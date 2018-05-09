@@ -1,6 +1,8 @@
 package main.java.Modelos;
 
-public class Dispositivo {
+import main.java.Json.BeanToJson;
+
+public class Dispositivo extends BeanToJson<Dispositivo> {
 
     private String nombre;
     private Double consumoPorHora;
@@ -37,5 +39,10 @@ public class Dispositivo {
 
     public void setTiempoEncendidoDelDia(Integer tiempoEncendidoDelDia) {
         this.tiempoEncendidoDelDia = tiempoEncendidoDelDia;
+    }
+
+    @Override
+    public Dispositivo getObj() {
+        return this;
     }
 }
