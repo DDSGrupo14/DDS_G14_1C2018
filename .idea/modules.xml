@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/DDS_G14_1C2018.iml" filepath="$PROJECT_DIR$/.idea/DDS_G14_1C2018.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SistemaDeGestionEnergetica/SistemaDeGestionEnergetica.iml" filepath="$PROJECT_DIR$/SistemaDeGestionEnergetica/SistemaDeGestionEnergetica.iml" />
     </modules>
   </component>
 </project>
