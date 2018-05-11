@@ -1,4 +1,4 @@
-package main.java.Json;
+package Json;
 
 import com.google.gson.GsonBuilder;
 

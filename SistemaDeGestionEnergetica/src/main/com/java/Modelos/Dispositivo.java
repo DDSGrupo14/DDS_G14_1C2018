@@ -1,6 +1,7 @@
-package main.java.Modelos;
+package Modelos;
 
-import main.java.Json.BeanToJson;
+
+import Json.BeanToJson;
 
 public class Dispositivo extends BeanToJson<Dispositivo> {
 

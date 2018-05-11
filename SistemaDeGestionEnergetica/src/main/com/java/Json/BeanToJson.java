@@ -1,6 +1,6 @@
-package main.java.Json;
+package Json;
 
-import static main.java.Json.JsonUtils.toJson;
+import static Json.JsonUtils.toJson;
 
 public abstract class BeanToJson <T> {
 

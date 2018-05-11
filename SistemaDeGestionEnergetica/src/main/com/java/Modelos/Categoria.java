@@ -1,4 +1,4 @@
-package main.java.Modelos;
+package Modelos;
 
 import main.java.Json.BeanToJson;
 

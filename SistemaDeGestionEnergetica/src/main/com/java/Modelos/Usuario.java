@@ -1,10 +1,11 @@
-package main.java.Modelos;
+package Modelos;
 
+import Json.BeanToJson;
 import com.google.gson.annotations.Expose;
-import main.java.Json.BeanToJson;
 
 import java.util.Date;
 import java.util.List;
+
 
 public class Usuario extends BeanToJson<Usuario> {
 

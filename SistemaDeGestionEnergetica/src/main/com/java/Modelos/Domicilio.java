@@ -1,6 +1,6 @@
-package main.java.Modelos;
+package Modelos;
 
-import main.java.Json.BeanToJson;
+import Json.BeanToJson;
 
 import java.util.List;
 
@@ -9,6 +9,8 @@ public class Domicilio extends BeanToJson<Domicilio> {
     private String direccion;
     private Boolean domicilioPrincipal;
     private Categoria categoria;
+    private String direccionDomicilio;
+
     private List< Dispositivo > listaDispositivos;
 
     public String getDireccion() {
@@ -41,6 +43,14 @@ public class Domicilio extends BeanToJson<Domicilio> {
 
     public void setListaDispositivos(List<Dispositivo> listaDispositivos) {
         this.listaDispositivos = listaDispositivos;
+    }
+
+    public String getDireccionDomicilio() {
+        return direccionDomicilio;
+    }
+
+    public void setDireccionDomicilio(String direccionDomicilio) {
+        this.direccionDomicilio = direccionDomicilio;
     }
 
     @Override

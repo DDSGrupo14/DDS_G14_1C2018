@@ -1,0 +1,24 @@
+[
+  {
+    "direccion":"tucuman-285",
+    "categoria":1,
+    "domicilioPrincipal":true,
+    "idUsuario":1001
+  },
+  {
+    "direccion":"suiza-2285",
+    "categoria":5,
+    "domicilioPrincipal":true,
+    "idUsuario":1003
+  },{
+  "direccion":"esteban-2385",
+  "categoria":3,
+  "domicilioPrincipal":false,
+  "idUsuario":1001
+},{
+  "direccion":"colon-1234",
+  "categoria":9,
+  "domicilioPrincipal":true,
+  "idUsuario":1002
+}
+]

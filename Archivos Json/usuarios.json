@@ -1,8 +1,26 @@
 [
   {
-    "documento":"DNI-452174556",
-    "nombre":"Juan",
-    "apellido":"Perez",
-    "telefono":44445555
+    "documento": "DNI-302174556",
+    "nombre": "Juan",
+    "apellido": "Perez",
+    "telefono": 44445555,
+    "fechaDeAltaDelServicio": "20-10-2005",
+    "idSistema": 1001
+  },
+  {
+    "documento": "DNI-332174556",
+    "nombre": "Juancito",
+    "apellido": "Perez",
+    "telefono": 12345678,
+    "fechaDeAltaDelServicio": "13-09-2010",
+    "idSistema": 1002
+  },
+  {
+    "documento": "DNI-272174556",
+    "nombre": "Juansote",
+    "apellido": "Fernandez",
+    "telefono": 11223344,
+    "fechaDeAltaDelServicio": "02-05-2000",
+    "idSistema": 1003
   }
 ]

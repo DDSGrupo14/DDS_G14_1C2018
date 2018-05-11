@@ -1,0 +1,32 @@
+[
+  {
+    "nombre": "consolaVideoJuegos",
+    "consumoPorHora": 22.3,
+    "direccion": "tucuman-285"
+  },
+  {
+    "nombre": "aireAcondicionado",
+    "consumoPorHora": 500.6,
+    "direccion": "tucuman-285"
+  },
+  {
+    "nombre": "lampara",
+    "consumoPorHora": 20,
+    "direccion": "esteban-2385"
+  },
+  {
+    "nombre": "heladera",
+    "consumoPorHora": 120.6,
+    "direccion": "tucuman-285"
+  },
+  {
+    "nombre": "heladera",
+    "consumoPorHora": 100.6,
+    "direccion": "esteban-2385"
+  },
+  {
+    "nombre":"hornoElectrico",
+    "consumoPorHora":200.6,
+    "direccion":"colon-1234"
+  }
+]

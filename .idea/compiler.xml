@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="SistemaDeGestionEnergetica" target="1.5" />
+      <module name="SistemaDeGestionEnergetica" target="7" />
     </bytecodeTargetLevel>
   </component>
 </project>
