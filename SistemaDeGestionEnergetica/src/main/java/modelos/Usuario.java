@@ -1,7 +1,7 @@
-package Modelos;
+package modelos;
 
-import Json.BeanToJson;
-import com.google.gson.annotations.Expose;
+
+import json.BeanToJson;
 
 import java.util.Date;
 import java.util.List;

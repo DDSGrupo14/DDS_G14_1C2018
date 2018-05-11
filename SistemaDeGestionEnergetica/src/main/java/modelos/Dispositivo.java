@@ -1,7 +1,7 @@
-package Modelos;
+package modelos;
 
 
-import Json.BeanToJson;
+import json.BeanToJson;
 
 public class Dispositivo extends BeanToJson<Dispositivo> {
 

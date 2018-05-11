@@ -1,6 +1,6 @@
-package Modelos;
+package modelos;
 
-import Json.BeanToJson;
+import json.BeanToJson;
 
 import java.util.List;
 
