@@ -1,6 +1,7 @@
 package modelos;
 
 
+import com.google.gson.annotations.Expose;
 import json.BeanToJson;
 
 import java.util.Date;
@@ -10,114 +11,32 @@ import java.util.List;
 public class Usuario extends BeanToJson<Usuario> {
 
 
+    @Expose
     private String nombre;
-
+    @Expose
     private String apellido;
-
+    @Expose
     private String documento;
-
-    private Integer telefono;
-
+    @Expose
+    private String telefono;
+    @Expose
     private Date fechaDeAltaDelServicio;
-
+    @Expose
     private Date fechaDeAltaEnSistema;
-
+    @Expose
     private Integer puntaje;
-
-    private Integer idSistema;
-
+    @Expose
     private String loginUsuario;
-
+    @Expose
     private String contrasenia;
-
+    @Expose
     private List<Domicilio> listaDomicilios;
 
-    public String getDocumento() {
-        return documento;
-    }
-
-    public void setDocumento(String documento) {
-        this.documento = documento;
-    }
-
-    public Integer getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(Integer telefono) {
-        this.telefono = telefono;
-    }
-
-    public Date getFechaDeAltaDelServicio() {
-        return fechaDeAltaDelServicio;
-    }
-
-    public void setFechaDeAltaDelServicio(Date fechaDeAltaDelServicio) {
-        this.fechaDeAltaDelServicio = fechaDeAltaDelServicio;
-    }
-
-    public Integer getPuntaje() {
-        return puntaje;
-    }
-
-    public void setPuntaje(Integer puntaje) {
-        this.puntaje = puntaje;
-    }
-
-    public List<Domicilio> getListaDomicilios() {
-        return listaDomicilios;
-    }
-
-    public void setListaDomicilios(List<Domicilio> listaDomicilios) {
-        this.listaDomicilios = listaDomicilios;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
+    public Usuario(String nombre, String apellido, String documento, String telefono) {
         this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
         this.apellido = apellido;
-    }
-
-    public Date getFechaDeAltaEnSistema() {
-        return fechaDeAltaEnSistema;
-    }
-
-    public void setFechaDeAltaEnSistema(Date fechaDeAltaEnSistema) {
-        this.fechaDeAltaEnSistema = fechaDeAltaEnSistema;
-    }
-
-    public Integer getIdSistema() {
-        return idSistema;
-    }
-
-    public void setIdSistema(Integer idSistema) {
-        this.idSistema = idSistema;
-    }
-
-    public String getLoginUsuario() {
-        return loginUsuario;
-    }
-
-    public void setLoginUsuario(String loginUsuario) {
-        this.loginUsuario = loginUsuario;
-    }
-
-    public String getContrasenia() {
-        return contrasenia;
-    }
-
-    public void setContrasenia(String contrasenia) {
-        this.contrasenia = contrasenia;
+        this.documento = documento;
+        this.telefono = telefono;
     }
 
     @Override
