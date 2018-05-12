@@ -9,15 +9,15 @@ import java.util.List;
 
 public class Usuario extends BeanToJson<Usuario> {
 
-
+    @Expose
     private String nombre;
-
+    @Expose
     private String apellido;
-
+    @Expose
     private String documento;
-
+    @Expose
     private Integer telefono;
-
+    @Expose
     private Date fechaDeAltaDelServicio;
 
     private Date fechaDeAltaEnSistema;

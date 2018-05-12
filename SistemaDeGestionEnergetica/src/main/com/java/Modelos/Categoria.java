@@ -1,13 +1,12 @@
 package Modelos;
 
-import Json.BeanToJson;
-
+import java.util.Arrays;
 import java.util.List;
 
-public class Categoria extends BeanToJson<Categoria> {
+public class Categoria {
 
-    private List<Double> cargosFijos;
-    private List<Double> cargosVariables;
+    private List<Double> cargosFijos = Arrays.asList( 5.2, 7.6, 9.1, 12.4, 15.8, 20.8, 25.9, 28.5, 30.6 );
+    private List<Double> cargosVariables = Arrays.asList( 2.2, 3.6, 4.1, 5.4, 6.8, 7.8, 9.9, 10.5, 11.6 );
 
     public List<Double> getCargosFijos() {
         return cargosFijos;
@@ -25,8 +24,14 @@ public class Categoria extends BeanToJson<Categoria> {
         this.cargosVariables = cargosVariables;
     }
 
-    @Override
-    public Categoria getObj() {
-        return this;
+    public Double obtenerCargoFijo( Integer categoria ){
+
+        return cargosFijos.get( categoria - 1);
     }
+
+    public Double obtenerCargoVariable( Integer categoria ){
+
+        return cargosVariables.get( categoria - 1);
+    }
+
 }
