@@ -7,52 +7,14 @@ import java.util.List;
 public class Domicilio extends BeanToJson<Domicilio> {
 
     private String direccion;
+    //para no ser redundantes con que se llame el atributo principal es suficiente
     private Boolean domicilioPrincipal;
     private Categoria categoria;
-    private String direccionDomicilio;
+    private String direccionDomicilio;//ya existe direccion domicilio
 
-    private List< Dispositivo > listaDispositivos;
+    private List< Dispositivo > listaDispositivos;//con que se llame dispositivos es mas representativo
 
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public Boolean getDomicilioPrincipal() {
-        return domicilioPrincipal;
-    }
-
-    public void setDomicilioPrincipal(Boolean domicilioPrincipal) {
-        this.domicilioPrincipal = domicilioPrincipal;
-    }
-
-    public Categoria getCategoria() {
-        return categoria;
-    }
-
-    public void setCategoria(Categoria categoria) {
-        this.categoria = categoria;
-    }
-
-    public List<Dispositivo> getListaDispositivos() {
-        return listaDispositivos;
-    }
-
-    public void setListaDispositivos(List<Dispositivo> listaDispositivos) {
-        this.listaDispositivos = listaDispositivos;
-    }
-
-    public String getDireccionDomicilio() {
-        return direccionDomicilio;
-    }
-
-    public void setDireccionDomicilio(String direccionDomicilio) {
-        this.direccionDomicilio = direccionDomicilio;
-    }
-
+    // por ahora solo crear los constructores no usar getters y setters
     @Override
     public Domicilio getObj() {
         return this;
