@@ -1,15 +1,10 @@
 package modelos;
 
-
 import com.google.gson.annotations.Expose;
 import json.BeanToJson;
-
-import java.util.Date;
 import java.util.List;
 
-
 public class Usuario extends BeanToJson<Usuario> {
-
 
     @Expose
     private String nombre;
@@ -20,23 +15,32 @@ public class Usuario extends BeanToJson<Usuario> {
     @Expose
     private String telefono;
     @Expose
-    private Date fechaDeAltaDelServicio;
+    private String fechaDeAltaDelServicio;
     @Expose
-    private Date fechaDeAltaEnSistema;
+    private String fechaDeAltaEnSistema;
     @Expose
     private Integer puntaje;
     @Expose
     private String loginUsuario;
     @Expose
-    private String contrasenia;//cambiarlo por clave
+    private String clave;
     @Expose
-    private List<Domicilio> listaDomicilios;//cambiarlo por domicilios es mas representativo
+    private List<Domicilio> domicilios;
 
-    public Usuario(String nombre, String apellido, String documento, String telefono) {
+    public Usuario(String nombre, String apellido, String documento, String telefono, String fechaDeAltaDelServicio) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.documento = documento;
         this.telefono = telefono;
+        this.fechaDeAltaDelServicio = fechaDeAltaDelServicio;
+    }
+
+    public List<Domicilio> getDomicilios() {
+        return domicilios;
+    }
+
+    public void setDomicilios(List<Domicilio> domicilios) {
+        this.domicilios = domicilios;
     }
 
     @Override

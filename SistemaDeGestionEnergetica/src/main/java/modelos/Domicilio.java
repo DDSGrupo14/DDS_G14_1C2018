@@ -1,18 +1,31 @@
 package modelos;
 
+import com.google.gson.annotations.Expose;
 import json.BeanToJson;
 
 import java.util.List;
 
 public class Domicilio extends BeanToJson<Domicilio> {
 
+    @Expose
     private String direccion;
-    //para no ser redundantes con que se llame el atributo principal es suficiente
-    private Boolean domicilioPrincipal;
+    @Expose
+    private Boolean principal;
+    @Expose
     private Categoria categoria;
-    private String direccionDomicilio;//ya existe direccion domicilio
+    @Expose
+    private List<Dispositivo> dispositivos;
 
-    private List< Dispositivo > listaDispositivos;//con que se llame dispositivos es mas representativo
+    public Domicilio(String direccion, Boolean principal, Categoria categoria, List<Dispositivo> dispositivos) {
+        this.direccion = direccion;
+        this.principal = principal;
+        this.categoria = categoria;
+        this.dispositivos = dispositivos;
+    }
+
+    public List<Dispositivo> getDispositivos() {
+        return dispositivos;
+    }
 
     // por ahora solo crear los constructores no usar getters y setters
     @Override

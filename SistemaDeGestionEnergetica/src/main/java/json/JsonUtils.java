@@ -7,7 +7,7 @@ public class JsonUtils {
     public static String toJson(Object object) {
         final GsonBuilder gson = new GsonBuilder();
         gson.excludeFieldsWithoutExposeAnnotation();
-        return gson.create().toJson(object);
+        return gson.setPrettyPrinting().create().toJson(object);
     }
 
 }
