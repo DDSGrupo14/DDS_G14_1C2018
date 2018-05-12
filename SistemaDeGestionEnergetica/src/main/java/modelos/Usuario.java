@@ -28,9 +28,9 @@ public class Usuario extends BeanToJson<Usuario> {
     @Expose
     private String loginUsuario;
     @Expose
-    private String contrasenia;
+    private String contrasenia;//cambiarlo por clave
     @Expose
-    private List<Domicilio> listaDomicilios;
+    private List<Domicilio> listaDomicilios;//cambiarlo por domicilios es mas representativo
 
     public Usuario(String nombre, String apellido, String documento, String telefono) {
         this.nombre = nombre;
