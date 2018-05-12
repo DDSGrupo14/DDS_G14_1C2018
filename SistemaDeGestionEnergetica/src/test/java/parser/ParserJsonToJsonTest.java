@@ -53,7 +53,9 @@ public class ParserJsonToJsonTest {
 
         JsonUtils jsonUtils = new JsonUtils();
 
-        String json = jsonUtils.toJson( usuario );
+        List<Usuario> usuarios = Arrays.asList( usuario );
+
+        String json = jsonUtils.toJson( usuarios );
 
         try {
 

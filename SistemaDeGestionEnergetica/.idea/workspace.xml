@@ -299,7 +299,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ParserJsonFromJsonTest.deberianExistirSoloCincoDispositivosTest">
+  <component name="RunManager" selected="JUnit.ParserJsonToJsonTest.crearUsuarioTest">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -395,7 +395,7 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="ParserJsonFromJsonTest.probarConteoTotalDeDispositivosEncedidosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParserJsonToJsonTest.crearUsuarioTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SistemaDeGestionEnergetica" />
       <extension name="coverage">
         <pattern>
@@ -406,8 +406,8 @@
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="PACKAGE_NAME" value="parser" />
-      <option name="MAIN_CLASS_NAME" value="parser.ParserJsonFromJsonTest" />
-      <option name="METHOD_NAME" value="probarConteoTotalDeDispositivosEncedidosTest" />
+      <option name="MAIN_CLASS_NAME" value="parser.ParserJsonToJsonTest" />
+      <option name="METHOD_NAME" value="crearUsuarioTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="VM_PARAMETERS" value="-ea" />
       <option name="PARAMETERS" />
@@ -457,19 +457,19 @@
       <listeners />
     </configuration>
     <list>
-      <item itemvalue="JUnit.ParserJsonFromJsonTest.probarConteoTotalDeDispositivosEncedidosTest" />
       <item itemvalue="JUnit.ParserJsonFromJsonTest.hayAlgunDispositivoEncendidoEnCualquierDomicilioTest" />
       <item itemvalue="JUnit.ParserJsonFromJsonTest.noDeberiaHaberDispositivosEncendidosEnCualquierDomicilioTest" />
       <item itemvalue="JUnit.ParserJsonFromJsonTest.deberiaDeHaberTresDispositivosApagadosTest" />
       <item itemvalue="JUnit.ParserJsonFromJsonTest.deberianExistirSoloCincoDispositivosTest" />
+      <item itemvalue="JUnit.ParserJsonToJsonTest.crearUsuarioTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ParserJsonToJsonTest.crearUsuarioTest" />
         <item itemvalue="JUnit.ParserJsonFromJsonTest.deberianExistirSoloCincoDispositivosTest" />
         <item itemvalue="JUnit.ParserJsonFromJsonTest.deberiaDeHaberTresDispositivosApagadosTest" />
         <item itemvalue="JUnit.ParserJsonFromJsonTest.noDeberiaHaberDispositivosEncendidosEnCualquierDomicilioTest" />
         <item itemvalue="JUnit.ParserJsonFromJsonTest.hayAlgunDispositivoEncendidoEnCualquierDomicilioTest" />
-        <item itemvalue="JUnit.ParserJsonFromJsonTest.probarConteoTotalDeDispositivosEncedidosTest" />
       </list>
     </recent_temporary>
   </component>
@@ -749,7 +749,7 @@
       </state>
       <state key="FacetStructureConfigurable.UI">
         <settings>
-          <last-edited>No facets are configured</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -809,7 +809,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: com.google.code.gson:gson:2.8.2</last-edited>
+          <last-edited />
           <splitter-proportions>
             <option name="proportions">
               <list>
