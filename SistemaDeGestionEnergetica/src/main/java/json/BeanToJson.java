@@ -1,6 +1,7 @@
-package Json;
+package json;
 
-import static Json.JsonUtils.toJson;
+
+import static json.JsonUtils.toJson;
 
 public abstract class BeanToJson <T> {
 
