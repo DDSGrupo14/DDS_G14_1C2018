@@ -5,6 +5,7 @@ import json.BeanToJson;
 
 import java.util.List;
 
+
 public class Domicilio extends BeanToJson<Domicilio> {
 
     @Expose
@@ -16,6 +17,9 @@ public class Domicilio extends BeanToJson<Domicilio> {
     @Expose
     private List<Dispositivo> dispositivos;
 
+    /*
+    Como el constructor pide todos los atributos, no habra nulls.
+     */
     public Domicilio(String direccion, Boolean principal, Categoria categoria, List<Dispositivo> dispositivos) {
         this.direccion = direccion;
         this.principal = principal;
@@ -27,9 +31,30 @@ public class Domicilio extends BeanToJson<Domicilio> {
         return dispositivos;
     }
 
+    public String getDireccion() {
+        return direccion;
+    }
+
     // por ahora solo crear los constructores no usar getters y setters
     @Override
     public Domicilio getObj() {
         return this;
+    }
+
+    public int cantidadDispositivosEncendidos(){
+
+        return (int) dispositivos.stream().filter(Dispositivo::getEncendido).count();
+    }
+    public int cantidadDispositivosApagados(){
+
+        return (int) dispositivos.stream().filter( disp -> !disp.getEncendido()).count();
+    }
+    public int cantidadTotalDispositivos(){
+
+        return dispositivos.size();
+    }
+    public Boolean hayAlgunDispositivoEncendido(){
+
+        return dispositivos.stream().anyMatch( Dispositivo::getEncendido);
     }
 }

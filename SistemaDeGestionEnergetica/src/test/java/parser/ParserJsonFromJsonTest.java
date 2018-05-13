@@ -3,7 +3,6 @@ package parser;
 import json.CargarUsuariosDesdeJson;
 import modelos.Usuario;
 import org.junit.jupiter.api.Test;
-import servicios.UserServices;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
@@ -53,9 +52,7 @@ public class ParserJsonFromJsonTest {
 
         Usuario usuario = usuarios.get(0);
 
-        UserServices services = new UserServices();
-
-        assertEquals( new Long(5), services.cantidadTotalDeDispositivos(usuario), "No coincide cantidad." );
+        assertEquals( 5, usuario.cantidadTotalDeDispositivos(), "No coincide cantidad." );
 
     }
 
@@ -66,9 +63,8 @@ public class ParserJsonFromJsonTest {
 
         Usuario usuario = usuarios.get(0);
 
-        UserServices services = new UserServices();
 
-        assertEquals( new Long(3), services.cantidadTotalDeDispositivosApagados(usuario), "No coincide cantidad." );
+        assertEquals( 3, usuario.cantidadTotalDeDispositivosApagados(), "No coincide cantidad." );
 
     }
 
@@ -79,11 +75,9 @@ public class ParserJsonFromJsonTest {
 
         Usuario usuario = usuarios.get(0);
 
-        UserServices services = new UserServices();
-
         usuario.getDomicilios().get(1).getDispositivos().get(0).setEncendido(true);
 
-        assertEquals( new Long(1), services.cantidadTotalDeDispositivosEncendidos(usuario), "No coincide cantidad." );
+        assertEquals( 1, usuario.cantidadTotalDeDispositivosEncendidos(), "No coincide cantidad." );
 
     }
 
@@ -94,11 +88,9 @@ public class ParserJsonFromJsonTest {
 
         Usuario usuario = usuarios.get(0);
 
-        UserServices services = new UserServices();
-
         usuario.getDomicilios().get(1).getDispositivos().get(0).setEncendido(true);
 
-        assertFalse( services.hayAlgunDispositivoEncendidoEnCualquierDomicilio(usuario),"Error.");
+        assertFalse( usuario.hayAlgunDispositivoEncendidoEnAlgunDomicilio(),"Error.");
 
     }
 
