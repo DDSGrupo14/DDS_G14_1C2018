@@ -35,4 +35,8 @@ public class Categoria extends BeanToJson<Categoria> {
         return cargosFijos.get( categoriaActual - 1);
     }
 
+    public void recategorizar( Integer nuevaCategoria ){
+        this.categoriaActual = nuevaCategoria;
+    }
+
 }

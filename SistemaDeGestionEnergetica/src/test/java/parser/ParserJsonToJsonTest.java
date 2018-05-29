@@ -2,7 +2,7 @@ package parser;
 
 import json.JsonUtils;
 import modelos.Categoria;
-import modelos.Dispositivo;
+import modelos.dispositivos.DispositivoInteligente;
 import modelos.Domicilio;
 import modelos.Usuario;
 import org.junit.jupiter.api.Test;
@@ -31,15 +31,15 @@ public class ParserJsonToJsonTest {
         final Usuario usuario = new Usuario("Pepe", "Garcia", "1234",
                 "1512312312", fecha1.toString());
 
-        final Dispositivo dipositivo01 = new Dispositivo( "AireAcondicionado", new BigDecimal( 500.36), false);
+        final DispositivoInteligente dipositivo01 = new DispositivoInteligente( "AireAcondicionado", new BigDecimal( 500.36), false);
 
-        final Dispositivo dipositivo02 = new Dispositivo( "ConsolaDeVideoJuegos", new BigDecimal( 200.1), false);
+        final DispositivoInteligente dipositivo02 = new DispositivoInteligente( "ConsolaDeVideoJuegos", new BigDecimal( 200.1), false);
 
-        final Dispositivo dipositivo03 = new Dispositivo( "Televisor", new BigDecimal( 150.3), false);
+        final DispositivoInteligente dipositivo03 = new DispositivoInteligente( "Televisor", new BigDecimal( 150.3), false);
 
-        final List<Dispositivo> dispositivos01 = Arrays.asList( dipositivo01, dipositivo02);
+        final List<DispositivoInteligente> dispositivos01 = Arrays.asList( dipositivo01, dipositivo02);
 
-        final List<Dispositivo> dispositivos02 = Arrays.asList( dipositivo03 );
+        final List<DispositivoInteligente> dispositivos02 = Arrays.asList( dipositivo03 );
 
         final Categoria categoria01 = new Categoria( cargosFijos, cargosVariables, 1 );
 

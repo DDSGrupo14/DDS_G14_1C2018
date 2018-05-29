@@ -2,6 +2,7 @@ package modelos;
 
 import com.google.gson.annotations.Expose;
 import json.BeanToJson;
+import modelos.dispositivos.DispositivoInteligente;
 
 import java.util.List;
 
@@ -15,19 +16,19 @@ public class Domicilio extends BeanToJson<Domicilio> {
     @Expose
     private Categoria categoria;
     @Expose
-    private List<Dispositivo> dispositivos;
+    private List<DispositivoInteligente> dispositivos;
 
     /*
     Como el constructor pide todos los atributos, no habra nulls.
      */
-    public Domicilio(String direccion, Boolean principal, Categoria categoria, List<Dispositivo> dispositivos) {
+    public Domicilio(String direccion, Boolean principal, Categoria categoria, List<DispositivoInteligente> dispositivos) {
         this.direccion = direccion;
         this.principal = principal;
         this.categoria = categoria;
         this.dispositivos = dispositivos;
     }
 
-    public List<Dispositivo> getDispositivos() {
+    public List<DispositivoInteligente> getDispositivos() {
         return dispositivos;
     }
 
@@ -43,7 +44,7 @@ public class Domicilio extends BeanToJson<Domicilio> {
 
     public int cantidadDispositivosEncendidos(){
 
-        return (int) dispositivos.stream().filter(Dispositivo::getEncendido).count();
+        return (int) dispositivos.stream().filter(DispositivoInteligente::getEncendido).count();
     }
     public int cantidadDispositivosApagados(){
 
@@ -55,6 +56,6 @@ public class Domicilio extends BeanToJson<Domicilio> {
     }
     public Boolean hayAlgunDispositivoEncendido(){
 
-        return dispositivos.stream().anyMatch( Dispositivo::getEncendido);
+        return dispositivos.stream().anyMatch( DispositivoInteligente::getEncendido);
     }
 }
