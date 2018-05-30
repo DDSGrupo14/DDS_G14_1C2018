@@ -1,4 +1,4 @@
-package modelos;
+package modelos.dispositivos;
 
 import com.google.gson.annotations.Expose;
 import json.BeanToJson;

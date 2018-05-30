@@ -2,7 +2,7 @@ package json;
 
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import modelos.Usuario;
+import modelos.usuarios.Usuario;
 
 import java.io.File;
 import java.io.IOException;

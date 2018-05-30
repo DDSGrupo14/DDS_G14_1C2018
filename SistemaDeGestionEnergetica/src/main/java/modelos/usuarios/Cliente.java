@@ -1,38 +1,21 @@
-package modelos;
+package modelos.usuarios;
 
-import com.google.gson.annotations.Expose;
-import json.BeanToJson;
+import modelos.reglas.actuadores.Actuador;
+import modelos.reglas.sensores.Sensor;
+
 import java.util.List;
 import java.util.Objects;
 
-public class Usuario extends BeanToJson<Usuario> {
+public class Cliente extends Usuario{
 
-    @Expose
-    private String nombre;
-    @Expose
-    private String apellido;
-    @Expose
-    private String documento;
-    @Expose
-    private String telefono;
-    @Expose
     private String fechaDeAltaDelServicio;
-    @Expose
-    private String fechaDeAltaEnSistema;
-    @Expose
+
     private Integer puntaje;
-    @Expose
-    private String loginUsuario;
-    @Expose
-    private String clave;
-    @Expose
+
     private List<Domicilio> domicilios;
 
-    public Usuario(String nombre, String apellido, String documento, String telefono, String fechaDeAltaDelServicio) {
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.documento = documento;
-        this.telefono = telefono;
+    public Cliente(String nombre, String apellido, String documento, String telefono, String fechaDeAltaDelServicio) {
+        super( nombre, apellido, documento, telefono );
         this.fechaDeAltaDelServicio = fechaDeAltaDelServicio;
     }
 
@@ -42,6 +25,10 @@ public class Usuario extends BeanToJson<Usuario> {
 
     public List<Domicilio> getDomicilios() {
         return domicilios;
+    }
+
+    public Integer getPuntaje() {
+        return puntaje;
     }
 
     @Override
@@ -74,4 +61,10 @@ public class Usuario extends BeanToJson<Usuario> {
 
         return domicilios.stream().anyMatch( Domicilio::hayAlgunDispositivoEncendido );
     }
+
+    public void registrarAdaptadorEstandar(){
+
+        puntaje =+ 15;
+    }
+
 }

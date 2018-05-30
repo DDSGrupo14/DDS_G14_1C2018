@@ -16,6 +16,6 @@ public class DispositivoEstandar implements Dispositivo {
 
     @Override
     public BigDecimal consumo(Integer tiempo) {
-        return estimadoKWConsumidosPorHora;
+        return estimadoKWConsumidosPorHora.multiply( new BigDecimal( tiempo ));
     }
 }

@@ -1,7 +1,7 @@
 package parser;
 
 import json.CargarUsuariosDesdeJson;
-import modelos.Usuario;
+import modelos.usuarios.Usuario;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

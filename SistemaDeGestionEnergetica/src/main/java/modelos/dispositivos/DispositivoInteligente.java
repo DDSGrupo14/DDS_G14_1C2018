@@ -6,12 +6,12 @@ import modelos.dispositivos.adaptadores.Adaptador;
 import modelos.estados.Apagado;
 import modelos.estados.Estado;
 
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 
 public class DispositivoInteligente extends BeanToJson<DispositivoInteligente> implements Dispositivo{
-
-    private String nombre;
 
     private Estado estado;
 
@@ -19,23 +19,26 @@ public class DispositivoInteligente extends BeanToJson<DispositivoInteligente> i
 
     private Double porcentajeAhorroEnergia;
 
-    public DispositivoInteligente(String nombre, BigDecimal consumoPorHora,
-                                  Adaptador adaptador, Double porcentajeAhorroEnergia) {
-        this.nombre = nombre;
+    private final static Logger logger = LogManager.getLogger(DispositivoInteligente.class);
+
+
+    public DispositivoInteligente( Adaptador adaptador, Double porcentajeAhorroEnergia) {
         this.adaptador = adaptador;
-        this.estado = new Apagado();
         this.porcentajeAhorroEnergia = porcentajeAhorroEnergia;
+        this.estado = new Apagado( logger );
     }
 
-    public void encenderDispositivo(){ this.estado.encender(); }
+    public String nombreDispositivo() { return adaptador.getNombre(); }
 
-    public void apagarDispositivo() { this.estado.apagar(); }
+    public void encenderDispositivo(){ estado.encender( nombreDispositivo() ); }
 
-    public void pasarAhorroEnergia(){ this.estado.ahorrarEnergia( this.porcentajeAhorroEnergia); }
+    public void apagarDispositivo() { estado.apagar( nombreDispositivo() ); }
 
-    public boolean estasEncendido(){ return this.estado.estasEncendido(); }
+    public void pasarAhorroEnergia(){ estado.ahorrarEnergia( porcentajeAhorroEnergia, nombreDispositivo() ); }
 
-    public boolean estasApagado() { return !this.estado.estasEncendido(); }
+    public boolean estasEncendido(){ return estado.estasEncendido(); }
+
+    public boolean estasApagado() { return !estado.estasEncendido(); }
 
     @Override
     public DispositivoInteligente getObj() {
@@ -44,6 +47,8 @@ public class DispositivoInteligente extends BeanToJson<DispositivoInteligente> i
 
     @Override
     public BigDecimal consumo(Integer tiempo) {
-        return null;
+
+        return adaptador.getConsumoPorHora().multiply(estado.porcentajeConsumo()).multiply( new BigDecimal(tiempo ));
     }
+
 }

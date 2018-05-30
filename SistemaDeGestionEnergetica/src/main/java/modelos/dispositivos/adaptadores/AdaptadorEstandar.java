@@ -8,9 +8,9 @@ public class AdaptadorEstandar extends Adaptador {
 
     private DispositivoEstandar dispositivoEstandar;
 
-    public AdaptadorEstandar(DispositivoEstandar dispositivoEstandar, BigDecimal consumoPorHora) {
-        this.dispositivoEstandar = dispositivoEstandar;
+    public AdaptadorEstandar( BigDecimal consumoPorHora, String nombre, DispositivoEstandar dispositivoEstandar) {
 
-        this.setConsumoPorHora( consumoPorHora );
+        super( consumoPorHora, nombre );
+        this.dispositivoEstandar = dispositivoEstandar;
     }
 }

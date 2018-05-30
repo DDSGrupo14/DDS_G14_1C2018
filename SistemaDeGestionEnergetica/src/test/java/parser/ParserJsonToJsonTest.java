@@ -1,10 +1,10 @@
 package parser;
 
 import json.JsonUtils;
-import modelos.Categoria;
+import modelos.dispositivos.Categoria;
 import modelos.dispositivos.DispositivoInteligente;
-import modelos.Domicilio;
-import modelos.Usuario;
+import modelos.usuarios.Domicilio;
+import modelos.usuarios.Usuario;
 import org.junit.jupiter.api.Test;
 import utilidades.RandomDate;
 
