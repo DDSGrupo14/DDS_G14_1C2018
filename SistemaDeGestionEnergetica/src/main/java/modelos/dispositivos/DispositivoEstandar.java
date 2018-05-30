@@ -9,6 +9,11 @@ public class DispositivoEstandar implements Dispositivo {
 
     private String nombre;
 
+    @Override
+    public String nombreDispositivo() {
+        return nombre;
+    }
+
     public DispositivoEstandar(BigDecimal estimadoKWConsumidosPorHora, String nombre) {
         this.estimadoKWConsumidosPorHora = estimadoKWConsumidosPorHora.setScale(2, RoundingMode.HALF_UP);
         this.nombre = nombre;

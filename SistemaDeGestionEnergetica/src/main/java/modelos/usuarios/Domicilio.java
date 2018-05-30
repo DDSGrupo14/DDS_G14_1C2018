@@ -4,6 +4,7 @@ import com.google.gson.annotations.Expose;
 import json.BeanToJson;
 import modelos.dispositivos.Categoria;
 import modelos.dispositivos.Dispositivo;
+import modelos.dispositivos.DispositivoEstandar;
 import modelos.dispositivos.DispositivoInteligente;
 import modelos.reglas.actuadores.Actuador;
 import modelos.reglas.sensores.Sensor;
@@ -22,6 +23,8 @@ public class Domicilio extends BeanToJson<Domicilio> {
     private Categoria categoria;
     @Expose
     private List<Dispositivo> dispositivos;
+
+    private List< String > dispositivosEstandarRegistrados;
 
     private List<Actuador> actuadores;
 
@@ -100,4 +103,22 @@ public class Domicilio extends BeanToJson<Domicilio> {
 
         return dispositivoInteligentes.stream().anyMatch( DispositivoInteligente::estasEncendido);
     }
+
+    public void registrarDispositivoEstandar(DispositivoInteligente dispositivoEstandarAdaptado ){
+
+        dispositivos.removeIf( dispositivo -> dispositivo.nombreDispositivo()
+                .equals( dispositivoEstandarAdaptado.nombreDispositivo() ) );
+
+        dispositivos.add( dispositivoEstandarAdaptado );
+
+        dispositivosEstandarRegistrados.add( dispositivoEstandarAdaptado.nombreDispositivo() );
+
+    }
+
+    public boolean seEncuentraRegistradoDispositivoEstandar( DispositivoInteligente dispositivoInteligenteAdaptado ){
+
+        return dispositivosEstandarRegistrados.contains( dispositivoInteligenteAdaptado.nombreDispositivo() );
+
+    }
+
 }

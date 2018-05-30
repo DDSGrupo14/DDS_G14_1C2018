@@ -62,7 +62,7 @@ public class Cliente extends Usuario{
         return domicilios.stream().anyMatch( Domicilio::hayAlgunDispositivoEncendido );
     }
 
-    public void registrarAdaptadorEstandar(){
+    public void aumentarPuntajePorDispositivoEstandar(){
 
         puntaje =+ 15;
     }

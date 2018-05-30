@@ -1,14 +1,15 @@
 package modelos.reglas.condiciones;
 
 import modelos.reglas.reglas.Regla;
+import modelos.reglas.sensores.Sensor;
 
-public abstract class CondicionTemperatura extends Condicion {
+public abstract class CondicionTemperatura extends CondicionObserver {
 
     public Integer temperaturaPivote;
 
-    public CondicionTemperatura(Regla regla, Integer temperatura ) {
+    public CondicionTemperatura(Regla regla, Sensor sensor, Integer temperatura ) {
 
-        super(regla);
+        super(regla, sensor);
         this.temperaturaPivote = temperatura;
     }
 

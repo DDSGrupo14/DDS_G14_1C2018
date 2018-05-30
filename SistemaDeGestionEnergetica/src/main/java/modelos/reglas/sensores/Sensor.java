@@ -1,20 +1,20 @@
 package modelos.reglas.sensores;
 
-import modelos.reglas.condiciones.Condicion;
+import modelos.reglas.condiciones.CondicionObserver;
 
 import java.math.BigDecimal;
 import java.util.List;
 
 public abstract class Sensor{
 
-    private List<Condicion> condiciones;
+    private List<CondicionObserver> condiciones;
 
-    public void agregarCondicion( Condicion condicion){
+    public void agregarCondicion( CondicionObserver condicion){
 
         condiciones.add( condicion );
     }
 
-    public List<Condicion> getCondiciones() {
+    public List<CondicionObserver> getCondiciones() {
         return condiciones;
     }
 

@@ -1,13 +1,14 @@
 package modelos.reglas.condiciones;
 
 import modelos.reglas.reglas.Regla;
+import modelos.reglas.sensores.Sensor;
 
 import java.math.BigDecimal;
 
 public class CondicionTemperaturaBaja extends CondicionTemperatura {
 
-    public CondicionTemperaturaBaja(Regla regla, Integer temperatura) {
-        super(regla, temperatura);
+    public CondicionTemperaturaBaja(Regla regla, Sensor sensor, Integer temperatura) {
+        super(regla, sensor,temperatura);
     }
 
     @Override

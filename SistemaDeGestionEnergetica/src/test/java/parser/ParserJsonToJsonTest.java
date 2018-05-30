@@ -1,5 +1,5 @@
 package parser;
-
+/*
 import json.JsonUtils;
 import modelos.dispositivos.Categoria;
 import modelos.dispositivos.DispositivoInteligente;
@@ -70,3 +70,4 @@ public class ParserJsonToJsonTest {
 
     }
 }
+*/

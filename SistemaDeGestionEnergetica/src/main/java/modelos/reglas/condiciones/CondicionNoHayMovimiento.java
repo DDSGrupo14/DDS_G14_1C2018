@@ -1,13 +1,14 @@
 package modelos.reglas.condiciones;
 
 import modelos.reglas.reglas.Regla;
+import modelos.reglas.sensores.Sensor;
 
 import java.math.BigDecimal;
 
-public class CondicionNoHayMovimiento extends Condicion {
+public class CondicionNoHayMovimiento extends CondicionObserver {
 
-    public CondicionNoHayMovimiento(Regla regla) {
-        super(regla);
+    public CondicionNoHayMovimiento(Regla regla, Sensor sensor) {
+        super(regla, sensor);
     }
 
     @Override

@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e721b091-18f3-430b-98e8-b26485bf4451" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/actuadores/Actuador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/Condicion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionNoHayMovimiento.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperatura.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperaturaAlta.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperaturaBaja.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/ObserverSensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/reglas/ApagarSegunTemperatura.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/reglas/Regla.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/Sensor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/SensorTemperatura.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelos/usuarios/Administrador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/modelos/usuarios/Domicilio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/LogEntry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/DDS_G14_1C2018.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/compiler.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/libraries/Maven__com_google_code_gson_gson_2_8_2.xml" beforeDir="false" />
@@ -29,26 +15,17 @@
       <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/json/CargarUsuariosDesdeJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/json/CargarUsuariosDesdeJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/Categoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/Domicilio.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/usuarios/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/Dispositivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/Dispositivo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoEstandar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoEstandar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoInteligente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoInteligente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/adaptadores/Adaptador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/adaptadores/Adaptador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/adaptadores/AdaptadorEstandar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/adaptadores/AdaptadorEstandar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/estados/AhorroDeEnergia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/estados/AhorroDeEnergia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/estados/Apagado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/estados/Apagado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/estados/Encendido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/estados/Encendido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/estados/Estado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/estados/Estado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/reglas/Actuador.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/reglas/Observer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/reglas/Regla.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/reglas/Sensor.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/parser/ParserJsonFromJsonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/parser/ParserJsonFromJsonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/parser/ParserJsonToJsonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/parser/ParserJsonToJsonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/Condicion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionObserver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionNoHayMovimiento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionNoHayMovimiento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperatura.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperatura.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperaturaAlta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperaturaAlta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperaturaBaja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperaturaBaja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/ObserverSensor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/Sensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/Sensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/usuarios/Domicilio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/usuarios/Domicilio.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -60,20 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Usuario.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Usuario.java">
+      <file leaf-file-name="DispositivoInteligente.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoInteligente.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ParserJsonToJsonTest.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/parser/ParserJsonToJsonTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="871">
-              <caret line="70" column="5" selection-start-line="70" selection-start-column="5" selection-end-line="70" selection-end-column="5" />
+            <state relative-caret-position="253">
+              <caret line="50" column="116" selection-start-line="50" selection-start-column="116" selection-end-line="50" selection-end-column="116" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -81,24 +49,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Administrador.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Administrador.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-              <folding>
-                <element signature="e#400#401#0" expanded="true" />
-                <element signature="e#427#428#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Cliente.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Cliente.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+            <state relative-caret-position="221">
+              <caret line="64" column="53" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#862#863#0" expanded="true" />
@@ -108,11 +63,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Domicilio.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Domicilio.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Domicilio.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="100">
-              <caret line="25" selection-start-line="25" selection-end-line="25" />
+            <state relative-caret-position="287">
+              <caret line="119" column="107" selection-start-line="119" selection-start-column="107" selection-end-line="119" selection-end-column="107" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1163#1164#0" expanded="true" />
@@ -126,13 +81,41 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AdaptadorEstandar.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/adaptadores/AdaptadorEstandar.java">
+      <file leaf-file-name="Sensor.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/Sensor.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="12" column="40" selection-start-line="12" selection-start-column="40" selection-end-line="12" selection-end-column="40" />
+            <state relative-caret-position="225">
+              <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Regla.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/reglas/Regla.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+              <folding>
+                <element signature="e#204#205#0" expanded="true" />
+                <element signature="e#254#255#0" expanded="true" />
+                <element signature="e#294#295#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CondicionObserver.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionObserver.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#287#288#0" expanded="true" />
+                <element signature="e#315#316#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -154,9 +137,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/modelos/Dispositivo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/json/JsonUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/usuarios.json" />
         <option value="$PROJECT_DIR$/src/test/java/parser/ParserJsonTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/json/usuarios.json" />
         <option value="$PROJECT_DIR$/src/main/java/servicios/UserServices.java" />
@@ -173,7 +153,6 @@
         <option value="$PROJECT_DIR$/src/main/java/modelos/Sensor.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/log4j.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/Dispositivo.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/adaptadores/AdaptadorEstandar.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/adaptadores/Adaptador.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/estados/Estado.java" />
@@ -181,20 +160,14 @@
         <option value="$PROJECT_DIR$/src/main/java/modelos/estados/Apagado.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/estados/AhorroDeEnergia.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoInteligente.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoEstandar.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/Domicilio.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/Sensor.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/condicion.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/Actuador.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/Observer.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/InterfaceCondicion.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperatura.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/ObserverSensor.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/Regla.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/Condicion.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperaturaAlta.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperaturaBaja.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionNoHayMovimiento.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/Sensor.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/dispositivosConcretos/AireAcondicionado.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/SensorTemperatura.java" />
@@ -203,8 +176,18 @@
         <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/reglas/ApagarSegunTemperatura.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/usuarios/Usuario.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/usuarios/Administrador.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/LogEntry.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/Dispositivo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoEstandar.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/usuarios/Domicilio.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/ObserverSensor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/Condicion.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionObserver.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperatura.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperaturaAlta.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionNoHayMovimiento.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperaturaBaja.java" />
       </list>
     </option>
   </component>
@@ -656,7 +639,7 @@
       <workItem from="1526085599205" duration="18605000" />
       <workItem from="1526174573197" duration="4578000" />
       <workItem from="1527626327036" duration="9766000" />
-      <workItem from="1527651217206" duration="23250000" />
+      <workItem from="1527651217206" duration="27510000" />
     </task>
     <servers />
   </component>
@@ -693,7 +676,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56338000" />
+    <option name="totallyTimeSpent" value="60598000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -709,13 +692,13 @@
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49932885" weight="0.32905984" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.32905984" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.32905984" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="3" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26308724" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24966443" />
       <window_info anchor="right" id="Database" order="6" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32905984" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32905984" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
@@ -741,7 +724,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/servicios/UserServices.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Domicilio.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="374">
@@ -899,13 +881,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/Dispositivo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/modelos/estados/Estado.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -937,27 +912,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoEstandar.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_161/src.zip!/java/util/function/Consumer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/ObserverSensor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1049,26 +1007,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperaturaAlta.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="58" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoInteligente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="50" column="116" selection-start-line="50" selection-start-column="116" selection-end-line="50" selection-end-column="116" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/dispositivosConcretos/ggg.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1086,46 +1024,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionNoHayMovimiento.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/Condicion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" column="29" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#315#316#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/reglas/Regla.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding>
-            <element signature="e#204#205#0" expanded="true" />
-            <element signature="e#254#255#0" expanded="true" />
-            <element signature="e#294#295#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/actuadores/Actuador.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/SensorTemperatura.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -1133,38 +1031,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/Sensor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#398#399#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperatura.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/reglas/ApagarSegunTemperatura.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="31" lean-forward="true" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperaturaBaja.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1209,6 +1079,56 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Usuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/LogEntry.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" column="28" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding>
+            <element signature="e#393#394#0" expanded="true" />
+            <element signature="e#437#438#0" expanded="true" />
+            <element signature="e#477#478#0" expanded="true" />
+            <element signature="e#521#522#0" expanded="true" />
+            <element signature="e#561#562#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/Dispositivo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoEstandar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/reglas/Regla.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="35" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+          <folding>
+            <element signature="e#204#205#0" expanded="true" />
+            <element signature="e#254#255#0" expanded="true" />
+            <element signature="e#294#295#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/adaptadores/AdaptadorEstandar.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -1219,29 +1139,96 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Usuario.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/actuadores/Actuador.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="32" lean-forward="true" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        <state relative-caret-position="68">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/ObserverSensor.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="14" column="39" selection-start-line="14" selection-start-column="39" selection-end-line="14" selection-end-column="39" />
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperatura.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#862#863#0" expanded="true" />
-            <element signature="e#892#893#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionNoHayMovimiento.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperaturaAlta.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperaturaBaja.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="9" column="85" lean-forward="true" selection-start-line="9" selection-start-column="85" selection-end-line="9" selection-end-column="85" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionObserver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#287#288#0" expanded="true" />
+            <element signature="e#315#316#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/Sensor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="16" column="45" selection-start-line="16" selection-start-column="45" selection-end-line="16" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoInteligente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="50" column="116" selection-start-line="50" selection-start-column="116" selection-end-line="50" selection-end-column="116" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Domicilio.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="100">
-          <caret line="25" selection-start-line="25" selection-end-line="25" />
+        <state relative-caret-position="287">
+          <caret line="119" column="107" selection-start-line="119" selection-start-column="107" selection-end-line="119" selection-end-column="107" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1163#1164#0" expanded="true" />
@@ -1250,6 +1237,18 @@
             <element signature="e#1374#1375#0" expanded="true" />
             <element signature="e#1426#1427#0" expanded="true" />
             <element signature="e#1464#1465#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="64" column="53" selection-start-line="64" selection-start-column="53" selection-end-line="64" selection-end-column="53" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#862#863#0" expanded="true" />
+            <element signature="e#892#893#0" expanded="true" />
           </folding>
         </state>
       </provider>

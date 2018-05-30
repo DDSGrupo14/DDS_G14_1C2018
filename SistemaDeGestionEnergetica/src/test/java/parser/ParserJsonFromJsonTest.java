@@ -1,5 +1,5 @@
 package parser;
-
+/*
 import json.CargarUsuariosDesdeJson;
 import modelos.usuarios.Usuario;
 import org.junit.jupiter.api.Test;
@@ -95,3 +95,4 @@ public class ParserJsonFromJsonTest {
     }
 
 }
+*/
