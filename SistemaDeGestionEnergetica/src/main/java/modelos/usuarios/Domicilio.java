@@ -9,6 +9,9 @@ import modelos.dispositivos.DispositivoInteligente;
 import modelos.reglas.actuadores.Actuador;
 import modelos.reglas.sensores.Sensor;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -22,9 +25,11 @@ public class Domicilio extends BeanToJson<Domicilio> {
     @Expose
     private Categoria categoria;
     @Expose
-    private List<Dispositivo> dispositivos;
-
-    private List< String > dispositivosEstandarRegistrados;
+    private List<DispositivoInteligente> dispositivosInteligentes;
+    @Expose
+    private List<DispositivoEstandar> dispositivosEstandar;
+    @Expose
+    private String fechaAltaEnSistema;
 
     private List<Actuador> actuadores;
 
@@ -36,15 +41,32 @@ public class Domicilio extends BeanToJson<Domicilio> {
         this.direccion = direccion;
         this.principal = principal;
         this.categoria = categoria;
+        this.fechaAltaEnSistema = LocalDateTime.now().toString();
+        this.dispositivosInteligentes = new ArrayList<DispositivoInteligente>();
+        this.dispositivosEstandar = new ArrayList<DispositivoEstandar>();
+        this.sensores = new ArrayList<Sensor>();
+        this.actuadores = new ArrayList<Actuador>();
     }
 
-    public List<Dispositivo> getDispositivos() {
-        return dispositivos;
+    public List<DispositivoInteligente> getDispositivosInteligentes() {
+        return dispositivosInteligentes;
     }
 
-    public Domicilio agregarDispositivo(Dispositivo dispositivo ){
-        dispositivos.add( dispositivo );
+    public List<DispositivoEstandar> getDispositivosEstandar() {
+        return dispositivosEstandar;
+    }
 
+    public String getFechaAltaEnSistema() {
+        return fechaAltaEnSistema;
+    }
+
+    public Domicilio agregarDispositivoInteligente(DispositivoInteligente dispositivo ){
+        dispositivosInteligentes.add( dispositivo );
+        return this;
+    }
+
+    public Domicilio agregarDispositivoEstandar(DispositivoEstandar dispositivo ){
+        dispositivosEstandar.add( dispositivo );
         return this;
     }
 
@@ -52,17 +74,20 @@ public class Domicilio extends BeanToJson<Domicilio> {
         return actuadores;
     }
 
-    public void agregarActuador( Actuador actuador) {
+    public Domicilio agregarActuador( Actuador actuador) {
 
         actuadores.add( actuador );
+
+        return this;
     }
 
     public List<Sensor> getSensores() {
         return sensores;
     }
 
-    public void agregarSensor( Sensor sensor){
+    public Domicilio agregarSensor( Sensor sensor){
         sensores.add( sensor );
+        return this;
     }
 
     public String getDireccion() {
@@ -77,7 +102,7 @@ public class Domicilio extends BeanToJson<Domicilio> {
 
     public int cantidadDispositivosEncendidos(){
 
-        List< DispositivoInteligente > dispositivoInteligentes = dispositivos.stream()
+        List< DispositivoInteligente > dispositivoInteligentes = dispositivosInteligentes.stream()
                 .filter( d -> d instanceof DispositivoInteligente).map( d -> ( DispositivoInteligente) d)
                 .collect(Collectors.toList());
 
@@ -85,7 +110,7 @@ public class Domicilio extends BeanToJson<Domicilio> {
     }
     public int cantidadDispositivosApagados(){
 
-        List< DispositivoInteligente > dispositivoInteligentes = dispositivos.stream()
+        List< DispositivoInteligente > dispositivoInteligentes = dispositivosInteligentes.stream()
                 .filter( d -> d instanceof DispositivoInteligente).map( d -> ( DispositivoInteligente) d)
                 .collect(Collectors.toList());
 
@@ -93,31 +118,25 @@ public class Domicilio extends BeanToJson<Domicilio> {
     }
     public int cantidadTotalDispositivos(){
 
-        return dispositivos.size();
+        return dispositivosInteligentes.size() + dispositivosEstandar.size();
     }
     public Boolean hayAlgunDispositivoEncendido(){
 
-        List< DispositivoInteligente > dispositivoInteligentes = dispositivos.stream()
-                .filter( d -> d instanceof DispositivoInteligente).map( d -> ( DispositivoInteligente) d)
-                .collect(Collectors.toList());
-
-        return dispositivoInteligentes.stream().anyMatch( DispositivoInteligente::estasEncendido);
+        return dispositivosInteligentes.stream().anyMatch( DispositivoInteligente::estasEncendido);
     }
 
     public void registrarDispositivoEstandar(DispositivoInteligente dispositivoEstandarAdaptado ){
 
-        dispositivos.removeIf( dispositivo -> dispositivo.nombreDispositivo()
+        dispositivosEstandar.removeIf( dispositivo -> dispositivo.nombreDispositivo()
                 .equals( dispositivoEstandarAdaptado.nombreDispositivo() ) );
 
-        dispositivos.add( dispositivoEstandarAdaptado );
-
-        dispositivosEstandarRegistrados.add( dispositivoEstandarAdaptado.nombreDispositivo() );
+        dispositivosInteligentes.add( dispositivoEstandarAdaptado );
 
     }
 
     public boolean seEncuentraRegistradoDispositivoEstandar( DispositivoInteligente dispositivoInteligenteAdaptado ){
 
-        return dispositivosEstandarRegistrados.contains( dispositivoInteligenteAdaptado.nombreDispositivo() );
+        return dispositivosInteligentes.contains( dispositivoInteligenteAdaptado );
 
     }
 

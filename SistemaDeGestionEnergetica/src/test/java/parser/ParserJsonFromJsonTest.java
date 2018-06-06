@@ -1,6 +1,7 @@
 package parser;
-/*
-import json.CargarUsuariosDesdeJson;
+
+import json.CargarClientesDesdeJson;
+import modelos.usuarios.Cliente;
 import modelos.usuarios.Usuario;
 import org.junit.jupiter.api.Test;
 
@@ -13,86 +14,84 @@ import java.util.List;
 
 public class ParserJsonFromJsonTest {
 
-    CargarUsuariosDesdeJson cargarUsuarios = new CargarUsuariosDesdeJson();
+    CargarClientesDesdeJson cargarClientes = new CargarClientesDesdeJson();
 
-    String path = "src/main/resources/json/usuarios.json";
+    String path = "src/main/resources/json/clientes.json";
 
-    public List<Usuario> obtenerUsuarios() {
+    public List<Cliente> obtenerClientes() {
 
-        List<Usuario> usuarios;
+        List<Cliente> clientes;
 
         try {
 
-            usuarios= cargarUsuarios.load(new File(path));
+            clientes= cargarClientes.load(new File(path));
 
         } catch (IOException e) {
 
-            usuarios = null;
+            clientes = null;
 
             e.printStackTrace();
         }
 
-        return usuarios;
+        return clientes;
 
     }
 
     @Test
-    public void cargarUsuariosDesdeJsonTest() {
+    public void cargarClientesDesdeJsonTest() {
 
-        List<Usuario> usuarios = obtenerUsuarios();
+        List<Cliente> clientes = obtenerClientes();
 
-        assertEquals(1,usuarios.size(), "No coincide.");
+        assertEquals(1,clientes.size(), "No coincide.");
 
     }
 
     @Test
     public void deberianExistirSoloTresDispositivosTest() {
 
-        List<Usuario> usuarios = obtenerUsuarios();
+        List<Cliente> clientes = obtenerClientes();
 
-        Usuario usuario = usuarios.get(0);
+        Cliente cliente = clientes.get(0);
 
-        assertEquals( 5, usuario.cantidadTotalDeDispositivos(), "No coincide cantidad." );
+        assertEquals( 5, cliente.cantidadTotalDeDispositivos(), "No coincide cantidad." );
 
     }
 
     @Test
     public void deberiaDeHaberTresDispositivosApagadosTest() {
 
-        List<Usuario> usuarios = obtenerUsuarios();
+        List<Cliente> clientes = obtenerClientes();
 
-        Usuario usuario = usuarios.get(0);
+        Cliente cliente = clientes.get(0);
 
-
-        assertEquals( 3, usuario.cantidadTotalDeDispositivosApagados(), "No coincide cantidad." );
+        assertEquals( 3, cliente.cantidadTotalDeDispositivosApagados(), "No coincide cantidad." );
 
     }
 
     @Test
     public void soloDeberiaHaberUnDispositivoEncendidoTest() {
 
-        List<Usuario> usuarios = obtenerUsuarios();
+        List<Cliente> clientes = obtenerClientes();
 
-        Usuario usuario = usuarios.get(0);
+        Cliente cliente = clientes.get(0);
 
-        usuario.getDomicilios().get(1).getDispositivos().get(0).setEncendido(true);
+        cliente.getDomicilios().get(1).getDispositivosInteligentes().get(0).encenderDispositivo();
 
-        assertEquals( 1, usuario.cantidadTotalDeDispositivosEncendidos(), "No coincide cantidad." );
+        assertEquals( 1, cliente.cantidadTotalDeDispositivosEncendidos(), "No coincide cantidad." );
 
     }
 
     @Test
     public void noDeberiaHaberDispositivosEncendidosEnCualquierDomicilioTest(){
 
-        List<Usuario> usuarios = obtenerUsuarios();
+        List<Cliente> clientes = obtenerClientes();
 
-        Usuario usuario = usuarios.get(0);
+        Cliente cliente = clientes.get(0);
 
-        usuario.getDomicilios().get(1).getDispositivos().get(0).setEncendido(true);
+        cliente.getDomicilios().get(1).getDispositivosInteligentes().get(0).encenderDispositivo();
 
-        assertFalse( usuario.hayAlgunDispositivoEncendidoEnAlgunDomicilio(),"Error.");
+        assertFalse( cliente.hayAlgunDispositivoEncendidoEnAlgunDomicilio(),"Error.");
 
     }
 
 }
-*/

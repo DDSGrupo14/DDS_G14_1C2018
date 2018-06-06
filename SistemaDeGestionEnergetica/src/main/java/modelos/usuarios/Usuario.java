@@ -1,12 +1,17 @@
 package modelos.usuarios;
 
+import com.google.gson.annotations.Expose;
 import json.BeanToJson;
 
-public abstract class Usuario extends BeanToJson<Usuario> {
+public abstract class Usuario extends BeanToJson<Usuario>{
 
+    @Expose
     private String nombre;
+    @Expose
     private String apellido;
+    @Expose
     private String documento;
+    @Expose
     private String telefono;
     private String loginUsuario;
     private String clave;

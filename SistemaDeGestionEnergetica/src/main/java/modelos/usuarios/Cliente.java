@@ -1,26 +1,29 @@
 package modelos.usuarios;
 
-import modelos.reglas.actuadores.Actuador;
-import modelos.reglas.sensores.Sensor;
+import com.google.gson.annotations.Expose;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class Cliente extends Usuario{
 
-    private String fechaDeAltaDelServicio;
-
+    @Expose
     private Integer puntaje;
-
+    @Expose
     private List<Domicilio> domicilios;
 
-    public Cliente(String nombre, String apellido, String documento, String telefono, String fechaDeAltaDelServicio) {
+    public Cliente(String nombre, String apellido, String documento, String telefono) {
         super( nombre, apellido, documento, telefono );
-        this.fechaDeAltaDelServicio = fechaDeAltaDelServicio;
+        this.puntaje = 0;
+        this.domicilios = new ArrayList<Domicilio>();
     }
 
-    public void setDomicilios(List<Domicilio> domicilios) {
-        this.domicilios = domicilios;
+    public Cliente agregarDomicilio( Domicilio domicilio ){
+
+        domicilios.add( domicilio );
+        return this;
+
     }
 
     public List<Domicilio> getDomicilios() {
@@ -66,5 +69,6 @@ public class Cliente extends Usuario{
 
         puntaje =+ 15;
     }
+
 
 }

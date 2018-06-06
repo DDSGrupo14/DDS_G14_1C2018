@@ -1,12 +1,16 @@
 package modelos.dispositivos;
 
+import com.google.gson.annotations.Expose;
+import json.BeanToJson;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public class DispositivoEstandar implements Dispositivo {
+public class DispositivoEstandar extends BeanToJson<DispositivoEstandar> implements Dispositivo {
 
+    @Expose
     private BigDecimal estimadoKWConsumidosPorHora;
-
+    @Expose
     private String nombre;
 
     @Override
@@ -20,7 +24,12 @@ public class DispositivoEstandar implements Dispositivo {
     }
 
     @Override
-    public BigDecimal consumo(Integer tiempo) {
-        return estimadoKWConsumidosPorHora.multiply( new BigDecimal( tiempo ));
+    public BigDecimal consumidoEnUltimasHoras(Integer cantidad_horas) {
+        return estimadoKWConsumidosPorHora.multiply( new BigDecimal( cantidad_horas ));
+    }
+
+    @Override
+    public DispositivoEstandar getObj() {
+        return this;
     }
 }

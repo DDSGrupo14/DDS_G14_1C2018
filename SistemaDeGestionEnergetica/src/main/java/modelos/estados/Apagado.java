@@ -20,7 +20,7 @@ public class Apagado implements Estado {
     @Override
     public Encendido encender( String nombreDispositivo ) {
 
-        logger.debug("Encendiendo dispositivo: " + nombreDispositivo );
+        logger.debug("Encender : " + nombreDispositivo  );
 
         return new Encendido( logger );
     }
@@ -36,7 +36,7 @@ public class Apagado implements Estado {
     @Override
     public Estado ahorrarEnergia(Double porcentajeAhorro, String nombreDispositivo ) {
 
-        logger.debug("Ahorrar energia dispositivo " + nombreDispositivo );
+        logger.debug("Ahorrar : " + nombreDispositivo );
 
         return new AhorroDeEnergia( logger, porcentajeAhorro );
     }

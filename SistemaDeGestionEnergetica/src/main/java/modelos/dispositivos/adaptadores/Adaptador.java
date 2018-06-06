@@ -1,12 +1,16 @@
 package modelos.dispositivos.adaptadores;
 
+import com.google.gson.annotations.Expose;
+import json.BeanToJson;
+
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
-public abstract class Adaptador {
+public abstract class Adaptador extends BeanToJson<Adaptador> {
 
+    @Expose
     private BigDecimal consumoPorHora;
-
+    @Expose
     private String nombre;
 
     public BigDecimal getConsumoPorHora() {

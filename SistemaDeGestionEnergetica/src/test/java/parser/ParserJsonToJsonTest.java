@@ -1,10 +1,13 @@
 package parser;
-/*
+
 import json.JsonUtils;
 import modelos.dispositivos.Categoria;
+import modelos.dispositivos.DispositivoEstandar;
 import modelos.dispositivos.DispositivoInteligente;
+import modelos.dispositivos.adaptadores.AdaptadorAire;
+import modelos.dispositivos.adaptadores.AdaptadorEstandar;
+import modelos.usuarios.Cliente;
 import modelos.usuarios.Domicilio;
-import modelos.usuarios.Usuario;
 import org.junit.jupiter.api.Test;
 import utilidades.RandomDate;
 
@@ -24,42 +27,42 @@ public class ParserJsonToJsonTest {
 
         List<Double> cargosVariables = Arrays.asList( 0.644, 0.644, 0.681, 0.738, 0.794, 0.832, 0.851, 0.851, 0.851 );
 
+        final Categoria categoria01 = new Categoria( cargosFijos, cargosVariables, 1 );
+
         RandomDate generadorFecha = new RandomDate();
 
         LocalDate fecha1 = generadorFecha.createRandomDate(2000, 2010);
 
-        final Usuario usuario = new Usuario("Pepe", "Garcia", "1234",
-                "1512312312", fecha1.toString());
+        final Cliente cliente = new Cliente("Pepe", "Garcia", "1234",
+                "1512312312");
 
-        final DispositivoInteligente dipositivo01 = new DispositivoInteligente( "AireAcondicionado", new BigDecimal( 500.36), false);
+        final DispositivoEstandar lampara = new DispositivoEstandar( new BigDecimal( 60), "lampara");
 
-        final DispositivoInteligente dipositivo02 = new DispositivoInteligente( "ConsolaDeVideoJuegos", new BigDecimal( 200.1), false);
+        final DispositivoEstandar reloj = new DispositivoEstandar( new BigDecimal( 15 ), "reloj");
 
-        final DispositivoInteligente dipositivo03 = new DispositivoInteligente( "Televisor", new BigDecimal( 150.3), false);
+        final AdaptadorEstandar adaptadorLampara = new AdaptadorEstandar(new BigDecimal( 300 ), "AdaptadorLampara", lampara);
 
-        final List<DispositivoInteligente> dispositivos01 = Arrays.asList( dipositivo01, dipositivo02);
+        final DispositivoInteligente lamparaAdaptada = new DispositivoInteligente(adaptadorLampara, 50.0 );
 
-        final List<DispositivoInteligente> dispositivos02 = Arrays.asList( dipositivo03 );
+        final AdaptadorAire adaptadorAire = new AdaptadorAire(new BigDecimal( 500 ), "Aire");
 
-        final Categoria categoria01 = new Categoria( cargosFijos, cargosVariables, 1 );
+        final DispositivoInteligente aire = new DispositivoInteligente( adaptadorAire, 50.0 );
 
-        final Domicilio domicilio01 = new Domicilio("congreso-2288", true, categoria01, dispositivos01);
+        final Domicilio domicilio01 = new Domicilio("congreso-2288", true, categoria01);
 
-        final Categoria categoria02 = new Categoria( cargosFijos, cargosVariables, 5);
+        domicilio01.agregarDispositivoEstandar(reloj).agregarDispositivoInteligente(lamparaAdaptada).agregarDispositivoInteligente(aire);
 
-        final Domicilio domicilio02 = new Domicilio("tucuman-333", false, categoria02, dispositivos02);
-
-        usuario.setDomicilios( Arrays.asList( domicilio01, domicilio02));
+        cliente.agregarDomicilio(domicilio01);
 
         JsonUtils jsonUtils = new JsonUtils();
 
-        List<Usuario> usuarios = Arrays.asList( usuario );
+        List<Cliente> clientes = Arrays.asList( cliente );
 
-        String json = jsonUtils.toJson( usuarios );
+        String json = jsonUtils.toJson( clientes );
 
         try {
 
-            FileWriter fileWriter = new FileWriter("src/main/resources/json/usuarios.json");
+            FileWriter fileWriter = new FileWriter("src/main/resources/json/clientes.json");
             fileWriter.write( json );
             fileWriter.close();
 
@@ -70,4 +73,3 @@ public class ParserJsonToJsonTest {
 
     }
 }
-*/

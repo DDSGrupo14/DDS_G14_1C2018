@@ -4,7 +4,7 @@ import java.math.BigDecimal;
 
 public interface Dispositivo {
 
-    BigDecimal consumo( Integer tiempo );
+    BigDecimal consumidoEnUltimasHoras( Integer tiempo );
 
     String nombreDispositivo();
 }

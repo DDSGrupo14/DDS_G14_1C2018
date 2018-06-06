@@ -10,17 +10,15 @@ public class LogEntry {
 
     private String estadoDispositivo;
 
-    public LogEntry( String entradaDeLog ) {
+    public LogEntry( Date fecha, String nombreDispositivo, String estadoDispositivo ) {
 
-        /*
-        Parsear entrada de log y llenar atributos
-         */
+        this.fecha = fecha;
+        this.nombreDispositivo = nombreDispositivo;
+        this.estadoDispositivo = estadoDispositivo;
 
     }
 
-    public Date getFecha() {
-        return fecha;
-    }
+    public Date getFecha() { return fecha; }
 
     public String getNombreDispositivo() {
         return nombreDispositivo;
