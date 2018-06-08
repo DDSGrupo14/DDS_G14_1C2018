@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 
 
@@ -140,4 +141,10 @@ public class Domicilio extends BeanToJson<Domicilio> {
 
     }
 
+    public Double cuantoGasto(Double periodo){
+        List <Double> sumaDI = Map(this.dispositivosInteligentes, consumidoEnUltimasHoras(periodo));
+        List <Double> sumaDE = Map(this.dispositivosEstandar, consumidoEnUltimasHoras(periodo));
+        Double gastoDelPeriodo = sumaDI.sum() + sumaDE.sum();
+        return sum(this.categoria.obtenerCargoFijo()) + sum(this.categoria.obtenerCargoVariable())*gastoDelPeriodo;
+    }
 }

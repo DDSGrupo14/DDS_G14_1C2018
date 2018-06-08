@@ -70,5 +70,7 @@ public class Cliente extends Usuario{
         puntaje =+ 15;
     }
 
-
+    public Double cuantoGasto(Domicilio domicilio, Int periodoEnHoras){
+        return domicilio.cuantoGasto(periodoEnHoras);
+    }
 }

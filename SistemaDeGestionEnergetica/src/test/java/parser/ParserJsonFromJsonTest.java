@@ -1,7 +1,9 @@
 package parser;
 
 import json.CargarClientesDesdeJson;
+import modelos.dispositivos.Categoria;
 import modelos.usuarios.Cliente;
+import modelos.usuarios.Domicilio;
 import modelos.usuarios.Usuario;
 import org.junit.jupiter.api.Test;
 
@@ -93,5 +95,5 @@ public class ParserJsonFromJsonTest {
         assertFalse( cliente.hayAlgunDispositivoEncendidoEnAlgunDomicilio(),"Error.");
 
     }
-
+    
 }
