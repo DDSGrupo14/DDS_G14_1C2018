@@ -11,19 +11,25 @@
         "dispositivosInteligentes": [
           {
             "adaptador": {
-              "dispositivoEstandar": {
-                "estimadoKWConsumidosPorHora": 60.00,
-                "nombre": "lampara"
-              },
-              "consumoPorHora": 300.00,
-              "nombre": "AdaptadorLampara"
+              "type": "modelos.dispositivos.adaptadores.AdaptadorEstandar",
+              "data": {
+                "dispositivoEstandar": {
+                  "estimadoKWConsumidosPorHora": 60.00,
+                  "nombre": "lampara"
+                },
+                "consumoPorHora": 300.00,
+                "nombre": "AdaptadorLampara"
+              }
             },
             "porcentajeAhorroEnergia": 50.0
           },
           {
             "adaptador": {
-              "consumoPorHora": 500.00,
-              "nombre": "Aire"
+              "type": "modelos.dispositivos.adaptadores.AdaptadorAire",
+              "data": {
+                "consumoPorHora": 500.00,
+                "nombre": "Aire"
+              }
             },
             "porcentajeAhorroEnergia": 50.0
           }
@@ -34,7 +40,7 @@
             "nombre": "reloj"
           }
         ],
-        "fechaAltaEnSistema": "2018-06-06T06:26:56.690"
+        "fechaAltaEnSistema": "2018-08-21T05:24:17.832"
       }
     ],
     "nombre": "Pepe",

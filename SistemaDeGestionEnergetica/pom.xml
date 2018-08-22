@@ -43,6 +43,13 @@
             <version>2.11.0</version>
         </dependency>
 
+        <!-- ojAlgo algoritmos-->
+        <dependency>
+            <groupId>org.ojalgo</groupId>
+            <artifactId>ojalgo</artifactId>
+            <version>46.0.0</version>
+        </dependency>
+
     </dependencies>
 
     <build>

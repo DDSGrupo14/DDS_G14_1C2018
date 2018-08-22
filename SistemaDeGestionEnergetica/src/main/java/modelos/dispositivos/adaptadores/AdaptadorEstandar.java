@@ -10,14 +10,17 @@ public class AdaptadorEstandar extends Adaptador {
     @Expose
     private DispositivoEstandar dispositivoEstandar;
 
-    public AdaptadorEstandar( BigDecimal consumoPorHora, String nombre, DispositivoEstandar dispositivoEstandar) {
+    public AdaptadorEstandar( BigDecimal consumoPorHora, String nombre) {
 
         super( consumoPorHora, nombre );
+    }
+
+    public void setDispositivoEstandar(DispositivoEstandar dispositivoEstandar) {
         this.dispositivoEstandar = dispositivoEstandar;
     }
 
     @Override
-    public Adaptador getObj() {
+    public AdaptadorEstandar getObj() {
         return this;
     }
 }

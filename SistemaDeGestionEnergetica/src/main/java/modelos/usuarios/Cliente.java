@@ -23,7 +23,6 @@ public class Cliente extends Usuario{
 
         domicilios.add( domicilio );
         return this;
-
     }
 
     public List<Domicilio> getDomicilios() {
@@ -35,7 +34,7 @@ public class Cliente extends Usuario{
     }
 
     @Override
-    public Usuario getObj() {
+    public Cliente getObj() {
         return this;
     }
 
@@ -65,10 +64,6 @@ public class Cliente extends Usuario{
         return domicilios.stream().anyMatch( Domicilio::hayAlgunDispositivoEncendido );
     }
 
-    public void aumentarPuntajePorDispositivoEstandar(){
-
-        puntaje =+ 15;
-    }
-
+    public void aumentarPuntajePorDispositivoEstandar(){ puntaje =+ 15; }
 
 }

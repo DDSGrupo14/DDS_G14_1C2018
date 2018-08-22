@@ -13,6 +13,12 @@ public abstract class Adaptador extends BeanToJson<Adaptador> {
     @Expose
     private String nombre;
 
+    public Adaptador(BigDecimal consumoPorHora, String nombre) {
+
+        this.consumoPorHora = consumoPorHora.setScale(2, RoundingMode.HALF_UP);
+        this.nombre = nombre;
+    }
+
     public BigDecimal getConsumoPorHora() {
         return consumoPorHora;
     }
@@ -21,8 +27,4 @@ public abstract class Adaptador extends BeanToJson<Adaptador> {
         return nombre;
     }
 
-    public Adaptador(BigDecimal consumoPorHora, String nombre) {
-        this.consumoPorHora = consumoPorHora.setScale(2, RoundingMode.HALF_UP);
-        this.nombre = nombre;
-    }
 }

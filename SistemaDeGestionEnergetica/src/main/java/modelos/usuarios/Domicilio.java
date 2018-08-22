@@ -25,23 +25,23 @@ public class Domicilio extends BeanToJson<Domicilio> {
     @Expose
     private Categoria categoria;
     @Expose
-    private List<DispositivoInteligente> dispositivosInteligentes;
+    private final List<DispositivoInteligente> dispositivosInteligentes;
     @Expose
-    private List<DispositivoEstandar> dispositivosEstandar;
+    private final List<DispositivoEstandar> dispositivosEstandar;
     @Expose
-    private String fechaAltaEnSistema;
+    private final String fechaAltaEnSistema;
 
-    private List<Actuador> actuadores;
+    private final List<Actuador> actuadores;
 
-    private List<Sensor> sensores;
+    private final List<Sensor> sensores;
     /*
     Como el constructor pide todos los atributos, no habra nulls.
      */
-    public Domicilio(String direccion, Boolean principal, Categoria categoria ) {
+    public Domicilio(String direccion, Boolean principal, Categoria categoria , String fecha) {
         this.direccion = direccion;
         this.principal = principal;
         this.categoria = categoria;
-        this.fechaAltaEnSistema = LocalDateTime.now().toString();
+        this.fechaAltaEnSistema = fecha;
         this.dispositivosInteligentes = new ArrayList<DispositivoInteligente>();
         this.dispositivosEstandar = new ArrayList<DispositivoEstandar>();
         this.sensores = new ArrayList<Sensor>();
@@ -102,19 +102,11 @@ public class Domicilio extends BeanToJson<Domicilio> {
 
     public int cantidadDispositivosEncendidos(){
 
-        List< DispositivoInteligente > dispositivoInteligentes = dispositivosInteligentes.stream()
-                .filter( d -> d instanceof DispositivoInteligente).map( d -> ( DispositivoInteligente) d)
-                .collect(Collectors.toList());
-
-        return (int) dispositivoInteligentes.stream().filter(DispositivoInteligente::estasEncendido).count();
+        return (int) dispositivosInteligentes.stream().filter(DispositivoInteligente::estasEncendido).count();
     }
     public int cantidadDispositivosApagados(){
 
-        List< DispositivoInteligente > dispositivoInteligentes = dispositivosInteligentes.stream()
-                .filter( d -> d instanceof DispositivoInteligente).map( d -> ( DispositivoInteligente) d)
-                .collect(Collectors.toList());
-
-        return (int) dispositivoInteligentes.stream().filter( disp -> disp.estasApagado()).count();
+        return (int) dispositivosInteligentes.stream().filter( disp -> disp.estasApagado()).count();
     }
     public int cantidadTotalDispositivos(){
 
