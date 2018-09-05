@@ -28,17 +28,18 @@ public class DomicilioDeserializer implements JsonDeserializer<Domicilio> {
         DispositivoEstandar[] dispositivosEstandar =
                 context.deserialize( jsonObject.get("dispositivosEstandar"),DispositivoEstandar[].class);
 
- //       Actuador[] actuadores = context.deserialize( jsonObject.get("actuadores"),Actuador[].class);
+        Actuador[] actuadores = context.deserialize( jsonObject.get("actuadores"),Actuador[].class);
 
  //       Sensor[] sensores = context.deserialize( jsonObject.get("sensores"),Sensor[].class);
 
         final Domicilio domicilio = new Domicilio(direccion,principal,categoria,fechaAltaEnSistema);
-/*
-        for ( Actuador actuador:actuadores
-             ) {
-            domicilio.agregarActuador(actuador);
-        }
 
+        if( actuadores!=null)
+            for ( Actuador actuador:actuadores
+                 ) {
+                domicilio.agregarActuador(actuador);
+            }
+/*
         for ( Sensor sensor:sensores
              ) {
             domicilio.agregarSensor(sensor);

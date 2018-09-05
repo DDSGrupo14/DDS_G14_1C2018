@@ -4,6 +4,7 @@ import json.JsonUtils;
 import modelos.dispositivos.Categoria;
 import modelos.dispositivos.DispositivoEstandar;
 import modelos.dispositivos.DispositivoInteligente;
+import modelos.dispositivos.TipoDispositivo;
 import modelos.dispositivos.adaptadores.AdaptadorAire;
 import modelos.dispositivos.adaptadores.AdaptadorEstandar;
 import modelos.usuarios.Cliente;
@@ -33,22 +34,29 @@ public class ParserJsonToJsonTest {
         final Cliente cliente = new Cliente("Pepe", "Garcia", "1234",
                 "1512312312");
 
-        final DispositivoEstandar lampara = new DispositivoEstandar( new BigDecimal( 60), "lampara");
+        final DispositivoEstandar lampara = new DispositivoEstandar("lampara", new BigDecimal( 60));
 
-        final DispositivoEstandar reloj = new DispositivoEstandar( new BigDecimal( 15 ), "reloj");
+        final DispositivoEstandar reloj = new DispositivoEstandar( "reloj",new BigDecimal( 15 ));
 
         final AdaptadorEstandar adaptadorLampara =
                 new AdaptadorEstandar(new BigDecimal( 300 ), "AdaptadorLampara");
 
         adaptadorLampara.setDispositivoEstandar(lampara);
 
-        final DispositivoInteligente lamparaAdaptada = new DispositivoInteligente( 50.0 );
+        TipoDispositivo lamparaAlogena40 = new TipoDispositivo("Lampara40"
+                ,90,360,new BigDecimal(0.04));
+
+        final DispositivoInteligente lamparaAdaptada = new DispositivoInteligente( lamparaAlogena40
+                ,"Lampara",60.0 );
 
         lamparaAdaptada.setAdaptador(adaptadorLampara);
 
         final AdaptadorAire adaptadorAire = new AdaptadorAire(new BigDecimal( 500 ), "Aire");
 
-        final DispositivoInteligente aire = new DispositivoInteligente(  50.0 );
+        TipoDispositivo aire3500 = new TipoDispositivo("Aire3500"
+                ,90,360,new BigDecimal(1.613));
+
+        final DispositivoInteligente aire = new DispositivoInteligente(aire3500,"Aire",50.0 );
 
         aire.setAdaptador(adaptadorAire);
 

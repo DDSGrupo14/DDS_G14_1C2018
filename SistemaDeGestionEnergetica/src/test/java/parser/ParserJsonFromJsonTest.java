@@ -1,6 +1,7 @@
 package parser;
 
 import json.CargarClientesDesdeJson;
+import modelos.dispositivos.DispositivoInteligente;
 import modelos.usuarios.Cliente;
 import modelos.usuarios.Usuario;
 import org.junit.jupiter.api.Test;
@@ -53,7 +54,10 @@ public class ParserJsonFromJsonTest {
 
         Cliente cliente = clientes.get(0);
 
-        assertEquals( 5, cliente.cantidadTotalDeDispositivos(), "No coincide cantidad." );
+        final int CANTIDAD_DISPOSITIVOS_ESPERADA = 3;
+
+        assertEquals( CANTIDAD_DISPOSITIVOS_ESPERADA
+                , cliente.cantidadTotalDeDispositivos(), "No coincide cantidad." );
 
     }
 
@@ -64,7 +68,10 @@ public class ParserJsonFromJsonTest {
 
         Cliente cliente = clientes.get(0);
 
-        assertEquals( 3, cliente.cantidadTotalDeDispositivosApagados(), "No coincide cantidad." );
+        final int CANTIDAD_DISPOSITIVOS_APAGADOS_ESPERADA = 2;
+
+        assertEquals( CANTIDAD_DISPOSITIVOS_APAGADOS_ESPERADA
+                , cliente.cantidadTotalDeDispositivosApagados(), "No coincide cantidad." );
 
     }
 
@@ -75,7 +82,14 @@ public class ParserJsonFromJsonTest {
 
         Cliente cliente = clientes.get(0);
 
-        cliente.getDomicilios().get(1).getDispositivosInteligentes().get(0).encenderDispositivo();
+        final int PRIMER_DOMICILIO = 0;
+
+        final int POSICION_DISPOSITIVO = 0;
+
+        final DispositivoInteligente dispositivoInteligente = cliente.getDomicilios().get(PRIMER_DOMICILIO)
+                .getDispositivosInteligentes().get(POSICION_DISPOSITIVO);
+
+        dispositivoInteligente.encenderDispositivo();
 
         assertEquals( 1, cliente.cantidadTotalDeDispositivosEncendidos(), "No coincide cantidad." );
 
@@ -88,7 +102,9 @@ public class ParserJsonFromJsonTest {
 
         Cliente cliente = clientes.get(0);
 
-        cliente.getDomicilios().get(1).getDispositivosInteligentes().get(0).encenderDispositivo();
+        final int PRIMER_DOMICILIO = 0;
+
+        cliente.getDomicilios().get(PRIMER_DOMICILIO).getDispositivosInteligentes().get(0).encenderDispositivo();
 
         assertFalse( cliente.hayAlgunDispositivoEncendidoEnAlgunDomicilio(),"Error.");
 

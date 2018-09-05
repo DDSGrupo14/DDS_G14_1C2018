@@ -10,37 +10,51 @@
         },
         "dispositivosInteligentes": [
           {
+            "nombre": "Lampara",
             "adaptador": {
               "type": "modelos.dispositivos.adaptadores.AdaptadorEstandar",
               "data": {
                 "dispositivoEstandar": {
-                  "estimadoKWConsumidosPorHora": 60.00,
-                  "nombre": "lampara"
+                  "nombre": "lampara",
+                  "estimadoKWConsumidosPorHora": 60.00
                 },
                 "consumoPorHora": 300.00,
-                "nombre": "AdaptadorLampara"
+                "nombreAdaptado": "AdaptadorLampara"
               }
             },
-            "porcentajeAhorroEnergia": 50.0
+            "porcentajeAhorroEnergia": 60.0,
+            "tipoDispositivo": {
+              "equipoConcreto": "Lampara40",
+              "usoMensualMinimo": 90,
+              "usoMensualMaximo": 360,
+              "consumoEstimadoKWh": 0.040000000000000000832667268468867405317723751068115234375
+            }
           },
           {
+            "nombre": "Aire",
             "adaptador": {
               "type": "modelos.dispositivos.adaptadores.AdaptadorAire",
               "data": {
                 "consumoPorHora": 500.00,
-                "nombre": "Aire"
+                "nombreAdaptado": "Aire"
               }
             },
-            "porcentajeAhorroEnergia": 50.0
+            "porcentajeAhorroEnergia": 50.0,
+            "tipoDispositivo": {
+              "equipoConcreto": "Aire3500",
+              "usoMensualMinimo": 90,
+              "usoMensualMaximo": 360,
+              "consumoEstimadoKWh": 1.612999999999999989341858963598497211933135986328125
+            }
           }
         ],
         "dispositivosEstandar": [
           {
-            "estimadoKWConsumidosPorHora": 15.00,
-            "nombre": "reloj"
+            "nombre": "reloj",
+            "estimadoKWConsumidosPorHora": 15.00
           }
         ],
-        "fechaAltaEnSistema": "2018-08-21T05:24:17.832"
+        "fechaAltaEnSistema": "2018-09-05T19:47:28.182"
       }
     ],
     "nombre": "Pepe",

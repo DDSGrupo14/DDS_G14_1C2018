@@ -1,16 +1,21 @@
 package modelos.dispositivos;
 
+import com.google.gson.annotations.Expose;
+
+import java.math.BigDecimal;
+
 public class TipoDispositivo {
 
+    @Expose
     private final String equipoConcreto;
-
+    @Expose
     private final int usoMensualMinimo;
-
+    @Expose
     private final int usoMensualMaximo;
+    @Expose
+    private final BigDecimal consumoEstimadoKWh;
 
-    private final Double consumoEstimadoKWh;
-
-    public TipoDispositivo(String equipoConcreto, int usoMensualMinimo, int usoMensualMaximo, Double consumoEstimadoKWh) {
+    public TipoDispositivo(String equipoConcreto, int usoMensualMinimo, int usoMensualMaximo, BigDecimal consumoEstimadoKWh) {
         this.equipoConcreto = equipoConcreto;
         this.usoMensualMinimo = usoMensualMinimo;
         this.usoMensualMaximo = usoMensualMaximo;
@@ -29,7 +34,7 @@ public class TipoDispositivo {
         return usoMensualMaximo;
     }
 
-    public Double getConsumoEstimadoKWh() {
+    public BigDecimal getConsumoEstimadoKWh() {
         return consumoEstimadoKWh;
     }
 }

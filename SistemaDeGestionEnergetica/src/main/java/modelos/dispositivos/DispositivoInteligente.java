@@ -1,6 +1,7 @@
 package modelos.dispositivos;
 
 import com.google.gson.annotations.Expose;
+import json.BeanToJson;
 import modelos.dispositivos.adaptadores.Adaptador;
 import modelos.estados.Apagado;
 import modelos.estados.Estado;
@@ -16,19 +17,27 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class DispositivoInteligente  extends Dispositivo{
+public class DispositivoInteligente extends BeanToJson<Dispositivo> implements Dispositivo{
+
+    @Expose
+    private String nombre;
 
     private Estado estado;
     @Expose
     private Adaptador adaptador;
     @Expose
     private Double porcentajeAhorroEnergia;
+    @Expose
+    private final TipoDispositivo tipoDispositivo;
+
+    private BigDecimal consumoActual;
 
     private final static Logger logger = LogManager.getLogger(DispositivoInteligente.class);
 
     public DispositivoInteligente( TipoDispositivo tipo, String nombre, Double porcentajeAhorroEnergia) {
 
-        super(tipo, nombre);
+        this.tipoDispositivo = tipo;
+        this.nombre = nombre;
         this.porcentajeAhorroEnergia = porcentajeAhorroEnergia;
         this.estado = new Apagado( logger );
     }
@@ -37,7 +46,13 @@ public class DispositivoInteligente  extends Dispositivo{
         this.adaptador = adaptador;
     }
 
-    public String nombreDispositivo() { return adaptador.getNombre(); }
+    public String nombreDispositivo() {
+
+        if(adaptador!=null)
+            return adaptador.getNombre();
+        else
+            return this.nombre;
+    }
 
     public void encenderDispositivo(){ estado.encender( nombreDispositivo() ); }
 
@@ -64,6 +79,20 @@ public class DispositivoInteligente  extends Dispositivo{
         }
     }
 
+    @Override
+    public BigDecimal consumoActual() {
+        return this.consumoActual;
+    }
+
+    public void setConsumoActual(BigDecimal consumoActual) {
+        this.consumoActual = consumoActual;
+    }
+
+    @Override
+    public String getNombre() {
+        return null;
+    }
+
     public BigDecimal obtenerConsumidoEn(Integer cantHoras){
 
         return new BigDecimal(1).multiply(estado.porcentajeConsumo());
@@ -85,4 +114,13 @@ public class DispositivoInteligente  extends Dispositivo{
         return logs;
     }
     */
+
+
+    public Integer getUsoMensualMinimo(){ return tipoDispositivo.getUsoMensualMinimo();}
+
+    public Integer getUsoMensualMaximo(){ return tipoDispositivo.getUsoMensualMaximo();}
+
+    public BigDecimal getConsumoEstimadoKWh(){ return tipoDispositivo.getConsumoEstimadoKWh();}
+
+    public String getEquipoConcreto(){ return tipoDispositivo.getEquipoConcreto();}
 }

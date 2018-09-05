@@ -3,18 +3,13 @@ package modelos.usuarios;
 import com.google.gson.annotations.Expose;
 import json.BeanToJson;
 import modelos.dispositivos.Categoria;
-import modelos.dispositivos.Dispositivo;
 import modelos.dispositivos.DispositivoEstandar;
 import modelos.dispositivos.DispositivoInteligente;
 import modelos.reglas.actuadores.Actuador;
 import modelos.reglas.sensores.Sensor;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-import java.util.stream.Collectors;
-
 
 public class Domicilio extends BeanToJson<Domicilio> {
 
@@ -119,7 +114,7 @@ public class Domicilio extends BeanToJson<Domicilio> {
 
     public void registrarDispositivoEstandar(DispositivoInteligente dispositivoEstandarAdaptado ){
 
-        dispositivosEstandar.removeIf( dispositivo -> dispositivo.nombreDispositivo()
+        dispositivosEstandar.removeIf( dispositivo -> dispositivo.getNombre()
                 .equals( dispositivoEstandarAdaptado.nombreDispositivo() ) );
 
         dispositivosInteligentes.add( dispositivoEstandarAdaptado );

@@ -20,6 +20,7 @@ public abstract class Sensor{
 
     public void medirMagnitud(BigDecimal unValor ) {
 
-        condiciones.stream().forEach( condicion -> condicion.update(unValor) );
+        condiciones.forEach( condicion -> condicion.update(unValor) );
     }
+
 }

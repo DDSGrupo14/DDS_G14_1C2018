@@ -45,7 +45,7 @@ public class FuncionSimplex {
             Variable var = Variable.make(dispositivo.getNombre()).lower(dispositivo.getUsoMensualMinimo())
                     .upper(dispositivo.getUsoMensualMaximo()).weight(dispositivo.getConsumoEstimadoKWh()).integer(true);
 
-            funcionEconomica.set(var,dispositivo.);
+            funcionEconomica.set(var,dispositivo.consumoActual());
 
             tmpModel.addVariable(var);
         }
