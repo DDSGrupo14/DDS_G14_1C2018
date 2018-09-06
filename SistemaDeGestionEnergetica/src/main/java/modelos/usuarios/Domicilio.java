@@ -115,7 +115,7 @@ public class Domicilio extends BeanToJson<Domicilio> {
     public void registrarDispositivoEstandar(DispositivoInteligente dispositivoEstandarAdaptado ){
 
         dispositivosEstandar.removeIf( dispositivo -> dispositivo.getNombre()
-                .equals( dispositivoEstandarAdaptado.nombreDispositivo() ) );
+                .equals( dispositivoEstandarAdaptado.getNombre() ) );
 
         dispositivosInteligentes.add( dispositivoEstandarAdaptado );
 

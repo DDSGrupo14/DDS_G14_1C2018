@@ -14,7 +14,7 @@ public class AdaptadorEstandarDeserializer implements  JsonDeserializer<Adaptado
 
         final JsonObject jsonObject = json.getAsJsonObject();
 
-        final String nombre = jsonObject.get("nombre").getAsString();
+        final String nombre = jsonObject.get("nombreAdaptado").getAsString();
 
         final BigDecimal consumoPorHora = jsonObject.get("consumoPorHora").getAsBigDecimal();
 

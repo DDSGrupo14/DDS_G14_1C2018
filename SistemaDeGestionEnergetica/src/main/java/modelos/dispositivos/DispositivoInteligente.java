@@ -46,7 +46,8 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
         this.adaptador = adaptador;
     }
 
-    public String nombreDispositivo() {
+    @Override
+    public String getNombre() {
 
         if(adaptador!=null)
             return adaptador.getNombre();
@@ -54,11 +55,11 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
             return this.nombre;
     }
 
-    public void encenderDispositivo(){ estado.encender( nombreDispositivo() ); }
+    public void encenderDispositivo(){ estado.encender( this.getNombre() ); }
 
-    public void apagarDispositivo() { estado.apagar( nombreDispositivo() ); }
+    public void apagarDispositivo() { estado.apagar( this.getNombre() ); }
 
-    public void pasarAhorroEnergia(){ estado.ahorrarEnergia( porcentajeAhorroEnergia, nombreDispositivo() ); }
+    public void pasarAhorroEnergia(){ estado.ahorrarEnergia( porcentajeAhorroEnergia, this.getNombre() ); }
 
     public boolean estasEncendido(){ return estado.estasEncendido(); }
 
@@ -86,11 +87,6 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
 
     public void setConsumoActual(BigDecimal consumoActual) {
         this.consumoActual = consumoActual;
-    }
-
-    @Override
-    public String getNombre() {
-        return null;
     }
 
     public BigDecimal obtenerConsumidoEn(Integer cantHoras){

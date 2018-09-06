@@ -91,6 +91,8 @@ public class ParserJsonFromJsonTest {
 
         dispositivoInteligente.encenderDispositivo();
 
+        System.console().printf(dispositivoInteligente.getNombre());
+
         assertEquals( 1, cliente.cantidadTotalDeDispositivosEncendidos(), "No coincide cantidad." );
 
     }
