@@ -16,6 +16,20 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
   <component name="FUSProjectUsageTrigger">
     <session id="-604840605">
       <usages-collector id="statistics.lifecycle.project">
@@ -270,7 +284,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="AndroidView" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -307,43 +323,7 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="json" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SistemaDeGestionEnergetica" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="json" type="462c0819:PsiDirectoryNode" />
-              <item name="Deserializers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SistemaDeGestionEnergetica" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="modelos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SistemaDeGestionEnergetica" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="modelos" type="462c0819:PsiDirectoryNode" />
-              <item name="dispositivos" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SistemaDeGestionEnergetica" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="modelos" type="462c0819:PsiDirectoryNode" />
-              <item name="dispositivos" type="462c0819:PsiDirectoryNode" />
-              <item name="adaptadores" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
@@ -353,29 +333,6 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="modelos" type="462c0819:PsiDirectoryNode" />
               <item name="usuarios" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SistemaDeGestionEnergetica" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="utilidades" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SistemaDeGestionEnergetica" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SistemaDeGestionEnergetica" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="json" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
@@ -402,8 +359,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
