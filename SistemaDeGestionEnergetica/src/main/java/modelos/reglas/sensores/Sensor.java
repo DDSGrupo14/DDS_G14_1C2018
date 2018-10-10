@@ -1,6 +1,7 @@
 package modelos.reglas.sensores;
 
 import modelos.reglas.condiciones.CondicionObserver;
+import modelos.usuarios.Domicilio;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -16,6 +17,10 @@ public class Sensor{
     @Column(name = "sensor_id", unique = true)
     private int sensor_id;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "dom_id")
+    private Domicilio domicilio;
+
     @Transient
     private List<CondicionObserver> condiciones;
 
@@ -30,6 +35,21 @@ public class Sensor{
 
     public Sensor(){}
 
+    public int getSensor_id() {
+        return sensor_id;
+    }
+
+    public void setSensor_id(int sensor_id) {
+        this.sensor_id = sensor_id;
+    }
+
+    public Domicilio getDomicilio() {
+        return domicilio;
+    }
+
+    public void setDomicilio(Domicilio domicilio) {
+        this.domicilio = domicilio;
+    }
 
     public void medirMagnitud(BigDecimal unValor ) {
 

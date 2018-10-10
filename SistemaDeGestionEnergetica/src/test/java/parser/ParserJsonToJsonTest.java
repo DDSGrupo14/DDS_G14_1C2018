@@ -60,11 +60,11 @@ public class ParserJsonToJsonTest {
 
         aire.setAdaptador(adaptadorAire);
 
-        final Domicilio domicilio01 = new Domicilio("congreso-2288", true, categoria01.getCat_id(), LocalDateTime.now().toString());
+        final Domicilio domicilio01 = new Domicilio("congreso-2288", true, LocalDateTime.now().toString());
 
         domicilio01.agregarDispositivoEstandar(reloj).agregarDispositivoInteligente(lamparaAdaptada).agregarDispositivoInteligente(aire);
 
-        cliente.agregarDomicilio(domicilio01);
+        cliente.agregarDomicilio(domicilio01, categoria01);
 
         JsonUtils jsonUtils = new JsonUtils();
 

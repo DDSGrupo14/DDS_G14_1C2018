@@ -6,6 +6,7 @@ import modelos.dispositivos.adaptadores.Adaptador;
 import modelos.estados.Apagado;
 import modelos.estados.Estado;
 
+import modelos.usuarios.Domicilio;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -21,6 +22,10 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
     @Column(name = "dint_id", unique = true)
     private int dint_id;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "dom_id")
+    private Domicilio domicilio;
+
     @Expose
     @Column(nullable = false)
     private String nombre;
@@ -31,7 +36,6 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
             mappedBy = "dispositivoInteligente",
             cascade = CascadeType.ALL,
             orphanRemoval = true,
-            optional = false,
             fetch = FetchType.LAZY
     )
     private Adaptador adaptador;
@@ -39,7 +43,9 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
     @Column
     private Double porcentajeAhorroEnergia;
     @Expose
-    @Transient
+    @OneToOne(fetch = FetchType.LAZY)
+    //@MapsId
+    @JoinColumn(name = "tdisp_id")
     private TipoDispositivo tipoDispositivo;
     @Transient
     private BigDecimal consumoActual;
@@ -71,6 +77,14 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
 
     public void setDint_id(int dint_id) {
         this.dint_id = dint_id;
+    }
+
+    public Domicilio getDomicilio() {
+        return domicilio;
+    }
+
+    public void setDomicilio(Domicilio domicilio) {
+        this.domicilio = domicilio;
     }
 
     @Override
@@ -134,9 +148,9 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
     }
 
 /*
-    public List<LogEntry> obtenerLogs( Integer cantHoras ){
+    public List<ConsumoDispositivo> obtenerLogs( Integer cantHoras ){
 
-        List<LogEntry> logs= Collections.emptyList();
+        List<ConsumoDispositivo> logs= Collections.emptyList();
 
         Scanner s = new Scanner(new FileReader(new File("/resources/logs/actividadDeDispositivos.logs")));
 

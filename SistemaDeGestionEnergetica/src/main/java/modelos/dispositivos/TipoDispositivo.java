@@ -6,13 +6,21 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
-@Table
+@Table(name = "tipoDispositivo")
 public class TipoDispositivo {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "tdisp_id", unique = true)
     private int tdisp_id;
+
+    @OneToOne(
+            mappedBy = "tipoDispositivo",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY
+    )
+    private DispositivoInteligente dispositivoInteligente;
 
     @Expose
     @Column
@@ -78,6 +86,14 @@ public class TipoDispositivo {
 
     public void setEsBajoConsumo(boolean esBajoConsumo) {
         this.esBajoConsumo = esBajoConsumo;
+    }
+
+    public DispositivoInteligente getDispositivoInteligente() {
+        return dispositivoInteligente;
+    }
+
+    public void setDispositivoInteligente(DispositivoInteligente dispositivoInteligente) {
+        this.dispositivoInteligente = dispositivoInteligente;
     }
 
     public String getEquipoConcreto() {

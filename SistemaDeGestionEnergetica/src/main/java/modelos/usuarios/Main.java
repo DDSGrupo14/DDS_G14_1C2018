@@ -1,6 +1,9 @@
 package modelos.usuarios;
 
 import modelos.dispositivos.Categoria;
+import modelos.dispositivos.DispositivoEstandar;
+import modelos.dispositivos.DispositivoInteligente;
+import modelos.dispositivos.TipoDispositivo;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -41,11 +44,25 @@ public class Main {
 
             sessionObj.beginTransaction();
             cliente = new Cliente("nuevo","renuevo","4444444","12345", "admin", "admin");
-
-            final Domicilio domicilio = new Domicilio("direccionNueva",true,1,"05/1/15");
-
-            cliente.agregarDomicilio(domicilio);
             cargarCategorias();
+
+            Categoria categoria01 = (Categoria) sessionObj.get( Categoria.class,1);
+            final Domicilio domicilio = new Domicilio("direccionNueva",true,"05/1/15");
+
+            final TipoDispositivo tipo = new TipoDispositivo("aire",90,220,new BigDecimal(100));
+
+            sessionObj.save(tipo);
+
+           // final TipoDispositivo _tipo = sessionObj.get(TipoDispositivo.class,1);
+
+            final DispositivoInteligente dips1 = new DispositivoInteligente(tipo,"aire acondicionado",30.0);
+
+            final DispositivoEstandar disp2 = new DispositivoEstandar("estandar",new BigDecimal(200));
+
+            domicilio.agregarDispositivoInteligente(dips1);
+            domicilio.agregarDispositivoEstandar(disp2);
+
+            cliente.agregarDomicilio(domicilio,categoria01);
 
             sessionObj.save(cliente);
 

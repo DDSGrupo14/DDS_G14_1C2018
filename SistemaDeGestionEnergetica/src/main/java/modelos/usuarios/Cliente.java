@@ -1,6 +1,7 @@
 package modelos.usuarios;
 
 import com.google.gson.annotations.Expose;
+import modelos.dispositivos.Categoria;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -31,11 +32,12 @@ public class Cliente extends Usuario{
     public Cliente() {
     }
 
-    public Cliente agregarDomicilio( Domicilio domicilio ){
+    public Cliente agregarDomicilio(Domicilio domicilio , Categoria categoria){
 
         domicilios.add( domicilio );
         domicilio.setCliente(this);
-
+        domicilio.setCategoria(categoria);
+        categoria.setDomicilio(domicilio);
         return this;
     }
 

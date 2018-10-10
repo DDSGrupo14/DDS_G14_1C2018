@@ -37,7 +37,8 @@ public class Adaptador extends BeanToJson<Adaptador> {
             cascade = CascadeType.ALL,
             orphanRemoval = true,
             fetch = FetchType.LAZY
-    )    private DispositivoEstandar dispositivoEstandar;
+    )
+    private DispositivoEstandar dispositivoEstandar;
 
     /*
     Uso este nombre para identificar cada adaptador, tiene que ser unico

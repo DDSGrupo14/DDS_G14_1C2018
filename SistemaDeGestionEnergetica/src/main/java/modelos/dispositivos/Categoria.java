@@ -1,5 +1,7 @@
 package modelos.dispositivos;
 
+import modelos.usuarios.Domicilio;
+
 import javax.persistence.*;
 import java.math.BigDecimal;
 
@@ -16,6 +18,15 @@ public class Categoria {
 
     @Column(nullable = false)
     private BigDecimal cargoVariable;
+
+    @OneToOne(
+            mappedBy = "categoria",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            optional = true,
+            fetch = FetchType.LAZY
+    )
+    private Domicilio domicilio;
 
     /*
     @Transient
@@ -37,6 +48,14 @@ public class Categoria {
 
     public void setCat_id(int id) {
         this.cat_id = id;
+    }
+
+    public Domicilio getDomicilio() {
+        return domicilio;
+    }
+
+    public void setDomicilio(Domicilio domicilio) {
+        this.domicilio = domicilio;
     }
 
     public BigDecimal getCargoFijo() {

@@ -28,6 +28,10 @@
         <mapping class="modelos.dispositivos.adaptadores.Adaptador" />
         <mapping class="modelos.dispositivos.adaptadores.AdaptadorEstandar" />
         <mapping class="modelos.dispositivos.adaptadores.AdaptadorAire" />
+        <mapping class="modelos.reglas.actuadores.Actuador" />
+        <mapping class="modelos.reglas.sensores.Sensor" />
+        <mapping class="modelos.reglas.sensores.SensorTemperatura" />
+        <mapping class="modelos.dispositivos.ConsumoDispositivo" />
 
     </session-factory>
 

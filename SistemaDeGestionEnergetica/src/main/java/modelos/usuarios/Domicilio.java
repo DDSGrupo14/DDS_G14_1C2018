@@ -2,6 +2,7 @@ package modelos.usuarios;
 
 import com.google.gson.annotations.Expose;
 import json.BeanToJson;
+import modelos.dispositivos.Categoria;
 import modelos.dispositivos.DispositivoEstandar;
 import modelos.dispositivos.DispositivoInteligente;
 import modelos.reglas.actuadores.Actuador;
@@ -31,30 +32,46 @@ public class Domicilio extends BeanToJson<Domicilio> {
     @org.hibernate.annotations.Type(type = "yes_no")
     private Boolean principal;
     @Expose
-    @Column
-    private int categoria;
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "cat_id")
+    private Categoria categoria;
     @Expose
-    @Transient
+    @OneToMany(
+            mappedBy = "domicilio",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
     private List<DispositivoInteligente> dispositivosInteligentes;
     @Expose
-    @Transient
+    @OneToMany(
+            mappedBy = "domicilio",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
     private List<DispositivoEstandar> dispositivosEstandar;
     @Expose
     @Column
     private String fechaAltaEnSistema;
     @Expose
-    @Transient
+    @OneToMany(
+            mappedBy = "domicilio",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
     private List<Actuador> actuadores;
     @Expose
-    @Transient
+    @OneToMany(
+            mappedBy = "domicilio",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
     private List<Sensor> sensores;
     /*
     Como el constructor pide todos los atributos, no habra nulls.
      */
-    public Domicilio(String direccion, Boolean principal, int categoria , String fecha) {
+    public Domicilio(String direccion, Boolean principal, String fecha) {
         this.direccion = direccion;
         this.principal = principal;
-        this.categoria = categoria;
         this.fechaAltaEnSistema = fecha;
         this.dispositivosInteligentes = new ArrayList<DispositivoInteligente>();
         this.dispositivosEstandar = new ArrayList<DispositivoEstandar>();
@@ -80,11 +97,11 @@ public class Domicilio extends BeanToJson<Domicilio> {
         this.cliente = cliente;
     }
 
-    public int getCategoria() {
+    public Categoria getCategoria() {
         return categoria;
     }
 
-    public void setCategoria(int categoria) {
+    public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
     }
 
@@ -106,11 +123,15 @@ public class Domicilio extends BeanToJson<Domicilio> {
 
     public Domicilio agregarDispositivoInteligente(DispositivoInteligente dispositivo ){
         dispositivosInteligentes.add( dispositivo );
+
+        dispositivo.setDomicilio(this);
         return this;
     }
 
     public Domicilio agregarDispositivoEstandar(DispositivoEstandar dispositivo ){
         dispositivosEstandar.add( dispositivo );
+
+        dispositivo.setDomicilio(this);
         return this;
     }
 
@@ -119,9 +140,8 @@ public class Domicilio extends BeanToJson<Domicilio> {
     }
 
     public Domicilio agregarActuador( Actuador actuador) {
-
         actuadores.add( actuador );
-
+        actuador.setDomicilio(this);
         return this;
     }
 
