@@ -1,6 +1,7 @@
 package json.Deserializers;
 
 import com.google.gson.*;
+import modelos.dispositivos.DispositivoEstandar;
 import modelos.dispositivos.adaptadores.AdaptadorEstandar;
 
 import java.lang.reflect.Type;
@@ -14,11 +15,17 @@ public class AdaptadorEstandarDeserializer implements  JsonDeserializer<Adaptado
 
         final JsonObject jsonObject = json.getAsJsonObject();
 
-        final String nombre = jsonObject.get("nombreAdaptado").getAsString();
+        final String nombreAdaptador = jsonObject.get("nombreAdaptador").getAsString();
 
         final BigDecimal consumoPorHora = jsonObject.get("consumoPorHora").getAsBigDecimal();
 
-        final AdaptadorEstandar adaptadorEstandar= new AdaptadorEstandar(consumoPorHora,nombre);
+        final AdaptadorEstandar adaptadorEstandar= new AdaptadorEstandar(consumoPorHora, nombreAdaptador);
+
+        final DispositivoEstandar dispositivoEstandar = context.deserialize(jsonObject.get("dispositivoEstandar"),DispositivoEstandar.class);
+
+        // final AdaptadorEstandar adaptadorEstandar= new AdaptadorEstandar(new BigDecimal(5),"asd");
+
+        adaptadorEstandar.setDispositivoEstandar(dispositivoEstandar);
 
         return adaptadorEstandar;
     }

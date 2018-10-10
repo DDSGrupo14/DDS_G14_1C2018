@@ -2,21 +2,32 @@ package modelos.usuarios;
 
 import com.google.gson.annotations.Expose;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+@Entity
+@Table
 public class Cliente extends Usuario{
 
     @Expose
+    @Column
     private Integer puntaje;
     @Expose
+    @Transient
     private List<Domicilio> domicilios;
 
-    public Cliente(String nombre, String apellido, String documento, String telefono) {
-        super( nombre, apellido, documento, telefono );
+    public Cliente(String nombre, String apellido, String documento, String telefono, String loginUsuario, String password) {
+        super( nombre, apellido, documento, telefono, loginUsuario, password );
         this.puntaje = 0;
         this.domicilios = new ArrayList<Domicilio>();
+    }
+
+    public Cliente() {
     }
 
     public Cliente agregarDomicilio( Domicilio domicilio ){
@@ -31,6 +42,10 @@ public class Cliente extends Usuario{
 
     public Integer getPuntaje() {
         return puntaje;
+    }
+
+    public void setPuntaje(Integer puntaje) {
+        this.puntaje = puntaje;
     }
 
     @Override

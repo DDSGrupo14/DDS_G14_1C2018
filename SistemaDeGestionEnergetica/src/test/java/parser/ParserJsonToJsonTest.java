@@ -32,7 +32,7 @@ public class ParserJsonToJsonTest {
         LocalDate fecha1 = generadorFecha.createRandomDate(2000, 2010);
         
         final Cliente cliente = new Cliente("Pepe", "Garcia", "1234",
-                "1512312312");
+                "1512312312", "admin", "admin");
 
         final DispositivoEstandar lampara = new DispositivoEstandar("lampara", new BigDecimal( 60));
 

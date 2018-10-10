@@ -5,15 +5,15 @@ import modelos.reglas.sensores.Sensor;
 
 import java.math.BigDecimal;
 
-public class CondicionTemperaturaAlta extends CondicionTemperatura {
+public class CondicionTemperaturaIgual extends CondicionTemperatura {
 
-    public CondicionTemperaturaAlta(Regla regla, Sensor sensor, Integer temperatura) {
+    public CondicionTemperaturaIgual(Regla regla, Sensor sensor, Integer temperatura) {
         super(regla, sensor, temperatura);
     }
 
     @Override
     public void update( BigDecimal temperatura) {
-        if (temperatura.compareTo( new BigDecimal( this.temperaturaPivote )) > 0)
+        if (temperatura.compareTo( new BigDecimal( this.temperaturaPivote )) == 0)
             this.getRegla().actuar();
     }
 }

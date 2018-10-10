@@ -9,13 +9,7 @@ import modelos.estados.Estado;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
-import java.io.File;
-import java.io.FileReader;
 import java.math.BigDecimal;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
 
 public class DispositivoInteligente extends BeanToJson<Dispositivo> implements Dispositivo{
 
@@ -50,7 +44,7 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
     public String getNombre() {
 
         if(adaptador!=null)
-            return adaptador.getNombre();
+            return adaptador.getNombreAdaptador();
         else
             return this.nombre;
     }

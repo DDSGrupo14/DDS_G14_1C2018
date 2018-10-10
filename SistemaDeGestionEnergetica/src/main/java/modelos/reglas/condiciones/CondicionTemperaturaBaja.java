@@ -13,7 +13,7 @@ public class CondicionTemperaturaBaja extends CondicionTemperatura {
 
     @Override
     public void update( BigDecimal temperatura) {
-        if( temperatura.compareTo( new BigDecimal( temperaturaPivote )) < 0 )
+        if( temperatura.compareTo( new BigDecimal( this.temperaturaPivote )) < 0 )
             this.getRegla().actuar();
     }
 }

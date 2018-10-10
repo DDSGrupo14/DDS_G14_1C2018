@@ -112,4 +112,20 @@ public class ParserJsonFromJsonTest {
 
     }
 
+    @Test
+    public void nombreLamparaTest(){
+
+        List<Cliente> clientes = obtenerClientes();
+
+        Cliente cliente = clientes.get(0);
+
+        final int POSICION_DISPOSITIVO = 0;
+
+        final DispositivoInteligente dispositivoInteligente = cliente.getDomicilios().get(POSICION_DISPOSITIVO)
+                .getDispositivosInteligentes().get(POSICION_DISPOSITIVO);
+
+        assertEquals( "lampara",dispositivoInteligente.getNombre());
+
+    }
+
 }

@@ -19,7 +19,7 @@
                   "estimadoKWConsumidosPorHora": 60.00
                 },
                 "consumoPorHora": 300.00,
-                "nombreAdaptado": "AdaptadorLampara"
+                "nombreAdaptador": "AdaptadorLampara"
               }
             },
             "porcentajeAhorroEnergia": 60.0,
@@ -36,7 +36,7 @@
               "type": "modelos.dispositivos.adaptadores.AdaptadorAire",
               "data": {
                 "consumoPorHora": 500.00,
-                "nombreAdaptado": "Aire"
+                "nombreAdaptador": "Aire"
               }
             },
             "porcentajeAhorroEnergia": 50.0,
@@ -54,7 +54,7 @@
             "estimadoKWConsumidosPorHora": 15.00
           }
         ],
-        "fechaAltaEnSistema": "2018-09-05T19:47:28.182"
+        "fechaAltaEnSistema": "2018-10-08T18:37:41.655"
       }
     ],
     "nombre": "Pepe",
