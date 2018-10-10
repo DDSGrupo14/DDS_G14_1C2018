@@ -25,7 +25,7 @@ public class ParserJsonToJsonTest {
     @Test
     public void crearUsuarioTest() {
 
-        final Categoria categoria01 = new Categoria( 1 );
+        final Categoria categoria01 = new Categoria( 1,new BigDecimal(2.3),new BigDecimal(3.2) );
 
         RandomDate generadorFecha = new RandomDate();
 
@@ -60,7 +60,7 @@ public class ParserJsonToJsonTest {
 
         aire.setAdaptador(adaptadorAire);
 
-        final Domicilio domicilio01 = new Domicilio("congreso-2288", true, categoria01, LocalDateTime.now().toString());
+        final Domicilio domicilio01 = new Domicilio("congreso-2288", true, categoria01.getCat_id(), LocalDateTime.now().toString());
 
         domicilio01.agregarDispositivoEstandar(reloj).agregarDispositivoInteligente(lamparaAdaptada).agregarDispositivoInteligente(aire);
 

@@ -2,23 +2,24 @@ package modelos.usuarios;
 
 import com.google.gson.annotations.Expose;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 @Entity
-@Table
+@Table(name = "cliente")
 public class Cliente extends Usuario{
 
     @Expose
     @Column
     private Integer puntaje;
     @Expose
-    @Transient
+    @OneToMany(
+            mappedBy = "cliente",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
     private List<Domicilio> domicilios;
 
     public Cliente(String nombre, String apellido, String documento, String telefono, String loginUsuario, String password) {
@@ -33,11 +34,24 @@ public class Cliente extends Usuario{
     public Cliente agregarDomicilio( Domicilio domicilio ){
 
         domicilios.add( domicilio );
+        domicilio.setCliente(this);
+
         return this;
+    }
+
+    public void quitarDomicilio( Domicilio domicilio ){
+
+        domicilios.remove( domicilio );
+        domicilio.setCliente(null);
+
     }
 
     public List<Domicilio> getDomicilios() {
         return domicilios;
+    }
+
+    public void setDomicilios(List<Domicilio> domicilios) {
+        this.domicilios = domicilios;
     }
 
     public Integer getPuntaje() {

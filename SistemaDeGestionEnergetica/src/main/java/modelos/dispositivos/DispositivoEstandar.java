@@ -3,19 +3,51 @@ package modelos.dispositivos;
 import com.google.gson.annotations.Expose;
 import json.BeanToJson;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+@Entity
+@Table(name = "dispositivoEstandar")
 public class DispositivoEstandar extends BeanToJson<Dispositivo> implements Dispositivo {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "dest_id", unique = true)
+    private int dest_id;
+
     @Expose
+    @Column(nullable = false)
     private String nombre;
     @Expose
+    @Column(nullable = false)
     private BigDecimal estimadoKWConsumidosPorHora;
 
     public DispositivoEstandar(String nombre, BigDecimal estimadoKWConsumidosPorHora) {
         this.nombre = nombre;
         this.estimadoKWConsumidosPorHora = estimadoKWConsumidosPorHora.setScale(2, RoundingMode.HALF_UP);
+    }
+
+    public DispositivoEstandar(){}
+
+    public int getDest_id() {
+        return dest_id;
+    }
+
+    public void setDest_id(int dest_id) {
+        this.dest_id = dest_id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public BigDecimal getEstimadoKWConsumidosPorHora() {
+        return estimadoKWConsumidosPorHora;
+    }
+
+    public void setEstimadoKWConsumidosPorHora(BigDecimal estimadoKWConsumidosPorHora) {
+        this.estimadoKWConsumidosPorHora = estimadoKWConsumidosPorHora;
     }
 
     @Override

@@ -2,37 +2,56 @@ package modelos.usuarios;
 
 import com.google.gson.annotations.Expose;
 import json.BeanToJson;
-import modelos.dispositivos.Categoria;
 import modelos.dispositivos.DispositivoEstandar;
 import modelos.dispositivos.DispositivoInteligente;
 import modelos.reglas.actuadores.Actuador;
 import modelos.reglas.sensores.Sensor;
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "domicilio")
 public class Domicilio extends BeanToJson<Domicilio> {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column( name = "dom_id",unique = true)
+    private int dom_id;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "usuario_id")
+    private Cliente cliente;
+
     @Expose
+    @Column(nullable = false)
     private String direccion;
     @Expose
+    @org.hibernate.annotations.Type(type = "yes_no")
     private Boolean principal;
     @Expose
-    private Categoria categoria;
+    @Column
+    private int categoria;
     @Expose
-    private final List<DispositivoInteligente> dispositivosInteligentes;
+    @Transient
+    private List<DispositivoInteligente> dispositivosInteligentes;
     @Expose
-    private final List<DispositivoEstandar> dispositivosEstandar;
+    @Transient
+    private List<DispositivoEstandar> dispositivosEstandar;
     @Expose
-    private final String fechaAltaEnSistema;
-
-    private final List<Actuador> actuadores;
-
-    private final List<Sensor> sensores;
+    @Column
+    private String fechaAltaEnSistema;
+    @Expose
+    @Transient
+    private List<Actuador> actuadores;
+    @Expose
+    @Transient
+    private List<Sensor> sensores;
     /*
     Como el constructor pide todos los atributos, no habra nulls.
      */
-    public Domicilio(String direccion, Boolean principal, Categoria categoria , String fecha) {
+    public Domicilio(String direccion, Boolean principal, int categoria , String fecha) {
         this.direccion = direccion;
         this.principal = principal;
         this.categoria = categoria;
@@ -41,6 +60,32 @@ public class Domicilio extends BeanToJson<Domicilio> {
         this.dispositivosEstandar = new ArrayList<DispositivoEstandar>();
         this.sensores = new ArrayList<Sensor>();
         this.actuadores = new ArrayList<Actuador>();
+    }
+
+    public Domicilio(){}
+
+    public int getDom_id() {
+        return dom_id;
+    }
+
+    public void setDom_id(int id) {
+        this.dom_id = id;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public int getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(int categoria) {
+        this.categoria = categoria;
     }
 
     public List<DispositivoInteligente> getDispositivosInteligentes() {
@@ -53,6 +98,10 @@ public class Domicilio extends BeanToJson<Domicilio> {
 
     public String getFechaAltaEnSistema() {
         return fechaAltaEnSistema;
+    }
+
+    public void setFechaAltaEnSistema(String fechaAltaEnSistema) {
+        this.fechaAltaEnSistema = fechaAltaEnSistema;
     }
 
     public Domicilio agregarDispositivoInteligente(DispositivoInteligente dispositivo ){
@@ -89,7 +138,18 @@ public class Domicilio extends BeanToJson<Domicilio> {
         return direccion;
     }
 
-    // por ahora solo crear los constructores no usar getters y setters
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public Boolean getPrincipal() {
+        return principal;
+    }
+
+    public void setPrincipal(Boolean principal) {
+        this.principal = principal;
+    }
+
     @Override
     public Domicilio getObj() {
         return this;
@@ -127,4 +187,14 @@ public class Domicilio extends BeanToJson<Domicilio> {
 
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Domicilio )) return false;
+        return dom_id == (((Domicilio) o).dom_id);
+    }
+    @Override
+    public int hashCode() {
+        return 31;
+    }
 }

@@ -18,6 +18,11 @@
 
         <mapping class="modelos.usuarios.Cliente" />
         <mapping class="modelos.usuarios.Usuario" />
+        <mapping class="modelos.usuarios.Administrador" />
+        <mapping class="modelos.usuarios.Domicilio" />
+        <mapping class="modelos.dispositivos.Categoria" />
+
+
     </session-factory>
 
 </hibernate-configuration>

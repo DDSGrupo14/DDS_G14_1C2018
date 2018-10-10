@@ -10,8 +10,8 @@ public abstract class Usuario extends BeanToJson<Usuario>{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", unique = true)
-    private int id;
+    @Column(name = "usuario_id", unique = true)
+    private int usuario_id;
     @Expose
     @Column(name = "nombre", nullable = false)
     private String nombre;
@@ -41,12 +41,12 @@ public abstract class Usuario extends BeanToJson<Usuario>{
     public Usuario(){}
 
 
-    public int getId() {
-        return id;
+    public int getUsuario_id() {
+        return usuario_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUsuario_id(int id) {
+        this.usuario_id = id;
     }
 
     public String getNombre() {

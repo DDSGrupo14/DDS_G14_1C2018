@@ -9,35 +9,57 @@ import modelos.estados.Estado;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 
-public class DispositivoInteligente extends BeanToJson<Dispositivo> implements Dispositivo{
+@Entity
+@Table(name = "dispositivoInteligente")
+public class DispositivoInteligente extends BeanToJson<Dispositivo> implements Dispositivo {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "dint_id", unique = true)
+    private int dint_id;
 
     @Expose
+    @Column(nullable = false)
     private String nombre;
-
+    @Transient
     private Estado estado;
     @Expose
+    @Transient
     private Adaptador adaptador;
     @Expose
+    @Column
     private Double porcentajeAhorroEnergia;
     @Expose
-    private final TipoDispositivo tipoDispositivo;
-
+    @Transient
+    private TipoDispositivo tipoDispositivo;
+    @Transient
     private BigDecimal consumoActual;
-
+    @Transient
     private final static Logger logger = LogManager.getLogger(DispositivoInteligente.class);
 
-    public DispositivoInteligente( TipoDispositivo tipo, String nombre, Double porcentajeAhorroEnergia) {
+    public DispositivoInteligente(TipoDispositivo tipo, String nombre, Double porcentajeAhorroEnergia) {
 
         this.tipoDispositivo = tipo;
         this.nombre = nombre;
         this.porcentajeAhorroEnergia = porcentajeAhorroEnergia;
-        this.estado = new Apagado( logger );
+        this.estado = new Apagado(logger);
     }
+
+    public DispositivoInteligente(){}
 
     public void setAdaptador(Adaptador adaptador) {
         this.adaptador = adaptador;
+    }
+
+    public int getDint_id() {
+        return dint_id;
+    }
+
+    public void setDint_id(int dint_id) {
+        this.dint_id = dint_id;
     }
 
     @Override
@@ -47,6 +69,18 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
             return adaptador.getNombreAdaptador();
         else
             return this.nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Double getPorcentajeAhorroEnergia() {
+        return porcentajeAhorroEnergia;
+    }
+
+    public void setPorcentajeAhorroEnergia(Double porcentajeAhorroEnergia) {
+        this.porcentajeAhorroEnergia = porcentajeAhorroEnergia;
     }
 
     public void encenderDispositivo(){ estado.encender( this.getNombre() ); }
