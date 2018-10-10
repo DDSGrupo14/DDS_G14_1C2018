@@ -1,23 +1,17 @@
 package modelos.dispositivos.adaptadores;
 
-import com.google.gson.annotations.Expose;
-import modelos.dispositivos.DispositivoEstandar;
-
+import javax.persistence.Entity;
 import java.math.BigDecimal;
 
+@Entity
 public class AdaptadorEstandar extends Adaptador {
-
-    @Expose
-    private DispositivoEstandar dispositivoEstandar;
 
     public AdaptadorEstandar( BigDecimal consumoPorHora, String nombre) {
 
         super( consumoPorHora, nombre );
     }
 
-    public void setDispositivoEstandar(DispositivoEstandar dispositivoEstandar) {
-        this.dispositivoEstandar = dispositivoEstandar;
-    }
+    public AdaptadorEstandar(){}
 
     @Override
     public AdaptadorEstandar getObj() {

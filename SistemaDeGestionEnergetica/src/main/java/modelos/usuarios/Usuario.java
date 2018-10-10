@@ -40,7 +40,6 @@ public abstract class Usuario extends BeanToJson<Usuario>{
 
     public Usuario(){}
 
-
     public int getUsuario_id() {
         return usuario_id;
     }

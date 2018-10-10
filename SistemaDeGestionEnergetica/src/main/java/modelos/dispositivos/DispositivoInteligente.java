@@ -27,7 +27,13 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
     @Transient
     private Estado estado;
     @Expose
-    @Transient
+    @OneToOne(
+            mappedBy = "dispositivoInteligente",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            optional = false,
+            fetch = FetchType.LAZY
+    )
     private Adaptador adaptador;
     @Expose
     @Column
@@ -52,6 +58,11 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
 
     public void setAdaptador(Adaptador adaptador) {
         this.adaptador = adaptador;
+        adaptador.setDispositivoInteligente(this);
+    }
+
+    public Adaptador getAdaptador() {
+        return adaptador;
     }
 
     public int getDint_id() {

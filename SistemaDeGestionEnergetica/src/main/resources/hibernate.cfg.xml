@@ -14,6 +14,7 @@
 
         <property name="hibernate.transaction.coordinator_class">jdbc</property>
 
+        <!-- Cambiar a update si no se quiere borrar todas las tablas, create para dropear y crear de nuevo-->
         <property name="hbm2ddl.auto">create</property>
 
         <mapping class="modelos.usuarios.Cliente" />
@@ -21,7 +22,12 @@
         <mapping class="modelos.usuarios.Administrador" />
         <mapping class="modelos.usuarios.Domicilio" />
         <mapping class="modelos.dispositivos.Categoria" />
-
+        <mapping class="modelos.dispositivos.DispositivoInteligente" />
+        <mapping class="modelos.dispositivos.DispositivoEstandar" />
+        <mapping class="modelos.dispositivos.TipoDispositivo" />
+        <mapping class="modelos.dispositivos.adaptadores.Adaptador" />
+        <mapping class="modelos.dispositivos.adaptadores.AdaptadorEstandar" />
+        <mapping class="modelos.dispositivos.adaptadores.AdaptadorAire" />
 
     </session-factory>
 

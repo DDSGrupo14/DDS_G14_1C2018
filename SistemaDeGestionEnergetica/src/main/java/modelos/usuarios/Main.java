@@ -24,7 +24,7 @@ public class Main {
             Configuration configObj = new Configuration();
             configObj.configure();
             // Since Hibernate Version 4.x, ServiceRegistry Is Being Used
-            ServiceRegistry serviceRegistryObj = new StandardServiceRegistryBuilder().applySettings(configObj.getProperties()).build();
+            //ServiceRegistry serviceRegistryObj = new StandardServiceRegistryBuilder().applySettings(configObj.getProperties()).build();
             // Creating Hibernate SessionFactory Instance
             sessionFactoryObj = configObj.buildSessionFactory();
             return sessionFactoryObj;
@@ -48,7 +48,6 @@ public class Main {
             cargarCategorias();
 
             sessionObj.save(cliente);
-            System.out.println("pase por aca\n");
 
             System.out.println("\n.......Records Saved Successfully To The Database.......\n");
 

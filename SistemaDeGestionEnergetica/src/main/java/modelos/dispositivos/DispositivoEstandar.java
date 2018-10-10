@@ -2,6 +2,7 @@ package modelos.dispositivos;
 
 import com.google.gson.annotations.Expose;
 import json.BeanToJson;
+import modelos.dispositivos.adaptadores.Adaptador;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -23,6 +24,10 @@ public class DispositivoEstandar extends BeanToJson<Dispositivo> implements Disp
     @Column(nullable = false)
     private BigDecimal estimadoKWConsumidosPorHora;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @MapsId
+    private Adaptador adaptador;
+
     public DispositivoEstandar(String nombre, BigDecimal estimadoKWConsumidosPorHora) {
         this.nombre = nombre;
         this.estimadoKWConsumidosPorHora = estimadoKWConsumidosPorHora.setScale(2, RoundingMode.HALF_UP);
@@ -36,6 +41,14 @@ public class DispositivoEstandar extends BeanToJson<Dispositivo> implements Disp
 
     public void setDest_id(int dest_id) {
         this.dest_id = dest_id;
+    }
+
+    public Adaptador getAdaptador() {
+        return adaptador;
+    }
+
+    public void setAdaptador(Adaptador adaptador) {
+        this.adaptador = adaptador;
     }
 
     public void setNombre(String nombre) {
@@ -69,6 +82,6 @@ public class DispositivoEstandar extends BeanToJson<Dispositivo> implements Disp
 
     @Override
     public String getNombre() {
-        return null;
+        return nombre;
     }
 }

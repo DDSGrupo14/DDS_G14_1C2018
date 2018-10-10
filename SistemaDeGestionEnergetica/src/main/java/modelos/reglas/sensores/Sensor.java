@@ -2,11 +2,21 @@ package modelos.reglas.sensores;
 
 import modelos.reglas.condiciones.CondicionObserver;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 
-public abstract class Sensor{
+@Entity
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
+@Table(name = "sensor")
+public class Sensor{
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "sensor_id", unique = true)
+    private int sensor_id;
+
+    @Transient
     private List<CondicionObserver> condiciones;
 
     public void agregarCondicion( CondicionObserver condicion){
@@ -17,6 +27,9 @@ public abstract class Sensor{
     public List<CondicionObserver> getCondiciones() {
         return condiciones;
     }
+
+    public Sensor(){}
+
 
     public void medirMagnitud(BigDecimal unValor ) {
 
