@@ -12,6 +12,8 @@ import org.apache.logging.log4j.LogManager;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "dispositivoInteligente")
@@ -47,6 +49,12 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
     //@MapsId
     @JoinColumn(name = "tdisp_id")
     private TipoDispositivo tipoDispositivo;
+    @OneToMany(
+            mappedBy = "dispositivoInteligente",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<ConsumoDispositivo> consumoTotal;
     @Transient
     private BigDecimal consumoActual;
     @Transient
@@ -58,6 +66,7 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
         this.nombre = nombre;
         this.porcentajeAhorroEnergia = porcentajeAhorroEnergia;
         this.estado = new Apagado(logger);
+        this.consumoTotal = new ArrayList<ConsumoDispositivo>();
     }
 
     public DispositivoInteligente(){}
@@ -85,6 +94,18 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
 
     public void setDomicilio(Domicilio domicilio) {
         this.domicilio = domicilio;
+    }
+
+    public void agregarConsumo(ConsumoDispositivo consumo){
+
+    }
+
+    public List<ConsumoDispositivo> getConsumoTotal() {
+        return consumoTotal;
+    }
+
+    public void setConsumoTotal(List<ConsumoDispositivo> consumoTotal) {
+        this.consumoTotal = consumoTotal;
     }
 
     @Override

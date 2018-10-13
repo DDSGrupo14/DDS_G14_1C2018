@@ -15,16 +15,17 @@ public class ConsumoDispositivo {
     @Column
     private Date fecha;
 
-    @Column
-    private int disp_id;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "dint_id")
+    private DispositivoInteligente dispositivoInteligente;
 
     @Column
     private String estadoDispositivo;
 
-    public ConsumoDispositivo(Date fecha, int disp_id, String estadoDispositivo ) {
+    public ConsumoDispositivo(Date fecha, DispositivoInteligente dispositivoInteligente, String estadoDispositivo ) {
 
         this.fecha = fecha;
-        this.disp_id = disp_id;
+        this.dispositivoInteligente = dispositivoInteligente;
         this.estadoDispositivo = estadoDispositivo;
 
     }
@@ -47,12 +48,12 @@ public class ConsumoDispositivo {
         this.fecha = fecha;
     }
 
-    public int getDisp_id() {
-        return disp_id;
+    public DispositivoInteligente getDispositivoInteligente() {
+        return dispositivoInteligente;
     }
 
-    public void setDisp_id(int disp_id) {
-        this.disp_id = disp_id;
+    public void setDispositivoInteligente(DispositivoInteligente dispositivoInteligente) {
+        this.dispositivoInteligente = dispositivoInteligente;
     }
 
     public String getEstadoDispositivo() {
