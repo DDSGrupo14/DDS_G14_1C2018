@@ -3,7 +3,6 @@ package parser;
 import json.CargarClientesDesdeJson;
 import modelos.dispositivos.DispositivoInteligente;
 import modelos.usuarios.Cliente;
-import modelos.usuarios.Usuario;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

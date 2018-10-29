@@ -1,10 +1,10 @@
 package modelos.reglas.sensores;
 
-import modelos.reglas.condiciones.CondicionObserver;
+import modelos.reglas.reglas.Regla;
 import modelos.usuarios.Domicilio;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -21,16 +21,28 @@ public class Sensor{
     @JoinColumn(name = "dom_id")
     private Domicilio domicilio;
 
-    @Transient
-    private List<CondicionObserver> condiciones;
+    @OneToMany(
+            mappedBy = "sensor",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Regla> reglas = new ArrayList<>();
 
-    public void agregarCondicion( CondicionObserver condicion){
+    public void agregarRegla( Regla regla){
 
-        condiciones.add( condicion );
+        reglas.add( regla );
     }
 
-    public List<CondicionObserver> getCondiciones() {
-        return condiciones;
+    public List<Regla> getReglas() {
+        return reglas;
+    }
+
+    public void setReglas(List<Regla> reglas) {
+
+        if (reglas == null)
+            this.reglas = reglas;
+        else
+            this.reglas.addAll(reglas);
     }
 
     public Sensor(){}
@@ -51,9 +63,8 @@ public class Sensor{
         this.domicilio = domicilio;
     }
 
-    public void medirMagnitud(BigDecimal unValor ) {
+    public void medirMagnitud(Magnitud tipoMagnitud, int unValor ) {
 
-        condiciones.forEach( condicion -> condicion.update(unValor) );
+        reglas.forEach( regla -> regla.update(tipoMagnitud, unValor) );
     }
-
 }

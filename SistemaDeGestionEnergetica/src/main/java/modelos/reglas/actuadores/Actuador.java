@@ -1,6 +1,7 @@
 package modelos.reglas.actuadores;
 
 import modelos.dispositivos.DispositivoInteligente;
+import modelos.reglas.reglas.Regla;
 import modelos.usuarios.Domicilio;
 
 import javax.persistence.*;
@@ -22,6 +23,16 @@ public class Actuador {
     //@MapsId
     @JoinColumn(name = "dint_id")
     private DispositivoInteligente dispositivoInteligente;
+
+
+    @OneToOne(
+            mappedBy = "actuador",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY
+    )
+    private Regla regla;
+
 
     public Actuador( DispositivoInteligente dispositivoInteligente ){
 

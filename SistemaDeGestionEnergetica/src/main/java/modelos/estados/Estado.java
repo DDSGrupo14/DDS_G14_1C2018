@@ -4,11 +4,11 @@ import java.math.BigDecimal;
 
 public interface Estado {
 
-    Estado encender( String nombreDispositivo);
+    Estado encender( );
 
-    Estado apagar( String nombreDispositivo );
+    Estado apagar( );
 
-    Estado ahorrarEnergia( Double porcentajeAhorro , String nombreDispositivo);
+    Estado ahorrarEnergia( Double porcentajeAhorro );
 
     BigDecimal porcentajeConsumo();
 

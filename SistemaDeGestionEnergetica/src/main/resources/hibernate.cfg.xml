@@ -28,11 +28,14 @@
         <mapping class="modelos.dispositivos.adaptadores.Adaptador" />
         <mapping class="modelos.dispositivos.adaptadores.AdaptadorEstandar" />
         <mapping class="modelos.dispositivos.adaptadores.AdaptadorAire" />
+        <mapping class="modelos.reglas.reglas.Regla" />
+        <mapping class="modelos.reglas.reglas.ApagarSegunTemperatura" />
+        <mapping class="modelos.reglas.condiciones.Condicion" />
+        <mapping class="modelos.reglas.condiciones.CondicionMagnitudCalculable" />
         <mapping class="modelos.reglas.actuadores.Actuador" />
         <mapping class="modelos.reglas.sensores.Sensor" />
         <mapping class="modelos.reglas.sensores.SensorTemperatura" />
         <mapping class="modelos.dispositivos.ConsumoDispositivo" />
-
     </session-factory>
 
 </hibernate-configuration>

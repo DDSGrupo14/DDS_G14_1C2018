@@ -1,16 +1,34 @@
 package modelos.reglas.sensores;
 
-import modelos.reglas.condiciones.CondicionTemperatura;
-
 import javax.persistence.Entity;
+import javax.persistence.Transient;
 
 @Entity
 public class SensorTemperatura extends Sensor {
 
-    public void agregarCondicion(CondicionTemperatura condicion){
+    @Transient
+    private Magnitud temperatura = Magnitud.TEMPERATURA;
 
-        this.getCondiciones().add( condicion );
+    @Transient
+    private int temperaturaActual = 0;
 
+    public SensorTemperatura(Integer temperaturaInicial) {
+        this.temperatura.setCantidad( temperaturaInicial );
+    }
+
+    public SensorTemperatura() {
+    }
+
+    public Magnitud getTemperatura() {
+        return temperatura;
+    }
+
+    public int getTemperaturaActual() {
+        return temperaturaActual;
+    }
+
+    public void setTemperaturaActual(int temperaturaActual) {
+        this.temperaturaActual = temperaturaActual;
     }
 
 }

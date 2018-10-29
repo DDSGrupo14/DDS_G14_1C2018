@@ -4,7 +4,6 @@ import com.google.gson.annotations.Expose;
 import json.BeanToJson;
 import modelos.dispositivos.DispositivoEstandar;
 import modelos.dispositivos.DispositivoInteligente;
-
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.math.RoundingMode;

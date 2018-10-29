@@ -1,17 +1,12 @@
 package modelos.estados;
 
-import org.apache.logging.log4j.Logger;
-
 import java.math.BigDecimal;
 
 public class AhorroDeEnergia implements Estado {
 
-    private Logger logger;
-
     private Double porcentajeDeAhorro;
 
-    public AhorroDeEnergia(Logger logger, Double porcentajeDeAhorro) {
-        this.logger = logger;
+    public AhorroDeEnergia( Double porcentajeDeAhorro) {
         this.porcentajeDeAhorro = porcentajeDeAhorro;
     }
 
@@ -21,25 +16,19 @@ public class AhorroDeEnergia implements Estado {
     }
 
     @Override
-    public Estado encender( String nombreDispositivo ) {
+    public Estado encender( ) {
 
-        logger.debug("Encender : " + nombreDispositivo);
-
-        return new Encendido( logger );
+        return new Encendido( );
     }
 
     @Override
-    public Estado apagar( String nombreDispositivo) {
+    public Estado apagar( ) {
 
-        logger.debug("Apagar : " + nombreDispositivo );
-
-        return new Apagado( logger );
+        return new Apagado( );
     }
 
     @Override
-    public Estado ahorrarEnergia(Double porcentajeAhorro, String nombreDipositivo) {
-
-        logger.debug("El dispositivo " + nombreDipositivo + " ya se encuentra en ahorro de energia.");
+    public Estado ahorrarEnergia(Double porcentajeAhorro ) {
 
         return this;
     }

@@ -1,16 +1,10 @@
 package modelos.estados;
 
-import org.apache.logging.log4j.Logger;
-
 import java.math.BigDecimal;
 
 public class Apagado implements Estado {
 
-    private Logger logger;
-
-    public Apagado(Logger logger) {
-        this.logger = logger;
-    }
+    public Apagado( ) {}
 
     @Override
     public boolean estasEncendido() {
@@ -18,27 +12,21 @@ public class Apagado implements Estado {
     }
 
     @Override
-    public Encendido encender( String nombreDispositivo ) {
+    public Estado encender( ) {
 
-        logger.debug("Encender : " + nombreDispositivo  );
-
-        return new Encendido( logger );
+        return new Encendido( );
     }
 
     @Override
-    public Estado apagar( String nombreDispositivo ) {
-
-        logger.debug("El dispositivo " + nombreDispositivo + "ya se encuentra apagado.");
+    public Estado apagar( ) {
 
         return this;
     }
 
     @Override
-    public Estado ahorrarEnergia(Double porcentajeAhorro, String nombreDispositivo ) {
+    public Estado ahorrarEnergia(Double porcentajeAhorro ) {
 
-        logger.debug("Ahorrar : " + nombreDispositivo );
-
-        return new AhorroDeEnergia( logger, porcentajeAhorro );
+        return new AhorroDeEnergia( porcentajeAhorro );
     }
 
     @Override

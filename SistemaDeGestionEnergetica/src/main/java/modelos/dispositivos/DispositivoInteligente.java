@@ -57,15 +57,13 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
     private List<ConsumoDispositivo> consumoTotal;
     @Transient
     private BigDecimal consumoActual;
-    @Transient
-    private final static Logger logger = LogManager.getLogger(DispositivoInteligente.class);
 
     public DispositivoInteligente(TipoDispositivo tipo, String nombre, Double porcentajeAhorroEnergia) {
 
         this.tipoDispositivo = tipo;
         this.nombre = nombre;
         this.porcentajeAhorroEnergia = porcentajeAhorroEnergia;
-        this.estado = new Apagado(logger);
+        this.estado = new Apagado( );
         this.consumoTotal = new ArrayList<ConsumoDispositivo>();
     }
 
@@ -129,11 +127,11 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
         this.porcentajeAhorroEnergia = porcentajeAhorroEnergia;
     }
 
-    public void encenderDispositivo(){ estado.encender( this.getNombre() ); }
+    public void encenderDispositivo(){ estado = estado.encender( ); }
 
-    public void apagarDispositivo() { estado.apagar( this.getNombre() ); }
+    public void apagarDispositivo() { estado = estado.apagar( ); }
 
-    public void pasarAhorroEnergia(){ estado.ahorrarEnergia( porcentajeAhorroEnergia, this.getNombre() ); }
+    public void pasarAhorroEnergia(){ estado = estado.ahorrarEnergia( porcentajeAhorroEnergia ); }
 
     public boolean estasEncendido(){ return estado.estasEncendido(); }
 
@@ -168,23 +166,25 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
         return new BigDecimal(1).multiply(estado.porcentajeConsumo());
     }
 
-/*
-    public List<ConsumoDispositivo> obtenerLogs( Integer cantHoras ){
-
-        List<ConsumoDispositivo> logs= Collections.emptyList();
-
-        Scanner s = new Scanner(new FileReader(new File("/resources/logs/actividadDeDispositivos.logs")));
-
-        while (s.hasNextLine()) {
-            String linea = s.nextLine();
-
-            String lineaPartida = linea.split("");
-        }
-
-        return logs;
+    public Estado getEstado() {
+        return estado;
     }
-    */
 
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
+    public TipoDispositivo getTipoDispositivo() {
+        return tipoDispositivo;
+    }
+
+    public void setTipoDispositivo(TipoDispositivo tipoDispositivo) {
+        this.tipoDispositivo = tipoDispositivo;
+    }
+
+    public BigDecimal getConsumoActual() {
+        return consumoActual;
+    }
 
     public Integer getUsoMensualMinimo(){ return tipoDispositivo.getUsoMensualMinimo();}
 
