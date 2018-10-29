@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e721b091-18f3-430b-98e8-b26485bf4451" name="Default" comment="Falla solo un test.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/json/Deserializers/AdaptadorDeserializer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/json/CargarClientesDesdeJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/json/CargarClientesDesdeJson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/json/Deserializers/AdaptadorAireDeserializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/json/Deserializers/AdaptadorEstandarDeserializer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/json/Deserializers/DispositivoInteligenteDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/json/Deserializers/DispositivoInteligenteDeserializer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/json/clientes.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/json/clientes.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/SensorAdaptadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SensorAdaptadorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/parser/ParserJsonFromJsonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/parser/ParserJsonFromJsonTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/parser/ParserJsonToJsonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/parser/ParserJsonToJsonTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,7 +78,7 @@
           <entry key="JavaScript-modules-diagram/C:/Users/Matias/Desktop/DDS_G14_1C2018/SistemaDeGestionEnergetica/src/main/java/modelos" value="1" />
           <entry key="domicilio" value="1" />
           <entry key="html" value="3" />
-          <entry key="java" value="452" />
+          <entry key="java" value="455" />
           <entry key="json" value="18" />
           <entry key="sql" value="2" />
           <entry key="tld" value="1" />
@@ -97,7 +89,7 @@
         <counts>
           <entry key="Database Element" value="1" />
           <entry key="HTML" value="3" />
-          <entry key="JAVA" value="452" />
+          <entry key="JAVA" value="455" />
           <entry key="JSON" value="18" />
           <entry key="Scratch" value="2" />
           <entry key="UML" value="5" />
@@ -108,7 +100,7 @@
         <counts>
           <entry key="dummy" value="33" />
           <entry key="html" value="36" />
-          <entry key="java" value="17024" />
+          <entry key="java" value="17050" />
           <entry key="json" value="4" />
           <entry key="sql" value="15" />
           <entry key="txt" value="94" />
@@ -118,7 +110,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="36" />
-          <entry key="JAVA" value="17025" />
+          <entry key="JAVA" value="17051" />
           <entry key="JSON" value="4" />
           <entry key="PLAIN_TEXT" value="127" />
           <entry key="Scratch" value="15" />
@@ -165,11 +157,38 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/parser/ParserJsonFromJsonTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="112" selection-start-line="112" selection-end-line="112" />
+            <state relative-caret-position="1904">
+              <caret line="112" column="22" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="94" column="73" lean-forward="true" selection-start-line="94" selection-start-column="56" selection-end-line="94" selection-end-column="84" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Domicilio.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="183">
+              <caret line="191" column="91" selection-start-line="191" selection-start-column="91" selection-end-line="191" selection-end-column="91" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoInteligente.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="142">
+              <caret line="135" column="19" selection-start-line="135" selection-start-column="19" selection-end-line="135" selection-end-column="19" />
             </state>
           </provider>
         </entry>
@@ -211,7 +230,6 @@
         <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/adaptadores/AdaptadorAire.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/adaptadores/AdaptadorEstandar.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/Deserializers/DomicilioDeserializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/usuarios/Domicilio.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/Categoria.java" />
@@ -244,6 +262,7 @@
         <option value="$PROJECT_DIR$/src/main/java/json/Deserializers/AdaptadorAireDeserializer.java" />
         <option value="$PROJECT_DIR$/src/test/java/parser/ParserJsonToJsonTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/CargarClientesDesdeJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java" />
         <option value="$PROJECT_DIR$/src/test/java/parser/ParserJsonFromJsonTest.java" />
       </list>
     </option>
@@ -464,7 +483,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540805823552" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540806797472" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TestSpark/testRuleEngine" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -535,6 +554,40 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ParserJsonFromJsonTest.noDeberiaHaberDispositivosEncendidosEnCualquierDomicilioTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SistemaDeGestionEnergetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="parser" />
+      <option name="MAIN_CLASS_NAME" value="parser.ParserJsonFromJsonTest" />
+      <option name="METHOD_NAME" value="noDeberiaHaberDispositivosEncendidosEnCualquierDomicilioTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParserJsonFromJsonTest.nombreLamparaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SistemaDeGestionEnergetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="parser" />
+      <option name="MAIN_CLASS_NAME" value="parser.ParserJsonFromJsonTest" />
+      <option name="METHOD_NAME" value="nombreLamparaTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ParserJsonFromJsonTest.soloDeberiaHaberUnDispositivoEncendidoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SistemaDeGestionEnergetica" />
       <extension name="coverage">
@@ -546,34 +599,6 @@
       <option name="PACKAGE_NAME" value="parser" />
       <option name="MAIN_CLASS_NAME" value="parser.ParserJsonFromJsonTest" />
       <option name="METHOD_NAME" value="soloDeberiaHaberUnDispositivoEncendidoTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ParserJsonToJsonTest.crearUsuarioTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SistemaDeGestionEnergetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="parser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="parser" />
-      <option name="MAIN_CLASS_NAME" value="parser.ParserJsonToJsonTest" />
-      <option name="METHOD_NAME" value="crearUsuarioTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SensorAdaptadorTest.dispositivoDeberiaApagarsePorLaRegla" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SistemaDeGestionEnergetica" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SensorAdaptadorTest" />
-      <option name="METHOD_NAME" value="dispositivoDeberiaApagarsePorLaRegla" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
@@ -596,18 +621,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.ParserJsonFromJsonTest" />
-      <item itemvalue="JUnit.SensorAdaptadorTest.dispositivoDeberiaApagarsePorLaRegla" />
       <item itemvalue="JUnit.ParserJsonFromJsonTest.cargarClientesDesdeJsonTest" />
-      <item itemvalue="JUnit.ParserJsonToJsonTest.crearUsuarioTest" />
       <item itemvalue="JUnit.ParserJsonFromJsonTest.soloDeberiaHaberUnDispositivoEncendidoTest" />
+      <item itemvalue="JUnit.ParserJsonFromJsonTest.noDeberiaHaberDispositivosEncendidosEnCualquierDomicilioTest" />
+      <item itemvalue="JUnit.ParserJsonFromJsonTest.nombreLamparaTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.ParserJsonFromJsonTest" />
+        <item itemvalue="JUnit.ParserJsonFromJsonTest.nombreLamparaTest" />
+        <item itemvalue="JUnit.ParserJsonFromJsonTest.noDeberiaHaberDispositivosEncendidosEnCualquierDomicilioTest" />
         <item itemvalue="JUnit.ParserJsonFromJsonTest.soloDeberiaHaberUnDispositivoEncendidoTest" />
         <item itemvalue="JUnit.ParserJsonFromJsonTest.cargarClientesDesdeJsonTest" />
-        <item itemvalue="JUnit.ParserJsonToJsonTest.crearUsuarioTest" />
-        <item itemvalue="JUnit.SensorAdaptadorTest.dispositivoDeberiaApagarsePorLaRegla" />
       </list>
     </recent_temporary>
   </component>
@@ -657,7 +682,7 @@
       <workItem from="1540566660546" duration="13752000" />
       <workItem from="1540642959361" duration="3400000" />
       <workItem from="1540760152793" duration="21000000" />
-      <workItem from="1540803469467" duration="2496000" />
+      <workItem from="1540803469467" duration="3259000" />
     </task>
     <task id="LOCAL-00001" summary="Cambios">
       <created>1534979327493</created>
@@ -677,12 +702,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="ParserJsonFromJsonTest_cargarClientesDesdeJsonTest - 2018.10.29 at 06h 28m 28s.xml">
-      <configuration name="ParserJsonFromJsonTest.cargarClientesDesdeJsonTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ParserJsonFromJsonTest_cargarClientesDesdeJsonTest - 2018.10.29 at 06h 28m 58s.xml">
-      <configuration name="ParserJsonFromJsonTest.cargarClientesDesdeJsonTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="ParserJsonFromJsonTest_cargarClientesDesdeJsonTest - 2018.10.29 at 06h 29m 25s.xml">
       <configuration name="ParserJsonFromJsonTest.cargarClientesDesdeJsonTest" configurationId="JUnit" />
     </history-entry>
@@ -707,9 +726,15 @@
     <history-entry file="ParserJsonFromJsonTest - 2018.10.29 at 06h 37m 04s.xml">
       <configuration name="ParserJsonFromJsonTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="ParserJsonFromJsonTest_noDeberiaHaberDispositivosEncendidosEnCualquierDomicilioTest - 2018.10.29 at 06h 42m 59s.xml">
+      <configuration name="ParserJsonFromJsonTest.noDeberiaHaberDispositivosEncendidosEnCualquierDomicilioTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="ParserJsonFromJsonTest_noDeberiaHaberDispositivosEncendidosEnCualquierDomicilioTest - 2018.10.29 at 06h 51m 55s.xml">
+      <configuration name="ParserJsonFromJsonTest.noDeberiaHaberDispositivosEncendidosEnCualquierDomicilioTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="217967000" />
+    <option name="totallyTimeSpent" value="218730000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1128,31 +1153,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Domicilio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="189" column="19" selection-start-line="189" selection-start-column="19" selection-end-line="189" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="94" column="65" lean-forward="true" selection-start-line="94" selection-start-column="65" selection-end-line="94" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/modelos/estados/Estado.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="11" selection-start-line="6" selection-start-column="11" selection-end-line="6" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoInteligente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="129" column="61" selection-start-line="129" selection-start-column="61" selection-end-line="129" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -1163,10 +1167,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/parser/ParserJsonFromJsonTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="94" column="73" lean-forward="true" selection-start-line="94" selection-start-column="56" selection-end-line="94" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Domicilio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="183">
+          <caret line="191" column="91" selection-start-line="191" selection-start-column="91" selection-end-line="191" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoInteligente.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
-          <caret line="112" selection-start-line="112" selection-end-line="112" />
+          <caret line="135" column="19" selection-start-line="135" selection-start-column="19" selection-end-line="135" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/parser/ParserJsonFromJsonTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1904">
+          <caret line="112" column="22" selection-start-line="112" selection-start-column="22" selection-end-line="112" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

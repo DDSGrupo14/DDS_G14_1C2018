@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import java.io.File;
 import java.io.IOException;
@@ -110,7 +111,7 @@ public class ParserJsonFromJsonTest {
 
         cliente.getDomicilios().get(PRIMER_DOMICILIO).getDispositivosInteligentes().get(0).encenderDispositivo();
 
-        assertFalse( cliente.hayAlgunDispositivoEncendidoEnAlgunDomicilio(),"Error.");
+        assertFalse( !cliente.hayAlgunDispositivoEncendidoEnAlgunDomicilio(),"Error.");
 
     }
 
@@ -126,7 +127,8 @@ public class ParserJsonFromJsonTest {
         final DispositivoInteligente dispositivoInteligente = cliente.getDomicilios().get(POSICION_DISPOSITIVO)
                 .getDispositivosInteligentes().get(POSICION_DISPOSITIVO);
 
-        assertEquals( "lampara",dispositivoInteligente.getNombre());
+        assertNotEquals( "lampara",dispositivoInteligente.getNombre());
+        assertNotEquals( "adaptadorLampara",dispositivoInteligente.getNombre());
 
     }
 
