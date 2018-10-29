@@ -7,6 +7,7 @@ import org.ojalgo.optimisation.ExpressionsBasedModel;
 import org.ojalgo.optimisation.Optimisation;
 import org.ojalgo.optimisation.Variable;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 public class FuncionSimplex {
@@ -45,9 +46,10 @@ public class FuncionSimplex {
             Variable var = Variable.make(dispositivo.getNombre()).lower(dispositivo.getUsoMensualMinimo())
                     .upper(dispositivo.getUsoMensualMaximo()).weight(dispositivo.getConsumoEstimadoKWh()).integer(true);
 
-            funcionEconomica.set(var,dispositivo.consumoActual());
-
             tmpModel.addVariable(var);
+
+            funcionEconomica.set(var, dispositivo.getConsumoActual());
+
         }
 
         Optimisation.Result resultado=  tmpModel.maximise();

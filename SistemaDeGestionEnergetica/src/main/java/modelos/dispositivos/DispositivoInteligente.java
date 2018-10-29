@@ -154,7 +154,7 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
 
     @Override
     public BigDecimal consumoActual() {
-        return this.consumoActual;
+        return getConsumoActual();
     }
 
     public void setConsumoActual(BigDecimal consumoActual) {
