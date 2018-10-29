@@ -14,7 +14,7 @@ import java.util.List;
 
 public class ParserJsonFromJsonTest {
 
-    CargarClientesDesdeJson cargarClientes = new CargarClientesDesdeJson();
+    final static CargarClientesDesdeJson cargarClientes = new CargarClientesDesdeJson();
 
     String path = "src/main/resources/json/clientes.json";
 
@@ -43,7 +43,10 @@ public class ParserJsonFromJsonTest {
         List<Cliente> clientes = obtenerClientes();
 
         assertEquals(1,clientes.size(), "No coincide.");
-
+        System.out.println("Tamaño lista: " + clientes.get(0).getDomicilios().get(0).getDispositivosInteligentes().size());
+        for(DispositivoInteligente dispositivoInteligente: clientes.get(0).getDomicilios().get(0).getDispositivosInteligentes()){
+            System.out.println(dispositivoInteligente.getAdaptador().getDispositivoEstandar().getNombre());
+        }
     }
 
     @Test
@@ -90,7 +93,7 @@ public class ParserJsonFromJsonTest {
 
         dispositivoInteligente.encenderDispositivo();
 
-        System.console().printf(dispositivoInteligente.getNombre());
+        System.out.println(dispositivoInteligente.getNombre());
 
         assertEquals( 1, cliente.cantidadTotalDeDispositivosEncendidos(), "No coincide cantidad." );
 

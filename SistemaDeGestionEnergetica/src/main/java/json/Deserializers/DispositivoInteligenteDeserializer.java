@@ -23,7 +23,7 @@ public class DispositivoInteligenteDeserializer implements JsonDeserializer<Disp
 
         final DispositivoInteligente dispositivoInteligente = new DispositivoInteligente(tipo,nombre,porcentajeAhorroEnergia);
 
-        final AdaptadorEstandar adaptador = context.deserialize( jsonObject.get("adaptador"), AdaptadorEstandar.class);
+        final Adaptador adaptador = context.deserialize( jsonObject.get("adaptador"), Adaptador.class);
 
         if (adaptador != null) {
             dispositivoInteligente.setAdaptador(adaptador);

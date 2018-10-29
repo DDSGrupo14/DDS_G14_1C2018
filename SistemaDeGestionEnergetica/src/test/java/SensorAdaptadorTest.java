@@ -1,7 +1,6 @@
 import modelos.dispositivos.DispositivoEstandar;
 import modelos.dispositivos.DispositivoInteligente;
 import modelos.dispositivos.adaptadores.AdaptadorAire;
-import modelos.estados.Apagado;
 import modelos.estados.Encendido;
 import modelos.reglas.actuadores.Actuador;
 import modelos.reglas.condiciones.CondicionMagnitudCalculable;

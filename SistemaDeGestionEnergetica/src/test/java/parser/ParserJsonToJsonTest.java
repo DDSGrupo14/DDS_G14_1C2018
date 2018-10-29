@@ -51,7 +51,12 @@ public class ParserJsonToJsonTest {
 
         lamparaAdaptada.setAdaptador(adaptadorLampara);
 
+        final DispositivoEstandar aireEstandar = new DispositivoEstandar("aireEstandar", new BigDecimal( 100));
+
+
         final AdaptadorAire adaptadorAire = new AdaptadorAire(new BigDecimal( 500 ), "Aire");
+
+        adaptadorAire.setDispositivoEstandar(aireEstandar);
 
         TipoDispositivo aire3500 = new TipoDispositivo("Aire3500"
                 ,90,360,new BigDecimal(1.613));

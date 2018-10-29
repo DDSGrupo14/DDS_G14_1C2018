@@ -5,20 +5,18 @@
       {
         "direccion": "congreso-2288",
         "principal": true,
-        "categoria": {
-          "categoriaActual": 1
-        },
+        "categoria": {},
         "dispositivosInteligentes": [
           {
             "nombre": "Lampara",
             "adaptador": {
               "type": "modelos.dispositivos.adaptadores.AdaptadorEstandar",
               "data": {
+                "consumoPorHora": 300.00,
                 "dispositivoEstandar": {
                   "nombre": "lampara",
                   "estimadoKWConsumidosPorHora": 60.00
                 },
-                "consumoPorHora": 300.00,
                 "nombreAdaptador": "AdaptadorLampara"
               }
             },
@@ -36,6 +34,10 @@
               "type": "modelos.dispositivos.adaptadores.AdaptadorAire",
               "data": {
                 "consumoPorHora": 500.00,
+                "dispositivoEstandar": {
+                  "nombre": "aireEstandar",
+                  "estimadoKWConsumidosPorHora": 100.00
+                },
                 "nombreAdaptador": "Aire"
               }
             },
@@ -54,7 +56,9 @@
             "estimadoKWConsumidosPorHora": 15.00
           }
         ],
-        "fechaAltaEnSistema": "2018-10-08T18:37:41.655"
+        "fechaAltaEnSistema": "2018-10-29T06:33:20.299",
+        "actuadores": [],
+        "sensores": []
       }
     ],
     "nombre": "Pepe",
