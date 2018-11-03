@@ -5,6 +5,8 @@
     <title>Test</title>
 </head>
 <body>
-    <p>${message}</p>
+    <p>$message</p>
+    #set( $unaVariable = "de definir una variable")
+    Aca de otra forma $unaVariable
 </body>
 </html>
