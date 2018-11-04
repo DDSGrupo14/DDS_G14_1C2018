@@ -1,5 +1,7 @@
 package modelos.dispositivos;
 
+import com.google.gson.annotations.Expose;
+import json.BeanToJson;
 import modelos.usuarios.Domicilio;
 
 import javax.persistence.*;
@@ -7,17 +9,23 @@ import java.math.BigDecimal;
 
 @Entity
 @Table(name = "categoria")
-public class Categoria {
+public class Categoria extends BeanToJson<Categoria> {
 
     @Id
     @Column( name = "cat_id",unique = true)
     private int cat_id;
 
-    @Column(nullable = false)
-    private BigDecimal cargoFijo;
+    @Expose
+    @Column
+    private String nombreCategoria;
 
+    @Expose
     @Column(nullable = false)
-    private BigDecimal cargoVariable;
+    private BigDecimal cargoFijoPorMes;
+
+    @Expose
+    @Column(nullable = false)
+    private BigDecimal cargoVariablePorHora;
 
     @OneToOne(
             mappedBy = "categoria",
@@ -36,10 +44,10 @@ public class Categoria {
     */
     public Categoria(){}
 
-    public Categoria(int cat_id, BigDecimal cargoFijo, BigDecimal cargoVariable){
-        this.cat_id = cat_id;
-        this.cargoFijo = cargoFijo;
-        this.cargoVariable = cargoVariable;
+    public Categoria(String nombreCategoria, BigDecimal cargoFijoPorMes, BigDecimal cargoVariablePorHora){
+        this.nombreCategoria = nombreCategoria;
+        this.cargoFijoPorMes = cargoFijoPorMes;
+        this.cargoVariablePorHora = cargoVariablePorHora;
     }
 
     public int getCat_id() {
@@ -50,6 +58,14 @@ public class Categoria {
         this.cat_id = id;
     }
 
+    public String getNombreCategoria() {
+        return nombreCategoria;
+    }
+
+    public void setNombreCategoria(String nombreCategoria) {
+        this.nombreCategoria = nombreCategoria;
+    }
+
     public Domicilio getDomicilio() {
         return domicilio;
     }
@@ -58,20 +74,24 @@ public class Categoria {
         this.domicilio = domicilio;
     }
 
-    public BigDecimal getCargoFijo() {
-        return cargoFijo;
+    public BigDecimal getCargoFijoPorMes() {
+        return cargoFijoPorMes;
     }
 
-    public void setCargoFijo(BigDecimal cargoFijo) {
-        this.cargoFijo = cargoFijo;
+    public void setCargoFijoPorMes(BigDecimal cargoFijo) {
+        this.cargoFijoPorMes = cargoFijo;
     }
 
-    public BigDecimal getCargoVariable() {
-        return cargoVariable;
+    public BigDecimal getCargoVariablePorHora() {
+        return cargoVariablePorHora;
     }
 
-    public void setCargoVariable(BigDecimal cargoVariable) {
-        this.cargoVariable = cargoVariable;
+    public void setCargoVariablePorHora(BigDecimal cargoVariable) {
+        this.cargoVariablePorHora = cargoVariable;
     }
 
+    @Override
+    public Categoria getObj() {
+        return this;
+    }
 }

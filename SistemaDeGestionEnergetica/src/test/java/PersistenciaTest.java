@@ -1,29 +1,24 @@
+import json.CargarClaseSimpleDesdeJson;
 import json.JsonUtils;
+import modelos.dispositivos.Categoria;
 import modelos.dispositivos.TipoDispositivo;
 import modelos.usuarios.Administrador;
 import modelos.usuarios.Cliente;
 import org.junit.jupiter.api.Test;
-import utilidades.AdministradorDAO;
 import utilidades.DatabaseUtil;
-import utilidades.ClienteDAO;
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import utilidades.Path;
 
 import java.util.List;
 
 public class PersistenciaTest {
 
-    final static String clientesCompletos = "src/main/resources/json/clientes.json";
-
-    final static String clientesLogin = "src/main/resources/json/clientes_login.json";
-
-    final static String adminLogin = "src/main/resources/json/administradores_login.json";
-
-    final static String tiposConcretos = "src/main/resources/json/tipos_concretos.json";
-
     @Test
     public void persistirLoginAdminTest(){
 
-        List<Administrador> administradores = JsonUtils.obtenerAdmins(adminLogin);
+        CargarClaseSimpleDesdeJson<Administrador> cargaAdmin =
+                new CargarClaseSimpleDesdeJson<>(Administrador.class);
+
+        List<Administrador> administradores = cargaAdmin.obtenerListaClaesComun(Path.Archivos.LOGIN_ADMINISTRADORES);
 
         for (Administrador administrador: administradores) {
             DatabaseUtil.persistir(administrador);
@@ -34,7 +29,7 @@ public class PersistenciaTest {
     @Test
     public void persistirLoginClientesTest(){
 
-        List<Cliente> clientes = JsonUtils.obtenerClientes(clientesLogin);
+        List<Cliente> clientes = JsonUtils.obtenerClientes(Path.Archivos.LOGIN_CLIENTES);
 
         for(Cliente cliente: clientes){
             DatabaseUtil.persistir(cliente);
@@ -44,7 +39,11 @@ public class PersistenciaTest {
     @Test
     public void persistirTiposConcretosTest(){
 
-        List<TipoDispositivo> tipos = JsonUtils.obtenerTiposConcretos(tiposConcretos);
+
+        CargarClaseSimpleDesdeJson<TipoDispositivo> cargaTipos =
+                new CargarClaseSimpleDesdeJson<>(TipoDispositivo.class);
+
+        List<TipoDispositivo> tipos = cargaTipos.obtenerListaClaesComun(Path.Archivos.TIPOS_CONCRETOS);
 
         for(TipoDispositivo tipo: tipos){
             DatabaseUtil.persistir(tipo);
@@ -53,47 +52,17 @@ public class PersistenciaTest {
     }
 
     @Test
-    public void traerClientesDesdeBaseTest(){
+    public void persistirCategoriasTest(){
 
-        ClienteDAO userDao = new ClienteDAO();
 
-        List<Cliente> clientes = userDao.listarClientes();
+        CargarClaseSimpleDesdeJson<Categoria> cargaCateogira =
+                new CargarClaseSimpleDesdeJson<>(Categoria.class);
 
-        System.out.println(clientes.get(0).toString());
+        List<Categoria> categorias = cargaCateogira.obtenerListaClaesComun(Path.Archivos.CATEGORIAS);
 
-        assertEquals(2,clientes.size());
-
-    }
-
-    @Test
-    public void traerUnSoloClientePorUsernameTest(){
-
-        ClienteDAO clienteDAO = new ClienteDAO();
-
-        Cliente cliente = clienteDAO.obtenerClientePorUsername("cliente1");
-
-        if( cliente == null ) {
-
-            System.out.println("nulo");
-
-            return;
+        for(Categoria categoria: categorias){
+            DatabaseUtil.persistir(categoria);
         }
-
-        System.out.println(cliente.toString());
-
-        assertEquals(false, clienteDAO.getSession().isOpen());
-
     }
 
-    @Test
-    public void traerElAdministradorTest(){
-
-        AdministradorDAO administradorDAO = new AdministradorDAO();
-
-        Administrador administrador = administradorDAO.obtenerAdministradorPorUsername("admin");
-
-        System.out.println(administrador.toString());
-
-        assertEquals(false,administradorDAO.getSession().isOpen());
-    }
 }

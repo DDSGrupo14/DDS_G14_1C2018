@@ -1,32 +1,25 @@
 package parser;
 
+import json.CargarClaseSimpleDesdeJson;
+import modelos.dispositivos.Categoria;
 import modelos.dispositivos.DispositivoInteligente;
 import modelos.dispositivos.TipoDispositivo;
 import modelos.usuarios.Administrador;
 import modelos.usuarios.Cliente;
 import org.junit.jupiter.api.Test;
+import utilidades.Path;
 
-import static json.JsonUtils.obtenerAdmins;
 import static json.JsonUtils.obtenerClientes;
-import static json.JsonUtils.obtenerTiposConcretos;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.List;
 
 public class ParserJsonFromJsonTest {
 
 
-    final static String clientesCompletos = "src/main/resources/json/clientes.json";
-
-    final static String clientesLogin = "src/main/resources/json/clientes_login.json";
-
-    final static String adminLogin = "src/main/resources/json/administradores_login.json";
-
-    final static String tiposConcretos = "src/main/resources/json/tipos_concretos.json";
-
     @Test
     public void cargarClientesDesdeJsonTest() {
 
-        List<Cliente> clientes = obtenerClientes(clientesCompletos);
+        List<Cliente> clientes = obtenerClientes(Path.Archivos.CLIENTE_COMPLETO);
 
         assertEquals(1,clientes.size(), "No coincide.");
         System.out.println("Tamaño lista: " + clientes.get(0).getDomicilios().get(0).getDispositivosInteligentes().size());
@@ -36,9 +29,11 @@ public class ParserJsonFromJsonTest {
     }
 
     @Test
-    public void cargaAdmins(){
+    public void cargaAdminsDesdeJsonTest(){
 
-        List<Administrador> admins = obtenerAdmins(adminLogin);
+        CargarClaseSimpleDesdeJson<Administrador> cargarAdmin = new CargarClaseSimpleDesdeJson<Administrador>(Administrador.class);
+
+        List<Administrador> admins = cargarAdmin.obtenerListaClaesComun(Path.Archivos.LOGIN_ADMINISTRADORES);
 
         Administrador admin = admins.get(0);
 
@@ -48,9 +43,9 @@ public class ParserJsonFromJsonTest {
     }
 
     @Test
-    public void cargarClientes(){
+    public void cargarLoginClientesDesdeJsonTest(){
 
-        List<Cliente> clientes = obtenerClientes(clientesLogin);
+        List<Cliente> clientes = obtenerClientes(Path.Archivos.LOGIN_CLIENTES);
 
         Cliente cliente = clientes.get(0);
 
@@ -60,13 +55,31 @@ public class ParserJsonFromJsonTest {
     }
 
     @Test
-    public void cargarTiposConcretos(){
+    public void cargarTiposConcretosDesdeJsonTest(){
 
-        List<TipoDispositivo> tipos = obtenerTiposConcretos(tiposConcretos);
+        CargarClaseSimpleDesdeJson<TipoDispositivo> cargaTipo =
+                new CargarClaseSimpleDesdeJson<>(TipoDispositivo.class);
+
+        List<TipoDispositivo> tipos = cargaTipo.obtenerListaClaesComun(Path.Archivos.TIPOS_CONCRETOS);
 
         System.out.println(tipos.get(4).toString());
 
         assertEquals(24, tipos.size());
+
+    }
+
+
+    @Test
+    public void cargarCategoriasDesdeJsonTest(){
+
+        CargarClaseSimpleDesdeJson<Categoria> cargaCategoria =
+                new CargarClaseSimpleDesdeJson<>(Categoria.class);
+
+        List<Categoria> categorias = cargaCategoria.obtenerListaClaesComun(Path.Archivos.CATEGORIAS);
+
+        System.out.println(categorias.get(4).toString());
+
+        assertEquals(9, categorias.size());
 
     }
 }

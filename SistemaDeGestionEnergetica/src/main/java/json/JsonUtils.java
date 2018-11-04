@@ -7,16 +7,34 @@ import modelos.usuarios.Administrador;
 import modelos.usuarios.Cliente;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.List;
 
 public class JsonUtils {
+
 
     public static String toJson(Object object) {
         final GsonBuilder gson = new GsonBuilder();
         gson.excludeFieldsWithoutExposeAnnotation();
         gson.registerTypeAdapter(Adaptador.class, new InterfaceAdapter<Adaptador>());
         return gson.setPrettyPrinting().create().toJson(object);
+    }
+
+    public static void crearArchivoJson( List<?> lista, String path){
+
+        final String json = toJson( lista );
+
+        try {
+
+            FileWriter fileWriter = new FileWriter(path);
+            fileWriter.write( json );
+            fileWriter.close();
+
+        } catch ( IOException e) {
+
+            e.printStackTrace();
+        }
     }
 
     public static List<Cliente> obtenerClientes(String path) {
@@ -36,37 +54,4 @@ public class JsonUtils {
         return clientes;
     }
 
-    public static List<Administrador> obtenerAdmins(String path) {
-
-        final CargarClaseSimpleDesdeJson cargarAdmins = new CargarClaseSimpleDesdeJson<Administrador>(Administrador.class);
-        List<Administrador> administradores;
-
-        try {
-
-            administradores= cargarAdmins.load(new File(path));
-
-        } catch (IOException e) {
-
-            administradores = null;
-            e.printStackTrace();
-        }
-        return administradores;
-    }
-
-    public static List<TipoDispositivo> obtenerTiposConcretos(String path) {
-
-        final CargarClaseSimpleDesdeJson cargarTipos = new CargarClaseSimpleDesdeJson<TipoDispositivo>(TipoDispositivo.class);
-        List<TipoDispositivo> tipos;
-
-        try {
-
-            tipos= cargarTipos.load(new File(path));
-
-        } catch (IOException e) {
-
-            tipos = null;
-            e.printStackTrace();
-        }
-        return tipos;
-    }
 }

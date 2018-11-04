@@ -44,7 +44,7 @@ public class Main {
 
             sessionObj.beginTransaction();
             cliente = new Cliente("nuevo","renuevo","4444444","12345", "admin", "admin");
-            cargarCategorias();
+           // cargarCategorias();
 
             Categoria categoria01 = (Categoria) sessionObj.get( Categoria.class,1);
             final Domicilio domicilio = new Domicilio("direccionNueva",true,"05/1/15");
@@ -83,7 +83,7 @@ public class Main {
             }
         }
     }
-
+/*
     private static void cargarCategorias( ){
 
         final List<Double> cargosFijos = Arrays.asList( 18.76, 35.32, 60.71, 71.74, 110.38, 220.75, 443.59, 545.96, 887.19 );
@@ -93,5 +93,5 @@ public class Main {
         for(int i = 0; i<9; i++){
             sessionObj.save(new Categoria(i+1, new BigDecimal(cargosFijos.get(i)),new BigDecimal(cargosVariables.get(i))));
         }
-    }
+    }*/
 }

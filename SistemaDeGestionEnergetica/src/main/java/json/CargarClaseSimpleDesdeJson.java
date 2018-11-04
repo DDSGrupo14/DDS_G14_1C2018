@@ -12,7 +12,6 @@ import java.util.List;
 
 public class CargarClaseSimpleDesdeJson<T> {
 
-
     private Class<?> wrapped;
 
     public CargarClaseSimpleDesdeJson(Class<T> wrapped){
@@ -32,6 +31,23 @@ public class CargarClaseSimpleDesdeJson<T> {
         final Gson gson = gsonBuilder.create();
 
         return  gson.fromJson(json, listType);
+    }
+
+
+    public List<T> obtenerListaClaesComun(String path) {
+
+        List<T> lista;
+
+        try {
+
+            lista= load(new File(path));
+
+        } catch (IOException e) {
+
+            lista = null;
+            e.printStackTrace();
+        }
+        return lista;
     }
 
 }

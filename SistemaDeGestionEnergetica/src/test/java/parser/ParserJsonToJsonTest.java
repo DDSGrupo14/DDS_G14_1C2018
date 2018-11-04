@@ -27,7 +27,9 @@ public class ParserJsonToJsonTest {
     @Test
     public void crearUsuariosCompletosTest() {
 
-        final Categoria categoria01 = new Categoria( 1,new BigDecimal(2.3),new BigDecimal(3.2) );
+        final String PATH = "src/main/resources/json/clientes.json";
+
+        final Categoria categoria01 = new Categoria( "R1",new BigDecimal(2.3),new BigDecimal(3.2) );
 
         RandomDate generadorFecha = new RandomDate();
 
@@ -73,27 +75,16 @@ public class ParserJsonToJsonTest {
 
         cliente.agregarDomicilio(domicilio01, categoria01);
 
-        JsonUtils jsonUtils = new JsonUtils();
-
         List<Cliente> clientes = Arrays.asList( cliente );
 
-        String json = jsonUtils.toJson( clientes );
-
-        try {
-
-            FileWriter fileWriter = new FileWriter("src/main/resources/json/clientes.json");
-            fileWriter.write( json );
-            fileWriter.close();
-
-        } catch ( IOException e) {
-
-            e.printStackTrace();
-        }
+        JsonUtils.crearArchivoJson(clientes, PATH);
 
     }
 
     @Test
-    public void crearUsuariosTest(){
+    public void crearLoginClientesTest(){
+
+        final String PATH = "src/main/resources/json/clientes_login.json";
 
         final String nombre1 = "Tomas";
         final String apellido1 = "Fernandez";
@@ -114,27 +105,15 @@ public class ParserJsonToJsonTest {
 
         final Cliente cliente2 = new Cliente(nombre2,apellido2,documento2,telefono2,login_usuario2,password2);
 
-        JsonUtils jsonUtils = new JsonUtils();
-
         List<Cliente> clientes = Arrays.asList(cliente1,cliente2 );
 
-        String json = jsonUtils.toJson( clientes );
-
-        try {
-
-            FileWriter fileWriter = new FileWriter("src/main/resources/json/clientes_login.json");
-            fileWriter.write( json );
-            fileWriter.close();
-
-        } catch ( IOException e) {
-
-            e.printStackTrace();
-        }
+        JsonUtils.crearArchivoJson(clientes, PATH);
     }
 
     @Test
-    public void crearAdministradoresTest(){
+    public void crearLoginAdministradoresTest(){
 
+        final String PATH = "src/main/resources/json/administradores_login.json";
 
         final String nombre3 = "Juan";
         final String apellido3 = "Alvarez";
@@ -144,30 +123,19 @@ public class ParserJsonToJsonTest {
         final String login_usuario3 = "admin";
         final String password3 = "admin";
 
-
         final Administrador administrador =
                 new Administrador(nombre3,apellido3,documento3,telefono3,fechaAlta1,login_usuario3,password3);
 
-        JsonUtils jsonUtils = new JsonUtils();
-
         List<Administrador> administradores = Arrays.asList(administrador );
 
-        String json = jsonUtils.toJson( administradores );
+        JsonUtils.crearArchivoJson(administradores, PATH);
 
-        try {
-
-            FileWriter fileWriter = new FileWriter("src/main/resources/json/administradores_login.json");
-            fileWriter.write( json );
-            fileWriter.close();
-
-        } catch ( IOException e) {
-
-            e.printStackTrace();
-        }
     }
 
     @Test
     public void crearEquiposConcretosTest(){
+
+        final String PATH = "src/main/resources/json/tipos_concretos.json";
 
         final int AIRE = 0, LAMPARA = 1, TELEVISOR = 2, LAVARROPA = 3, PC = 4, MICROONDA = 5
                 , PLANCHA = 6, VENTILADOR = 7, HELADERA = 8;
@@ -252,19 +220,25 @@ public class ParserJsonToJsonTest {
                 heladera1, heladera2, lavaropa1, lavaropa2, lavaropa3, ventilador1, ventilador2, lampara1,
                 lampara2, lampara3, lampara4, lampara5, lampara6, pc1, microondas1, plancha1);
 
-        JsonUtils jsonUtils = new JsonUtils();
+        JsonUtils.crearArchivoJson(tipos, PATH);
+    }
 
-        String json = jsonUtils.toJson( tipos );
+    @Test
+    public void crearCategoriasTest(){
 
-        try {
+        final String PATH = "src/main/resources/json/categorias.json";
 
-            FileWriter fileWriter = new FileWriter("src/main/resources/json/tipos_concretos.json");
-            fileWriter.write( json );
-            fileWriter.close();
+        int i = 0;
+        final double cargosFijos[] = {18.76, 35.32, 60.71, 71.74, 110.38, 220.75, 443.59, 545.96, 887.19};
+        final double cargosVariables[] = {0.644, 0.644, 0.681, 0.738, 0.794, 0.832, 0.851, 0.851, 0.851};
+        List<Categoria> categorias = new ArrayList<>();
 
-        } catch ( IOException e) {
-
-            e.printStackTrace();
+        while( i < 9){
+            categorias.add(new Categoria(String.format("R%d", i+1),
+                    new BigDecimal(cargosFijos[i]), new BigDecimal(cargosVariables[i])));
+            i++;
         }
+
+        JsonUtils.crearArchivoJson(categorias, PATH);
     }
 }
