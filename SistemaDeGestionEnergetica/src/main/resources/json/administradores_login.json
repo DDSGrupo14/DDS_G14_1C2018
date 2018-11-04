@@ -1,0 +1,11 @@
+[
+  {
+    "fechaDeAltaEnSistema": "10/05/2018",
+    "nombre": "Juan",
+    "apellido": "Alvarez",
+    "documento": "15947833",
+    "telefono": "5555-3333",
+    "loginUsuario": "admin",
+    "password": "admin"
+  }
+]

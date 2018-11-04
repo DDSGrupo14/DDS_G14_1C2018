@@ -1,5 +1,3 @@
-package parser;
-
 import modelos.dispositivos.DispositivoInteligente;
 import modelos.dispositivos.TipoDispositivo;
 import org.junit.jupiter.api.BeforeAll;

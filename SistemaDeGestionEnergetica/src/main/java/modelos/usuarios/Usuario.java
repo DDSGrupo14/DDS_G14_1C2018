@@ -24,8 +24,10 @@ public abstract class Usuario extends BeanToJson<Usuario>{
     @Expose
     @Column(name = "telefono", nullable = false)
     private String telefono;
+    @Expose
     @Column(name = "login_usuario", unique = true, nullable = false)
     private String loginUsuario;
+    @Expose
     @Column(name = "password", nullable = false)
     private String password;
 

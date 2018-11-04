@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e721b091-18f3-430b-98e8-b26485bf4451" name="Default" comment="Falla solo un test.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controladores/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controladores/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controladores/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utilidades/Path.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utilidades/ViewUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/bootstrapTest.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/customStyles/signin.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/login.vm" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/json/CargarAdminsDesdeJson.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utilidades/DatabaseUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/utilidades/UserDao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/FuncionalidadesTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/PersistenciaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/spark_test_01.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/home.vm" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/spark/SparkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spark/SparkTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/json/JsonUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/json/JsonUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/usuarios/Administrador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/usuarios/Administrador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/usuarios/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/usuarios/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/parser/FuncionSimplexTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FuncionSimplexTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/parser/ParserJsonFromJsonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/parser/ParserJsonFromJsonTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/parser/ParserJsonToJsonTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/parser/ParserJsonToJsonTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -56,7 +56,7 @@
     <session id="-604840605">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="27" />
+          <entry key="project.closed" value="28" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="2" />
@@ -71,6 +71,7 @@
           <entry key="project.open.time.52" value="1" />
           <entry key="project.open.time.53" value="1" />
           <entry key="project.open.time.55" value="3" />
+          <entry key="project.open.time.56" value="1" />
           <entry key="project.open.time.58" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.60" value="1" />
@@ -79,7 +80,7 @@
           <entry key="project.open.time.67" value="2" />
           <entry key="project.open.time.73" value="1" />
           <entry key="project.open.time.80" value="1" />
-          <entry key="project.opened" value="28" />
+          <entry key="project.opened" value="29" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -92,8 +93,8 @@
           <entry key="domicilio" value="1" />
           <entry key="ftl" value="1" />
           <entry key="html" value="7" />
-          <entry key="java" value="475" />
-          <entry key="json" value="20" />
+          <entry key="java" value="505" />
+          <entry key="json" value="27" />
           <entry key="properties" value="1" />
           <entry key="sql" value="2" />
           <entry key="tld" value="1" />
@@ -107,8 +108,8 @@
           <entry key="Database Element" value="1" />
           <entry key="FTL" value="1" />
           <entry key="HTML" value="7" />
-          <entry key="JAVA" value="475" />
-          <entry key="JSON" value="20" />
+          <entry key="JAVA" value="505" />
+          <entry key="JSON" value="27" />
           <entry key="Properties" value="1" />
           <entry key="Scratch" value="2" />
           <entry key="UML" value="5" />
@@ -120,34 +121,56 @@
         <counts>
           <entry key="dummy" value="33" />
           <entry key="html" value="215" />
-          <entry key="java" value="19370" />
+          <entry key="java" value="21463" />
           <entry key="json" value="8" />
           <entry key="sql" value="15" />
           <entry key="txt" value="94" />
-          <entry key="vm" value="609" />
+          <entry key="vm" value="611" />
           <entry key="xml" value="618" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="215" />
-          <entry key="JAVA" value="19371" />
+          <entry key="JAVA" value="21464" />
           <entry key="JSON" value="8" />
           <entry key="PLAIN_TEXT" value="127" />
           <entry key="Scratch" value="15" />
-          <entry key="VTL" value="609" />
+          <entry key="VTL" value="611" />
           <entry key="XML" value="617" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+    <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/java/spark/SparkTest.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/json/CargarClientesDesdeJson.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="30" selection-start-line="30" selection-end-line="30" />
+            <state>
+              <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/parser/ParserJsonToJsonTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="134" selection-start-line="134" selection-end-line="134" />
+              <folding>
+                <element signature="method#crearUsuariosTest#0;class#ParserJsonToJsonTest#0" />
+                <element signature="method#crearAdministradoresTest#0;class#ParserJsonToJsonTest#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/parser/ParserJsonFromJsonTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="34">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="19" selection-end-column="90" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -156,10 +179,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controladores/TestController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/DatabaseUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="13" selection-start-line="13" selection-end-line="19" selection-end-column="6" />
+            <state relative-caret-position="17">
+              <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -168,31 +191,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/login.vm">
+        <entry file="file://$PROJECT_DIR$/src/test/java/PersistenciaTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
-              <folding>
-                <element signature="e#1377#1383#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/customStyles/signin.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="43" column="1" selection-start-line="43" selection-start-column="1" selection-end-line="43" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/controladores/LoginController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="18" column="58" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
+            <state relative-caret-position="340">
+              <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -201,28 +203,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/resources/bootstrapTest.vm">
+        <entry file="file://$PROJECT_DIR$/src/main/java/json/JsonUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="95" selection-start-line="13" selection-start-column="95" selection-end-line="13" selection-end-column="95" />
+            <state relative-caret-position="204">
+              <caret line="19" selection-start-line="19" selection-end-line="19" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Administrador.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="106" selection-start-line="106" selection-end-line="106" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/Path.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+            <state relative-caret-position="136">
+              <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -237,8 +230,8 @@
         <option value="Tag Library Descriptor" />
         <option value="Enum" />
         <option value="HTML File" />
-        <option value="Class" />
         <option value="CSS File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -248,15 +241,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/adaptadores/AdaptadorEstandar.java" />
-        <option value="$PROJECT_DIR$/src/main/java/json/Deserializers/DomicilioDeserializer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/usuarios/Domicilio.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/Categoria.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoEstandar.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/TipoDispositivo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/ConsumoDispositivo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/Magnitud.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/Operador.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/SensorTemperatura.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionTemperaturaIgual.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/actuadores/Actuador.java" />
@@ -278,10 +262,7 @@
         <option value="$PROJECT_DIR$/src/main/java/json/Deserializers/DispositivoInteligenteDeserializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/Deserializers/AdaptadorDeserializer.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/Deserializers/AdaptadorAireDeserializer.java" />
-        <option value="$PROJECT_DIR$/src/test/java/parser/ParserJsonToJsonTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/json/CargarClientesDesdeJson.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java" />
-        <option value="$PROJECT_DIR$/src/test/java/parser/ParserJsonFromJsonTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/json/tablaEquipoConcreto.json" />
         <option value="$PROJECT_DIR$/src/test/java/parser/FuncionSimplexTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoInteligente.java" />
@@ -297,8 +278,20 @@
         <option value="$PROJECT_DIR$/src/main/resources/customStyles/signin.css" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/bootstrapTest.vm" />
-        <option value="$PROJECT_DIR$/src/test/java/spark/SparkTest.java" />
         <option value="$PROJECT_DIR$/src/main/resources/login.vm" />
+        <option value="$PROJECT_DIR$/src/test/java/spark/SparkTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/usuarios/Domicilio.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/usuarios/Usuario.java" />
+        <option value="$PROJECT_DIR$/src/test/java/parser/UsuariosToJsonTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/parser/ParserJsonToJsonTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/json/CargarAdminsDesdeJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/usuarios/Administrador.java" />
+        <option value="$PROJECT_DIR$/src/test/java/parser/ParserJsonFromJsonTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/FuncionalidadesTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/json/JsonUtils.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utilidades/DatabaseUtil.java" />
+        <option value="$PROJECT_DIR$/src/test/java/PersistenciaTest.java" />
       </list>
     </option>
   </component>
@@ -406,6 +399,31 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="json" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SistemaDeGestionEnergetica" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="modelos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SistemaDeGestionEnergetica" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="modelos" type="462c0819:PsiDirectoryNode" />
+              <item name="usuarios" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SistemaDeGestionEnergetica" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="utilidades" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -464,7 +482,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541222002175" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541304371468" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TestSpark/testRuleEngine" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -476,17 +494,19 @@
     <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="modelos.dispositivo" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Matias\Desktop\DDS_G14_1C2018\SistemaDeGestionEnergetica\src\test\resources" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Matias\Desktop\DDS_G14_1C2018\SistemaDeGestionEnergetica\src\main\resources\vistas" />
       <recent name="C:\Users\Matias\Desktop\DDS_G14_1C2018\SistemaDeGestionEnergetica\src\main\resources" />
       <recent name="C:\Users\Matias\Desktop\DDS_G14_1C2018\SistemaDeGestionEnergetica\src\main\resources\spark\template" />
       <recent name="C:\Users\Matias\Desktop\DDS_G14_1C2018\SistemaDeGestionEnergetica\src\META-INF" />
       <recent name="C:\Users\Matias\Desktop\DDS_G14_1C2018\SistemaDeGestionEnergetica\src\main\resources\json" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+      <recent name="modelos.dispositivo" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Matias\Desktop\DDS_G14_1C2018\SistemaDeGestionEnergetica\src\test\resources" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -501,60 +521,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.SparkTest">
-    <configuration name="SparkTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="spark.SparkTest" />
-      <module name="SistemaDeGestionEnergetica" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="spark.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.PersistenciaTest.persistirLoginClientesTest">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="FuncionSimplexTest.funcionDeSegundaEntregaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SistemaDeGestionEnergetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="parser.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="parser" />
-      <option name="MAIN_CLASS_NAME" value="parser.FuncionSimplexTest" />
-      <option name="METHOD_NAME" value="funcionDeSegundaEntregaTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ParserJsonFromJsonTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SistemaDeGestionEnergetica" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="spark.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="parser" />
-      <option name="MAIN_CLASS_NAME" value="parser.ParserJsonFromJsonTest" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ParserJsonFromJsonTest.nombreLamparaTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParserJsonFromJsonTest.cargaAdmins" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SistemaDeGestionEnergetica" />
       <extension name="coverage">
         <pattern>
@@ -564,18 +538,63 @@
       </extension>
       <option name="PACKAGE_NAME" value="parser" />
       <option name="MAIN_CLASS_NAME" value="parser.ParserJsonFromJsonTest" />
-      <option name="METHOD_NAME" value="nombreLamparaTest" />
+      <option name="METHOD_NAME" value="cargaAdmins" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SensorAdaptadorTest.dispositivoDeberiaApagarsePorLaRegla" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ParserJsonFromJsonTest.cargarClientes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SistemaDeGestionEnergetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="parser" />
+      <option name="MAIN_CLASS_NAME" value="parser.ParserJsonFromJsonTest" />
+      <option name="METHOD_NAME" value="cargarClientes" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ParserJsonToJsonTest.crearAdministradoresTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SistemaDeGestionEnergetica" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="parser.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="parser" />
+      <option name="MAIN_CLASS_NAME" value="parser.ParserJsonToJsonTest" />
+      <option name="METHOD_NAME" value="crearAdministradoresTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersistenciaTest.persistirLoginAdminTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SistemaDeGestionEnergetica" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="SensorAdaptadorTest" />
-      <option name="METHOD_NAME" value="dispositivoDeberiaApagarsePorLaRegla" />
+      <option name="MAIN_CLASS_NAME" value="PersistenciaTest" />
+      <option name="METHOD_NAME" value="persistirLoginAdminTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersistenciaTest.persistirLoginClientesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SistemaDeGestionEnergetica" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PersistenciaTest" />
+      <option name="METHOD_NAME" value="persistirLoginClientesTest" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
@@ -597,19 +616,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ParserJsonFromJsonTest" />
-      <item itemvalue="JUnit.ParserJsonFromJsonTest.nombreLamparaTest" />
-      <item itemvalue="JUnit.FuncionSimplexTest.funcionDeSegundaEntregaTest" />
-      <item itemvalue="JUnit.SensorAdaptadorTest.dispositivoDeberiaApagarsePorLaRegla" />
-      <item itemvalue="Application.SparkTest" />
+      <item itemvalue="JUnit.ParserJsonFromJsonTest.cargaAdmins" />
+      <item itemvalue="JUnit.ParserJsonToJsonTest.crearAdministradoresTest" />
+      <item itemvalue="JUnit.ParserJsonFromJsonTest.cargarClientes" />
+      <item itemvalue="JUnit.PersistenciaTest.persistirLoginAdminTest" />
+      <item itemvalue="JUnit.PersistenciaTest.persistirLoginClientesTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.SparkTest" />
-        <item itemvalue="JUnit.FuncionSimplexTest.funcionDeSegundaEntregaTest" />
-        <item itemvalue="JUnit.SensorAdaptadorTest.dispositivoDeberiaApagarsePorLaRegla" />
-        <item itemvalue="JUnit.ParserJsonFromJsonTest.nombreLamparaTest" />
-        <item itemvalue="JUnit.ParserJsonFromJsonTest" />
+        <item itemvalue="JUnit.PersistenciaTest.persistirLoginClientesTest" />
+        <item itemvalue="JUnit.PersistenciaTest.persistirLoginAdminTest" />
+        <item itemvalue="JUnit.ParserJsonFromJsonTest.cargaAdmins" />
+        <item itemvalue="JUnit.ParserJsonFromJsonTest.cargarClientes" />
+        <item itemvalue="JUnit.ParserJsonToJsonTest.crearAdministradoresTest" />
       </list>
     </recent_temporary>
   </component>
@@ -661,7 +680,8 @@
       <workItem from="1540760152793" duration="21000000" />
       <workItem from="1540803469467" duration="6152000" />
       <workItem from="1540869516965" duration="1194000" />
-      <workItem from="1541189424642" duration="15716000" />
+      <workItem from="1541189424642" duration="16198000" />
+      <workItem from="1541252873069" duration="6503000" />
     </task>
     <task id="LOCAL-00001" summary="Cambios">
       <created>1534979327493</created>
@@ -681,39 +701,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SensorAdaptadorTest_dispositivoDeberiaApagarsePorLaRegla - 2018.10.29 at 13h 31m 31s.xml">
-      <configuration name="SensorAdaptadorTest.dispositivoDeberiaApagarsePorLaRegla" configurationId="JUnit" />
+    <history-entry file="UsuariosToJsonTest_crearUsuariosTest - 2018.11.04 at 00h 33m 36s.xml">
+      <configuration name="UsuariosToJsonTest.crearUsuariosTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FuncionSimplexTest_funcionDeSegundaEntregaTest - 2018.10.29 at 13h 31m 42s.xml">
-      <configuration name="FuncionSimplexTest.funcionDeSegundaEntregaTest" configurationId="JUnit" />
+    <history-entry file="ParserJsonFromJsonTest_cargaAdmins - 2018.11.04 at 00h 40m 38s.xml">
+      <configuration name="ParserJsonFromJsonTest.cargaAdmins" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FuncionSimplexTest_funcionDeSegundaEntregaTest - 2018.10.29 at 13h 31m 59s.xml">
-      <configuration name="FuncionSimplexTest.funcionDeSegundaEntregaTest" configurationId="JUnit" />
+    <history-entry file="ParserJsonFromJsonTest_cargaAdmins - 2018.11.04 at 00h 42m 25s.xml">
+      <configuration name="ParserJsonFromJsonTest.cargaAdmins" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FuncionSimplexTest_funcionDeSegundaEntregaTest - 2018.10.29 at 13h 32m 44s.xml">
-      <configuration name="FuncionSimplexTest.funcionDeSegundaEntregaTest" configurationId="JUnit" />
+    <history-entry file="ParserJsonFromJsonTest_cargaAdmins - 2018.11.04 at 00h 43m 24s.xml">
+      <configuration name="ParserJsonFromJsonTest.cargaAdmins" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FuncionSimplexTest_funcionDeSegundaEntregaTest - 2018.10.29 at 13h 33m 23s.xml">
-      <configuration name="FuncionSimplexTest.funcionDeSegundaEntregaTest" configurationId="JUnit" />
+    <history-entry file="ParserJsonToJsonTest_crearAdministradoresTest - 2018.11.04 at 00h 44m 01s.xml">
+      <configuration name="ParserJsonToJsonTest.crearAdministradoresTest" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FuncionSimplexTest_funcionDeSegundaEntregaTest - 2018.10.29 at 13h 33m 58s.xml">
-      <configuration name="FuncionSimplexTest.funcionDeSegundaEntregaTest" configurationId="JUnit" />
+    <history-entry file="ParserJsonFromJsonTest_cargaAdmins - 2018.11.04 at 00h 44m 15s.xml">
+      <configuration name="ParserJsonFromJsonTest.cargaAdmins" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FuncionSimplexTest_funcionDeSegundaEntregaTest - 2018.10.29 at 13h 35m 25s.xml">
-      <configuration name="FuncionSimplexTest.funcionDeSegundaEntregaTest" configurationId="JUnit" />
+    <history-entry file="ParserJsonFromJsonTest_cargarClientes - 2018.11.04 at 00h 46m 54s.xml">
+      <configuration name="ParserJsonFromJsonTest.cargarClientes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FuncionSimplexTest_funcionDeSegundaEntregaTest - 2018.10.29 at 13h 36m 40s.xml">
-      <configuration name="FuncionSimplexTest.funcionDeSegundaEntregaTest" configurationId="JUnit" />
+    <history-entry file="ParserJsonFromJsonTest_cargarClientes - 2018.11.04 at 00h 49m 30s.xml">
+      <configuration name="ParserJsonFromJsonTest.cargarClientes" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FuncionSimplexTest_funcionDeSegundaEntregaTest - 2018.10.29 at 13h 38m 10s.xml">
-      <configuration name="FuncionSimplexTest.funcionDeSegundaEntregaTest" configurationId="JUnit" />
+    <history-entry file="ParserJsonFromJsonTest_cargaAdmins - 2018.11.04 at 00h 49m 40s.xml">
+      <configuration name="ParserJsonFromJsonTest.cargaAdmins" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="FuncionSimplexTest_funcionDeSegundaEntregaTest - 2018.10.29 at 13h 39m 07s.xml">
-      <configuration name="FuncionSimplexTest.funcionDeSegundaEntregaTest" configurationId="JUnit" />
+    <history-entry file="ParserJsonFromJsonTest_cargaAdmins - 2018.11.04 at 00h 49m 49s.xml">
+      <configuration name="ParserJsonFromJsonTest.cargaAdmins" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="238533000" />
+    <option name="totallyTimeSpent" value="245518000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -729,7 +749,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Persistence" order="0" sideWeight="0.5021097" side_tool="true" weight="0.25100672" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4978903" visible="true" weight="0.2885906" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4978903" visible="true" weight="0.29261744" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -740,7 +760,7 @@
       <window_info anchor="bottom" id="Database Console" order="1" weight="0.32907802" />
       <window_info anchor="bottom" id="Message" order="2" />
       <window_info anchor="bottom" id="Find" order="3" weight="0.32765958" />
-      <window_info active="true" anchor="bottom" id="Run" order="4" sideWeight="0.49597314" visible="true" weight="0.32765958" />
+      <window_info anchor="bottom" id="Run" order="4" sideWeight="0.49597314" visible="true" weight="0.32765958" />
       <window_info anchor="bottom" id="Debug" order="5" weight="0.39858156" />
       <window_info anchor="bottom" id="Cvs" order="6" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="7" weight="0.4" />
@@ -796,76 +816,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.2/gson-2.8.2-sources.jar!/com/google/gson/internal/bind/SqlDateTypeAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="41" selection-start-line="41" selection-end-line="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.2/gson-2.8.2-sources.jar!/com/google/gson/reflect/TypeToken.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="93" selection-start-line="93" selection-end-line="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.2/gson-2.8.2-sources.jar!/com/google/gson/internal/bind/TypeAdapters.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="574" selection-start-line="574" selection-end-line="574" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.2/gson-2.8.2-sources.jar!/com/google/gson/Gson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="904" selection-start-line="904" selection-end-line="904" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.2.0/junit-platform-engine-1.2.0-sources.jar!/org/junit/platform/engine/support/hierarchical/SingleTestExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="72" selection-start-line="72" selection-end-line="72" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-engine/1.2.0/junit-platform-engine-1.2.0-sources.jar!/org/junit/platform/engine/support/hierarchical/HierarchicalTestExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="120" column="46" selection-start-line="120" selection-start-column="46" selection-end-line="120" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.2.0/junit-platform-commons-1.2.0-sources.jar!/org/junit/platform/commons/util/ReflectionUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="515" selection-start-line="515" selection-end-line="515" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.2.0/junit-jupiter-engine-5.2.0-sources.jar!/org/junit/jupiter/engine/descriptor/TestMethodTestDescriptor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="125">
-          <caret line="172" selection-start-line="172" selection-end-line="172" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.2.0/junit-jupiter-engine-5.2.0-sources.jar!/org/junit/jupiter/engine/execution/ThrowableCollector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="44" selection-start-line="44" selection-end-line="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/json/Deserializers/ActuadorDeserializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/adaptadores/Adaptador.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-95">
@@ -880,28 +830,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/json/JsonUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/json/InterfaceAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/json/JsonFile.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="e#198#199#0" expanded="true" />
-            <element signature="e#229#230#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -927,31 +859,11 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/json/Deserializers/AdaptadorEstandarDeserializer.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/parser/ParserJsonToJsonTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="58" column="57" selection-start-line="58" selection-start-column="57" selection-end-line="58" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/json/Deserializers/AdaptadorAireDeserializer.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/json/Deserializers/AdaptadorDeserializer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="24" selection-start-line="21" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/json/CargarClientesDesdeJson.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -969,34 +881,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Domicilio.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="191" column="91" selection-start-line="191" selection-start-column="91" selection-end-line="191" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1050">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="94" column="73" lean-forward="true" selection-start-line="94" selection-start-column="56" selection-end-line="94" selection-end-column="84" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/json/clientes.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="11" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/json/tablaEquipoConcreto.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -1008,16 +892,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="48" column="9" selection-start-line="48" selection-start-column="9" selection-end-line="48" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/parser/ParserJsonFromJsonTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="239">
-          <caret line="130" column="42" selection-start-line="130" selection-start-column="42" selection-end-line="130" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1042,7 +916,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/parser/FuncionSimplexTest.java">
+    <entry file="file://$PROJECT_DIR$/src/test/java/FuncionSimplexTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="816">
           <caret line="56" selection-start-line="56" selection-end-line="56" />
@@ -1069,9 +943,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/resources/template/home.ftl">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/resources/template/home.ftl" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/log4j2.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -1083,13 +955,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/home.vm">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/vistas/home.vm">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="7" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
@@ -1100,9 +969,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="14" selection-start-line="14" selection-end-line="20" selection-end-column="6" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1120,6 +986,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="188">
           <caret line="13" selection-start-line="13" selection-end-line="19" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/vistas/bootstrapTest.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="95" selection-start-line="13" selection-start-column="95" selection-end-line="13" selection-end-column="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/spark/SparkTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1133,10 +1013,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/Path.java">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/vistas/login.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
+        <state relative-caret-position="391">
+          <caret line="23" column="17" selection-start-line="23" selection-start-column="17" selection-end-line="23" selection-end-column="17" />
+          <folding>
+            <element signature="e#1377#1383#0#HTML" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1147,29 +1030,159 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/bootstrapTest.vm">
+    <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/Path.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
-          <caret line="13" column="95" selection-start-line="13" selection-start-column="95" selection-end-line="13" selection-end-column="95" />
+          <caret line="13" column="33" selection-start-line="13" selection-start-column="33" selection-end-line="13" selection-end-column="33" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/spark/SparkTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="30" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="-37">
+          <caret line="32" column="27" lean-forward="true" selection-start-line="32" selection-start-column="27" selection-end-line="32" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/UserDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="20" selection-start-line="2" selection-start-column="20" selection-end-line="2" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/json/clientes.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="30" column="11" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Domicilio.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="67" column="33" selection-start-line="67" selection-start-column="33" selection-end-line="67" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/json/JsonFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+          <folding>
+            <element signature="e#198#199#0" expanded="true" />
+            <element signature="e#229#230#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Usuario.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="29" column="11" selection-start-line="29" selection-start-column="11" selection-end-line="29" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/parser/UsuariosToJsonTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/login.vm">
+    <entry file="file://$PROJECT_DIR$/src/main/resources/json/clientes_login.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/json/CargarClientesDesdeJson.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        <state>
+          <caret line="14" column="27" lean-forward="true" selection-start-line="14" selection-start-column="27" selection-end-line="14" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/json/administradores_login.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/json/CargarAdminsDesdeJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
           <folding>
-            <element signature="e#1377#1383#0#HTML" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/parser/ParserJsonToJsonTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="134" selection-start-line="134" selection-end-line="134" />
+          <folding>
+            <element signature="method#crearUsuariosTest#0;class#ParserJsonToJsonTest#0" />
+            <element signature="method#crearAdministradoresTest#0;class#ParserJsonToJsonTest#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/FuncionalidadesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-867">
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/json/JsonUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Administrador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="12" column="10" selection-start-line="12" selection-start-column="10" selection-end-line="12" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/DatabaseUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="8" column="25" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/parser/ParserJsonFromJsonTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="19" selection-end-column="90" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/PersistenciaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="21" column="50" selection-start-line="21" selection-start-column="50" selection-end-line="21" selection-end-column="50" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

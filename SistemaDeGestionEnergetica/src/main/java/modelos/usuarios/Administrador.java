@@ -1,5 +1,7 @@
 package modelos.usuarios;
 
+import com.google.gson.annotations.Expose;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Table;
@@ -8,6 +10,7 @@ import javax.persistence.Table;
 @Table
 public class Administrador extends Usuario{
 
+    @Expose
     @Column
     private String fechaDeAltaEnSistema;
 
@@ -31,4 +34,5 @@ public class Administrador extends Usuario{
     public Usuario getObj() {
         return this;
     }
+
 }

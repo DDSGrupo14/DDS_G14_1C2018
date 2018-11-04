@@ -1,0 +1,22 @@
+[
+  {
+    "puntaje": 0,
+    "domicilios": [],
+    "nombre": "Tomas",
+    "apellido": "Fernandez",
+    "documento": "12345678",
+    "telefono": "5555-5555",
+    "loginUsuario": "cliente1",
+    "password": "123456"
+  },
+  {
+    "puntaje": 0,
+    "domicilios": [],
+    "nombre": "Fernando",
+    "apellido": "Juarez",
+    "documento": "12342499",
+    "telefono": "5555-4444",
+    "loginUsuario": "cliente2",
+    "password": "111111"
+  }
+]
