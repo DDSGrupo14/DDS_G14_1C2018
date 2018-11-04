@@ -3,7 +3,6 @@ package json;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
-import modelos.usuarios.Administrador;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,11 +10,20 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-public class CargarAdminsDesdeJson {
+public class CargarClaseSimpleDesdeJson<T> {
 
-    public List<Administrador> load(File file) throws IOException {
+
+    private Class<?> wrapped;
+
+    public CargarClaseSimpleDesdeJson(Class<T> wrapped){
+        this.wrapped = wrapped;
+    }
+
+    public List< T > load(File file) throws IOException {
         final String json = new JsonFile(file.getAbsolutePath()).read();
-        final Type listType = new TypeToken<ArrayList<Administrador>>(){}.getType();
+        //final Type listType = new TypeToken<ArrayList< T >>(){}.getType();
+
+        final Type listType = TypeToken.getParameterized(ArrayList.class, wrapped).getType();
 
         GsonBuilder gsonBuilder = new GsonBuilder();
 
@@ -25,4 +33,5 @@ public class CargarAdminsDesdeJson {
 
         return  gson.fromJson(json, listType);
     }
+
 }

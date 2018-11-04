@@ -21,7 +21,12 @@ public class TipoDispositivoDeserializer implements JsonDeserializer<TipoDisposi
 
         final BigDecimal consumoEstimadoKWh = jsonObject.get("consumoEstimadoKWh").getAsBigDecimal();
 
-        final TipoDispositivo tipo = new TipoDispositivo(equipoConcreto,consumoMinimo,consumoMaximo,consumoEstimadoKWh);
+        final boolean esInteligente = jsonObject.get("esInteligente").getAsBoolean();
+
+        final boolean esBajoConsumo = jsonObject.get("esBajoConsumo").getAsBoolean();
+
+        final TipoDispositivo tipo = new TipoDispositivo(equipoConcreto,consumoMinimo,consumoMaximo
+                ,consumoEstimadoKWh, esInteligente, esBajoConsumo);
 
         return tipo;
     }

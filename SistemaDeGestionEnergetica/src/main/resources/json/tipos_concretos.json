@@ -1,0 +1,194 @@
+[
+  {
+    "equipoConcreto": "Aire3500Frigorias",
+    "usoMensualMinimo": 90,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 1.612999999999999989341858963598497211933135986328125,
+    "esInteligente": true,
+    "esBajoConsumo": false
+  },
+  {
+    "equipoConcreto": "Aire2200Frigorias",
+    "usoMensualMinimo": 90,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 1.0129999999999999005240169935859739780426025390625,
+    "esInteligente": true,
+    "esBajoConsumo": true
+  },
+  {
+    "equipoConcreto": "TeleTuvo21",
+    "usoMensualMinimo": 90,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.07499999999999999722444243843710864894092082977294921875,
+    "esInteligente": false,
+    "esBajoConsumo": false
+  },
+  {
+    "equipoConcreto": "TeleTuvo29a34",
+    "usoMensualMinimo": 90,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.174999999999999988897769753748434595763683319091796875,
+    "esInteligente": false,
+    "esBajoConsumo": false
+  },
+  {
+    "equipoConcreto": "LCD40",
+    "usoMensualMinimo": 90,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.179999999999999993338661852249060757458209991455078125,
+    "esInteligente": false,
+    "esBajoConsumo": false
+  },
+  {
+    "equipoConcreto": "LED24",
+    "usoMensualMinimo": 90,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.040000000000000000832667268468867405317723751068115234375,
+    "esInteligente": true,
+    "esBajoConsumo": true
+  },
+  {
+    "equipoConcreto": "LED32",
+    "usoMensualMinimo": 90,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.055000000000000000277555756156289135105907917022705078125,
+    "esInteligente": true,
+    "esBajoConsumo": true
+  },
+  {
+    "equipoConcreto": "LED40",
+    "usoMensualMinimo": 90,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.08000000000000000166533453693773481063544750213623046875,
+    "esInteligente": true,
+    "esBajoConsumo": true
+  },
+  {
+    "equipoConcreto": "HeladeraConFreezer",
+    "usoMensualMinimo": 120,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.0899999999999999966693309261245303787291049957275390625,
+    "esInteligente": true,
+    "esBajoConsumo": true
+  },
+  {
+    "equipoConcreto": "HeladeraSinFreezer",
+    "usoMensualMinimo": 120,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.07499999999999999722444243843710864894092082977294921875,
+    "esInteligente": true,
+    "esBajoConsumo": true
+  },
+  {
+    "equipoConcreto": "Lavaropa5kgAutoCaliente",
+    "usoMensualMinimo": 120,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.174999999999999988897769753748434595763683319091796875,
+    "esInteligente": false,
+    "esBajoConsumo": false
+  },
+  {
+    "equipoConcreto": "5kgAuto",
+    "usoMensualMinimo": 120,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.07499999999999999722444243843710864894092082977294921875,
+    "esInteligente": true,
+    "esBajoConsumo": true
+  },
+  {
+    "equipoConcreto": "5kgSemiAuto",
+    "usoMensualMinimo": 120,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.127500000000000002220446049250313080847263336181640625,
+    "esInteligente": false,
+    "esBajoConsumo": true
+  },
+  {
+    "equipoConcreto": "ventiladorDePie",
+    "usoMensualMinimo": 120,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.0899999999999999966693309261245303787291049957275390625,
+    "esInteligente": false,
+    "esBajoConsumo": true
+  },
+  {
+    "equipoConcreto": "ventiladorDeTecho",
+    "usoMensualMinimo": 120,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.059999999999999997779553950749686919152736663818359375,
+    "esInteligente": true,
+    "esBajoConsumo": true
+  },
+  {
+    "equipoConcreto": "LamparaHalogena40W",
+    "usoMensualMinimo": 90,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.040000000000000000832667268468867405317723751068115234375,
+    "esInteligente": true,
+    "esBajoConsumo": false
+  },
+  {
+    "equipoConcreto": "LamparaHalogena60W",
+    "usoMensualMinimo": 90,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.059999999999999997779553950749686919152736663818359375,
+    "esInteligente": true,
+    "esBajoConsumo": false
+  },
+  {
+    "equipoConcreto": "LamparaHalogena100W",
+    "usoMensualMinimo": 90,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.0015000000000000000312250225675825276994146406650543212890625,
+    "esInteligente": true,
+    "esBajoConsumo": false
+  },
+  {
+    "equipoConcreto": "Lampara11W",
+    "usoMensualMinimo": 90,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.0109999999999999993616217608405349892564117908477783203125,
+    "esInteligente": true,
+    "esBajoConsumo": true
+  },
+  {
+    "equipoConcreto": "Lampara15W",
+    "usoMensualMinimo": 90,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.01499999999999999944488848768742172978818416595458984375,
+    "esInteligente": true,
+    "esBajoConsumo": true
+  },
+  {
+    "equipoConcreto": "Lampara20W",
+    "usoMensualMinimo": 90,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.0200000000000000004163336342344337026588618755340576171875,
+    "esInteligente": true,
+    "esBajoConsumo": true
+  },
+  {
+    "equipoConcreto": "PCEscritorio",
+    "usoMensualMinimo": 60,
+    "usoMensualMaximo": 360,
+    "consumoEstimadoKWh": 0.40000000000000002220446049250313080847263336181640625,
+    "esInteligente": true,
+    "esBajoConsumo": true
+  },
+  {
+    "equipoConcreto": "MicroondaConvencional",
+    "usoMensualMinimo": 3,
+    "usoMensualMaximo": 15,
+    "consumoEstimadoKWh": 0.64000000000000001332267629550187848508358001708984375,
+    "esInteligente": false,
+    "esBajoConsumo": true
+  },
+  {
+    "equipoConcreto": "PlanchaVapor",
+    "usoMensualMinimo": 3,
+    "usoMensualMaximo": 30,
+    "consumoEstimadoKWh": 0.75,
+    "esInteligente": false,
+    "esBajoConsumo": true
+  }
+]

@@ -49,7 +49,8 @@ public class Main {
             Categoria categoria01 = (Categoria) sessionObj.get( Categoria.class,1);
             final Domicilio domicilio = new Domicilio("direccionNueva",true,"05/1/15");
 
-            final TipoDispositivo tipo = new TipoDispositivo("aire",90,220,new BigDecimal(100));
+            final TipoDispositivo tipo = new TipoDispositivo("aire",90,220
+                    ,new BigDecimal(100), true, true);
 
             sessionObj.save(tipo);
 

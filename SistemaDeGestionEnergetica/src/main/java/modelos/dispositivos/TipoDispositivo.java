@@ -1,13 +1,14 @@
 package modelos.dispositivos;
 
 import com.google.gson.annotations.Expose;
+import json.BeanToJson;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
 @Table(name = "tipoDispositivo")
-public class TipoDispositivo {
+public class TipoDispositivo extends BeanToJson<TipoDispositivo> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,16 +35,21 @@ public class TipoDispositivo {
     @Expose
     @Column
     private BigDecimal consumoEstimadoKWh;
+    @Expose
     @org.hibernate.annotations.Type(type = "yes_no")
     private boolean esInteligente;
+    @Expose
     @org.hibernate.annotations.Type(type = "yes_no")
     private boolean esBajoConsumo;
 
-    public TipoDispositivo(String equipoConcreto, int usoMensualMinimo, int usoMensualMaximo, BigDecimal consumoEstimadoKWh) {
+    public TipoDispositivo(String equipoConcreto, int usoMensualMinimo, int usoMensualMaximo, BigDecimal consumoEstimadoKWh,
+                           boolean esInteligente, boolean esBajoConsumo) {
         this.equipoConcreto = equipoConcreto;
         this.usoMensualMinimo = usoMensualMinimo;
         this.usoMensualMaximo = usoMensualMaximo;
         this.consumoEstimadoKWh = consumoEstimadoKWh;
+        this.esBajoConsumo = esBajoConsumo;
+        this.esInteligente = esInteligente;
     }
 
     public TipoDispositivo(){}
@@ -110,5 +116,10 @@ public class TipoDispositivo {
 
     public BigDecimal getConsumoEstimadoKWh() {
         return consumoEstimadoKWh;
+    }
+
+    @Override
+    public TipoDispositivo getObj() {
+        return this;
     }
 }

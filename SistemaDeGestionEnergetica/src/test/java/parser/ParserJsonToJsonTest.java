@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -45,7 +46,7 @@ public class ParserJsonToJsonTest {
         adaptadorLampara.setDispositivoEstandar(lampara);
 
         TipoDispositivo lamparaAlogena40 = new TipoDispositivo("Lampara40"
-                ,90,360,new BigDecimal(0.04));
+                ,90,360,new BigDecimal(0.04),true, false);
 
         final DispositivoInteligente lamparaAdaptada = new DispositivoInteligente( lamparaAlogena40
                 ,"Lampara",60.0 );
@@ -60,7 +61,7 @@ public class ParserJsonToJsonTest {
         adaptadorAire.setDispositivoEstandar(aireEstandar);
 
         TipoDispositivo aire3500 = new TipoDispositivo("Aire3500"
-                ,90,360,new BigDecimal(1.613));
+                ,90,360,new BigDecimal(1.613), true, false);
 
         final DispositivoInteligente aire = new DispositivoInteligente(aire3500,"Aire",50.0 );
 
@@ -156,6 +157,108 @@ public class ParserJsonToJsonTest {
         try {
 
             FileWriter fileWriter = new FileWriter("src/main/resources/json/administradores_login.json");
+            fileWriter.write( json );
+            fileWriter.close();
+
+        } catch ( IOException e) {
+
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void crearEquiposConcretosTest(){
+
+        final int AIRE = 0, LAMPARA = 1, TELEVISOR = 2, LAVARROPA = 3, PC = 4, MICROONDA = 5
+                , PLANCHA = 6, VENTILADOR = 7, HELADERA = 8;
+
+        final int minimos[] = { 90, 90, 90, 6, 60, 3, 3, 120, 120 };
+
+        final int maximos[] = { 360, 360, 360, 30, 360, 15, 30, 360, 360 };
+
+        final TipoDispositivo aire1 = new TipoDispositivo("Aire3500Frigorias",minimos[AIRE],
+                maximos[AIRE],new BigDecimal(1.613),true,false);
+
+        final TipoDispositivo aire2 = new TipoDispositivo("Aire2200Frigorias",minimos[AIRE],
+                maximos[AIRE],new BigDecimal(1.013),true,true);
+
+        final TipoDispositivo tele1 = new TipoDispositivo("TeleTuvo21", minimos[TELEVISOR], maximos[TELEVISOR]
+            , new BigDecimal(0.075), false, false);
+
+        final TipoDispositivo tele2 = new TipoDispositivo("TeleTuvo29a34", minimos[TELEVISOR], maximos[TELEVISOR]
+                , new BigDecimal(0.175), false, false);
+
+        final TipoDispositivo tele3 = new TipoDispositivo("LCD40", minimos[TELEVISOR], maximos[TELEVISOR]
+                , new BigDecimal(0.18), false, false);
+
+        final TipoDispositivo tele4 = new TipoDispositivo("LED24", minimos[TELEVISOR], maximos[TELEVISOR]
+                , new BigDecimal(0.04), true, true);
+
+        final TipoDispositivo tele5 = new TipoDispositivo("LED32", minimos[TELEVISOR], maximos[TELEVISOR]
+                , new BigDecimal(0.055), true, true);
+
+        final TipoDispositivo tele6 = new TipoDispositivo("LED40", minimos[TELEVISOR], maximos[TELEVISOR]
+                , new BigDecimal(0.08), true, true);
+
+        final TipoDispositivo heladera1 = new TipoDispositivo("HeladeraConFreezer", minimos[HELADERA]
+                , maximos[HELADERA], new BigDecimal(0.09), true, true);
+
+        final TipoDispositivo heladera2 = new TipoDispositivo("HeladeraSinFreezer", minimos[HELADERA]
+                , maximos[HELADERA], new BigDecimal(0.075), true, true);
+
+        final TipoDispositivo lavaropa1 = new TipoDispositivo("Lavaropa5kgAutoCaliente", minimos[HELADERA]
+                , maximos[HELADERA], new BigDecimal(0.175), false, false);
+
+        final TipoDispositivo lavaropa2 = new TipoDispositivo("5kgAuto", minimos[HELADERA]
+                , maximos[HELADERA], new BigDecimal(0.075), true, true);
+
+        final TipoDispositivo lavaropa3 = new TipoDispositivo("5kgSemiAuto", minimos[HELADERA]
+                , maximos[HELADERA], new BigDecimal(0.1275), false, true);
+
+        final TipoDispositivo ventilador1 = new TipoDispositivo("ventiladorDePie", minimos[VENTILADOR]
+                , maximos[VENTILADOR], new BigDecimal(0.09), false, true);
+
+        final TipoDispositivo ventilador2 = new TipoDispositivo("ventiladorDeTecho", minimos[VENTILADOR]
+                , maximos[VENTILADOR], new BigDecimal(0.06), true, true);
+
+        final TipoDispositivo lampara1 = new TipoDispositivo("LamparaHalogena40W", minimos[LAMPARA]
+                , maximos[LAMPARA], new BigDecimal(0.04), true, false);
+
+        final TipoDispositivo lampara2 = new TipoDispositivo("LamparaHalogena60W", minimos[LAMPARA]
+                , maximos[LAMPARA], new BigDecimal(0.06), true, false);
+
+        final TipoDispositivo lampara3 = new TipoDispositivo("LamparaHalogena100W", minimos[LAMPARA]
+                , maximos[LAMPARA], new BigDecimal(0.0015), true, false);
+
+        final TipoDispositivo lampara4 = new TipoDispositivo("Lampara11W", minimos[LAMPARA]
+                , maximos[LAMPARA], new BigDecimal(0.011), true, true);
+
+        final TipoDispositivo lampara5 = new TipoDispositivo("Lampara15W", minimos[LAMPARA]
+                , maximos[LAMPARA], new BigDecimal(0.015), true, true);
+
+        final TipoDispositivo lampara6 = new TipoDispositivo("Lampara20W", minimos[LAMPARA]
+                , maximos[LAMPARA], new BigDecimal(0.02), true, true);
+
+        final TipoDispositivo pc1 = new TipoDispositivo("PCEscritorio", minimos[PC]
+                , maximos[PC], new BigDecimal(0.4), true, true);
+
+        final TipoDispositivo microondas1 = new TipoDispositivo("MicroondaConvencional", minimos[MICROONDA]
+                , maximos[MICROONDA], new BigDecimal(0.64), false, true);
+
+        final TipoDispositivo plancha1 = new TipoDispositivo("PlanchaVapor", minimos[PLANCHA]
+                , maximos[PLANCHA], new BigDecimal(0.75), false, true);
+
+        List<TipoDispositivo> tipos = Arrays.asList(aire1, aire2, tele1, tele2, tele3, tele4, tele5, tele6,
+                heladera1, heladera2, lavaropa1, lavaropa2, lavaropa3, ventilador1, ventilador2, lampara1,
+                lampara2, lampara3, lampara4, lampara5, lampara6, pc1, microondas1, plancha1);
+
+        JsonUtils jsonUtils = new JsonUtils();
+
+        String json = jsonUtils.toJson( tipos );
+
+        try {
+
+            FileWriter fileWriter = new FileWriter("src/main/resources/json/tipos_concretos.json");
             fileWriter.write( json );
             fileWriter.close();
 

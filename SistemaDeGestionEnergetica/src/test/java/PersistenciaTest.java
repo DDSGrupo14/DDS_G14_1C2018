@@ -1,4 +1,5 @@
 import json.JsonUtils;
+import modelos.dispositivos.TipoDispositivo;
 import modelos.usuarios.Administrador;
 import modelos.usuarios.Cliente;
 import org.junit.jupiter.api.Test;
@@ -16,6 +17,8 @@ public class PersistenciaTest {
     final static String clientesLogin = "src/main/resources/json/clientes_login.json";
 
     final static String adminLogin = "src/main/resources/json/administradores_login.json";
+
+    final static String tiposConcretos = "src/main/resources/json/tipos_concretos.json";
 
     @Test
     public void persistirLoginAdminTest(){
@@ -36,6 +39,17 @@ public class PersistenciaTest {
         for(Cliente cliente: clientes){
             DatabaseUtil.persistir(cliente);
         }
+    }
+
+    @Test
+    public void persistirTiposConcretosTest(){
+
+        List<TipoDispositivo> tipos = JsonUtils.obtenerTiposConcretos(tiposConcretos);
+
+        for(TipoDispositivo tipo: tipos){
+            DatabaseUtil.persistir(tipo);
+        }
+
     }
 
     @Test

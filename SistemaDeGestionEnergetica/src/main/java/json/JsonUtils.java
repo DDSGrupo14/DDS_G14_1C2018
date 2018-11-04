@@ -1,6 +1,7 @@
 package json;
 
 import com.google.gson.GsonBuilder;
+import modelos.dispositivos.TipoDispositivo;
 import modelos.dispositivos.adaptadores.Adaptador;
 import modelos.usuarios.Administrador;
 import modelos.usuarios.Cliente;
@@ -21,7 +22,6 @@ public class JsonUtils {
     public static List<Cliente> obtenerClientes(String path) {
 
         final CargarClientesDesdeJson cargarClientes = new CargarClientesDesdeJson();
-
         List<Cliente> clientes;
 
         try {
@@ -31,18 +31,14 @@ public class JsonUtils {
         } catch (IOException e) {
 
             clientes = null;
-
             e.printStackTrace();
         }
-
         return clientes;
-
     }
 
     public static List<Administrador> obtenerAdmins(String path) {
 
-        final CargarAdminsDesdeJson cargarAdmins = new CargarAdminsDesdeJson();
-
+        final CargarClaseSimpleDesdeJson cargarAdmins = new CargarClaseSimpleDesdeJson<Administrador>(Administrador.class);
         List<Administrador> administradores;
 
         try {
@@ -52,11 +48,25 @@ public class JsonUtils {
         } catch (IOException e) {
 
             administradores = null;
-
             e.printStackTrace();
         }
-
         return administradores;
+    }
 
+    public static List<TipoDispositivo> obtenerTiposConcretos(String path) {
+
+        final CargarClaseSimpleDesdeJson cargarTipos = new CargarClaseSimpleDesdeJson<TipoDispositivo>(TipoDispositivo.class);
+        List<TipoDispositivo> tipos;
+
+        try {
+
+            tipos= cargarTipos.load(new File(path));
+
+        } catch (IOException e) {
+
+            tipos = null;
+            e.printStackTrace();
+        }
+        return tipos;
     }
 }

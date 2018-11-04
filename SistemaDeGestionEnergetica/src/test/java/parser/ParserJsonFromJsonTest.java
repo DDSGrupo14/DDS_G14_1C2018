@@ -1,12 +1,14 @@
 package parser;
 
 import modelos.dispositivos.DispositivoInteligente;
+import modelos.dispositivos.TipoDispositivo;
 import modelos.usuarios.Administrador;
 import modelos.usuarios.Cliente;
 import org.junit.jupiter.api.Test;
 
 import static json.JsonUtils.obtenerAdmins;
 import static json.JsonUtils.obtenerClientes;
+import static json.JsonUtils.obtenerTiposConcretos;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.List;
 
@@ -19,6 +21,7 @@ public class ParserJsonFromJsonTest {
 
     final static String adminLogin = "src/main/resources/json/administradores_login.json";
 
+    final static String tiposConcretos = "src/main/resources/json/tipos_concretos.json";
 
     @Test
     public void cargarClientesDesdeJsonTest() {
@@ -54,5 +57,16 @@ public class ParserJsonFromJsonTest {
         System.out.println(cliente.toString());
 
         assertEquals(2,clientes.size());
+    }
+
+    @Test
+    public void cargarTiposConcretos(){
+
+        List<TipoDispositivo> tipos = obtenerTiposConcretos(tiposConcretos);
+
+        System.out.println(tipos.get(4).toString());
+
+        assertEquals(24, tipos.size());
+
     }
 }

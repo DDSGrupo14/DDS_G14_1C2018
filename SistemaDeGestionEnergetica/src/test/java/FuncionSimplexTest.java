@@ -23,21 +23,22 @@ public class FuncionSimplexTest {
 
         //TipoDispositivo(String equipoConcreto, int usoMensualMinimo, int usoMensualMaximo, BigDecimal consumoEstimadoKWh)
         aire.setTipoDispositivo(
-                new TipoDispositivo("aire220",90,360,new BigDecimal(1.013)));
+                new TipoDispositivo("aire220",90,
+                        360,new BigDecimal(1.013), true, false));
 
         aire.setConsumoActual(new BigDecimal(300));
 
         lampara = new DispositivoInteligente();
         lampara.setNombre("lampara");
         lampara.setTipoDispositivo(
-                new TipoDispositivo("lampara11W", 90, 360, new BigDecimal(0.011)));
+                new TipoDispositivo("lampara11W", 90, 360, new BigDecimal(0.011),true,true));
 
         lampara.setConsumoActual(new BigDecimal(200));
 
         computadora= new DispositivoInteligente();
         computadora.setNombre("computadora");
         computadora.setTipoDispositivo(
-                new TipoDispositivo("escritorio", 60, 360, new BigDecimal(0.4)));
+                new TipoDispositivo("escritorio", 60, 360, new BigDecimal(0.4),true,true));
 
         computadora.setConsumoActual(new BigDecimal(500));
 
