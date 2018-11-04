@@ -19,7 +19,8 @@ public class Cliente extends Usuario{
     @OneToMany(
             mappedBy = "cliente",
             cascade = CascadeType.ALL,
-            orphanRemoval = true
+            orphanRemoval = true,
+            fetch = FetchType.EAGER
     )
     private List<Domicilio> domicilios;
 

@@ -11,7 +11,7 @@ public class DatabaseUtil {
     static SessionFactory sf = new Configuration().configure().buildSessionFactory();
 
     public static String persistir(Object o){
-        EntityManager session = sf.createEntityManager();
+        final EntityManager session = sf.createEntityManager();
 
         try {
             session.getTransaction().begin();
