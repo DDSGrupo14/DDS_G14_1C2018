@@ -1,9 +1,8 @@
 package json;
 
 import com.google.gson.GsonBuilder;
-import modelos.dispositivos.TipoDispositivo;
 import modelos.dispositivos.adaptadores.Adaptador;
-import modelos.usuarios.Administrador;
+import modelos.enre.Zona;
 import modelos.usuarios.Cliente;
 
 import java.io.File;
@@ -52,6 +51,24 @@ public class JsonUtils {
             e.printStackTrace();
         }
         return clientes;
+    }
+
+
+    public static List<Zona> obtenerZonas(String path) {
+
+        final CargarZonaDesdeJson cargaZonas = new CargarZonaDesdeJson();
+        List<Zona> zonas;
+
+        try {
+
+            zonas= cargaZonas.load(new File(path));
+
+        } catch (IOException e) {
+
+            zonas = null;
+            e.printStackTrace();
+        }
+        return zonas;
     }
 
 }

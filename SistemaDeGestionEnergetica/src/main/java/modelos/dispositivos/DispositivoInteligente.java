@@ -46,7 +46,6 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
     private Double porcentajeAhorroEnergia;
     @Expose
     @OneToOne(fetch = FetchType.LAZY)
-    //@MapsId
     @JoinColumn(name = "tdisp_id")
     private TipoDispositivo tipoDispositivo;
     @OneToMany(
@@ -104,6 +103,7 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
 
     public void setConsumoTotal(List<ConsumoDispositivo> consumoTotal) {
         this.consumoTotal = consumoTotal;
+        consumoTotal.forEach(cons -> cons.setDispositivoInteligente(this));
     }
 
     @Override

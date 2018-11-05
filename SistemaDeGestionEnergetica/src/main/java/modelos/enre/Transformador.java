@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name = "transformador")
 public class Transformador extends BeanToJson<Transformador> {
 
     @Id
@@ -19,17 +19,19 @@ public class Transformador extends BeanToJson<Transformador> {
     @OneToMany(
             mappedBy = "transformador",
             cascade = CascadeType.ALL,
-            orphanRemoval = true
+            orphanRemoval = true,
+            fetch = FetchType.EAGER
     )
     private List<Domicilio> domicilios;
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "zona_id")
+    @ManyToOne
+    @JoinColumn(name = "zona_id", nullable = false)
     private Zona zona;
     @Expose
     @Transient
     private List<String> direcciones;
     @Expose
     @Column
+    @org.hibernate.annotations.Type(type = "yes_no")
     private Boolean estaActivo;
     @Expose
     @Column
@@ -47,6 +49,14 @@ public class Transformador extends BeanToJson<Transformador> {
     }
 
     public Transformador() {
+    }
+
+    public Zona getZona() {
+        return zona;
+    }
+
+    public void setZona(Zona zona) {
+        this.zona = zona;
     }
 
     public int getTransf_id() {

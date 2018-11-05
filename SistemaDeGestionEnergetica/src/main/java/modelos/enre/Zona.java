@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table
+@Table(name = "zona")
 public class Zona extends BeanToJson<Zona> {
 
 
@@ -16,6 +16,9 @@ public class Zona extends BeanToJson<Zona> {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "zona_id", unique = true)
     private int zona_id;
+    @Expose
+    @Column(unique = true)
+    private String codigo;
     @Expose
     @Column
     private double latitud;
@@ -34,7 +37,8 @@ public class Zona extends BeanToJson<Zona> {
     )
     private List<Transformador> transformadores;
 
-    public Zona(double latitud, double longitud,int radio, List<Transformador> transformadores) {
+    public Zona(String codigo, double latitud, double longitud,int radio, List<Transformador> transformadores) {
+        this.codigo = codigo;
         this.latitud = latitud;
         this.radio = radio;
         this.longitud = longitud;
@@ -42,6 +46,14 @@ public class Zona extends BeanToJson<Zona> {
     }
 
     public Zona() {
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public int getRadio() {
@@ -74,6 +86,7 @@ public class Zona extends BeanToJson<Zona> {
 
     public void setTransformadores(List<Transformador> transformadores) {
         this.transformadores = transformadores;
+        transformadores.forEach(transformador -> transformador.setZona(this));
     }
 
     public void agregarTransformador(Transformador transformador){ transformadores.add(transformador); }

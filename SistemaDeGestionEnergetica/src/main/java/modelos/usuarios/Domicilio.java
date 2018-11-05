@@ -137,18 +137,24 @@ public class Domicilio extends BeanToJson<Domicilio> {
 
     public void setDispositivosInteligentes(List<DispositivoInteligente> dispositivosInteligentes) {
         this.dispositivosInteligentes = dispositivosInteligentes;
+        dispositivosInteligentes.forEach(disp -> disp.setDomicilio(this));
     }
 
     public void setDispositivosEstandar(List<DispositivoEstandar> dispositivosEstandar) {
         this.dispositivosEstandar = dispositivosEstandar;
+        dispositivosEstandar.forEach(disp -> disp.setDomicilio(this));
     }
 
     public void setActuadores(List<Actuador> actuadores) {
         this.actuadores = actuadores;
+        actuadores.forEach(act -> act.setDomicilio(this));
+
     }
 
     public void setSensores(List<Sensor> sensores) {
         this.sensores = sensores;
+        sensores.forEach(sensor -> sensor.setDomicilio(this));
+
     }
 
     public Domicilio agregarDispositivoInteligente(DispositivoInteligente dispositivo ){

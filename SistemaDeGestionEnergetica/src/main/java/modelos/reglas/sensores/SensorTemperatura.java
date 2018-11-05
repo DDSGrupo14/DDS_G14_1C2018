@@ -31,4 +31,11 @@ public class SensorTemperatura extends Sensor {
         this.temperaturaActual = temperaturaActual;
     }
 
+    @Override
+    public void medirMagnitud( int unValor ) {
+
+        getCondicion().update( Magnitud.TEMPERATURA, unValor );
+
+    }
+
 }

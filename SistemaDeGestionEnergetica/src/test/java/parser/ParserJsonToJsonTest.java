@@ -266,8 +266,9 @@ public class ParserJsonToJsonTest {
         final double latitudZona = -34.672627;
         final double longitudZona = -58.47698;
         final int radio = 5000;
+        final String codigo = "ZONA1";
         List<Transformador> transformadores = Arrays.asList(transformador1, transformador2);
-        Zona zona = new Zona(latitudZona, longitudZona, radio,transformadores);
+        Zona zona = new Zona(codigo,latitudZona, longitudZona, radio,transformadores);
 
         JsonUtils.crearArchivoJson(Arrays.asList(zona), Path.Archivos.ZONA);
     }

@@ -9,6 +9,8 @@ import modelos.usuarios.Domicilio;
 import modelos.dispositivos.Categoria;
 
 import java.lang.reflect.Type;
+import java.util.Arrays;
+import java.util.List;
 
 public class DomicilioDeserializer implements JsonDeserializer<Domicilio> {
     @Override
@@ -30,30 +32,25 @@ public class DomicilioDeserializer implements JsonDeserializer<Domicilio> {
 
         Actuador[] actuadores = context.deserialize( jsonObject.get("actuadores"),Actuador[].class);
 
- //       Sensor[] sensores = context.deserialize( jsonObject.get("sensores"),Sensor[].class);
+        Sensor[] sensores = context.deserialize( jsonObject.get("sensores"),Sensor[].class);
 
         final Domicilio domicilio = new Domicilio(direccion,principal,fechaAltaEnSistema);
 
-        if( actuadores!=null)
-            for ( Actuador actuador:actuadores
-                 ) {
-                domicilio.agregarActuador(actuador);
-            }
-/*
-        for ( Sensor sensor:sensores
-             ) {
-            domicilio.agregarSensor(sensor);
-        }
-*/
-        for ( DispositivoEstandar dispE: dispositivosEstandar
-             ) {
-            domicilio.agregarDispositivoEstandar(dispE);
-        }
+        List<DispositivoInteligente> listaInteligentes = Arrays.asList(dispositivosInteligentes);
 
-        for ( DispositivoInteligente dispI:dispositivosInteligentes
-             ) {
-            domicilio.agregarDispositivoInteligente(dispI);
-        }
+        domicilio.setDispositivosInteligentes(listaInteligentes);
+
+        List<DispositivoEstandar> listaEstandar = Arrays.asList(dispositivosEstandar);
+
+        domicilio.setDispositivosEstandar(listaEstandar);
+
+        List<Actuador> listaActuador = Arrays.asList(actuadores);
+
+        domicilio.setActuadores(listaActuador);
+
+        List<Sensor> listaSensor = Arrays.asList(sensores);
+
+        domicilio.setSensores(listaSensor);
 
         return domicilio;
     }

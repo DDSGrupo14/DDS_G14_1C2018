@@ -8,18 +8,18 @@ public enum Magnitud {
     LUZ(false, 0, false),
     MOVIMIENTO(false, 0, false);
 
-    private Boolean calculable;
+    private Boolean esCalculable;
     private int cantidad;
     private Boolean ocurrioEvento;
 
     Magnitud(Boolean calculable, int cantidad, Boolean ocurrioEvento){
-        this.calculable = calculable;
+        this.esCalculable = calculable;
         this.cantidad = cantidad;
         this.ocurrioEvento = ocurrioEvento;
     }
 
-    public Boolean getCalculable() {
-        return calculable;
+    public Boolean getEsCalculable() {
+        return esCalculable;
     }
 
     public int getCantidad() {

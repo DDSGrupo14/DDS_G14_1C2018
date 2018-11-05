@@ -1,14 +1,11 @@
 package modelos.reglas.reglas;
 
-import com.deliveredtechnologies.rulebook.model.RuleBook;
 import modelos.reglas.actuadores.Actuador;
 import modelos.reglas.condiciones.Condicion;
-import modelos.reglas.sensores.Magnitud;
-import modelos.reglas.sensores.Sensor;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -19,9 +16,9 @@ public class Regla {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "regla_id", unique = true)
     private int regla_id;
+
     @OneToOne(fetch = FetchType.LAZY)
-    //@MapsId
-    @JoinColumn(name = "adap_id")
+    @JoinColumn(name = "act_id")
     private Actuador actuador;
 
     @OneToMany(
@@ -29,14 +26,10 @@ public class Regla {
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<Condicion> condiciones = new ArrayList<>();
+    private Set<Condicion> condiciones = new HashSet<>();
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "sensor_id")
-    private Sensor sensor;
-
-    @Transient
-    List<RuleBook> condiciones_a_cumplir = new ArrayList<>();
+    @Column
+    private String codigoRegla;
 
     public Regla(){}
 
@@ -48,20 +41,26 @@ public class Regla {
         this.regla_id = regla_id;
     }
 
-    public Actuador getActuador() {
-        return actuador;
+    public String getCodigoRegla() {
+        return codigoRegla;
     }
 
-    public List<Condicion> getCondiciones() {
+    public void setCodigoRegla(String codigoRegla) {
+        this.codigoRegla = codigoRegla;
+    }
+
+    public Set<Condicion> getCondiciones() {
         return condiciones;
     }
 
-    public void setCondiciones(List<Condicion> condiciones) {
+    public void setCondiciones(Set<Condicion> condiciones) {
 
         if (condiciones == null)
             this.condiciones = condiciones;
         else
             condiciones.addAll(condiciones);
+
+        condiciones.forEach(condicion -> condicion.setRegla(this));
     }
 
     public void agregarCondicion(Condicion condicion){
@@ -70,32 +69,18 @@ public class Regla {
 
     public void quitarCondicion( Condicion condicion) { condiciones.remove(condicion);}
 
+    public Actuador getActuador() {
+        return actuador;
+    }
+
     public void setActuador(Actuador actuador) {
         this.actuador = actuador;
     }
 
-    public List<RuleBook> getCondiciones_a_cumplir() {
-        return condiciones_a_cumplir;
-    }
-
-    public void setCondiciones_a_cumplir(List<RuleBook> condiciones_a_cumplir) {
-
-        if (condiciones_a_cumplir == null)
-            this.condiciones_a_cumplir = condiciones_a_cumplir;
-        else
-            this.condiciones_a_cumplir.addAll(condiciones_a_cumplir);
-    }
-
-    public Sensor getSensor() {
-        return sensor;
-    }
-
-    public void setSensor(Sensor sensor) {
-        this.sensor = sensor;
-    }
-
     public void actuar(){}
 
-    public void update(Magnitud tipoMagnitud, int valor ){}
-
+    public void update(){
+        if(condiciones.stream().allMatch(Condicion::getCondicionCumplida))
+            actuar();
+    }
 }

@@ -26,7 +26,6 @@ public class Adaptador extends BeanToJson<Adaptador> {
     private BigDecimal consumoPorHora;
 
     @OneToOne(fetch = FetchType.LAZY)
-    //@MapsId
     @JoinColumn(name = "dint_id")
     private DispositivoInteligente dispositivoInteligente;
 

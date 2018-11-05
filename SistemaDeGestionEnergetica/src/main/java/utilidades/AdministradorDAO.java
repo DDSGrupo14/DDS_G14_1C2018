@@ -8,7 +8,7 @@ import java.util.List;
 
 public class AdministradorDAO {
 
-    final static EntityManager session = new Configuration().configure().buildSessionFactory().createEntityManager();
+    private final static EntityManager session = new Configuration().configure().buildSessionFactory().createEntityManager();
 
     public EntityManager getSession() {
         return session;

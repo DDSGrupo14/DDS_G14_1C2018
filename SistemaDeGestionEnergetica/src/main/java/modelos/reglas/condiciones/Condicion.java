@@ -1,14 +1,15 @@
 package modelos.reglas.condiciones;
 
-import com.deliveredtechnologies.rulebook.model.rulechain.cor.CoRRuleBook;
 import modelos.reglas.reglas.Regla;
+import modelos.reglas.sensores.Magnitud;
+import modelos.reglas.sensores.Sensor;
 
 import javax.persistence.*;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Table(name = "condicion")
-public class Condicion extends CoRRuleBook<Boolean> {
+public class Condicion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,9 +21,16 @@ public class Condicion extends CoRRuleBook<Boolean> {
     @Column
     private Integer limite;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "sensor_id")
+    private Sensor sensor;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "regla_id")
     private Regla regla;
+
+    @Transient
+    private Boolean condicionCumplida = false;
 
     public Condicion(int operador, Integer limite) {
         this.operador = operador;
@@ -62,7 +70,28 @@ public class Condicion extends CoRRuleBook<Boolean> {
         this.regla = regla;
     }
 
+    public Sensor getSensor() {
+        return sensor;
+    }
+
+    public void setSensor(Sensor sensor) {
+        this.sensor = sensor;
+    }
+
+    public Boolean getCondicionCumplida() {
+        return condicionCumplida;
+    }
+
+    public void setCondicionCumplida(Boolean condicionCumplida) {
+        this.condicionCumplida = condicionCumplida;
+    }
+
     public Condicion getClaseConcreta(){
         return null;
     }
+
+    public void update( Magnitud magnitud, int valor ){}
+
+    public void updateRegla(){ regla.update();}
+
 }

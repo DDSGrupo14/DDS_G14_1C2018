@@ -20,7 +20,6 @@ public class Actuador {
     private Domicilio domicilio;
 
     @OneToOne(fetch = FetchType.LAZY)
-    //@MapsId
     @JoinColumn(name = "dint_id")
     private DispositivoInteligente dispositivoInteligente;
 

@@ -5,15 +5,16 @@ import modelos.estados.Encendido;
 import modelos.reglas.actuadores.Actuador;
 import modelos.reglas.condiciones.CondicionMagnitudCalculable;
 import modelos.reglas.condiciones.Operador;
-import modelos.reglas.reglas.ApagarSegunTemperatura;
+import modelos.reglas.reglas.ReglaParaApagar;
 import modelos.reglas.sensores.Magnitud;
 import modelos.reglas.sensores.SensorTemperatura;
+import org.apache.log4j.BasicConfigurator;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 
 public class SensorAdaptadorTest {
 
@@ -22,7 +23,7 @@ public class SensorAdaptadorTest {
     static DispositivoEstandar aire;
     static SensorTemperatura sensorTemperatura;
     static Actuador actuador;
-    static ApagarSegunTemperatura regla;
+    static ReglaParaApagar regla;
     static CondicionMagnitudCalculable condicion;
 
     final static String NOMBRE = "hola";
@@ -45,17 +46,18 @@ public class SensorAdaptadorTest {
         actuador = new Actuador();
         actuador.setDispositivoInteligente(dispositivoInteligente);
         sensorTemperatura= new SensorTemperatura();
-        regla = new ApagarSegunTemperatura();
-        condicion = new CondicionMagnitudCalculable(Operador.MENOR.getValue(),100);
+        regla = new ReglaParaApagar();
+        condicion = new CondicionMagnitudCalculable(Operador.MENOR.getValue(),25);
         regla.agregarCondicion(condicion);
         regla.setActuador(actuador);
-        sensorTemperatura.agregarRegla(regla);
+        sensorTemperatura.setCondicion(condicion);
+        condicion.setRegla(regla);
     }
 
     @Test
     public void dispositivoDeberiaApagarsePorLaRegla(){
 
-        sensorTemperatura.medirMagnitud(Magnitud.TEMPERATURA,150);
+        sensorTemperatura.medirMagnitud(24);
 
         assertFalse(dispositivoInteligente.getEstado().estasEncendido());
     }

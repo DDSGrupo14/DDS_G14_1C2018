@@ -1,6 +1,6 @@
 package modelos.reglas.condiciones;
 
-import com.deliveredtechnologies.rulebook.lang.RuleBuilder;
+import modelos.reglas.sensores.Magnitud;
 
 import javax.persistence.*;
 
@@ -19,17 +19,13 @@ public class CondicionMagnitudCalculable extends Condicion {
         return this;
     }
 
-    @Override
-    public void defineRules() {
-        /*
-            Defino regla para temperatura
-         */
-        addRule(RuleBuilder.create().withFactType(int.class).withResultType(Boolean.class)
-                .when(facts -> Operador.obtenerOperador(this.getOperador())
-                        .calcular( this.getLimite(),facts.getIntVal("valor")))
-                .using("valor")
-                .then((facts, result) -> result.setValue( true ))
-                .build());
-    }
 
+    @Override
+    public void update(Magnitud magnitud, int valor){
+
+        if(magnitud.getEsCalculable())
+            setCondicionCumplida(Operador.obtenerOperador(getOperador()).calcular(getLimite(), valor));
+
+        if(getCondicionCumplida()) updateRegla();
     }
+}

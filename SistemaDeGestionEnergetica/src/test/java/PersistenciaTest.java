@@ -1,7 +1,9 @@
 import json.CargarClaseSimpleDesdeJson;
+import json.CargarZonaDesdeJson;
 import json.JsonUtils;
 import modelos.dispositivos.Categoria;
 import modelos.dispositivos.TipoDispositivo;
+import modelos.enre.Zona;
 import modelos.usuarios.Administrador;
 import modelos.usuarios.Cliente;
 import org.junit.jupiter.api.Test;
@@ -65,4 +67,17 @@ public class PersistenciaTest {
         }
     }
 
-}
+    @Test
+    public void persistirZonasTest(){
+
+
+        CargarZonaDesdeJson cargaZona =
+                new CargarZonaDesdeJson();
+
+        List<Zona> zonas = JsonUtils.obtenerZonas(Path.Archivos.ZONA);
+
+        for(Zona zona: zonas){
+            DatabaseUtil.persistir(zona);
+            System.out.println(zona.toString());
+        }
+    }}

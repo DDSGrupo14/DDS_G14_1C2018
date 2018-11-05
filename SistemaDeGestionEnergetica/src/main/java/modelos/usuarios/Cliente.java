@@ -54,7 +54,10 @@ public class Cliente extends Usuario{
     }
 
     public void setDomicilios(List<Domicilio> domicilios) {
+
         this.domicilios = domicilios;
+        domicilios.forEach(dom -> dom.setCliente(this));
+
     }
 
     public Integer getPuntaje() {

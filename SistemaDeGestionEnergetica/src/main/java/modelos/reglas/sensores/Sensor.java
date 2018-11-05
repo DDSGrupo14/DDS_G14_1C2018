@@ -1,5 +1,6 @@
 package modelos.reglas.sensores;
 
+import modelos.reglas.condiciones.Condicion;
 import modelos.reglas.reglas.Regla;
 import modelos.usuarios.Domicilio;
 
@@ -21,29 +22,13 @@ public class Sensor{
     @JoinColumn(name = "dom_id")
     private Domicilio domicilio;
 
-    @OneToMany(
+    @OneToOne(
             mappedBy = "sensor",
             cascade = CascadeType.ALL,
-            orphanRemoval = true
+            orphanRemoval = true,
+            fetch = FetchType.LAZY
     )
-    private List<Regla> reglas = new ArrayList<>();
-
-    public void agregarRegla( Regla regla){
-
-        reglas.add( regla );
-    }
-
-    public List<Regla> getReglas() {
-        return reglas;
-    }
-
-    public void setReglas(List<Regla> reglas) {
-
-        if (reglas == null)
-            this.reglas = reglas;
-        else
-            this.reglas.addAll(reglas);
-    }
+    private Condicion condicion;
 
     public Sensor(){}
 
@@ -55,6 +40,14 @@ public class Sensor{
         this.sensor_id = sensor_id;
     }
 
+    public Condicion getCondicion() {
+        return condicion;
+    }
+
+    public void setCondicion(Condicion condicion) {
+        this.condicion = condicion;
+    }
+
     public Domicilio getDomicilio() {
         return domicilio;
     }
@@ -63,8 +56,5 @@ public class Sensor{
         this.domicilio = domicilio;
     }
 
-    public void medirMagnitud(Magnitud tipoMagnitud, int unValor ) {
-
-        reglas.forEach( regla -> regla.update(tipoMagnitud, unValor) );
-    }
+    public void medirMagnitud(int unValor ) { }
 }

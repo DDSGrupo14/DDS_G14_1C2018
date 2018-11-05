@@ -15,7 +15,7 @@
         <property name="hibernate.transaction.coordinator_class">jdbc</property>
 
         <!-- Cambiar a update si no se quiere borrar todas las tablas, create para dropear y crear de nuevo-->
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
 
         <mapping class="modelos.usuarios.Cliente" />
         <mapping class="modelos.usuarios.Usuario" />
@@ -29,7 +29,7 @@
         <mapping class="modelos.dispositivos.adaptadores.AdaptadorEstandar" />
         <mapping class="modelos.dispositivos.adaptadores.AdaptadorAire" />
         <mapping class="modelos.reglas.reglas.Regla" />
-        <mapping class="modelos.reglas.reglas.ApagarSegunTemperatura" />
+        <mapping class="modelos.reglas.reglas.ReglaParaApagar" />
         <mapping class="modelos.reglas.condiciones.Condicion" />
         <mapping class="modelos.reglas.condiciones.CondicionMagnitudCalculable" />
         <mapping class="modelos.reglas.actuadores.Actuador" />
