@@ -29,5 +29,8 @@ public class Path {
         public final static String TIPOS_CONCRETOS = "src/main/resources/json/tipos_concretos.json";
 
         public final static String CATEGORIAS = "src/main/resources/json/categorias.json";
+
+        public final static String ZONA = "src/main/resources/json/zona.json";
+
     }
 }

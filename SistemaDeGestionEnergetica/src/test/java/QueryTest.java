@@ -51,6 +51,7 @@ public class QueryTest {
 
         Administrador administrador = administradorDAO.obtenerAdministradorPorUsername("admin");
 
+        if( administrador != null)
         System.out.println(administrador.toString());
 
         assertEquals(false,administradorDAO.getSession().isOpen());

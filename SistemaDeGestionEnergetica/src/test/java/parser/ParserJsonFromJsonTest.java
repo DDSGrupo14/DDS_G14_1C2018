@@ -4,6 +4,7 @@ import json.CargarClaseSimpleDesdeJson;
 import modelos.dispositivos.Categoria;
 import modelos.dispositivos.DispositivoInteligente;
 import modelos.dispositivos.TipoDispositivo;
+import modelos.enre.Zona;
 import modelos.usuarios.Administrador;
 import modelos.usuarios.Cliente;
 import org.junit.jupiter.api.Test;
@@ -80,6 +81,20 @@ public class ParserJsonFromJsonTest {
         System.out.println(categorias.get(4).toString());
 
         assertEquals(9, categorias.size());
+
+    }
+
+    @Test
+    public void cargarZonasDesdeJsonTest(){
+
+        CargarClaseSimpleDesdeJson<Zona> cargaZonas =
+                new CargarClaseSimpleDesdeJson<>(Zona.class);
+
+        List<Zona> zonas = cargaZonas.obtenerListaClaesComun(Path.Archivos.ZONA);
+
+        System.out.println(zonas.get(0).toString());
+
+        assertEquals(1, zonas.size());
 
     }
 }

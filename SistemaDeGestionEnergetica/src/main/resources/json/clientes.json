@@ -5,7 +5,11 @@
       {
         "direccion": "congreso-2288",
         "principal": true,
-        "categoria": {},
+        "categoria": {
+          "nombreCategoria": "R1",
+          "cargoFijoPorMes": 2.29999999999999982236431605997495353221893310546875,
+          "cargoVariablePorHora": 3.20000000000000017763568394002504646778106689453125
+        },
         "dispositivosInteligentes": [
           {
             "nombre": "Lampara",
@@ -25,7 +29,9 @@
               "equipoConcreto": "Lampara40",
               "usoMensualMinimo": 90,
               "usoMensualMaximo": 360,
-              "consumoEstimadoKWh": 0.040000000000000000832667268468867405317723751068115234375
+              "consumoEstimadoKWh": 0.040000000000000000832667268468867405317723751068115234375,
+              "esInteligente": true,
+              "esBajoConsumo": false
             }
           },
           {
@@ -46,7 +52,9 @@
               "equipoConcreto": "Aire3500",
               "usoMensualMinimo": 90,
               "usoMensualMaximo": 360,
-              "consumoEstimadoKWh": 1.612999999999999989341858963598497211933135986328125
+              "consumoEstimadoKWh": 1.612999999999999989341858963598497211933135986328125,
+              "esInteligente": true,
+              "esBajoConsumo": false
             }
           }
         ],
@@ -56,7 +64,7 @@
             "estimadoKWConsumidosPorHora": 15.00
           }
         ],
-        "fechaAltaEnSistema": "2018-10-29T06:33:20.299",
+        "fechaAltaEnSistema": "2018-11-04T22:02:11.008",
         "actuadores": [],
         "sensores": []
       }
@@ -64,6 +72,8 @@
     "nombre": "Pepe",
     "apellido": "Garcia",
     "documento": "1234",
-    "telefono": "1512312312"
+    "telefono": "1512312312",
+    "loginUsuario": "admin",
+    "password": "admin"
   }
 ]

@@ -36,6 +36,8 @@
         <mapping class="modelos.reglas.sensores.Sensor" />
         <mapping class="modelos.reglas.sensores.SensorTemperatura" />
         <mapping class="modelos.dispositivos.ConsumoDispositivo" />
+        <mapping class="modelos.enre.Transformador" />
+        <mapping class="modelos.enre.Zona" />
     </session-factory>
 
 </hibernate-configuration>

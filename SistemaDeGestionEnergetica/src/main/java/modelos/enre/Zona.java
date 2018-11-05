@@ -1,14 +1,79 @@
 package modelos.enre;
 
+import com.google.gson.annotations.Expose;
+import json.BeanToJson;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Zona {
+@Entity
+@Table
+public class Zona extends BeanToJson<Zona> {
 
-    private final List<Transformador> transformadores = new ArrayList<Transformador>();
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "zona_id", unique = true)
+    private int zona_id;
+    @Expose
+    @Column
+    private double latitud;
+    @Expose
+    @Column
+    private double longitud;
+    @Expose
+    @Column
+    private int radio;
+    @Expose
+    @OneToMany(
+            mappedBy = "zona",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.EAGER
+    )
+    private List<Transformador> transformadores;
+
+    public Zona(double latitud, double longitud,int radio, List<Transformador> transformadores) {
+        this.latitud = latitud;
+        this.radio = radio;
+        this.longitud = longitud;
+        this.transformadores= transformadores;
+    }
+
+    public Zona() {
+    }
+
+    public int getRadio() {
+        return radio;
+    }
+
+    public void setRadio(int radio) {
+        this.radio = radio;
+    }
+
+    public double getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(double latitud) {
+        this.latitud = latitud;
+    }
+
+    public double getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(double longitud) {
+        this.longitud = longitud;
+    }
 
     public List<Transformador> getTransformadores() {
         return transformadores;
+    }
+
+    public void setTransformadores(List<Transformador> transformadores) {
+        this.transformadores = transformadores;
     }
 
     public void agregarTransformador(Transformador transformador){ transformadores.add(transformador); }
@@ -19,4 +84,9 @@ public class Zona {
     }
 
     public void enviarConsumoEnre(){}
+
+    @Override
+    public Zona getObj() {
+        return this;
+    }
 }

@@ -5,6 +5,7 @@ import json.BeanToJson;
 import modelos.dispositivos.Categoria;
 import modelos.dispositivos.DispositivoEstandar;
 import modelos.dispositivos.DispositivoInteligente;
+import modelos.enre.Transformador;
 import modelos.reglas.actuadores.Actuador;
 import modelos.reglas.sensores.Sensor;
 
@@ -66,6 +67,11 @@ public class Domicilio extends BeanToJson<Domicilio> {
             orphanRemoval = true
     )
     private List<Sensor> sensores;
+    @Expose
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "transf_id")
+    private Transformador transformador;
+
     /*
     Como el constructor pide todos los atributos, no habra nulls.
      */
@@ -119,6 +125,30 @@ public class Domicilio extends BeanToJson<Domicilio> {
 
     public void setFechaAltaEnSistema(String fechaAltaEnSistema) {
         this.fechaAltaEnSistema = fechaAltaEnSistema;
+    }
+
+    public Transformador getTransformador() {
+        return transformador;
+    }
+
+    public void setTransformador(Transformador transformador) {
+        this.transformador = transformador;
+    }
+
+    public void setDispositivosInteligentes(List<DispositivoInteligente> dispositivosInteligentes) {
+        this.dispositivosInteligentes = dispositivosInteligentes;
+    }
+
+    public void setDispositivosEstandar(List<DispositivoEstandar> dispositivosEstandar) {
+        this.dispositivosEstandar = dispositivosEstandar;
+    }
+
+    public void setActuadores(List<Actuador> actuadores) {
+        this.actuadores = actuadores;
+    }
+
+    public void setSensores(List<Sensor> sensores) {
+        this.sensores = sensores;
     }
 
     public Domicilio agregarDispositivoInteligente(DispositivoInteligente dispositivo ){

@@ -7,12 +7,16 @@ import modelos.dispositivos.DispositivoInteligente;
 import modelos.dispositivos.TipoDispositivo;
 import modelos.dispositivos.adaptadores.AdaptadorAire;
 import modelos.dispositivos.adaptadores.AdaptadorEstandar;
+import modelos.enre.Transformador;
+import modelos.enre.Zona;
 import modelos.usuarios.Administrador;
 import modelos.usuarios.Cliente;
 import modelos.usuarios.Domicilio;
 import org.junit.jupiter.api.Test;
+import utilidades.Path;
 import utilidades.RandomDate;
 
+import java.beans.Transient;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.math.BigDecimal;
@@ -226,8 +230,6 @@ public class ParserJsonToJsonTest {
     @Test
     public void crearCategoriasTest(){
 
-        final String PATH = "src/main/resources/json/categorias.json";
-
         int i = 0;
         final double cargosFijos[] = {18.76, 35.32, 60.71, 71.74, 110.38, 220.75, 443.59, 545.96, 887.19};
         final double cargosVariables[] = {0.644, 0.644, 0.681, 0.738, 0.794, 0.832, 0.851, 0.851, 0.851};
@@ -239,6 +241,34 @@ public class ParserJsonToJsonTest {
             i++;
         }
 
-        JsonUtils.crearArchivoJson(categorias, PATH);
+        JsonUtils.crearArchivoJson(categorias, Path.Archivos.CATEGORIAS);
+    }
+
+    @Test
+    public void crearZonas(){
+
+        final String direccion1 = "direccion1";
+        final String direccion2 = "direccion2";
+        final String direccion3 = "direccion3";
+        final String direccion4 = "direccion4";
+
+        List<String> direcciones1 = Arrays.asList(direccion1,direccion2);
+        final double latitud1= -34.670177;
+        final double longitud1= -58.479916;
+        Transformador transformador1 = new Transformador(true,latitud1,longitud1, direcciones1);
+
+        List<String> direcciones2 = Arrays.asList(direccion3,direccion4);
+        final double latitud2= -34.665116;
+        final double longitud2= -58.489735;
+        Transformador transformador2 = new Transformador(true,latitud2,longitud2, direcciones2);
+
+
+        final double latitudZona = -34.672627;
+        final double longitudZona = -58.47698;
+        final int radio = 5000;
+        List<Transformador> transformadores = Arrays.asList(transformador1, transformador2);
+        Zona zona = new Zona(latitudZona, longitudZona, radio,transformadores);
+
+        JsonUtils.crearArchivoJson(Arrays.asList(zona), Path.Archivos.ZONA);
     }
 }

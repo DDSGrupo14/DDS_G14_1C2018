@@ -1,0 +1,27 @@
+[
+  {
+    "latitud": -34.672627,
+    "longitud": -58.47698,
+    "radio": 5000,
+    "transformadores": [
+      {
+        "direcciones": [
+          "direccion1",
+          "direccion2"
+        ],
+        "estaActivo": true,
+        "latitud": -34.670177,
+        "longitud": -58.479916
+      },
+      {
+        "direcciones": [
+          "direccion3",
+          "direccion4"
+        ],
+        "estaActivo": true,
+        "latitud": -34.665116,
+        "longitud": -58.489735
+      }
+    ]
+  }
+]
