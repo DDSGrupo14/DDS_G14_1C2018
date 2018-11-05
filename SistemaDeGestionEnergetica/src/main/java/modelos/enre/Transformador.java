@@ -24,7 +24,7 @@ public class Transformador extends BeanToJson<Transformador> {
     )
     private List<Domicilio> domicilios;
     @ManyToOne
-    @JoinColumn(name = "zona_id", nullable = false)
+    @JoinColumn(name = "zona_id")
     private Zona zona;
     @Expose
     @Transient
