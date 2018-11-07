@@ -56,6 +56,8 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
     private List<ConsumoDispositivo> consumoTotal;
     @Transient
     private BigDecimal consumoActual;
+    @Transient
+    private double consumoRecomendadoSimplex;
 
     public DispositivoInteligente(TipoDispositivo tipo, String nombre, Double porcentajeAhorroEnergia) {
 
@@ -104,6 +106,14 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
     public void setConsumoTotal(List<ConsumoDispositivo> consumoTotal) {
         this.consumoTotal = consumoTotal;
         consumoTotal.forEach(cons -> cons.setDispositivoInteligente(this));
+    }
+
+    public double getConsumoRecomendadoSimplex() {
+        return consumoRecomendadoSimplex;
+    }
+
+    public void setConsumoRecomendadoSimplex(double consumoRecomendadoSimplex) {
+        this.consumoRecomendadoSimplex = consumoRecomendadoSimplex;
     }
 
     @Override
