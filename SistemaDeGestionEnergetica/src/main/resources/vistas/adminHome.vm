@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!--link rel="icon" href="../../../../favicon.ico"-->
+
+    <title>SGE - Home administrador</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="row mt-5">
+        <div class="col-4 text-center">
+            <div class="btn-group">
+                <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false">
+                    Transformadores
+                </button>
+                <div class="dropdown-menu">
+                    #foreach( $transformador in $transformadores )
+                        <a class="dropdown-item" href="/transformadores/$transformador/domicilios">$transformador</a>
+                    #end
+                </div>
+            </div>
+        </div>
+        <div class="col-4 text-center">
+            <a class="btn btn-primary" href="/reportes" role="button">Reportes de consumo</a>
+        </div>
+        <div class="col-4 text-center">
+            <a class="btn btn-primary" href="/nuevoDispositivo" role="button">Alta de dispositivos</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>
