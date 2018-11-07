@@ -24,13 +24,18 @@
 </head>
 
 <body class="text-center">
-<form method="post" action="/login/" class="form-signin">
-    <img class="mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+
+    #if($falloLogin)
+    <p>Fallo el Login</p>
+    #end
+
+<form method="post" class="form-signin">
+    <!--img class="mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"-->
     <h1 class="h3 mb-3 font-weight-normal">Ingresar al sistema</h1>
-    <label for="inputUsuario" class="sr-only">Usuario</label>
-    <input name="username" id="inputUsername" class="form-control" placeholder="Usuario" required autofocus>
-    <label for="inputPassword" class="sr-only">Contraseña</label>
-    <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+    <label for="username" class="sr-only">Usuario</label>
+    <input type="text" name="username" class="form-control" placeholder="Usuario" required autofocus>
+    <label for="password" class="sr-only">Contraseña</label>
+    <input name="password" type="password" class="form-control" placeholder="Contraseña" required>
     <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
 </form>
 </body>

@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e721b091-18f3-430b-98e8-b26485bf4451" name="Default" comment="Falla solo un test.">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/vistas/adminHome.vm" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/vistas/transformador.vm" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/vistas/login.vm" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/vistas/login.vm" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/velocity.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/velocity.log.1" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -86,13 +86,13 @@
           <entry key="domicilio" value="1" />
           <entry key="ftl" value="1" />
           <entry key="html" value="7" />
-          <entry key="java" value="689" />
+          <entry key="java" value="691" />
           <entry key="json" value="40" />
           <entry key="properties" value="1" />
           <entry key="sql" value="2" />
           <entry key="tld" value="1" />
-          <entry key="vm" value="8" />
-          <entry key="xml" value="37" />
+          <entry key="vm" value="13" />
+          <entry key="xml" value="38" />
           <entry key="zona_transformador" value="1" />
         </counts>
       </usages-collector>
@@ -102,42 +102,73 @@
           <entry key="Database Element" value="2" />
           <entry key="FTL" value="1" />
           <entry key="HTML" value="7" />
-          <entry key="JAVA" value="689" />
+          <entry key="JAVA" value="691" />
           <entry key="JSON" value="40" />
           <entry key="Properties" value="1" />
           <entry key="Scratch" value="2" />
           <entry key="UML" value="5" />
-          <entry key="VTL" value="8" />
-          <entry key="XML" value="38" />
+          <entry key="VTL" value="13" />
+          <entry key="XML" value="39" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="46" />
           <entry key="html" value="215" />
-          <entry key="java" value="34628" />
+          <entry key="java" value="34630" />
           <entry key="json" value="8" />
           <entry key="sql" value="15" />
           <entry key="txt" value="94" />
-          <entry key="vm" value="773" />
-          <entry key="xml" value="699" />
+          <entry key="vm" value="817" />
+          <entry key="xml" value="706" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="215" />
-          <entry key="JAVA" value="34629" />
+          <entry key="JAVA" value="34631" />
           <entry key="JSON" value="8" />
           <entry key="PLAIN_TEXT" value="140" />
           <entry key="Scratch" value="15" />
-          <entry key="VTL" value="773" />
-          <entry key="XML" value="698" />
+          <entry key="VTL" value="817" />
+          <entry key="XML" value="705" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/vistas/login.vm">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="307">
+              <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/controladores/LoginController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/java/spark/SparkTest.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -201,14 +232,14 @@
         <option value="$PROJECT_DIR$/src/main/java/utilidades/AdministradorDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/utilidades/ClienteDAO.java" />
         <option value="$PROJECT_DIR$/src/test/java/QueryTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/controladores/LoginController.java" />
         <option value="$PROJECT_DIR$/src/main/java/utilidades/Path.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/vistas/login.vm" />
         <option value="$PROJECT_DIR$/src/main/resources/customStyles/simple-sidebar.css" />
         <option value="$PROJECT_DIR$/src/main/resources/vistas/home_admin.vm" />
         <option value="$PROJECT_DIR$/src/main/java/utilidades/CoordenadaUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/usuarios/Domicilio.java" />
         <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/controladores/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/vistas/login.vm" />
       </list>
     </option>
   </component>
@@ -433,7 +464,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541628931461" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541631042716" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TestSpark/testRuleEngine" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -473,7 +504,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.PersistenciaTest">
+  <component name="RunManager" selected="Application.SparkTest">
     <configuration name="SparkTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="spark.SparkTest" />
       <module name="SistemaDeGestionEnergetica" />
@@ -559,8 +590,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PersistenciaTest" />
         <item itemvalue="Application.SparkTest" />
+        <item itemvalue="JUnit.PersistenciaTest" />
         <item itemvalue="JUnit.PersistenciaTest.persistirLoginAdminTest" />
         <item itemvalue="JUnit.FuncionSimplexTest.testSimplex" />
         <item itemvalue="JUnit.FuncionSimplexTest.otroSimplex" />
@@ -620,7 +651,7 @@
       <workItem from="1541476827956" duration="596000" />
       <workItem from="1541558203604" duration="5480000" />
       <workItem from="1541603529462" duration="6276000" />
-      <workItem from="1541624747773" duration="4121000" />
+      <workItem from="1541624747773" duration="5991000" />
     </task>
     <task id="LOCAL-00001" summary="Cambios">
       <created>1534979327493</created>
@@ -640,9 +671,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="FuncionSimplexTest_testeando - 2018.11.06 at 23h 46m 32s.xml">
-      <configuration name="FuncionSimplexTest.testeando" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="FuncionSimplexTest_testeando - 2018.11.07 at 00h 24m 22s.xml">
       <configuration name="FuncionSimplexTest.testeando" configurationId="JUnit" />
     </history-entry>
@@ -670,9 +698,12 @@
     <history-entry file="PersistenciaTest - 2018.11.07 at 19h 10m 14s.xml">
       <configuration name="PersistenciaTest" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="PersistenciaTest - 2018.11.07 at 19h 17m 45s.xml">
+      <configuration name="PersistenciaTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="304547000" />
+    <option name="totallyTimeSpent" value="306417000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -685,6 +716,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Persistence" order="0" sideWeight="0.5021097" side_tool="true" weight="0.25100672" />
       <window_info active="true" content_ui="combo" id="Project" order="1" sideWeight="0.4978903" visible="true" weight="0.30939597" />
@@ -754,20 +786,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/Categoria.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="26" column="29" lean-forward="true" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/TipoDispositivo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1496">
-          <caret line="122" column="19" selection-start-line="122" selection-start-column="19" selection-end-line="122" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/adaptadores/AdaptadorAire.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -1004,13 +1022,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/resources/vistas/home.vm">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/spark/SparkTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-start-column="14" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/DatabaseUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1046,16 +1057,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="16" column="69" selection-start-line="16" selection-start-column="69" selection-end-line="16" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controladores/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="40" column="67" selection-start-line="40" selection-start-column="67" selection-end-line="40" selection-end-column="67" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1113,13 +1114,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/PersistenciaTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -1127,10 +1121,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/vistas/transformador.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-305" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/vistas/adminHome.vm">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-458" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/spark/SparkTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="26" column="50" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/vistas/login.vm">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="35">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="307">
+          <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/controladores/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1212,6 +1240,17 @@
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
           <last-edited>Maven: com.google.code.gson:gson:2.8.2</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
           <splitter-proportions>
             <option name="proportions">
               <list>
