@@ -27,6 +27,13 @@ public class Domicilio extends BeanToJson<Domicilio> {
     private Cliente cliente;
 
     @Expose
+    @Column
+    private Double latitud;
+    @Expose
+    @Column
+    private Double longitud;
+
+    @Expose
     @Column(nullable = false)
     private String direccion;
     @Expose
@@ -155,6 +162,22 @@ public class Domicilio extends BeanToJson<Domicilio> {
         this.sensores = sensores;
         sensores.forEach(sensor -> sensor.setDomicilio(this));
 
+    }
+
+    public Double getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(Double latitud) {
+        this.latitud = latitud;
+    }
+
+    public Double getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(Double longitud) {
+        this.longitud = longitud;
     }
 
     public Domicilio agregarDispositivoInteligente(DispositivoInteligente dispositivo ){

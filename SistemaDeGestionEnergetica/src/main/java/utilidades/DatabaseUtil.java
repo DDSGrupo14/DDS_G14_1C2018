@@ -8,10 +8,13 @@ import javax.persistence.EntityManager;
 public class DatabaseUtil {
 
     static SessionFactory sf = new Configuration().configure().buildSessionFactory();
+    static final EntityManager session = sf.createEntityManager();
+
+    public static EntityManager getSession() {
+        return session;
+    }
 
     public static String persistir(Object o){
-        final EntityManager session = sf.createEntityManager();
-
         try {
             session.getTransaction().begin();
             session.persist(o);
@@ -19,10 +22,10 @@ public class DatabaseUtil {
             return "";
         } catch (Exception e){
             return "Error " + e.getMessage();
-        } finally {
+        } /*finally {
             if( session.isOpen())
                 session.close();
-        }
+        }*/
     }
 
 }

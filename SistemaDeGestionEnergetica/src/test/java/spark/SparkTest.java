@@ -8,6 +8,7 @@ import utilidades.Path;
 
 import static spark.Spark.get;
 import static spark.Spark.port;
+import static spark.Spark.post;
 
 public class SparkTest {
 
@@ -17,13 +18,13 @@ public class SparkTest {
         PropertyConfigurator.configure(ClassLoader.getSystemResource("log4j2.properties"));
 
         Spark.staticFileLocation("/customStyles");
-
         port(8080);
+
         get(Path.Web.HOME, HomeController.home);
-
         get(Path.Web.TEST, TestController.testBootstrap);
+        get(Path.Web.LOGIN, LoginController.loginGet);
 
-        get(Path.Web.LOGIN, LoginController.login);
+        post(Path.Web.LOGIN, LoginController.loginPost);
 
      /*   get(Path.Web.TEST, (Request req, Response res) ->{
             Map<String, Object> model = new HashMap<>();

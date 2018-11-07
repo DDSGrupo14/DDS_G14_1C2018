@@ -8,38 +8,27 @@ import java.util.List;
 
 public class ClienteDAO {
 
-    final static EntityManager session = new Configuration().configure().buildSessionFactory().createEntityManager();
-
-    public EntityManager getSession() {
-        return session;
-    }
-
     public Cliente obtenerClientePorUsername(String login_username){
 
         try {
-            List<Cliente> clientes =  session.createQuery("from Cliente where loginUsuario=:username")
+            final String hql = "FROM Cliente where login_usuario = :username";
+            List<Cliente> lista = DatabaseUtil.getSession().createQuery(hql,Cliente.class)
                     .setParameter("username",login_username).getResultList();
 
-            if( clientes != null) return clientes.get(0); else return null;
+            if( lista != null) return lista.get(0); else return null;
         } catch (Exception e){
             System.out.println(e.getMessage());
             return null;
-        } finally {
-            if( session.isOpen())
-                session.close();
         }
 
     }
 
     public List<Cliente> listarClientes(){
         try {
-            return session.createQuery("from Cliente").getResultList();
+            return DatabaseUtil.getSession().createQuery("from Cliente").getResultList();
         } catch (Exception e){
             System.out.println(e.getMessage());
             return null;
-        } finally {
-            if( session.isOpen())
-                session.close();
         }
     }
 }

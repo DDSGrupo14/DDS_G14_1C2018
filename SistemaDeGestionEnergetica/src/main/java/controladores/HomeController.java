@@ -17,7 +17,7 @@ public class HomeController {
         Map<String, Object> model = new HashMap<>();
         model.put("message","funciona");
 
-        return ViewUtil.render( model, Path.Template.HOME);
+        return ViewUtil.render( model, Path.Template.HOMEADMIN);
     };
 
 }

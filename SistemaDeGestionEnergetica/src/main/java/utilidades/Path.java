@@ -13,7 +13,8 @@ public class Path {
 
     public static class Template{
 
-        public static final String HOME = "vistas/home.vm";
+        public static final String HOMEADMIN = "vistas/home_admin.vm";
+        public static final String HOMECLIENTE = "vistas/home_cliente.vm";
         public static final String TEST = "vistas/bootstrapTest.vm";
         public static final String LOGIN = "vistas/login.vm";
     }

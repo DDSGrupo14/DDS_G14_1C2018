@@ -3,6 +3,7 @@ import modelos.usuarios.Cliente;
 import org.junit.jupiter.api.Test;
 import utilidades.AdministradorDAO;
 import utilidades.ClienteDAO;
+import utilidades.DatabaseUtil;
 
 import java.util.List;
 
@@ -40,7 +41,7 @@ public class QueryTest {
 
         System.out.println(cliente.toString());
 
-        assertEquals(false, clienteDAO.getSession().isOpen());
+        assertEquals(false, DatabaseUtil.getSession().isOpen());
 
     }
 
@@ -54,6 +55,6 @@ public class QueryTest {
         if( administrador != null)
         System.out.println(administrador.toString());
 
-        assertEquals(false,administradorDAO.getSession().isOpen());
+        assertEquals(false,DatabaseUtil.getSession().isOpen());
     }
 }
