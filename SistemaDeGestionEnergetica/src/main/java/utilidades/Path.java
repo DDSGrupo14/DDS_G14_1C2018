@@ -8,6 +8,7 @@ public class Path {
         public static final String TEST = "/test/";
         public static final String HOME = "/home/";
         public static final String LOGIN = "/login/";
+        public static final String MAPA = "/mapa/";
 
     }
 
@@ -17,6 +18,7 @@ public class Path {
         public static final String HOMECLIENTE = "vistas/home_cliente.vm";
         public static final String TEST = "vistas/bootstrapTest.vm";
         public static final String LOGIN = "vistas/login.vm";
+        public static final String MAPA = "vistas/mapa.vm";
     }
 
     public static class Archivos {

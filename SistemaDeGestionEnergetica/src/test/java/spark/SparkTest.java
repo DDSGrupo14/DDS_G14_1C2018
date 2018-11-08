@@ -2,6 +2,7 @@ package spark;
 
 import controladores.HomeController;
 import controladores.LoginController;
+import controladores.MapaController;
 import controladores.TestController;
 import org.apache.log4j.PropertyConfigurator;
 import utilidades.Path;
@@ -14,7 +15,6 @@ public class SparkTest {
 
     public static void main(String[] args) {
 
-
         PropertyConfigurator.configure(ClassLoader.getSystemResource("log4j2.properties"));
 
         Spark.staticFileLocation("/customStyles");
@@ -23,6 +23,7 @@ public class SparkTest {
         get(Path.Web.HOME, HomeController.home);
         get(Path.Web.TEST, TestController.testBootstrap);
         get(Path.Web.LOGIN, LoginController.loginGet);
+        get(Path.Web.MAPA, MapaController.obtenerMApa);
 
         post(Path.Web.LOGIN, LoginController.loginPost);
 

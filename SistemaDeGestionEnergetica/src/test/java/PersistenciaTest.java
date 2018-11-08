@@ -70,7 +70,6 @@ public class PersistenciaTest {
     @Test
     public void persistirZonasTest(){
 
-
         CargarZonaDesdeJson cargaZona =
                 new CargarZonaDesdeJson();
 

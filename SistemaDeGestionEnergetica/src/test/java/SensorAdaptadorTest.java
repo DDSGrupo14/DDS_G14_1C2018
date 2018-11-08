@@ -6,9 +6,7 @@ import modelos.reglas.actuadores.Actuador;
 import modelos.reglas.condiciones.CondicionMagnitudCalculable;
 import modelos.reglas.condiciones.Operador;
 import modelos.reglas.reglas.ReglaParaApagar;
-import modelos.reglas.sensores.Magnitud;
 import modelos.reglas.sensores.SensorTemperatura;
-import org.apache.log4j.BasicConfigurator;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 

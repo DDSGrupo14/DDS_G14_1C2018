@@ -30,8 +30,6 @@ public class LoginController {
         String username = request.queryParams("username");
         String password = request.queryParams("password");
 
-        System.out.println(request.body());
-
         AdministradorDAO adminDAO = new AdministradorDAO();
 
         Administrador administrador = adminDAO.obtenerAdministradorPorUsername(username);
