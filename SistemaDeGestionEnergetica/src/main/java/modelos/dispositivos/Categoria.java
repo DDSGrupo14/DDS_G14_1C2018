@@ -12,7 +12,8 @@ import java.math.BigDecimal;
 public class Categoria extends BeanToJson<Categoria> {
 
     @Id
-    @Column( name = "cat_id",unique = true)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "cat_id", unique = true)
     private int cat_id;
 
     @Expose

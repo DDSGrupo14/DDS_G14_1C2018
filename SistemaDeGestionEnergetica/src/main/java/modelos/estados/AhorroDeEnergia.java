@@ -1,13 +1,15 @@
 package modelos.estados;
 
+import modelos.dispositivos.DispositivoInteligente;
+
 import java.math.BigDecimal;
 
-public class AhorroDeEnergia implements Estado {
+public class AhorroDeEnergia extends Estado {
 
-    private Double porcentajeDeAhorro;
+    public AhorroDeEnergia( DispositivoInteligente dispositivoInteligente) {
 
-    public AhorroDeEnergia( Double porcentajeDeAhorro) {
-        this.porcentajeDeAhorro = porcentajeDeAhorro;
+        super(dispositivoInteligente);
+        getConsumoDispositivoDAO().ahorroEnergiaDispositivo(dispositivoInteligente);
     }
 
     @Override
@@ -18,23 +20,23 @@ public class AhorroDeEnergia implements Estado {
     @Override
     public Estado encender( ) {
 
-        return new Encendido( );
+        return new Encendido( getDispositivoInteligente() );
     }
 
     @Override
     public Estado apagar( ) {
 
-        return new Apagado( );
+        return new Apagado( getDispositivoInteligente());
     }
 
     @Override
-    public Estado ahorrarEnergia(Double porcentajeAhorro ) {
+    public Estado ahorrarEnergia( ) {
 
         return this;
     }
 
     @Override
     public BigDecimal porcentajeConsumo() {
-        return new BigDecimal( 1 - porcentajeDeAhorro/100);
+        return new BigDecimal( 1 - getDispositivoInteligente().getPorcentajeAhorroEnergia()/100);
     }
 }

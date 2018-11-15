@@ -62,9 +62,7 @@ public class PersistenciaTest {
 
         List<Categoria> categorias = cargaCateogira.obtenerListaClaesComun(Path.Archivos.CATEGORIAS);
 
-        for(Categoria categoria: categorias){
-            DatabaseUtil.persistir(categoria);
-        }
+        categorias.forEach(categoria -> DatabaseUtil.persistir(categoria));
     }
 
     @Test

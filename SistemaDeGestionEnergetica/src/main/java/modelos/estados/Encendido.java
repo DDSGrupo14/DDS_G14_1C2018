@@ -1,11 +1,15 @@
 package modelos.estados;
 
+import modelos.dispositivos.DispositivoInteligente;
+
 import java.math.BigDecimal;
 
-public class Encendido implements Estado {
+public class Encendido extends Estado {
 
-
-    public Encendido() { }
+    public Encendido(DispositivoInteligente dispositivoInteligente) {
+        super(dispositivoInteligente);
+        getConsumoDispositivoDAO().encenderDispositivo(dispositivoInteligente);
+    }
 
     @Override
     public boolean estasEncendido() {
@@ -21,13 +25,13 @@ public class Encendido implements Estado {
     @Override
     public Apagado apagar( ) {
 
-        return new Apagado( );
+        return new Apagado(getDispositivoInteligente() );
     }
 
     @Override
-    public Estado ahorrarEnergia( Double porcentajeAhorro ) {
+    public Estado ahorrarEnergia( ) {
 
-        return new AhorroDeEnergia( porcentajeAhorro );
+        return new AhorroDeEnergia( getDispositivoInteligente() );
     }
 
     @Override

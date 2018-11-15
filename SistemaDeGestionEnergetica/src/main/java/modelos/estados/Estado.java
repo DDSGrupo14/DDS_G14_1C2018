@@ -1,17 +1,35 @@
 package modelos.estados;
 
+import modelos.dispositivos.DispositivoInteligente;
+import utilidades.ConsumoDispositivoDAO;
+
 import java.math.BigDecimal;
 
-public interface Estado {
+public abstract class Estado {
 
-    Estado encender( );
+    private DispositivoInteligente dispositivoInteligente;
+    private final ConsumoDispositivoDAO consumoDispositivoDAO = new ConsumoDispositivoDAO();
 
-    Estado apagar( );
+    public Estado(DispositivoInteligente dispositivoInteligente){
+        this.dispositivoInteligente = dispositivoInteligente;
+    }
 
-    Estado ahorrarEnergia( Double porcentajeAhorro );
+    public DispositivoInteligente getDispositivoInteligente() {
+        return dispositivoInteligente;
+    }
 
-    BigDecimal porcentajeConsumo();
+    public ConsumoDispositivoDAO getConsumoDispositivoDAO() {
+        return consumoDispositivoDAO;
+    }
 
-    boolean estasEncendido();
+    public Estado encender( ){ return null; }
+
+    public Estado apagar( ){return null; }
+
+    public Estado ahorrarEnergia( ){return null; }
+
+    public BigDecimal porcentajeConsumo(){ return null; }
+
+    public boolean estasEncendido(){ return false; }
 
 }

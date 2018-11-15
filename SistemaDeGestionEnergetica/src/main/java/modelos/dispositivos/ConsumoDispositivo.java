@@ -1,6 +1,7 @@
 package modelos.dispositivos;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -13,7 +14,7 @@ public class ConsumoDispositivo {
     private int cons_id;
 
     @Column
-    private Date fecha;
+    private LocalDateTime fecha;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "dint_id")
@@ -22,7 +23,7 @@ public class ConsumoDispositivo {
     @Column
     private String estadoDispositivo;
 
-    public ConsumoDispositivo(Date fecha, DispositivoInteligente dispositivoInteligente, String estadoDispositivo ) {
+    public ConsumoDispositivo(LocalDateTime fecha, DispositivoInteligente dispositivoInteligente, String estadoDispositivo ) {
 
         this.fecha = fecha;
         this.dispositivoInteligente = dispositivoInteligente;
@@ -40,11 +41,11 @@ public class ConsumoDispositivo {
         this.cons_id = cons_id;
     }
 
-    public Date getFecha() {
+    public LocalDateTime getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(LocalDateTime fecha) {
         this.fecha = fecha;
     }
 

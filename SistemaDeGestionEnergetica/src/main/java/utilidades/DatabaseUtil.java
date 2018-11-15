@@ -28,4 +28,17 @@ public class DatabaseUtil {
         }*/
     }
 
+    public static String actualizar(Object o){
+        try {
+            session.getTransaction().begin();
+            session.merge(o);
+            session.getTransaction().commit();
+            return "";
+        } catch (Exception e){
+            return "Error " + e.getMessage();
+        } /*finally {
+            if( session.isOpen())
+                session.close();
+        }*/
+    }
 }

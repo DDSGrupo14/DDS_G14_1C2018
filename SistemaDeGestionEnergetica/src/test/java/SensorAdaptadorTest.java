@@ -39,7 +39,7 @@ public class SensorAdaptadorTest {
         dispositivoInteligente = new DispositivoInteligente();
         dispositivoInteligente.setAdaptador(adaptadorAire);
         dispositivoInteligente.setConsumoActual(KWCONSUMIDO);
-        dispositivoInteligente.setEstado(new Encendido());
+        dispositivoInteligente.setEstado(new Encendido(dispositivoInteligente));
 
         actuador = new Actuador();
         actuador.setDispositivoInteligente(dispositivoInteligente);

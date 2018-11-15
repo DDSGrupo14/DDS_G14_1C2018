@@ -53,22 +53,22 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
             cascade = CascadeType.ALL,
             orphanRemoval = true
     )
-    private List<ConsumoDispositivo> consumoTotal;
+    private List<ConsumoDispositivo> consumoTotal = new ArrayList<>();
     @Transient
     private BigDecimal consumoActual;
-    @Transient
-    private double consumoRecomendadoSimplex;
 
     public DispositivoInteligente(TipoDispositivo tipo, String nombre, Double porcentajeAhorroEnergia) {
 
         this.tipoDispositivo = tipo;
         this.nombre = nombre;
         this.porcentajeAhorroEnergia = porcentajeAhorroEnergia;
-        this.estado = new Apagado( );
-        this.consumoTotal = new ArrayList<ConsumoDispositivo>();
     }
 
     public DispositivoInteligente(){}
+
+    public void iniciarDispositivoInteligente(){
+        this.estado = new Apagado(this );
+    }
 
     public void setAdaptador(Adaptador adaptador) {
         this.adaptador = adaptador;
@@ -95,25 +95,13 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
         this.domicilio = domicilio;
     }
 
-    public void agregarConsumo(ConsumoDispositivo consumo){
-
-    }
-
     public List<ConsumoDispositivo> getConsumoTotal() {
         return consumoTotal;
     }
 
     public void setConsumoTotal(List<ConsumoDispositivo> consumoTotal) {
         this.consumoTotal = consumoTotal;
-        consumoTotal.forEach(cons -> cons.setDispositivoInteligente(this));
-    }
-
-    public double getConsumoRecomendadoSimplex() {
-        return consumoRecomendadoSimplex;
-    }
-
-    public void setConsumoRecomendadoSimplex(double consumoRecomendadoSimplex) {
-        this.consumoRecomendadoSimplex = consumoRecomendadoSimplex;
+        //consumoTotal.forEach(cons -> cons.setDispositivoInteligente(this));
     }
 
     @Override
@@ -141,7 +129,7 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
 
     public void apagarDispositivo() { estado = estado.apagar( ); }
 
-    public void pasarAhorroEnergia(){ estado = estado.ahorrarEnergia( porcentajeAhorroEnergia ); }
+    public void pasarAhorroEnergia(){ estado = estado.ahorrarEnergia( ); }
 
     public boolean estasEncendido(){ return estado.estasEncendido(); }
 

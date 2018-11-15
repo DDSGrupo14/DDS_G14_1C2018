@@ -89,7 +89,7 @@ public class FuncionSimplexTest {
             System.out.println(solucion.getValue());
             System.out.println(solucion.getPoint()[0]);
             System.out.println(solucion.getPoint()[1]);
-            System.out.println(dispositivos.get(2).getConsumoRecomendadoSimplex());
+            //System.out.println(dispositivos.get(2).getConsumoRecomendadoSimplex());
         }
         catch (Exception e) {
             System.out.println(e.getMessage());

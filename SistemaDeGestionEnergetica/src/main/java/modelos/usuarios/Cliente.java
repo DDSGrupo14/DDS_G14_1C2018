@@ -22,12 +22,11 @@ public class Cliente extends Usuario{
             orphanRemoval = true,
             fetch = FetchType.EAGER
     )
-    private List<Domicilio> domicilios;
+    private List<Domicilio> domicilios= new ArrayList<>();
 
     public Cliente(String nombre, String apellido, String documento, String telefono, String loginUsuario, String password) {
         super( nombre, apellido, documento, telefono, loginUsuario, password );
         this.puntaje = 0;
-        this.domicilios = new ArrayList<Domicilio>();
     }
 
     public Cliente() {
@@ -71,6 +70,10 @@ public class Cliente extends Usuario{
     @Override
     public Cliente getObj() {
         return this;
+    }
+
+    public Domicilio getPrincipal(){
+        return domicilios.stream().filter(domicilio -> domicilio.getPrincipal()).findFirst().get();
     }
 
     public int cantidadTotalDeDispositivosEncendidos(){

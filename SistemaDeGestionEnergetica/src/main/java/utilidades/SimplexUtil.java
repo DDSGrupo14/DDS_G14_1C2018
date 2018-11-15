@@ -54,7 +54,7 @@ public class SimplexUtil {
         i = 0;
 
         for(DispositivoInteligente disp: dispositivos){
-            disp.setConsumoRecomendadoSimplex(resultado.getPoint()[i]);
+            //disp.setConsumoRecomendadoSimplex(resultado.getPoint()[i]);
             i++;
         }
 
