@@ -1,5 +1,7 @@
 package modelos.dispositivos;
 
+import modelos.estados.EstadoConcreto;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -21,13 +23,14 @@ public class ConsumoDispositivo {
     private DispositivoInteligente dispositivoInteligente;
 
     @Column
-    private String estadoDispositivo;
+    private int estadoDispositivo;
 
-    public ConsumoDispositivo(LocalDateTime fecha, DispositivoInteligente dispositivoInteligente, String estadoDispositivo ) {
+    public ConsumoDispositivo(LocalDateTime fecha, DispositivoInteligente dispositivoInteligente
+            , EstadoConcreto estadoConcreto ) {
 
         this.fecha = fecha;
         this.dispositivoInteligente = dispositivoInteligente;
-        this.estadoDispositivo = estadoDispositivo;
+        this.estadoDispositivo = estadoConcreto.getValue();
 
     }
 
@@ -57,11 +60,11 @@ public class ConsumoDispositivo {
         this.dispositivoInteligente = dispositivoInteligente;
     }
 
-    public String getEstadoDispositivo() {
+    public int getEstadoDispositivo() {
         return estadoDispositivo;
     }
 
-    public void setEstadoDispositivo(String estadoDispositivo) {
+    public void setEstadoDispositivo(int estadoDispositivo) {
         this.estadoDispositivo = estadoDispositivo;
     }
 }

@@ -6,6 +6,7 @@ import modelos.dispositivos.adaptadores.Adaptador;
 import modelos.estados.Apagado;
 import modelos.estados.Estado;
 
+import modelos.estados.EstadoConcreto;
 import modelos.usuarios.Domicilio;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
@@ -33,6 +34,8 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
     private String nombre;
     @Transient
     private Estado estado;
+    @Column
+    private int ultimoEstado = -1;
     @Expose
     @OneToOne(
             mappedBy = "dispositivoInteligente",
@@ -67,7 +70,11 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
     public DispositivoInteligente(){}
 
     public void iniciarDispositivoInteligente(){
-        this.estado = new Apagado(this );
+
+        if( (this.estado == null) && (this.ultimoEstado == -1))
+            this.estado = new Apagado(this );
+        else
+            this.estado = EstadoConcreto.obtenerEstadoConcreto(ultimoEstado).obtenerEstado(this);
     }
 
     public void setAdaptador(Adaptador adaptador) {
@@ -102,6 +109,14 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
     public void setConsumoTotal(List<ConsumoDispositivo> consumoTotal) {
         this.consumoTotal = consumoTotal;
         //consumoTotal.forEach(cons -> cons.setDispositivoInteligente(this));
+    }
+
+    public int getUltimoEstado() {
+        return ultimoEstado;
+    }
+
+    public void setUltimoEstado(int ultimoEstado) {
+        this.ultimoEstado = ultimoEstado;
     }
 
     @Override

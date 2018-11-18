@@ -1,8 +1,8 @@
 import modelos.usuarios.Administrador;
 import modelos.usuarios.Cliente;
 import org.junit.jupiter.api.Test;
-import utilidades.AdministradorDAO;
-import utilidades.ClienteDAO;
+import modelos.dao.AdministradorDAO;
+import modelos.dao.ClienteDAO;
 import utilidades.DatabaseUtil;
 
 import java.util.List;

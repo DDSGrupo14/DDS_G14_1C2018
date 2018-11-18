@@ -14,7 +14,7 @@ public enum Operador {
     private int value;
     private static Map map = new HashMap<>();
 
-    Operador( int value){
+    Operador( int value ){
         this.value = value;
     }
 

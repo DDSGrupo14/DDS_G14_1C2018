@@ -1,7 +1,8 @@
-package utilidades;
+package modelos.dao;
 
 import modelos.dispositivos.DispositivoInteligente;
 import modelos.dispositivos.TipoDispositivo;
+import utilidades.DatabaseUtil;
 
 import java.util.List;
 
@@ -23,10 +24,12 @@ public class DispositivoInteligenteDAO {
     public DispositivoInteligente getDispositivoInteligente( String nombre){
         try {
             final String hql = "FROM DispositivoInteligente where nombre = :nombre";
-            List<DispositivoInteligente> lista = DatabaseUtil.getSession().createQuery(hql,DispositivoInteligente.class)
-                    .setParameter("nombre",nombre).getResultList();
+            DispositivoInteligente dispositivoInteligente = DatabaseUtil.getSession().createQuery(hql,DispositivoInteligente.class)
+                    .setParameter("nombre",nombre).getSingleResult();
 
-            if( lista != null) return lista.get(0); else return null;
+            dispositivoInteligente.iniciarDispositivoInteligente();
+
+            return dispositivoInteligente;
         } catch (Exception e){
             System.out.println(e.getMessage());
             return null;

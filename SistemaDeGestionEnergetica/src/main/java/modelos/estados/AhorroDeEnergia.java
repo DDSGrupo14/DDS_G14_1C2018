@@ -7,9 +7,10 @@ import java.math.BigDecimal;
 public class AhorroDeEnergia extends Estado {
 
     public AhorroDeEnergia( DispositivoInteligente dispositivoInteligente) {
-
         super(dispositivoInteligente);
-        getConsumoDispositivoDAO().ahorroEnergiaDispositivo(dispositivoInteligente);
+        this.setEstadoConcreto(EstadoConcreto.AHORROENERGIA);
+        this.getConsumoDispositivoDAO().ahorroEnergiaDispositivo(dispositivoInteligente);
+        this.setUltimoEstado();
     }
 
     @Override

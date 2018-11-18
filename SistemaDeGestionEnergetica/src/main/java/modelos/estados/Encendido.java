@@ -8,7 +8,9 @@ public class Encendido extends Estado {
 
     public Encendido(DispositivoInteligente dispositivoInteligente) {
         super(dispositivoInteligente);
-        getConsumoDispositivoDAO().encenderDispositivo(dispositivoInteligente);
+        this.setEstadoConcreto(EstadoConcreto.ENCENDIDO);
+        this.getConsumoDispositivoDAO().encenderDispositivo(dispositivoInteligente);
+        this.setUltimoEstado();
     }
 
     @Override
@@ -38,4 +40,5 @@ public class Encendido extends Estado {
     public BigDecimal porcentajeConsumo() {
         return new BigDecimal( 1 );
     }
+
 }

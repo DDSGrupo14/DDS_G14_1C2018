@@ -1,6 +1,8 @@
-package utilidades;
+package modelos.dao;
 
 import modelos.dispositivos.Categoria;
+import utilidades.DatabaseUtil;
+
 import java.util.List;
 
 public class DomicilioDAO {

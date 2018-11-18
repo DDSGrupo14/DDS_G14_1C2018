@@ -5,8 +5,8 @@ import modelos.usuarios.Cliente;
 import spark.Request;
 import spark.Response;
 import spark.Route;
-import utilidades.AdministradorDAO;
-import utilidades.ClienteDAO;
+import modelos.dao.AdministradorDAO;
+import modelos.dao.ClienteDAO;
 import utilidades.Path;
 import utilidades.ViewUtil;
 

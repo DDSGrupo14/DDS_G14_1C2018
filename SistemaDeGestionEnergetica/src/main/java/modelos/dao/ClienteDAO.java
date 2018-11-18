@@ -1,7 +1,8 @@
-package utilidades;
+package modelos.dao;
 
 import modelos.usuarios.Cliente;
 import org.hibernate.cfg.Configuration;
+import utilidades.DatabaseUtil;
 
 import javax.persistence.EntityManager;
 import java.util.List;

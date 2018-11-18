@@ -8,7 +8,9 @@ public class Apagado extends Estado {
 
     public Apagado(DispositivoInteligente dispositivoInteligente) {
         super(dispositivoInteligente);
-        getConsumoDispositivoDAO().apagarDispositivo(dispositivoInteligente);
+        this.setEstadoConcreto(EstadoConcreto.APAGADO);
+        this.getConsumoDispositivoDAO().apagarDispositivo(dispositivoInteligente);
+        this.setUltimoEstado();
     }
 
     @Override
@@ -38,4 +40,5 @@ public class Apagado extends Estado {
     public BigDecimal porcentajeConsumo() {
         return new BigDecimal( 0 );
     }
+
 }

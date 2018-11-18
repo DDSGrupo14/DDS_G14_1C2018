@@ -1,9 +1,13 @@
 
+import modelos.dao.ClienteDAO;
+import modelos.dao.ConsumoDispositivoDAO;
+import modelos.dao.DispositivoInteligenteDAO;
+import modelos.dao.DomicilioDAO;
 import modelos.dispositivos.ConsumoDispositivo;
 import modelos.dispositivos.DispositivoInteligente;
+import modelos.estados.EstadoConcreto;
 import modelos.usuarios.Cliente;
 import modelos.usuarios.Domicilio;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import utilidades.*;
 
@@ -14,13 +18,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class EntregaPersistenciaTest {
 
-    private static Cliente cliente = null;
-
-    private static DispositivoInteligente dispositivoInteligente = null;
-
     public static void cargarCliente(){
 
-        cliente = new Cliente("Nuevo","Nuevo"
+        Cliente cliente = new Cliente("Nuevo","Nuevo"
                 ,"12345678","55554444","nuevo","nuevo");
 
         Domicilio domicilio = new Domicilio();
@@ -38,7 +38,7 @@ public class EntregaPersistenciaTest {
     public static void cargarDispositivo(){
 
         DispositivoInteligenteDAO dispositivoInteligenteDAO = new DispositivoInteligenteDAO();
-        dispositivoInteligente = new DispositivoInteligente();
+        DispositivoInteligente dispositivoInteligente = new DispositivoInteligente();
         ClienteDAO clienteDAO = new ClienteDAO();
         Cliente cliente2 = clienteDAO.obtenerClientePorUsername("nuevo");
         Domicilio principal = cliente2.getPrincipal();
@@ -54,12 +54,12 @@ public class EntregaPersistenciaTest {
     @Test
     public void casoPrueba1Test(){
 
-        if(cliente == null)
-            cargarCliente();
-
         ClienteDAO clienteDAO = new ClienteDAO();
 
         Cliente cliente1 = clienteDAO.obtenerClientePorUsername("nuevo");
+
+        if(cliente1 == null)
+            cargarCliente();
 
         Domicilio principal = cliente1.getPrincipal();
 
@@ -79,22 +79,55 @@ public class EntregaPersistenciaTest {
     }
 
     @Test
-    public void casoPrueba2Test(){
+    public void casoPrueba2Parte1Test(){
 
-        final String NUEVONOMBRE = "NombreLoco";
+        final String NUEVONOMBRE = "AireNuevo";
 
-      //  if(dispositivoInteligente == null)
-   //         cargarDispositivo();
         DispositivoInteligenteDAO dispositivoInteligenteDAO = new DispositivoInteligenteDAO();
         ConsumoDispositivoDAO consumoDispositivoDAO = new ConsumoDispositivoDAO();
         DispositivoInteligente dispositivoInteligente1 =
-                dispositivoInteligenteDAO.getDispositivoInteligente("AireNuevo");
+                dispositivoInteligenteDAO.getDispositivoInteligente(NUEVONOMBRE);
 
+        if( dispositivoInteligente1 == null){
+            cargarDispositivo();
+        }
+        dispositivoInteligente1.iniciarDispositivoInteligente();
         dispositivoInteligente1.encenderDispositivo();
         dispositivoInteligente1.apagarDispositivo();
 
         List<ConsumoDispositivo> consumos = consumoDispositivoDAO.consumoUltimoMes(dispositivoInteligente1);
 
-        consumos.forEach(consumoDispositivo -> System.out.println(consumoDispositivo.getEstadoDispositivo()));
+        consumos.forEach(consumoDispositivo -> System.out.println(
+                EstadoConcreto.obtenerEstadoConcreto(consumoDispositivo.getEstadoDispositivo()).toString()
+        ));
+    }
+
+    @Test
+    public void casoPrube2Parte2Test(){
+
+        final String NOMBREVIEJO = "AireNuevo";
+
+        final String CAMBIONOMBRE = "NombreCambiado";
+
+        DispositivoInteligenteDAO dispositivoInteligenteDAO = new DispositivoInteligenteDAO();
+
+        DispositivoInteligente dispositivoInteligente =
+                dispositivoInteligenteDAO.getDispositivoInteligente(NOMBREVIEJO);
+
+        System.out.println(dispositivoInteligente.getEstado().toString());
+
+        dispositivoInteligente.setNombre(CAMBIONOMBRE);
+
+        DatabaseUtil.actualizar(dispositivoInteligente);
+
+        DispositivoInteligente dipActualizado =
+                dispositivoInteligenteDAO.getDispositivoInteligente(CAMBIONOMBRE);
+
+        assertEquals(CAMBIONOMBRE, dipActualizado.getNombre());
+    }
+
+    @Test
+    public void casoPrueba3Parte1Test(){
+
     }
 }

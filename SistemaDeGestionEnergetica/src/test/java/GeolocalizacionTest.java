@@ -1,7 +1,7 @@
 import modelos.enre.Zona;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import utilidades.ZonaDAO;
+import modelos.dao.ZonaDAO;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
