@@ -7,6 +7,7 @@ import modelos.reglas.actuadores.Actuador;
 import modelos.reglas.condiciones.CondicionMagnitudCalculable;
 import modelos.reglas.condiciones.Operador;
 import modelos.reglas.reglas.ReglaParaEncender;
+import modelos.reglas.sensores.Sensor;
 import modelos.reglas.sensores.SensorTemperatura;
 import modelos.usuarios.Cliente;
 import modelos.usuarios.Domicilio;
@@ -168,7 +169,33 @@ public class EntregaPersistenciaTest {
             actuador = actuadorDAO.getActuador(NOMBREACTUADOR);
         }
 
+        DispositivoInteligenteDAO dispositivoInteligenteDAO = new DispositivoInteligenteDAO();
+        DispositivoInteligente dispositivoInteligente1 =
+                dispositivoInteligenteDAO.getDispositivoInteligente("NombreCambiado");
+
+        if( dispositivoInteligente1 == null) {
+            cargarDispositivo();
+            dispositivoInteligente1 =
+                    dispositivoInteligenteDAO.getDispositivoInteligente("NombreCambiado");
+        }
+
+        if(actuador.getDispositivoInteligente() == null)
+            actuador.setDispositivoInteligente(dispositivoInteligente1);
+
+        DatabaseUtil.actualizar(dispositivoInteligente1);
+
+        if( dispositivoInteligente1.getUltimoEstado() != EstadoConcreto.APAGADO.getValue())
+            dispositivoInteligente1.apagarDispositivo();
+
+        SensorDAO sensorDAO = new SensorDAO();
+
+        SensorTemperatura sensor = (SensorTemperatura) sensorDAO.getSenor("Sensor1");
+
+        sensor.medirMagnitud(55);
+
         assertEquals(NOMBREACTUADOR,actuador.getNombre());
+
+        assertEquals(EstadoConcreto.ENCENDIDO.getValue(),dispositivoInteligente1.getUltimoEstado());
 
     }
 }
