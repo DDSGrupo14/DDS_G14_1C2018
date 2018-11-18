@@ -76,6 +76,7 @@ public class Condicion {
 
     public void setSensor(Sensor sensor) {
         this.sensor = sensor;
+        sensor.setCondicion(this);
     }
 
     public Boolean getCondicionCumplida() {

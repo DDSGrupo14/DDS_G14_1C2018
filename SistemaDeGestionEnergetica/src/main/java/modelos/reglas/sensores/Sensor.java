@@ -22,6 +22,9 @@ public class Sensor{
     @JoinColumn(name = "dom_id")
     private Domicilio domicilio;
 
+    @Column
+    private String nombre;
+
     @OneToOne(
             mappedBy = "sensor",
             cascade = CascadeType.ALL,
@@ -57,4 +60,12 @@ public class Sensor{
     }
 
     public void medirMagnitud(int unValor ) { }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 }

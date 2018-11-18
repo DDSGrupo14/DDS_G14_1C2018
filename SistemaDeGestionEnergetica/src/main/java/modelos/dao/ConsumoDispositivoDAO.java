@@ -39,7 +39,7 @@ public class ConsumoDispositivoDAO {
         try {
             List<ConsumoDispositivo> lista = DatabaseUtil.getSession().createQuery(
                     "from ConsumoDispositivo where dispositivoInteligente = :dispositivo and " +
-                            "date( fecha ) between date_sub_days(current_date ,1) and current_date "
+                            "date( fecha ) between date_sub_month(current_date ,1) and current_date "
                     , ConsumoDispositivo.class)
                     .setParameter("dispositivo", dispositivoInteligente).getResultList();
             return lista;

@@ -15,7 +15,9 @@ public class ActuadorDeserializer implements JsonDeserializer<Actuador> {
         final DispositivoInteligente dispositivoInteligente = context
                 .deserialize(jsonObject.get("dispositivoInteligente"),DispositivoInteligente.class);
 
-        final Actuador actuador = new Actuador(dispositivoInteligente);
+        final String nombre = jsonObject.get("nombre").getAsString();
+
+        final Actuador actuador = new Actuador(dispositivoInteligente, nombre);
 
         return actuador;
     }

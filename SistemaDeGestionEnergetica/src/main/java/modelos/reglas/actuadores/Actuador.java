@@ -15,6 +15,9 @@ public class Actuador {
     @Column(name = "act_id", unique = true)
     private int act_id;
 
+    @Column
+    private String nombre;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "dom_id")
     private Domicilio domicilio;
@@ -33,9 +36,10 @@ public class Actuador {
     private Regla regla;
 
 
-    public Actuador( DispositivoInteligente dispositivoInteligente ){
+    public Actuador( DispositivoInteligente dispositivoInteligente , String nombre){
 
         this.dispositivoInteligente = dispositivoInteligente;
+        this.nombre = nombre;
     }
 
     public Actuador(){}
@@ -46,6 +50,23 @@ public class Actuador {
 
     public void setAct_id(int act_id) {
         this.act_id = act_id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public Regla getRegla() {
+        return regla;
+    }
+
+    public void setRegla(Regla regla) {
+        this.regla = regla;
+        regla.setActuador(this);
     }
 
     public Domicilio getDomicilio() {

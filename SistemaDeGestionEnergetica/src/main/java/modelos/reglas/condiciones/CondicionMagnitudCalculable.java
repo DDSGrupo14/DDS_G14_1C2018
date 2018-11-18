@@ -10,8 +10,9 @@ public class CondicionMagnitudCalculable extends Condicion {
 
     public CondicionMagnitudCalculable(){}
 
-    public CondicionMagnitudCalculable(int operador, Integer limite){
-        super(operador, limite);
+    public CondicionMagnitudCalculable( Operador operador, Integer limite){
+
+        super(operador.getValue(), limite);
     }
 
     @Override

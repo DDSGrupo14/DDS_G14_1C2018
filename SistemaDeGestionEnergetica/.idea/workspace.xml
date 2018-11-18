@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e721b091-18f3-430b-98e8-b26485bf4451" name="Default" comment="Falla solo un test.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/utilidades/ConsumoDispositivoDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utilidades/DispositivoInteligenteDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/utilidades/DomicilioDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/EntregaPersistenciaTest.java" afterDir="false" />
+    <list default="true" id="e721b091-18f3-430b-98e8-b26485bf4451" name="Default" comment="Terminando Backend">
+      <change afterPath="$PROJECT_DIR$/src/main/java/modelos/dao/ActuadorDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/reglas/ReglaParaEncender.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/Categoria.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/Categoria.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/ConsumoDispositivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/ConsumoDispositivo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/json/CargarClientesDesdeJson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/json/CargarClientesDesdeJson.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/json/Deserializers/ActuadorDeserializer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/json/Deserializers/ActuadorDeserializer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dao/ConsumoDispositivoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/dao/ConsumoDispositivoDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoInteligente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoInteligente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/estados/AhorroDeEnergia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/estados/AhorroDeEnergia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/estados/Apagado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/estados/Apagado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/estados/Encendido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/estados/Encendido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/estados/Estado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/estados/Estado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilidades/DatabaseUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilidades/DatabaseUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/utilidades/SimplexUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilidades/SimplexUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/reglas/actuadores/Actuador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/actuadores/Actuador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/Condicion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/Condicion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionMagnitudCalculable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionMagnitudCalculable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/reglas/reglas/Regla.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/reglas/Regla.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/Sensor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/Sensor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utilidades/DateSubMySQLFunction.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utilidades/DateSubMonthMySQLFunction.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/FuncionSimplexTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/FuncionSimplexTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/PersistenciaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/PersistenciaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/EntregaPersistenciaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EntregaPersistenciaTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/SensorAdaptadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SensorAdaptadorTest.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -63,7 +60,7 @@
     <session id="-604840605">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="34" />
+          <entry key="project.closed" value="35" />
           <entry key="project.open.time.1" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="2" />
@@ -80,7 +77,7 @@
           <entry key="project.open.time.53" value="1" />
           <entry key="project.open.time.55" value="3" />
           <entry key="project.open.time.56" value="2" />
-          <entry key="project.open.time.57" value="1" />
+          <entry key="project.open.time.57" value="2" />
           <entry key="project.open.time.58" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.60" value="1" />
@@ -89,7 +86,7 @@
           <entry key="project.open.time.67" value="2" />
           <entry key="project.open.time.73" value="2" />
           <entry key="project.open.time.80" value="1" />
-          <entry key="project.opened" value="35" />
+          <entry key="project.opened" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -102,13 +99,13 @@
           <entry key="domicilio" value="1" />
           <entry key="ftl" value="1" />
           <entry key="html" value="7" />
-          <entry key="java" value="776" />
+          <entry key="java" value="881" />
           <entry key="json" value="43" />
           <entry key="properties" value="1" />
           <entry key="sql" value="2" />
           <entry key="tld" value="1" />
           <entry key="vm" value="21" />
-          <entry key="xml" value="39" />
+          <entry key="xml" value="43" />
           <entry key="zona_transformador" value="1" />
         </counts>
       </usages-collector>
@@ -118,37 +115,37 @@
           <entry key="Database Element" value="2" />
           <entry key="FTL" value="1" />
           <entry key="HTML" value="7" />
-          <entry key="JAVA" value="776" />
+          <entry key="JAVA" value="881" />
           <entry key="JSON" value="43" />
           <entry key="Properties" value="1" />
           <entry key="Scratch" value="2" />
           <entry key="UML" value="5" />
           <entry key="VTL" value="21" />
-          <entry key="XML" value="40" />
+          <entry key="XML" value="44" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="46" />
           <entry key="html" value="215" />
-          <entry key="java" value="37763" />
+          <entry key="java" value="41488" />
           <entry key="json" value="8" />
           <entry key="sql" value="15" />
-          <entry key="txt" value="94" />
+          <entry key="txt" value="112" />
           <entry key="vm" value="1081" />
-          <entry key="xml" value="733" />
+          <entry key="xml" value="818" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="215" />
-          <entry key="JAVA" value="37763" />
-          <entry key="JPA QL" value="1" />
+          <entry key="JAVA" value="41486" />
+          <entry key="JPA QL" value="3" />
           <entry key="JSON" value="8" />
-          <entry key="PLAIN_TEXT" value="140" />
+          <entry key="PLAIN_TEXT" value="158" />
           <entry key="Scratch" value="15" />
           <entry key="VTL" value="1081" />
-          <entry key="XML" value="732" />
+          <entry key="XML" value="817" />
         </counts>
       </usages-collector>
     </session>
@@ -158,8 +155,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/EntregaPersistenciaTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="103">
-              <caret line="48" column="55" lean-forward="true" selection-start-line="48" selection-start-column="55" selection-end-line="49" selection-end-column="63" />
+            <state relative-caret-position="-866">
+              <caret line="77" column="39" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -168,74 +165,37 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/ConsumoDispositivoDAO.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/Condicion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-16">
-              <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="102">
+              <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/ClienteDAO.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/SensorTemperatura.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="15" column="47" selection-start-line="15" selection-end-line="16" />
+            <state relative-caret-position="85">
+              <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="102">
+              <caret line="33" column="63" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/SimplexUtil.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dao/ActuadorDAO.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoInteligente.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="193">
-              <caret line="64" selection-start-line="64" selection-end-line="64" />
-              <folding>
-                <element signature="e#1959#1960#0" expanded="true" />
-                <element signature="e#2007#2008#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/DispositivoInteligenteDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="273">
-              <caret line="25" column="113" selection-start-line="25" selection-start-column="113" selection-end-line="25" selection-end-column="113" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/DomicilioDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="9" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="18" selection-end-column="9" />
+            <state relative-caret-position="222">
+              <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -251,9 +211,9 @@
         <option value="Interface" />
         <option value="Singleton" />
         <option value="Tag Library Descriptor" />
-        <option value="Enum" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -270,21 +230,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/modelos/enre/Zona.java" />
-        <option value="$PROJECT_DIR$/src/main/java/json/Deserializers/ZonaDeserializer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/json/Deserializers/DomicilioDeserializer.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/actuadores/Actuador.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/adaptadores/Adaptador.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/reglas/ApagarSegunTemperatura.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/reglas/ReglaParaApagar.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/Magnitud.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/SensorTemperatura.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/Sensor.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/Condicion.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/reglas/Regla.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionMagnitudCalculable.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/enre/Transformador.java" />
         <option value="$PROJECT_DIR$/src/main/java/controladores/HomeController.java" />
         <option value="$PROJECT_DIR$/src/main/java/utilidades/ViewUtil.java" />
         <option value="$PROJECT_DIR$/src/main/resources/vistas/home_cliente.vm" />
@@ -305,21 +250,36 @@
         <option value="$PROJECT_DIR$/src/main/java/controladores/LoginController.java" />
         <option value="$PROJECT_DIR$/src/test/java/PersistenciaTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/Categoria.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
         <option value="$PROJECT_DIR$/src/main/java/utilidades/DomicilioDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/utilidades/DatabaseUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/ConsumoDispositivo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/estados/Estado.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/estados/Encendido.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/estados/Apagado.java" />
-        <option value="$PROJECT_DIR$/src/main/java/modelos/estados/AhorroDeEnergia.java" />
-        <option value="$PROJECT_DIR$/src/test/java/SensorAdaptadorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/utilidades/SimplexUtil.java" />
         <option value="$PROJECT_DIR$/src/test/java/FuncionSimplexTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/utilidades/DispositivoInteligenteDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/utilidades/ConsumoDispositivoDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/ConsumoDispositivo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/Operador.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/estados/Estado.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/estados/Apagado.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/estados/Encendido.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/estados/AhorroDeEnergia.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/estados/EstadoConcreto.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/dao/DispositivoInteligenteDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utilidades/DateSubMySQLFunction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/utilidades/DateSubMonthMySQLFunction.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/dao/ConsumoDispositivoDAO.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/reglas/ReglaParaEncender.java" />
+        <option value="$PROJECT_DIR$/src/main/java/json/Deserializers/ActuadorDeserializer.java" />
+        <option value="$PROJECT_DIR$/src/main/java/json/CargarClientesDesdeJson.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionMagnitudCalculable.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/actuadores/Actuador.java" />
         <option value="$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoInteligente.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/dao/ActuadorDAO.java" />
+        <option value="$PROJECT_DIR$/src/test/java/SensorAdaptadorTest.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/reglas/Regla.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/Sensor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/Condicion.java" />
         <option value="$PROJECT_DIR$/src/test/java/EntregaPersistenciaTest.java" />
       </list>
     </option>
@@ -383,8 +343,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -455,6 +413,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="modelos" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SistemaDeGestionEnergetica" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="modelos" type="462c0819:PsiDirectoryNode" />
               <item name="dispositivos" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -465,6 +432,55 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="modelos" type="462c0819:PsiDirectoryNode" />
               <item name="estados" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SistemaDeGestionEnergetica" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="modelos" type="462c0819:PsiDirectoryNode" />
+              <item name="reglas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SistemaDeGestionEnergetica" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="modelos" type="462c0819:PsiDirectoryNode" />
+              <item name="reglas" type="462c0819:PsiDirectoryNode" />
+              <item name="actuadores" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SistemaDeGestionEnergetica" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="modelos" type="462c0819:PsiDirectoryNode" />
+              <item name="reglas" type="462c0819:PsiDirectoryNode" />
+              <item name="condiciones" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SistemaDeGestionEnergetica" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="modelos" type="462c0819:PsiDirectoryNode" />
+              <item name="reglas" type="462c0819:PsiDirectoryNode" />
+              <item name="reglas" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SistemaDeGestionEnergetica" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="modelos" type="462c0819:PsiDirectoryNode" />
+              <item name="reglas" type="462c0819:PsiDirectoryNode" />
+              <item name="sensores" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
@@ -502,22 +518,6 @@
               <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
               <item name="SistemaDeGestionEnergetica" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="json" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SistemaDeGestionEnergetica" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="vistas" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SistemaDeGestionEnergetica" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SistemaDeGestionEnergetica" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -547,6 +547,8 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -554,7 +556,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542256801179" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542527643012" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TestSpark/testRuleEngine" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -594,9 +596,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.EntregaPersistenciaTest.casoPrueba2Test">
+  <component name="RunManager" selected="JUnit.EntregaPersistenciaTest.casoPrueba3Parte1Test">
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EntregaPersistenciaTest.casoPrube2Parte2Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SistemaDeGestionEnergetica" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="EntregaPersistenciaTest" />
+      <option name="METHOD_NAME" value="casoPrube2Parte2Test" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -612,44 +625,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="EntregaPersistenciaTest.casoPrueba2Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EntregaPersistenciaTest.casoPrueba2Parte1Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SistemaDeGestionEnergetica" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="EntregaPersistenciaTest" />
-      <option name="METHOD_NAME" value="casoPrueba2Test" />
+      <option name="METHOD_NAME" value="casoPrueba2Parte1Test" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersistenciaTest.persistirLoginAdminTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EntregaPersistenciaTest.casoPrueba3Parte1Test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SistemaDeGestionEnergetica" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PersistenciaTest" />
-      <option name="METHOD_NAME" value="persistirLoginAdminTest" />
+      <option name="MAIN_CLASS_NAME" value="EntregaPersistenciaTest" />
+      <option name="METHOD_NAME" value="casoPrueba3Parte1Test" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PersistenciaTest.persistirLoginClientesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SensorAdaptadorTest.dispositivoDeberiaApagarsePorLaRegla" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SistemaDeGestionEnergetica" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PersistenciaTest" />
-      <option name="METHOD_NAME" value="persistirLoginClientesTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PersistenciaTest.persistirTiposConcretosTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SistemaDeGestionEnergetica" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PersistenciaTest" />
-      <option name="METHOD_NAME" value="persistirTiposConcretosTest" />
+      <option name="MAIN_CLASS_NAME" value="SensorAdaptadorTest" />
+      <option name="METHOD_NAME" value="dispositivoDeberiaApagarsePorLaRegla" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
@@ -671,19 +673,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.PersistenciaTest.persistirLoginClientesTest" />
-      <item itemvalue="JUnit.PersistenciaTest.persistirTiposConcretosTest" />
-      <item itemvalue="JUnit.PersistenciaTest.persistirLoginAdminTest" />
       <item itemvalue="JUnit.EntregaPersistenciaTest.casoPrueba1Test" />
-      <item itemvalue="JUnit.EntregaPersistenciaTest.casoPrueba2Test" />
+      <item itemvalue="JUnit.EntregaPersistenciaTest.casoPrueba2Parte1Test" />
+      <item itemvalue="JUnit.EntregaPersistenciaTest.casoPrube2Parte2Test" />
+      <item itemvalue="JUnit.SensorAdaptadorTest.dispositivoDeberiaApagarsePorLaRegla" />
+      <item itemvalue="JUnit.EntregaPersistenciaTest.casoPrueba3Parte1Test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.EntregaPersistenciaTest.casoPrueba2Test" />
+        <item itemvalue="JUnit.EntregaPersistenciaTest.casoPrueba3Parte1Test" />
+        <item itemvalue="JUnit.SensorAdaptadorTest.dispositivoDeberiaApagarsePorLaRegla" />
+        <item itemvalue="JUnit.EntregaPersistenciaTest.casoPrube2Parte2Test" />
+        <item itemvalue="JUnit.EntregaPersistenciaTest.casoPrueba2Parte1Test" />
         <item itemvalue="JUnit.EntregaPersistenciaTest.casoPrueba1Test" />
-        <item itemvalue="JUnit.PersistenciaTest.persistirLoginAdminTest" />
-        <item itemvalue="JUnit.PersistenciaTest.persistirLoginClientesTest" />
-        <item itemvalue="JUnit.PersistenciaTest.persistirTiposConcretosTest" />
       </list>
     </recent_temporary>
   </component>
@@ -742,7 +744,8 @@
       <workItem from="1541603529462" duration="6276000" />
       <workItem from="1541624747773" duration="5991000" />
       <workItem from="1542238830714" duration="111000" />
-      <workItem from="1542239234169" duration="9696000" />
+      <workItem from="1542239234169" duration="9928000" />
+      <workItem from="1542480846993" duration="16638000" />
     </task>
     <task id="LOCAL-00001" summary="Cambios">
       <created>1534979327493</created>
@@ -762,39 +765,39 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="EntregaPersistenciaTest_casoPrueba1Test - 2018.11.14 at 22h 58m 58s.xml">
-      <configuration name="EntregaPersistenciaTest.casoPrueba1Test" configurationId="JUnit" />
+    <history-entry file="EntregaPersistenciaTest_casoPrueba2Parte1Test - 2018.11.18 at 01h 12m 53s.xml">
+      <configuration name="EntregaPersistenciaTest.casoPrueba2Parte1Test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntregaPersistenciaTest_casoPrueba1Test - 2018.11.14 at 23h 00m 08s.xml">
-      <configuration name="EntregaPersistenciaTest.casoPrueba1Test" configurationId="JUnit" />
+    <history-entry file="EntregaPersistenciaTest_casoPrube2Parte2Test - 2018.11.18 at 01h 13m 23s.xml">
+      <configuration name="EntregaPersistenciaTest.casoPrube2Parte2Test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntregaPersistenciaTest_casoPrueba1Test - 2018.11.15 at 01h 09m 41s.xml">
-      <configuration name="EntregaPersistenciaTest.casoPrueba1Test" configurationId="JUnit" />
+    <history-entry file="EntregaPersistenciaTest_casoPrube2Parte2Test - 2018.11.18 at 01h 14m 18s.xml">
+      <configuration name="EntregaPersistenciaTest.casoPrube2Parte2Test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntregaPersistenciaTest_casoPrueba1Test - 2018.11.15 at 01h 10m 35s.xml">
-      <configuration name="EntregaPersistenciaTest.casoPrueba1Test" configurationId="JUnit" />
+    <history-entry file="EntregaPersistenciaTest_casoPrube2Parte2Test - 2018.11.18 at 01h 18m 02s.xml">
+      <configuration name="EntregaPersistenciaTest.casoPrube2Parte2Test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntregaPersistenciaTest_casoPrueba1Test - 2018.11.15 at 01h 12m 10s.xml">
-      <configuration name="EntregaPersistenciaTest.casoPrueba1Test" configurationId="JUnit" />
+    <history-entry file="EntregaPersistenciaTest_casoPrube2Parte2Test - 2018.11.18 at 01h 18m 46s.xml">
+      <configuration name="EntregaPersistenciaTest.casoPrube2Parte2Test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntregaPersistenciaTest_casoPrueba1Test - 2018.11.15 at 01h 16m 40s.xml">
-      <configuration name="EntregaPersistenciaTest.casoPrueba1Test" configurationId="JUnit" />
+    <history-entry file="SensorAdaptadorTest_dispositivoDeberiaApagarsePorLaRegla - 2018.11.18 at 04h 10m 43s.xml">
+      <configuration name="SensorAdaptadorTest.dispositivoDeberiaApagarsePorLaRegla" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntregaPersistenciaTest_casoPrueba1Test - 2018.11.15 at 01h 19m 39s.xml">
-      <configuration name="EntregaPersistenciaTest.casoPrueba1Test" configurationId="JUnit" />
+    <history-entry file="EntregaPersistenciaTest_casoPrueba3Parte1Test - 2018.11.18 at 04h 37m 55s.xml">
+      <configuration name="EntregaPersistenciaTest.casoPrueba3Parte1Test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntregaPersistenciaTest_casoPrueba2Test - 2018.11.15 at 01h 34m 10s.xml">
-      <configuration name="EntregaPersistenciaTest.casoPrueba2Test" configurationId="JUnit" />
+    <history-entry file="EntregaPersistenciaTest_casoPrueba3Parte1Test - 2018.11.18 at 04h 38m 54s.xml">
+      <configuration name="EntregaPersistenciaTest.casoPrueba3Parte1Test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntregaPersistenciaTest_casoPrueba1Test - 2018.11.15 at 01h 36m 45s.xml">
-      <configuration name="EntregaPersistenciaTest.casoPrueba1Test" configurationId="JUnit" />
+    <history-entry file="EntregaPersistenciaTest_casoPrueba3Parte1Test - 2018.11.18 at 04h 41m 19s.xml">
+      <configuration name="EntregaPersistenciaTest.casoPrueba3Parte1Test" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="EntregaPersistenciaTest_casoPrueba2Test - 2018.11.15 at 01h 37m 10s.xml">
-      <configuration name="EntregaPersistenciaTest.casoPrueba2Test" configurationId="JUnit" />
+    <history-entry file="EntregaPersistenciaTest_casoPrueba3Parte1Test - 2018.11.18 at 04h 50m 29s.xml">
+      <configuration name="EntregaPersistenciaTest.casoPrueba3Parte1Test" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="320212000" />
+    <option name="totallyTimeSpent" value="337082000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -810,7 +813,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Persistence" order="0" sideWeight="0.5021097" side_tool="true" weight="0.25100672" />
-      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4978903" visible="true" weight="0.31879196" />
+      <window_info content_ui="combo" id="Project" order="1" sideWeight="0.4978903" visible="true" weight="0.32348993" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="3" />
       <window_info id="Designer" order="4" />
@@ -852,7 +855,8 @@
     <MESSAGE value="Cambios" />
     <MESSAGE value="Arreglos con deserializers, hay que arreglar sensores." />
     <MESSAGE value="Falla solo un test." />
-    <option name="LAST_COMMIT_MESSAGE" value="Falla solo un test." />
+    <MESSAGE value="Terminando Backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Terminando Backend" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -867,13 +871,13 @@
           <url>file://$PROJECT_DIR$/src/test/java/SensorAdaptadorTest.java</url>
           <line>57</line>
           <properties />
-          <option name="timeStamp" value="8" />
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/utilidades/ClienteDAO.java</url>
-          <line>15</line>
+          <url>file://$PROJECT_DIR$/src/test/java/EntregaPersistenciaTest.java</url>
+          <line>171</line>
           <properties />
-          <option name="timeStamp" value="13" />
+          <option name="timeStamp" value="48" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -883,223 +887,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/json/Deserializers/TipoDispositivoDeserializer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/ViewUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-595">
-          <caret line="43" column="21" selection-start-line="43" selection-start-column="21" selection-end-line="43" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/vistas/home_cliente.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1479">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/vistas/home.vm">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/customStyles/simple-sidebar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2057">
-          <caret line="121" column="1" selection-start-line="121" selection-start-column="1" selection-end-line="121" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/vistas/home_admin.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-510">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controladores/HomeController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="16" column="31" lean-forward="true" selection-start-line="16" selection-end-line="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/vistas/transformador.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="33" column="6" lean-forward="true" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/parser/ParserJsonToJsonTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3094">
-          <caret line="28" column="13" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/CoordenadaUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="48" column="73" selection-start-line="48" selection-start-column="73" selection-end-line="48" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/SensorTemperatura.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="36" column="63" lean-forward="true" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/Path.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="16" lean-forward="true" selection-start-line="8" selection-start-column="16" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/spark/SparkTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="22" column="43" lean-forward="true" selection-start-line="22" selection-start-column="43" selection-end-line="22" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/vistas/login.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="36" column="49" selection-start-line="36" selection-start-column="49" selection-end-line="36" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/vistas/mapa.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="40" column="12" lean-forward="true" selection-start-line="40" selection-start-column="12" selection-end-line="40" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/vistas/adminHome.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-407" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controladores/TestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/vistas/bootstrapTest.vm">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="62" selection-start-line="13" selection-start-column="62" selection-end-line="13" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/QueryTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="670">
-          <caret line="57" column="39" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/json/clientes.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/json/clientes_login.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controladores/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/controladores/MapaController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/json/categorias.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/TipoDispositivo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="14" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/Dispositivo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="44" selection-start-line="17" selection-start-column="44" selection-end-line="17" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/Categoria.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/GeolocalizacionTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="5" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/AdministradorDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="27" column="24" selection-start-line="27" selection-start-column="24" selection-end-line="27" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/ZonaDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/DatabaseUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="41" column="11" lean-forward="true" selection-start-line="41" selection-start-column="11" selection-end-line="41" selection-end-column="11" />
-          <folding>
-            <element signature="e#368#369#0" expanded="true" />
-            <element signature="e#398#399#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1114,93 +905,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/ConsumoDispositivo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="47" column="38" selection-start-line="47" selection-start-column="38" selection-end-line="47" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/estados/Estado.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="137">
-          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#800#801#0" expanded="true" />
-            <element signature="e#844#845#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/estados/AhorroDeEnergia.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="109">
-          <caret line="11" column="82" selection-start-line="11" selection-start-column="82" selection-end-line="11" selection-end-column="82" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/PersistenciaTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/FuncionalidadesTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/estados/Encendido.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/SensorAdaptadorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="41" column="77" selection-start-line="41" selection-start-column="77" selection-end-line="41" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/estados/Apagado.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="10" column="77" selection-start-line="10" selection-start-column="77" selection-end-line="10" selection-end-column="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/DomicilioDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="9" lean-forward="true" selection-start-line="9" selection-start-column="8" selection-end-line="18" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/SimplexUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -1214,55 +922,412 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/DispositivoInteligenteDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/TipoDispositivo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="25" column="113" selection-start-line="25" selection-start-column="113" selection-end-line="25" selection-end-column="113" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/ClienteDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="15" column="47" selection-start-line="15" selection-end-line="16" />
+        <state relative-caret-position="136">
+          <caret line="12" selection-start-line="12" selection-end-line="14" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/modelos/usuarios/Cliente.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="408">
+          <caret line="30" selection-start-line="30" selection-end-line="30" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoInteligente.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/SimplexUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="193">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
-          <folding>
-            <element signature="e#1959#1960#0" expanded="true" />
-            <element signature="e#2007#2008#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="799">
+          <caret line="56" column="14" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/ConsumoDispositivoDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dao/AdministradorDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-16">
-          <caret line="28" column="9" lean-forward="true" selection-start-line="28" selection-start-column="9" selection-end-line="28" selection-end-column="9" />
+        <state relative-caret-position="68">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/Operador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="389">
+          <caret line="30" column="37" selection-start-line="30" selection-end-line="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/PersistenciaTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="59" column="39" selection-start-line="59" selection-start-column="39" selection-end-line="59" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/jupiter/junit-jupiter-engine/5.2.0/junit-jupiter-engine-5.2.0-sources.jar!/org/junit/jupiter/engine/descriptor/TestMethodTestDescriptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="172" selection-start-line="172" selection-end-line="172" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_161/src.zip!/java/lang/reflect/InvocationTargetException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="71" selection-start-line="71" selection-end-line="71" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dao/ClienteDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_161/src.zip!/java/util/stream/ForEachOps.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="183" selection-start-line="183" selection-end-line="183" />
+          <folding>
+            <element signature="e#6103#6104#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/estados/EstadoConcreto.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="172">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/hibernate/hibernate-core/5.3.6.Final/hibernate-core-5.3.6.Final-sources.jar!/org/hibernate/internal/AbstractSharedSessionContract.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="393" selection-start-line="393" selection-end-line="393" />
+          <folding>
+            <element signature="e#10266#10267#0" expanded="true" />
+            <element signature="e#10287#10288#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/estados/Apagado.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/junit/platform/junit-platform-commons/1.2.0/junit-platform-commons-1.2.0-sources.jar!/org/junit/platform/commons/util/ReflectionUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="320">
+          <caret line="514" selection-start-line="514" selection-end-line="514" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/DatabaseUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#368#369#0" expanded="true" />
+            <element signature="e#398#399#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/estados/Encendido.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/ConsumoDispositivo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="87">
+          <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+          <folding>
+            <element signature="e#1535#1536#0" expanded="true" />
+            <element signature="e#1575#1576#0" expanded="true" />
+            <element signature="e#1638#1639#0" expanded="true" />
+            <element signature="e#1696#1697#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/estados/AhorroDeEnergia.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/utilidades/DateSubMonthMySQLFunction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/GeolocalizacionTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dao/ConsumoDispositivoDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="41" column="65" selection-start-line="41" selection-start-column="65" selection-end-line="41" selection-end-column="65" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dao/ZonaDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="11" column="19" selection-start-line="11" selection-start-column="19" selection-end-line="11" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/reglas/ReglaParaApagar.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/reglas/ReglaParaEncender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="8" selection-start-line="14" selection-start-column="8" selection-end-line="14" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/json/Deserializers/DomicilioDeserializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/parser/ParserJsonToJsonTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1560">
+          <caret line="39" column="51" selection-start-line="39" selection-end-line="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/json/Deserializers/TipoDispositivoDeserializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/json/Deserializers/AdaptadorDeserializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="9" column="32" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/json/CargarClaseSimpleDesdeJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-238">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/json/CargarClientesDesdeJson.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="34" column="84" selection-start-line="34" selection-start-column="84" selection-end-line="34" selection-end-column="84" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/json/Deserializers/SensorDeserializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/json/Deserializers/ActuadorDeserializer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="26" selection-start-line="8" selection-start-column="26" selection-end-line="8" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/CondicionMagnitudCalculable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="14" column="33" selection-start-line="14" selection-start-column="33" selection-end-line="14" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/actuadores/Actuador.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="215">
+          <caret line="68" column="30" selection-start-line="68" selection-start-column="30" selection-end-line="68" selection-end-column="30" />
+          <folding>
+            <element signature="e#1186#1187#0" expanded="true" />
+            <element signature="e#1215#1216#0" expanded="true" />
+            <element signature="e#1259#1260#0" expanded="true" />
+            <element signature="e#1295#1296#0" expanded="true" />
+            <element signature="e#1326#1327#0" expanded="true" />
+            <element signature="e#1354#1355#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/Dispositivo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="10" selection-start-line="6" selection-start-column="10" selection-end-line="6" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/estados/Estado.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="41" column="22" selection-start-line="41" selection-start-column="22" selection-end-line="41" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#578#579#0" expanded="true" />
+            <element signature="e#623#624#0" expanded="true" />
+            <element signature="e#777#778#0" expanded="true" />
+            <element signature="e#829#830#0" expanded="true" />
+            <element signature="e#892#893#0" expanded="true" />
+            <element signature="e#936#937#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoInteligente.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="198" column="60" lean-forward="true" selection-start-line="198" selection-start-column="60" selection-end-line="198" selection-end-column="60" />
+          <folding>
+            <element signature="e#4912#4913#0" expanded="true" />
+            <element signature="e#4941#4942#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dao/DomicilioDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dao/DispositivoInteligenteDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="24" selection-start-line="24" selection-end-line="35" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/SensorAdaptadorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="47" column="66" selection-start-line="47" selection-start-column="66" selection-end-line="47" selection-end-column="66" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="33" column="63" selection-start-line="33" selection-start-column="63" selection-end-line="33" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/dao/ActuadorDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/reglas/Regla.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="56" column="31" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/Sensor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="63" column="31" selection-start-line="63" selection-start-column="31" selection-end-line="63" selection-end-column="31" />
+          <folding>
+            <element signature="e#1441#1442#0" expanded="true" />
+            <element signature="e#1485#1486#0" expanded="true" />
+            <element signature="e#1521#1522#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/sensores/SensorTemperatura.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/modelos/reglas/condiciones/Condicion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="75" lean-forward="true" selection-start-line="75" selection-end-line="75" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/EntregaPersistenciaTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="103">
-          <caret line="48" column="55" lean-forward="true" selection-start-line="48" selection-start-column="55" selection-end-line="49" selection-end-column="63" />
+        <state relative-caret-position="-866">
+          <caret line="77" column="39" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -45,7 +45,7 @@ public class SensorAdaptadorTest {
         actuador.setDispositivoInteligente(dispositivoInteligente);
         sensorTemperatura= new SensorTemperatura();
         regla = new ReglaParaApagar();
-        condicion = new CondicionMagnitudCalculable(Operador.MENOR.getValue(),25);
+        condicion = new CondicionMagnitudCalculable(Operador.MENOR,25);
         regla.agregarCondicion(condicion);
         regla.setActuador(actuador);
         sensorTemperatura.setCondicion(condicion);

@@ -196,7 +196,7 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
     }
 
     public BigDecimal getConsumoActual() {
-        return consumoActual;
+        return tipoDispositivo.getConsumoEstimadoKWh().multiply(estado.porcentajeConsumo());
     }
 
     public Integer getUsoMensualMinimo(){ return tipoDispositivo.getUsoMensualMinimo();}

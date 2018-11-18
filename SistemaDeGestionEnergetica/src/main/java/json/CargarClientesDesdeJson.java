@@ -6,6 +6,7 @@ import com.google.gson.reflect.TypeToken;
 import json.Deserializers.*;
 import modelos.dispositivos.DispositivoInteligente;
 import modelos.dispositivos.adaptadores.Adaptador;
+import modelos.reglas.actuadores.Actuador;
 import modelos.usuarios.Cliente;
 import modelos.usuarios.Domicilio;
 
@@ -30,6 +31,8 @@ public class CargarClientesDesdeJson {
         gsonBuilder.registerTypeAdapter(DispositivoInteligente.class, new DispositivoInteligenteDeserializer());
 
         gsonBuilder.registerTypeAdapter(Adaptador.class, new AdaptadorDeserializer());
+
+        gsonBuilder.registerTypeAdapter(Actuador.class, new ActuadorDeserializer());
 
         final Gson gson = gsonBuilder.create();
 

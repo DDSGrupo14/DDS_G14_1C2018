@@ -28,9 +28,6 @@ public class Regla {
     )
     private Set<Condicion> condiciones = new HashSet<>();
 
-    @Column
-    private String codigoRegla;
-
     public Regla(){}
 
     public int getRegla_id() {
@@ -39,14 +36,6 @@ public class Regla {
 
     public void setRegla_id(int regla_id) {
         this.regla_id = regla_id;
-    }
-
-    public String getCodigoRegla() {
-        return codigoRegla;
-    }
-
-    public void setCodigoRegla(String codigoRegla) {
-        this.codigoRegla = codigoRegla;
     }
 
     public Set<Condicion> getCondiciones() {
@@ -65,6 +54,7 @@ public class Regla {
 
     public void agregarCondicion(Condicion condicion){
         condiciones.add(condicion);
+        condicion.setRegla(this);
     }
 
     public void quitarCondicion( Condicion condicion) { condiciones.remove(condicion);}

@@ -1,16 +1,19 @@
 
-import modelos.dao.ClienteDAO;
-import modelos.dao.ConsumoDispositivoDAO;
-import modelos.dao.DispositivoInteligenteDAO;
-import modelos.dao.DomicilioDAO;
+import modelos.dao.*;
 import modelos.dispositivos.ConsumoDispositivo;
 import modelos.dispositivos.DispositivoInteligente;
 import modelos.estados.EstadoConcreto;
+import modelos.reglas.actuadores.Actuador;
+import modelos.reglas.condiciones.CondicionMagnitudCalculable;
+import modelos.reglas.condiciones.Operador;
+import modelos.reglas.reglas.ReglaParaEncender;
+import modelos.reglas.sensores.SensorTemperatura;
 import modelos.usuarios.Cliente;
 import modelos.usuarios.Domicilio;
 import org.junit.jupiter.api.Test;
 import utilidades.*;
 
+import javax.xml.crypto.Data;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -49,6 +52,29 @@ public class EntregaPersistenciaTest {
         dispositivoInteligente.setDomicilio(principal);
         dispositivoInteligente.iniciarDispositivoInteligente();
         DatabaseUtil.persistir(dispositivoInteligente);
+    }
+
+    public static void cargarActuador(){
+
+        Actuador actuador = new Actuador();
+
+        actuador.setNombre("Actuador1");
+
+        ReglaParaEncender regla = new ReglaParaEncender();
+
+        CondicionMagnitudCalculable condicion = new CondicionMagnitudCalculable(Operador.MAYOR, 30);
+
+        SensorTemperatura sensor = new SensorTemperatura();
+
+        sensor.setNombre("Sensor1");
+        DatabaseUtil.persistir(sensor);
+        condicion.setSensor(sensor);
+
+        regla.agregarCondicion(condicion);
+
+        actuador.setRegla(regla);
+
+        DatabaseUtil.persistir(actuador);
     }
 
     @Test
@@ -90,6 +116,8 @@ public class EntregaPersistenciaTest {
 
         if( dispositivoInteligente1 == null){
             cargarDispositivo();
+            dispositivoInteligente1 =
+                    dispositivoInteligenteDAO.getDispositivoInteligente(NUEVONOMBRE);
         }
         dispositivoInteligente1.iniciarDispositivoInteligente();
         dispositivoInteligente1.encenderDispositivo();
@@ -128,6 +156,19 @@ public class EntregaPersistenciaTest {
 
     @Test
     public void casoPrueba3Parte1Test(){
+
+        final String NOMBREACTUADOR = "Actuador1";
+
+        ActuadorDAO actuadorDAO = new ActuadorDAO();
+
+        Actuador actuador = actuadorDAO.getActuador(NOMBREACTUADOR);
+
+        if(actuador == null){
+            cargarActuador();
+            actuador = actuadorDAO.getActuador(NOMBREACTUADOR);
+        }
+
+        assertEquals(NOMBREACTUADOR,actuador.getNombre());
 
     }
 }
