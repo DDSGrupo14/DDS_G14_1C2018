@@ -34,7 +34,7 @@ public class CargarClaseSimpleDesdeJson<T> {
     }
 
 
-    public List<T> obtenerListaClaesComun(String path) {
+    public List<T> obtenerListaClaseComun(String path) {
 
         List<T> lista;
 

@@ -3,7 +3,7 @@
     "codigo": "ZONA1",
     "latitud": -34.672627,
     "longitud": -58.47698,
-    "radio": 5000,
+    "radio": 1000,
     "transformadores": [
       {
         "direcciones": [
@@ -12,7 +12,8 @@
         ],
         "estaActivo": true,
         "latitud": -34.670177,
-        "longitud": -58.479916
+        "longitud": -58.479916,
+        "codigo": "transformador1"
       },
       {
         "direcciones": [
@@ -21,7 +22,34 @@
         ],
         "estaActivo": true,
         "latitud": -34.665116,
-        "longitud": -58.489735
+        "longitud": -58.489735,
+        "codigo": "transformador2"
+      }
+    ]
+  },
+  {
+    "codigo": "ZONA2",
+    "latitud": -34.657795,
+    "longitud": -58.500996,
+    "radio": 1000,
+    "transformadores": [
+      {
+        "direcciones": [
+          "direccion5"
+        ],
+        "estaActivo": true,
+        "latitud": -34.657089,
+        "longitud": -58.501854,
+        "codigo": "transformador3"
+      },
+      {
+        "direcciones": [
+          "direccion6"
+        ],
+        "estaActivo": true,
+        "latitud": -34.662878,
+        "longitud": -58.505802,
+        "codigo": "transformador4"
       }
     ]
   }

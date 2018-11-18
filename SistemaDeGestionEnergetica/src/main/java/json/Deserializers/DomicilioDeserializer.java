@@ -9,6 +9,7 @@ import modelos.usuarios.Domicilio;
 import modelos.dispositivos.Categoria;
 
 import java.lang.reflect.Type;
+import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,7 +21,7 @@ public class DomicilioDeserializer implements JsonDeserializer<Domicilio> {
 
         final String direccion = jsonObject.get("direccion").getAsString();
         final Boolean principal = jsonObject.get("principal").getAsBoolean();
-        final String fechaAltaEnSistema = jsonObject.get("fechaAltaEnSistema").getAsString();
+        final LocalDateTime fechaAltaEnSistema = LocalDateTime.parse(jsonObject.get("fechaAltaEnSistema").getAsString());
 
         Categoria categoria = context.deserialize( jsonObject.get("categoria"),Categoria.class);
 
@@ -35,6 +36,8 @@ public class DomicilioDeserializer implements JsonDeserializer<Domicilio> {
         Sensor[] sensores = context.deserialize( jsonObject.get("sensores"),Sensor[].class);
 
         final Domicilio domicilio = new Domicilio(direccion,principal,fechaAltaEnSistema);
+
+        domicilio.setCategoria(categoria);
 
         List<DispositivoInteligente> listaInteligentes = Arrays.asList(dispositivosInteligentes);
 

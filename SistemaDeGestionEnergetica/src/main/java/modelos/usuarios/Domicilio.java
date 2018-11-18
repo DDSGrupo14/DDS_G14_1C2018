@@ -10,6 +10,7 @@ import modelos.reglas.actuadores.Actuador;
 import modelos.reglas.sensores.Sensor;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -59,7 +60,7 @@ public class Domicilio extends BeanToJson<Domicilio> {
     private List<DispositivoEstandar> dispositivosEstandar;
     @Expose
     @Column
-    private String fechaAltaEnSistema;
+    private LocalDateTime fechaAltaEnSistema;
     @Expose
     @OneToMany(
             mappedBy = "domicilio",
@@ -82,14 +83,14 @@ public class Domicilio extends BeanToJson<Domicilio> {
     /*
     Como el constructor pide todos los atributos, no habra nulls.
      */
-    public Domicilio(String direccion, Boolean principal, String fecha) {
+    public Domicilio(String direccion, Boolean principal, LocalDateTime fecha) {
         this.direccion = direccion;
         this.principal = principal;
         this.fechaAltaEnSistema = fecha;
-        this.dispositivosInteligentes = new ArrayList<DispositivoInteligente>();
-        this.dispositivosEstandar = new ArrayList<DispositivoEstandar>();
-        this.sensores = new ArrayList<Sensor>();
-        this.actuadores = new ArrayList<Actuador>();
+        this.dispositivosInteligentes = new ArrayList<>();
+        this.dispositivosEstandar = new ArrayList<>();
+        this.sensores = new ArrayList<>();
+        this.actuadores = new ArrayList<>();
     }
 
     public Domicilio(){}
@@ -126,11 +127,11 @@ public class Domicilio extends BeanToJson<Domicilio> {
         return dispositivosEstandar;
     }
 
-    public String getFechaAltaEnSistema() {
+    public LocalDateTime getFechaAltaEnSistema() {
         return fechaAltaEnSistema;
     }
 
-    public void setFechaAltaEnSistema(String fechaAltaEnSistema) {
+    public void setFechaAltaEnSistema(LocalDateTime fechaAltaEnSistema) {
         this.fechaAltaEnSistema = fechaAltaEnSistema;
     }
 

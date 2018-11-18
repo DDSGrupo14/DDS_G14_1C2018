@@ -30,12 +30,8 @@ public class Adaptador extends BeanToJson<Adaptador> {
     private DispositivoInteligente dispositivoInteligente;
 
     @Expose
-    @OneToOne(
-            mappedBy = "adaptador",
-            cascade = CascadeType.ALL,
-            orphanRemoval = true,
-            fetch = FetchType.LAZY
-    )
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "dest_id")
     private DispositivoEstandar dispositivoEstandar;
 
     /*

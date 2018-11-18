@@ -32,12 +32,10 @@ public class Cliente extends Usuario{
     public Cliente() {
     }
 
-    public Cliente agregarDomicilio(Domicilio domicilio , Categoria categoria){
+    public Cliente agregarDomicilio(Domicilio domicilio){
 
         domicilios.add( domicilio );
         domicilio.setCliente(this);
-        domicilio.setCategoria(categoria);
-        categoria.setDomicilio(domicilio);
         return this;
     }
 

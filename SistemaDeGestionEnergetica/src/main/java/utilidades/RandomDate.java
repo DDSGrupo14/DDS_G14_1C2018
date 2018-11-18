@@ -1,6 +1,8 @@
 package utilidades;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.ZoneId;
 import java.util.Date;
 
@@ -13,11 +15,11 @@ public class RandomDate {
     /*
     Solo toma del 1 al 28 para no tomar en cuenta los otros meses
      */
-    public static LocalDate createRandomDate(int startYear, int endYear) {
+    public static LocalDateTime createRandomDate(int startYear, int endYear) {
         int day = createRandomIntBetween(1, 28);
         int month = createRandomIntBetween(1, 12);
         int year = createRandomIntBetween(startYear, endYear);
-        return LocalDate.of(year, month, day);
+        return LocalDateTime.of(LocalDate.of(year, month, day), LocalTime.now());
     }
 
     public static Date asDate(LocalDate localDate) {

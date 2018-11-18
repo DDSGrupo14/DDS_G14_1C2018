@@ -22,6 +22,8 @@ public class MapaController {
 
         List<Zona> zonas = zonaDAO.obtenerZonas();
 
+        zonas.forEach(Zona::calcularConsumoDeTransformadores);
+
         model.put("zonas", zonas);
 
         return ViewUtil.render(model, Path.Template.MAPA);

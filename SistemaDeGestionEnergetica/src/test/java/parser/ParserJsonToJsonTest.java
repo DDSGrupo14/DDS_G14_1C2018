@@ -31,16 +31,16 @@ public class ParserJsonToJsonTest {
     @Test
     public void crearUsuariosCompletosTest() {
 
-        final String PATH = "src/main/resources/json/clientes.json";
+      /*  final String PATH = "src/main/resources/json/clientes.json";
 
         final Categoria categoria01 = new Categoria( "R1",new BigDecimal(2.3),new BigDecimal(3.2) );
 
         RandomDate generadorFecha = new RandomDate();
 
-        LocalDate fecha1 = generadorFecha.createRandomDate(2000, 2010);
+        LocalDateTime fecha1 = generadorFecha.createRandomDate(2000, 2010);
         
         final Cliente cliente = new Cliente("Pepe", "Garcia", "1234",
-                "1512312312", "admin", "admin");
+                "1512312312", "completo1", "completo");
 
         final DispositivoEstandar lampara = new DispositivoEstandar("lampara", new BigDecimal( 60));
 
@@ -61,7 +61,6 @@ public class ParserJsonToJsonTest {
 
         final DispositivoEstandar aireEstandar = new DispositivoEstandar("aireEstandar", new BigDecimal( 100));
 
-
         final AdaptadorAire adaptadorAire = new AdaptadorAire(new BigDecimal( 500 ), "Aire");
 
         adaptadorAire.setDispositivoEstandar(aireEstandar);
@@ -70,10 +69,8 @@ public class ParserJsonToJsonTest {
                 ,90,360,new BigDecimal(1.613), true, false);
 
         final DispositivoInteligente aire = new DispositivoInteligente(aire3500,"Aire",50.0 );
-
         aire.setAdaptador(adaptadorAire);
-
-        final Domicilio domicilio01 = new Domicilio("congreso-2288", true, LocalDateTime.now().toString());
+        final Domicilio domicilio01 = new Domicilio("congreso-2288", true, LocalDateTime.now());
 
         domicilio01.agregarDispositivoEstandar(reloj).agregarDispositivoInteligente(lamparaAdaptada).agregarDispositivoInteligente(aire);
 
@@ -81,7 +78,7 @@ public class ParserJsonToJsonTest {
 
         List<Cliente> clientes = Arrays.asList( cliente );
 
-        JsonUtils.crearArchivoJson(clientes, PATH);
+        JsonUtils.crearArchivoJson(clientes, PATH);*/
 
     }
 
@@ -251,25 +248,47 @@ public class ParserJsonToJsonTest {
         final String direccion2 = "direccion2";
         final String direccion3 = "direccion3";
         final String direccion4 = "direccion4";
+        final String direccion5 = "direccion5";
+        final String direccion6 = "direccion6";
 
         List<String> direcciones1 = Arrays.asList(direccion1,direccion2);
         final double latitud1= -34.670177;
         final double longitud1= -58.479916;
-        Transformador transformador1 = new Transformador(true,latitud1,longitud1, direcciones1);
+        final String trans_codigo1 = "transformador1";
+        Transformador transformador1 = new Transformador(true,latitud1,longitud1,trans_codigo1, direcciones1);
 
         List<String> direcciones2 = Arrays.asList(direccion3,direccion4);
         final double latitud2= -34.665116;
         final double longitud2= -58.489735;
-        Transformador transformador2 = new Transformador(true,latitud2,longitud2, direcciones2);
+        final String trans_codigo2 = "transformador2";
+        Transformador transformador2 = new Transformador(true,latitud2,longitud2, trans_codigo2, direcciones2);
 
+        List<String> direcciones3 = Arrays.asList(direccion5);
+        final double latitud3= -34.657089;
+        final double longitud3= -58.501854;
+        final String trans_codigo3 = "transformador3";
+        Transformador transformador3 = new Transformador(true,latitud3,longitud3, trans_codigo3, direcciones3);
 
-        final double latitudZona = -34.672627;
-        final double longitudZona = -58.47698;
-        final int radio = 5000;
-        final String codigo = "ZONA1";
-        List<Transformador> transformadores = Arrays.asList(transformador1, transformador2);
-        Zona zona = new Zona(codigo,latitudZona, longitudZona, radio,transformadores);
+        List<String> direcciones4 = Arrays.asList(direccion6);
+        final double latitud4= -34.662878;
+        final double longitud4= -58.505802;
+        final String trans_codigo4 = "transformador4";
+        Transformador transformador4 = new Transformador(true,latitud4,longitud4, trans_codigo4, direcciones4);
 
-        JsonUtils.crearArchivoJson(Arrays.asList(zona), Path.Archivos.ZONA);
+        final double latitudZona1 = -34.672627;
+        final double longitudZona1 = -58.47698;
+        final int radio1 = 1000;
+        final String codigo1 = "ZONA1";
+        List<Transformador> transformadores1 = Arrays.asList(transformador1, transformador2);
+        Zona zona1 = new Zona(codigo1,latitudZona1, longitudZona1, radio1,transformadores1);
+
+        final double latitudZona2 = -34.657795;
+        final double longitudZona2 = -58.500996;
+        final int radio2 = 1000;
+        final String codigo2 = "ZONA2";
+        List<Transformador> transformadores2 = Arrays.asList(transformador3, transformador4);
+        Zona zona2 = new Zona(codigo2,latitudZona2, longitudZona2, radio2,transformadores2);
+
+        JsonUtils.crearArchivoJson(Arrays.asList(zona1,zona2), Path.Archivos.ZONA);
     }
 }

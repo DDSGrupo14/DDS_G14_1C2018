@@ -7,15 +7,13 @@ import modelos.reglas.actuadores.Actuador;
 import modelos.reglas.condiciones.CondicionMagnitudCalculable;
 import modelos.reglas.condiciones.Operador;
 import modelos.reglas.reglas.ReglaParaEncender;
-import modelos.reglas.sensores.Sensor;
 import modelos.reglas.sensores.SensorTemperatura;
 import modelos.usuarios.Cliente;
 import modelos.usuarios.Domicilio;
 import org.junit.jupiter.api.Test;
 import utilidades.*;
 
-import javax.xml.crypto.Data;
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -31,10 +29,10 @@ public class EntregaPersistenciaTest {
         DomicilioDAO domicilioDAO = new DomicilioDAO();
         domicilio.setDireccion("nuevaDir");
         domicilio.setPrincipal(true);
-        domicilio.setFechaAltaEnSistema(LocalDate.now().toString());
+        domicilio.setFechaAltaEnSistema(LocalDateTime.now());
         domicilio.setLongitud(-58.479000);
         domicilio.setLatitud(-34.670000);
-        cliente.agregarDomicilio(domicilio,domicilioDAO.obtenerCategoriaPorNombre("R1"));
+        cliente.agregarDomicilio(domicilio);
 
         DatabaseUtil.persistir(cliente);
     }

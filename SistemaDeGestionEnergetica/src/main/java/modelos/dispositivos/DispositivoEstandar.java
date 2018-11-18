@@ -25,20 +25,34 @@ public class DispositivoEstandar extends BeanToJson<Dispositivo> implements Disp
     @Expose
     @Column(nullable = false)
     private String nombre;
-    @Expose
-    @Column(nullable = false)
-    private BigDecimal estimadoKWConsumidosPorHora;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "adap_id")
+    @OneToOne(
+            mappedBy = "dispositivoEstandar",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true,
+            fetch = FetchType.LAZY
+    )
     private Adaptador adaptador;
 
-    public DispositivoEstandar(String nombre, BigDecimal estimadoKWConsumidosPorHora) {
+    @Expose
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tdisp_id")
+    private TipoDispositivo tipoDispositivo;
+
+    public DispositivoEstandar(String nombre, TipoDispositivo tipoDispositivo) {
         this.nombre = nombre;
-        this.estimadoKWConsumidosPorHora = estimadoKWConsumidosPorHora.setScale(2, RoundingMode.HALF_UP);
+        this.tipoDispositivo = tipoDispositivo;
     }
 
     public DispositivoEstandar(){}
+
+    public TipoDispositivo getTipoDispositivo() {
+        return tipoDispositivo;
+    }
+
+    public void setTipoDispositivo(TipoDispositivo tipoDispositivo) {
+        this.tipoDispositivo = tipoDispositivo;
+    }
 
     public int getDest_id() {
         return dest_id;
@@ -68,17 +82,13 @@ public class DispositivoEstandar extends BeanToJson<Dispositivo> implements Disp
         this.nombre = nombre;
     }
 
-    public BigDecimal getEstimadoKWConsumidosPorHora() {
-        return estimadoKWConsumidosPorHora;
-    }
-
-    public void setEstimadoKWConsumidosPorHora(BigDecimal estimadoKWConsumidosPorHora) {
-        this.estimadoKWConsumidosPorHora = estimadoKWConsumidosPorHora;
+    public BigDecimal getConsumoEstimadoKWh() {
+        return tipoDispositivo.getConsumoEstimadoKWh();
     }
 
     @Override
     public BigDecimal consumidoEnUltimasHoras(Integer cantidad_horas) {
-        return estimadoKWConsumidosPorHora.multiply( new BigDecimal( cantidad_horas ));
+        return getConsumoEstimadoKWh().multiply( new BigDecimal( cantidad_horas ));
     }
 
     @Override
@@ -89,12 +99,15 @@ public class DispositivoEstandar extends BeanToJson<Dispositivo> implements Disp
     /*
     Este getter esta asi para que sea igual para todos los dispositivos
      */
-    public BigDecimal consumoActual() {
-        return estimadoKWConsumidosPorHora;
+    public BigDecimal getConsumoActual() {
+        return getConsumoEstimadoKWh();
     }
 
     @Override
     public String getNombre() {
         return nombre;
     }
+
+    @Override
+    public String getEquipoConcreto(){ return tipoDispositivo.getEquipoConcreto();}
 }

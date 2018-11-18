@@ -22,10 +22,7 @@ public class DatabaseUtil {
             return "";
         } catch (Exception e){
             return "Error " + e.getMessage();
-        } /*finally {
-            if( session.isOpen())
-                session.close();
-        }*/
+        }
     }
 
     public static String actualizar(Object o){
@@ -36,9 +33,6 @@ public class DatabaseUtil {
             return "";
         } catch (Exception e){
             return "Error " + e.getMessage();
-        } /*finally {
-            if( session.isOpen())
-                session.close();
-        }*/
+        }
     }
 }

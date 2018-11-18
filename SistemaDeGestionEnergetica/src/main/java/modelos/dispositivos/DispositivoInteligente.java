@@ -57,8 +57,6 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
             orphanRemoval = true
     )
     private List<ConsumoDispositivo> consumoTotal = new ArrayList<>();
-    @Transient
-    private BigDecimal consumoActual;
 
     public DispositivoInteligente(TipoDispositivo tipo, String nombre, Double porcentajeAhorroEnergia) {
 
@@ -165,15 +163,6 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
         }
     }
 
-    @Override
-    public BigDecimal consumoActual() {
-        return getConsumoActual();
-    }
-
-    public void setConsumoActual(BigDecimal consumoActual) {
-        this.consumoActual = consumoActual;
-    }
-
     public BigDecimal obtenerConsumidoEn(Integer cantHoras){
 
         return new BigDecimal(1).multiply(estado.porcentajeConsumo());
@@ -195,6 +184,7 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
         this.tipoDispositivo = tipoDispositivo;
     }
 
+    @Override
     public BigDecimal getConsumoActual() {
         return tipoDispositivo.getConsumoEstimadoKWh().multiply(estado.porcentajeConsumo());
     }
@@ -205,5 +195,6 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
 
     public BigDecimal getConsumoEstimadoKWh(){ return tipoDispositivo.getConsumoEstimadoKWh();}
 
+    @Override
     public String getEquipoConcreto(){ return tipoDispositivo.getEquipoConcreto();}
 }

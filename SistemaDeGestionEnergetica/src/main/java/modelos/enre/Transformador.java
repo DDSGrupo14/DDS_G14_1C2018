@@ -39,12 +39,19 @@ public class Transformador extends BeanToJson<Transformador> {
     @Expose
     @Column
     private double longitud;
+    @Expose
+    @Column
+    private String codigo;
 
-    public Transformador(Boolean estaActivo, double latitud, double longitud, List<String> direcciones) {
+    @Transient
+    private double consumoActual;
+
+    public Transformador(Boolean estaActivo, double latitud, double longitud, String codigo, List<String> direcciones) {
         this.estaActivo = estaActivo;
         this.latitud = latitud;
         this.longitud = longitud;
         this.direcciones = direcciones;
+        this.codigo = codigo;
         this.domicilios = new ArrayList<>();
     }
 
@@ -107,9 +114,27 @@ public class Transformador extends BeanToJson<Transformador> {
         return direcciones;
     }
 
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public double getConsumoActual() {
+        return consumoActual;
+    }
+
+    public void setConsumoActual(double consumoActual) {
+        this.consumoActual = consumoActual;
+    }
+
     public Double obtenerConsumoActual(){
 
-        return 1.;
+        consumoActual = 1111.111;
+
+        return this.consumoActual;
     }
 
     @Override

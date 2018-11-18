@@ -20,7 +20,7 @@ public class PersistenciaTest {
         CargarClaseSimpleDesdeJson<Administrador> cargaAdmin =
                 new CargarClaseSimpleDesdeJson<>(Administrador.class);
 
-        List<Administrador> administradores = cargaAdmin.obtenerListaClaesComun(Path.Archivos.LOGIN_ADMINISTRADORES);
+        List<Administrador> administradores = cargaAdmin.obtenerListaClaseComun(Path.Archivos.LOGIN_ADMINISTRADORES);
 
         for (Administrador administrador: administradores) {
             DatabaseUtil.persistir(administrador);
@@ -45,7 +45,7 @@ public class PersistenciaTest {
         CargarClaseSimpleDesdeJson<TipoDispositivo> cargaTipos =
                 new CargarClaseSimpleDesdeJson<>(TipoDispositivo.class);
 
-        List<TipoDispositivo> tipos = cargaTipos.obtenerListaClaesComun(Path.Archivos.TIPOS_CONCRETOS);
+        List<TipoDispositivo> tipos = cargaTipos.obtenerListaClaseComun(Path.Archivos.TIPOS_CONCRETOS);
 
         for(TipoDispositivo tipo: tipos){
             DatabaseUtil.persistir(tipo);
@@ -56,11 +56,10 @@ public class PersistenciaTest {
     @Test
     public void persistirCategoriasTest(){
 
-
         CargarClaseSimpleDesdeJson<Categoria> cargaCateogira =
                 new CargarClaseSimpleDesdeJson<>(Categoria.class);
 
-        List<Categoria> categorias = cargaCateogira.obtenerListaClaesComun(Path.Archivos.CATEGORIAS);
+        List<Categoria> categorias = cargaCateogira.obtenerListaClaseComun(Path.Archivos.CATEGORIAS);
 
         categorias.forEach(categoria -> DatabaseUtil.persistir(categoria));
     }

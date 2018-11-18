@@ -34,7 +34,7 @@ public class ParserJsonFromJsonTest {
 
         CargarClaseSimpleDesdeJson<Administrador> cargarAdmin = new CargarClaseSimpleDesdeJson<Administrador>(Administrador.class);
 
-        List<Administrador> admins = cargarAdmin.obtenerListaClaesComun(Path.Archivos.LOGIN_ADMINISTRADORES);
+        List<Administrador> admins = cargarAdmin.obtenerListaClaseComun(Path.Archivos.LOGIN_ADMINISTRADORES);
 
         Administrador admin = admins.get(0);
 
@@ -61,7 +61,7 @@ public class ParserJsonFromJsonTest {
         CargarClaseSimpleDesdeJson<TipoDispositivo> cargaTipo =
                 new CargarClaseSimpleDesdeJson<>(TipoDispositivo.class);
 
-        List<TipoDispositivo> tipos = cargaTipo.obtenerListaClaesComun(Path.Archivos.TIPOS_CONCRETOS);
+        List<TipoDispositivo> tipos = cargaTipo.obtenerListaClaseComun(Path.Archivos.TIPOS_CONCRETOS);
 
         System.out.println(tipos.get(4).toString());
 
@@ -76,7 +76,7 @@ public class ParserJsonFromJsonTest {
         CargarClaseSimpleDesdeJson<Categoria> cargaCategoria =
                 new CargarClaseSimpleDesdeJson<>(Categoria.class);
 
-        List<Categoria> categorias = cargaCategoria.obtenerListaClaesComun(Path.Archivos.CATEGORIAS);
+        List<Categoria> categorias = cargaCategoria.obtenerListaClaseComun(Path.Archivos.CATEGORIAS);
 
         System.out.println(categorias.get(4).toString());
 
@@ -90,7 +90,7 @@ public class ParserJsonFromJsonTest {
         CargarClaseSimpleDesdeJson<Zona> cargaZonas =
                 new CargarClaseSimpleDesdeJson<>(Zona.class);
 
-        List<Zona> zonas = cargaZonas.obtenerListaClaesComun(Path.Archivos.ZONA);
+        List<Zona> zonas = cargaZonas.obtenerListaClaseComun(Path.Archivos.ZONA);
 
         System.out.println(zonas.get(0).toString());
 

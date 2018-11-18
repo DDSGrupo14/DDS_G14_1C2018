@@ -91,6 +91,10 @@ public class Zona extends BeanToJson<Zona> {
 
     public void agregarTransformador(Transformador transformador){ transformadores.add(transformador); }
 
+    public void calcularConsumoDeTransformadores(){
+        transformadores.forEach(Transformador::obtenerConsumoActual);
+    }
+
     public Double obtenerConsumoTotalActual(){
 
         return transformadores.stream().map( Transformador::obtenerConsumoActual).reduce(0.,Double::sum);

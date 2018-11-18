@@ -32,7 +32,6 @@ public class Categoria extends BeanToJson<Categoria> {
             mappedBy = "categoria",
             cascade = CascadeType.ALL,
             orphanRemoval = true,
-            optional = true,
             fetch = FetchType.LAZY
     )
     private Domicilio domicilio;
