@@ -1,6 +1,6 @@
 import json.CargarClaseSimpleDesdeJson;
 import json.JsonUtils;
-import modelos.dao.ZonaDAO;
+import dao.ZonaDAO;
 import modelos.dispositivos.Categoria;
 import modelos.dispositivos.DispositivoEstandar;
 import modelos.dispositivos.DispositivoInteligente;
@@ -85,7 +85,7 @@ public class CargaDatosCompletaTest {
 
         TipoDispositivo tipoPlancha = tipos.stream().filter(t -> t.getEquipoConcreto().equals("PlanchaVapor"))
                 .findAny().orElse(null);
-        DispositivoEstandar plancha1 = new DispositivoEstandar("plancha1",tipoPlancha);
+        DispositivoEstandar plancha1 = new DispositivoEstandar("plancha1",tipoPlancha,2);
 
         TipoDispositivo tipoAire1 = tipos.stream().filter( t -> t.getEquipoConcreto().equals("Aire2200Frigorias"))
                 .findAny().orElse(null);
@@ -116,6 +116,9 @@ public class CargaDatosCompletaTest {
 
         clientes.forEach(cliente -> DatabaseUtil.persistir(cliente));
 
+        aire1.iniciarDispositivoInteligente();
+        heladera2.iniciarDispositivoInteligente();
+
         /*
         ------------------------ CARGA CLIENTES ------------------------
          */
@@ -130,8 +133,6 @@ public class CargaDatosCompletaTest {
         List<Zona> zonas = JsonUtils.obtenerZonas(Path.Archivos.ZONA);
 
         ZonaDAO zonaDAO = new ZonaDAO();
-
-        zonas.forEach(z -> z.getTransformadores().forEach(t-> System.out.println(t.getCodigo())));
 
         zonas.forEach(zona -> DatabaseUtil.persistir(zona));
 

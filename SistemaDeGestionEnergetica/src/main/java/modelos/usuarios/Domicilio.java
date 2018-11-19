@@ -128,6 +128,9 @@ public class Domicilio extends BeanToJson<Domicilio> {
     }
 
     public List<DispositivoInteligente> getDispositivosInteligentes() {
+
+        dispositivosInteligentes.forEach(DispositivoInteligente::iniciarDispositivoInteligente);
+
         return dispositivosInteligentes;
     }
 

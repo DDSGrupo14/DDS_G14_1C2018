@@ -1,4 +1,4 @@
-package modelos.dao;
+package dao;
 
 import modelos.dispositivos.DispositivoEstandar;
 import modelos.usuarios.Domicilio;

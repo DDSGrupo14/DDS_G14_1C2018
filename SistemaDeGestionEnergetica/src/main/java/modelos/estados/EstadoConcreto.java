@@ -34,17 +34,27 @@ public enum EstadoConcreto {
         return nombreEstadoConcreto;
     }
 
-    public static EstadoConcreto obtenerEstadoConcreto(int idEstado ){
+    public static EstadoConcreto getEstadoConcreto(int idEstado ){
         return (EstadoConcreto) map.get(idEstado);
     }
 
 
-    public Estado obtenerEstado(DispositivoInteligente dispositivoInteligente){
+    public Estado getEstadoDispositivo(DispositivoInteligente dispositivoInteligente){
 
         switch (this){
             case APAGADO: return new Apagado(dispositivoInteligente);
             case ENCENDIDO: return new Encendido(dispositivoInteligente);
             case AHORROENERGIA: return  new AhorroDeEnergia(dispositivoInteligente);
+            default: throw new AssertionError("Estado desconocido " + this);
+        }
+    }
+
+    public Estado getEstado(double porcentajeAhorro){
+
+        switch (this){
+            case APAGADO: return new Apagado();
+            case ENCENDIDO: return new Encendido();
+            case AHORROENERGIA: return  new AhorroDeEnergia(porcentajeAhorro);
             default: throw new AssertionError("Estado desconocido " + this);
         }
     }

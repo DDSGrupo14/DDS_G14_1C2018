@@ -11,6 +11,12 @@ public class AhorroDeEnergia extends Estado {
         this.setEstadoConcreto(EstadoConcreto.AHORROENERGIA);
         this.getConsumoDispositivoDAO().ahorroEnergiaDispositivo(dispositivoInteligente);
         this.setUltimoEstado();
+        setPorcentajeAhorro(dispositivoInteligente.getPorcentajeAhorroEnergia());
+    }
+
+    public AhorroDeEnergia(double porcentajeDeAhorro){
+        super();
+        setPorcentajeAhorro(porcentajeDeAhorro);
     }
 
     @Override
@@ -38,6 +44,6 @@ public class AhorroDeEnergia extends Estado {
 
     @Override
     public BigDecimal porcentajeConsumo() {
-        return new BigDecimal( 1 - getDispositivoInteligente().getPorcentajeAhorroEnergia()/100);
+        return new BigDecimal( 1 - getPorcentajeAhorro()/100);
     }
 }

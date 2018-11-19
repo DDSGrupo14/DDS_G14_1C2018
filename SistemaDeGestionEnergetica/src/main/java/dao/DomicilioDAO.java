@@ -1,4 +1,4 @@
-package modelos.dao;
+package dao;
 
 import modelos.dispositivos.Categoria;
 import modelos.enre.Transformador;
@@ -71,4 +71,15 @@ public class DomicilioDAO {
         }
     }
 
+    public Domicilio getDomicilio(int id){
+        try{
+            hql = "from Domicilio where dom_id = :id";
+            return DatabaseUtil.getSession().createQuery(hql,Domicilio.class)
+                    .setParameter("id",id)
+                    .getSingleResult();
+        }catch (Exception e){
+            System.out.println("e.getMessage() = " + e.getMessage());
+            return null;
+        }
+    }
 }

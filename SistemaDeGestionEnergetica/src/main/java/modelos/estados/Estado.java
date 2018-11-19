@@ -1,11 +1,13 @@
 package modelos.estados;
 
 import modelos.dispositivos.DispositivoInteligente;
-import modelos.dao.ConsumoDispositivoDAO;
+import dao.ConsumoDispositivoDAO;
 
 import java.math.BigDecimal;
 
 public abstract class Estado {
+
+    private double porcentajeAhorro;
 
     private EstadoConcreto estadoConcreto;
 
@@ -15,6 +17,10 @@ public abstract class Estado {
 
     public Estado(DispositivoInteligente dispositivoInteligente){
         this.dispositivoInteligente = dispositivoInteligente;
+    }
+
+    public Estado(){
+
     }
 
     public DispositivoInteligente getDispositivoInteligente() {
@@ -40,6 +46,14 @@ public abstract class Estado {
     public Estado ahorrarEnergia( ){return null; }
 
     public BigDecimal porcentajeConsumo(){ return null; }
+
+    public double getPorcentajeAhorro() {
+        return porcentajeAhorro;
+    }
+
+    public void setPorcentajeAhorro(double porcentajeAhorro) {
+        this.porcentajeAhorro = porcentajeAhorro;
+    }
 
     public boolean estasEncendido(){ return false; }
 

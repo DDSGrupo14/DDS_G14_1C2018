@@ -13,6 +13,10 @@ public class Apagado extends Estado {
         this.setUltimoEstado();
     }
 
+    public Apagado(){
+        super();
+    }
+
     @Override
     public boolean estasEncendido() {
         return false;

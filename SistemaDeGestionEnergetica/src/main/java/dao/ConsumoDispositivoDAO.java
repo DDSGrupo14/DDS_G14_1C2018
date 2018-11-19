@@ -1,4 +1,4 @@
-package modelos.dao;
+package dao;
 
 import modelos.dispositivos.ConsumoDispositivo;
 import modelos.dispositivos.DispositivoInteligente;
@@ -9,6 +9,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public class ConsumoDispositivoDAO {
+
+    private static String hql;
 
     public void encenderDispositivo(DispositivoInteligente dispositivoInteligente) {
 
@@ -35,18 +37,33 @@ public class ConsumoDispositivoDAO {
     }
 
 
-    public List<ConsumoDispositivo> consumoUltimoMes(DispositivoInteligente dispositivoInteligente) {
+    public List<ConsumoDispositivo> getConsumoUltimoMes(DispositivoInteligente dispositivoInteligente) {
         try {
-            List<ConsumoDispositivo> lista = DatabaseUtil.getSession().createQuery(
-                    "from ConsumoDispositivo where dispositivoInteligente = :dispositivo and " +
-                            "date( fecha ) between date_sub_month(current_date ,1) and current_date "
-                    , ConsumoDispositivo.class)
+            hql = "from ConsumoDispositivo where dispositivoInteligente = :dispositivo and " +
+                    "date( fecha ) between date_sub_month(current_date ,1) and current_date ";
+
+            return DatabaseUtil.getSession().createQuery(hql, ConsumoDispositivo.class)
                     .setParameter("dispositivo", dispositivoInteligente).getResultList();
-            return lista;
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return null;
 
+        }
+    }
+
+    public List<ConsumoDispositivo> getConsumoPeriodo
+            (DispositivoInteligente dipI, LocalDateTime p_inicio, LocalDateTime p_fin){
+        try{
+            hql = "from ConsumoDispositivo where dispositivoInteligente = :dispositivo and " +
+                    " fecha between :p_inicio and :p_fin";
+            return DatabaseUtil.getSession().createQuery(hql, ConsumoDispositivo.class)
+                    .setParameter("dispositivo", dipI)
+                    .setParameter("p_inicio", p_inicio)
+                    .setParameter("p_fin", p_fin)
+                    .getResultList();
+        } catch (Exception e){
+            System.out.println("e.getMessage() = " + e.getMessage());
+            return null;
         }
     }
 }

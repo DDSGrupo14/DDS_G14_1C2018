@@ -39,9 +39,13 @@ public class DispositivoEstandar extends BeanToJson<Dispositivo> implements Disp
     @JoinColumn(name = "tdisp_id")
     private TipoDispositivo tipoDispositivo;
 
-    public DispositivoEstandar(String nombre, TipoDispositivo tipoDispositivo) {
+    @Column
+    private int usoDiarioEstimadoEnHoras;
+
+    public DispositivoEstandar(String nombre, TipoDispositivo tipoDispositivo, int usoDiarioEstimadoEnHoras) {
         this.nombre = nombre;
         this.tipoDispositivo = tipoDispositivo;
+        this.usoDiarioEstimadoEnHoras = usoDiarioEstimadoEnHoras;
     }
 
     public DispositivoEstandar(){}
@@ -91,16 +95,21 @@ public class DispositivoEstandar extends BeanToJson<Dispositivo> implements Disp
         return getConsumoEstimadoKWh().multiply( new BigDecimal( cantidad_horas ));
     }
 
+    public int getUsoDiarioEstimadoEnHoras() {
+        return usoDiarioEstimadoEnHoras;
+    }
+
+    public void setUsoDiarioEstimadoEnHoras(int usoDiarioEstimadoEnHoras) {
+        this.usoDiarioEstimadoEnHoras = usoDiarioEstimadoEnHoras;
+    }
+
     @Override
     public DispositivoEstandar getObj() {
         return this;
     }
 
-    /*
-    Este getter esta asi para que sea igual para todos los dispositivos
-     */
-    public BigDecimal getConsumoActual() {
-        return getConsumoEstimadoKWh();
+    public BigDecimal getConsumoDiarioEstimado() {
+        return getConsumoEstimadoKWh().multiply(new BigDecimal(this.usoDiarioEstimadoEnHoras));
     }
 
     @Override

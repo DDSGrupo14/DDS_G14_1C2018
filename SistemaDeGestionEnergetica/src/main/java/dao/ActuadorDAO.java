@@ -1,4 +1,4 @@
-package modelos.dao;
+package dao;
 
 import modelos.reglas.actuadores.Actuador;
 import utilidades.DatabaseUtil;

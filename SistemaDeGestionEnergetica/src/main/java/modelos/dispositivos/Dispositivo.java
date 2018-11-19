@@ -6,8 +6,6 @@ interface Dispositivo {
 
     BigDecimal consumidoEnUltimasHoras(Integer tiempo );
 
-    BigDecimal getConsumoActual();
-
     BigDecimal getConsumoEstimadoKWh();
 
     String getNombre();

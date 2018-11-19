@@ -1,4 +1,4 @@
-package modelos.dao;
+package dao;
 
 import modelos.dispositivos.DispositivoInteligente;
 import modelos.dispositivos.TipoDispositivo;

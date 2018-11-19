@@ -1,7 +1,8 @@
 
-import modelos.dao.*;
+import dao.*;
 import modelos.dispositivos.ConsumoDispositivo;
 import modelos.dispositivos.DispositivoInteligente;
+import modelos.enre.Transformador;
 import modelos.estados.EstadoConcreto;
 import modelos.reglas.actuadores.Actuador;
 import modelos.reglas.condiciones.CondicionMagnitudCalculable;
@@ -11,12 +12,19 @@ import modelos.reglas.sensores.SensorTemperatura;
 import modelos.usuarios.Cliente;
 import modelos.usuarios.Domicilio;
 import org.junit.jupiter.api.Test;
+import servicios.DispositivoInteligenteService;
+import servicios.DomicilioService;
+import servicios.TransformadorService;
 import utilidades.*;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class EntregaPersistenciaTest {
 
@@ -25,11 +33,7 @@ public class EntregaPersistenciaTest {
         Cliente cliente = new Cliente("Nuevo","Nuevo"
                 ,"12345678","55554444","nuevo","nuevo");
 
-        Domicilio domicilio = new Domicilio();
-        DomicilioDAO domicilioDAO = new DomicilioDAO();
-        domicilio.setDireccion("nuevaDir");
-        domicilio.setPrincipal(true);
-        domicilio.setFechaAltaEnSistema(LocalDateTime.now());
+        Domicilio domicilio = new Domicilio("nuevaDir",true,LocalDateTime.now());
         domicilio.setLongitud(-58.479000);
         domicilio.setLatitud(-34.670000);
         cliente.agregarDomicilio(domicilio);
@@ -83,9 +87,10 @@ public class EntregaPersistenciaTest {
 
         Cliente cliente1 = clienteDAO.obtenerClientePorUsername("nuevo");
 
-        if(cliente1 == null)
+        if(cliente1 == null) {
             cargarCliente();
-
+            cliente1 = clienteDAO.obtenerClientePorUsername("nuevo");
+        }
         Domicilio principal = cliente1.getPrincipal();
 
         final double LATITUD = -34.671843;
@@ -123,10 +128,10 @@ public class EntregaPersistenciaTest {
         dispositivoInteligente1.pasarAhorroEnergia();
         dispositivoInteligente1.apagarDispositivo();
 
-        List<ConsumoDispositivo> consumos = consumoDispositivoDAO.consumoUltimoMes(dispositivoInteligente1);
+        List<ConsumoDispositivo> consumos = consumoDispositivoDAO.getConsumoUltimoMes(dispositivoInteligente1);
 
         consumos.forEach(consumoDispositivo -> System.out.println(
-                EstadoConcreto.obtenerEstadoConcreto(consumoDispositivo.getEstadoDispositivo()).toString()
+                EstadoConcreto.getEstadoConcreto(consumoDispositivo.getEstadoDispositivo()).toString()
         ));
     }
 
@@ -188,7 +193,7 @@ public class EntregaPersistenciaTest {
 
         SensorDAO sensorDAO = new SensorDAO();
 
-        SensorTemperatura sensor = (SensorTemperatura) sensorDAO.getSenor("Sensor1");
+        SensorTemperatura sensor = (SensorTemperatura) sensorDAO.getSensor("Sensor1");
 
         sensor.medirMagnitud(55);
 
@@ -203,13 +208,88 @@ public class EntregaPersistenciaTest {
 
         final String NOMBREACTUADOR = "Actuador1";
 
-        ActuadorDAO actuadorDAO = new ActuadorDAO();
-        Actuador actuador = actuadorDAO.getActuador(NOMBREACTUADOR);
+        SensorDAO sensorDAO = new SensorDAO();
+        SensorTemperatura sensor = (SensorTemperatura) sensorDAO.getSensor("Sensor1");
 
         DispositivoInteligenteDAO dispositivoInteligenteDAO = new DispositivoInteligenteDAO();
         DispositivoInteligente dispositivoInteligente1 =
                 dispositivoInteligenteDAO.getDispositivoInteligente("NombreCambiado");
 
+        if( dispositivoInteligente1.getUltimoEstado() != EstadoConcreto.APAGADO.getValue())
+            dispositivoInteligente1.apagarDispositivo();
+
+        CondicionMagnitudCalculable condi = (CondicionMagnitudCalculable) sensor.getCondicion();
+
+        condi.setLimite(60);
+
+        DatabaseUtil.actualizar(condi);
+
+        sensor = (SensorTemperatura) sensorDAO.getSensor("Sensor1");
+
+        sensor.medirMagnitud(55);
+
+        assertNotEquals(EstadoConcreto.ENCENDIDO.getValue(),dispositivoInteligente1.getUltimoEstado());
+    }
+
+    @Test
+    public void casoPrueba4Test(){
+
+        TransformadorDAO transformadorDAO = new TransformadorDAO();
+
+        List<Transformador> lista = transformadorDAO.getAllTransformadores();
+
+        System.out.println(lista.size());
+    }
+
+    @Test
+    public void consumoTest(){
+
+        DomicilioDAO domicilioDAO = new DomicilioDAO();
+
+        Domicilio domicilio = domicilioDAO.getDomicilio(1);
+
+        DispositivoInteligente disp = domicilio.getDispositivosInteligentes().get(0);
+
+        disp.encenderDispositivo();
+        disp.pasarAhorroEnergia();
+        disp.apagarDispositivo();
 
     }
+
+    @Test
+    public void casoPrueba5Parte1Test(){
+
+        DomicilioService domicilioService = new DomicilioService();
+
+        BigDecimal consumo = domicilioService.getConsumoTotalDomicilioPeriodo(1,
+                LocalDateTime.of(LocalDate.of(2018,01,19), LocalTime.now()),
+                LocalDateTime.now());
+
+        System.out.println(consumo);
+    }
+
+    @Test
+    public void casoPrueba5Parte2Test(){
+
+        DispositivoInteligenteService dispService = new DispositivoInteligenteService();
+
+        BigDecimal consumoPromedio = dispService.getConsumoPromedioPeriodo("aire1",
+                LocalDateTime.of(LocalDate.of(2018,01,19), LocalTime.now()),
+                LocalDateTime.now());
+
+        System.out.println(consumoPromedio);
+    }
+
+    @Test
+    public void casoPrueba5Parte3Test(){
+
+        TransformadorService transformadorService = new TransformadorService();
+
+        BigDecimal consumopromedio = transformadorService.getConsumoPromedioPeriodo("transformador1",
+                LocalDateTime.of(LocalDate.of(2018,01,19), LocalTime.now()),
+                LocalDateTime.now());
+
+        System.out.println(consumopromedio);
+    }
+
 }

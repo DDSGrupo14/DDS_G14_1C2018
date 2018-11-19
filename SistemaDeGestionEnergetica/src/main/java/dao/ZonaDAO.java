@@ -1,4 +1,4 @@
-package modelos.dao;
+package dao;
 
 import modelos.enre.Zona;
 import modelos.usuarios.Domicilio;

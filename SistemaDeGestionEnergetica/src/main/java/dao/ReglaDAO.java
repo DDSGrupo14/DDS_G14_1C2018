@@ -1,4 +1,4 @@
-package modelos.dao;
+package dao;
 
 import modelos.reglas.reglas.Regla;
 import modelos.usuarios.Domicilio;

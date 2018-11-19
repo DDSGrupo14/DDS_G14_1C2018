@@ -8,8 +8,6 @@ import modelos.estados.Estado;
 
 import modelos.estados.EstadoConcreto;
 import modelos.usuarios.Domicilio;
-import org.apache.logging.log4j.Logger;
-import org.apache.logging.log4j.LogManager;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -72,7 +70,7 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
         if( (this.estado == null) && (this.ultimoEstado == -1))
             this.estado = new Apagado(this );
         else
-            this.estado = EstadoConcreto.obtenerEstadoConcreto(ultimoEstado).obtenerEstado(this);
+            this.estado = EstadoConcreto.getEstadoConcreto(ultimoEstado).getEstadoDispositivo(this);
     }
 
     public void setAdaptador(Adaptador adaptador) {
@@ -184,7 +182,6 @@ public class DispositivoInteligente extends BeanToJson<Dispositivo> implements D
         this.tipoDispositivo = tipoDispositivo;
     }
 
-    @Override
     public BigDecimal getConsumoActual() {
         return tipoDispositivo.getConsumoEstimadoKWh().multiply(estado.porcentajeConsumo());
     }
