@@ -2,23 +2,47 @@ package servicios;
 
 import dao.DispositivoInteligenteDAO;
 import modelos.dispositivos.DispositivoInteligente;
+import modelos.mongo.Reporte;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
-public class DispositivoInteligenteService {
+public class DispositivoInteligenteService extends BaseService{
+
+
+    public DispositivoInteligenteService(){
+        this.nombreClase = DispositivoInteligente.class.getSimpleName();
+    }
 
     private final static DispositivoInteligenteDAO dispDAO = new DispositivoInteligenteDAO();
 
-    public BigDecimal getConsumoPromedioPeriodo(String nombre, LocalDateTime p_inicio, LocalDateTime p_final) {
-        DispositivoInteligente i = dispDAO.getDispositivoInteligente(nombre);
-        if (i != null) {
-            ConsumoService consumoService = new ConsumoService();
+    public BigDecimal getConsumoTotalPeriodo(int id, LocalDate inicio, LocalDate fin){
 
-            BigDecimal consumoTotal = consumoService.consumoTotalDispositivo(i, p_inicio, p_final);
+        Reporte reporte = reporteDAO.getReporte(nombreClase,id,inicio,fin);
 
-            return consumoTotal.divide(new BigDecimal(24));
-        } else
+        if( reporte != null )
+            return reporte.getConsumoTotalPeriodo();
+
+        LocalDateTime p_inicio = LocalDateTime.of(inicio, LocalTime.of(0,0,0)) ;
+        LocalDateTime p_final = LocalDateTime.of(fin,LocalTime.of(0,0,0)) ;
+
+        DispositivoInteligente i = dispDAO.getDispositivoInteligentePorId(id);
+
+        if (i == null)
             return new BigDecimal(0);
+
+        ConsumoService consumoService = new ConsumoService();
+
+        consumoTotal = consumoService.getConsumoTotalPeriodo(i, p_inicio, p_final);
+
+        reporte = new Reporte(nombreClase,i.getDint_id(),inicio,fin,
+                consumoTotal, consumoTotal.divide(new BigDecimal(24)));
+
+        reporteDAO.save(reporte);
+
+        return consumoTotal;
     }
+
 }

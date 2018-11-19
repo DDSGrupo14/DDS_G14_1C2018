@@ -20,7 +20,6 @@ import utilidades.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -116,12 +115,12 @@ public class EntregaPersistenciaTest {
         DispositivoInteligenteDAO dispositivoInteligenteDAO = new DispositivoInteligenteDAO();
         ConsumoDispositivoDAO consumoDispositivoDAO = new ConsumoDispositivoDAO();
         DispositivoInteligente dispositivoInteligente1 =
-                dispositivoInteligenteDAO.getDispositivoInteligente(NUEVONOMBRE);
+                dispositivoInteligenteDAO.getDispositivoInteligentePorNombre(NUEVONOMBRE);
 
         if( dispositivoInteligente1 == null){
             cargarDispositivo();
             dispositivoInteligente1 =
-                    dispositivoInteligenteDAO.getDispositivoInteligente(NUEVONOMBRE);
+                    dispositivoInteligenteDAO.getDispositivoInteligentePorNombre(NUEVONOMBRE);
         }
         dispositivoInteligente1.iniciarDispositivoInteligente();
         dispositivoInteligente1.encenderDispositivo();
@@ -145,7 +144,7 @@ public class EntregaPersistenciaTest {
         DispositivoInteligenteDAO dispositivoInteligenteDAO = new DispositivoInteligenteDAO();
 
         DispositivoInteligente dispositivoInteligente =
-                dispositivoInteligenteDAO.getDispositivoInteligente(NOMBREVIEJO);
+                dispositivoInteligenteDAO.getDispositivoInteligentePorNombre(NOMBREVIEJO);
 
         System.out.println(dispositivoInteligente.getEstado().toString());
 
@@ -154,7 +153,7 @@ public class EntregaPersistenciaTest {
         DatabaseUtil.actualizar(dispositivoInteligente);
 
         DispositivoInteligente dipActualizado =
-                dispositivoInteligenteDAO.getDispositivoInteligente(CAMBIONOMBRE);
+                dispositivoInteligenteDAO.getDispositivoInteligentePorNombre(CAMBIONOMBRE);
 
         assertEquals(CAMBIONOMBRE, dipActualizado.getNombre());
     }
@@ -175,12 +174,12 @@ public class EntregaPersistenciaTest {
 
         DispositivoInteligenteDAO dispositivoInteligenteDAO = new DispositivoInteligenteDAO();
         DispositivoInteligente dispositivoInteligente1 =
-                dispositivoInteligenteDAO.getDispositivoInteligente("NombreCambiado");
+                dispositivoInteligenteDAO.getDispositivoInteligentePorNombre("NombreCambiado");
 
         if( dispositivoInteligente1 == null) {
             cargarDispositivo();
             dispositivoInteligente1 =
-                    dispositivoInteligenteDAO.getDispositivoInteligente("NombreCambiado");
+                    dispositivoInteligenteDAO.getDispositivoInteligentePorNombre("NombreCambiado");
         }
 
         if(actuador.getDispositivoInteligente() == null)
@@ -213,7 +212,7 @@ public class EntregaPersistenciaTest {
 
         DispositivoInteligenteDAO dispositivoInteligenteDAO = new DispositivoInteligenteDAO();
         DispositivoInteligente dispositivoInteligente1 =
-                dispositivoInteligenteDAO.getDispositivoInteligente("NombreCambiado");
+                dispositivoInteligenteDAO.getDispositivoInteligentePorNombre("NombreCambiado");
 
         if( dispositivoInteligente1.getUltimoEstado() != EstadoConcreto.APAGADO.getValue())
             dispositivoInteligente1.apagarDispositivo();
@@ -244,9 +243,11 @@ public class EntregaPersistenciaTest {
     @Test
     public void consumoTest(){
 
+        final int ID = 1;
+
         DomicilioDAO domicilioDAO = new DomicilioDAO();
 
-        Domicilio domicilio = domicilioDAO.getDomicilio(1);
+        Domicilio domicilio = domicilioDAO.getDomicilio(ID);
 
         DispositivoInteligente disp = domicilio.getDispositivosInteligentes().get(0);
 
@@ -259,11 +260,13 @@ public class EntregaPersistenciaTest {
     @Test
     public void casoPrueba5Parte1Test(){
 
+        final int ID = 1;
+
         DomicilioService domicilioService = new DomicilioService();
 
-        BigDecimal consumo = domicilioService.getConsumoTotalDomicilioPeriodo(1,
-                LocalDateTime.of(LocalDate.of(2018,01,19), LocalTime.now()),
-                LocalDateTime.now());
+        BigDecimal consumo = domicilioService.getConsumoTotalPeriodo(ID,
+                LocalDate.of(2018,01,19),
+                LocalDate.now());
 
         System.out.println(consumo);
     }
@@ -271,11 +274,13 @@ public class EntregaPersistenciaTest {
     @Test
     public void casoPrueba5Parte2Test(){
 
+        final int ID = 1;
+
         DispositivoInteligenteService dispService = new DispositivoInteligenteService();
 
-        BigDecimal consumoPromedio = dispService.getConsumoPromedioPeriodo("aire1",
-                LocalDateTime.of(LocalDate.of(2018,01,19), LocalTime.now()),
-                LocalDateTime.now());
+        BigDecimal consumoPromedio = dispService.getConsumoPromedioPeriodo(ID,
+                LocalDate.of(2018,01,19),
+                LocalDate.now());
 
         System.out.println(consumoPromedio);
     }
@@ -283,11 +288,13 @@ public class EntregaPersistenciaTest {
     @Test
     public void casoPrueba5Parte3Test(){
 
+        final int ID = 1;
+
         TransformadorService transformadorService = new TransformadorService();
 
-        BigDecimal consumopromedio = transformadorService.getConsumoPromedioPeriodo("transformador1",
-                LocalDateTime.of(LocalDate.of(2018,01,19), LocalTime.now()),
-                LocalDateTime.now());
+        BigDecimal consumopromedio = transformadorService.getConsumoPromedioPeriodo(ID,
+                LocalDate.of(2018,01,19),
+                LocalDate.now());
 
         System.out.println(consumopromedio);
     }

@@ -1,27 +1,40 @@
 package servicios;
 
-import dao.ConsumoDispositivoDAO;
 import dao.DomicilioDAO;
-import modelos.dispositivos.ConsumoDispositivo;
 import modelos.dispositivos.DispositivoEstandar;
 import modelos.dispositivos.DispositivoInteligente;
-import modelos.estados.EstadoConcreto;
+import modelos.mongo.Reporte;
 import modelos.usuarios.Domicilio;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
-public class DomicilioService {
+public class DomicilioService extends BaseService{
 
     private final static DomicilioDAO domicilioDAO = new DomicilioDAO();
-    private BigDecimal consumoTotal = new BigDecimal(0);
 
+    public DomicilioService(){
+        this.nombreClase = Domicilio.class.getSimpleName();
+    }
 
-    public BigDecimal getConsumoTotalDomicilioPeriodo(int id, LocalDateTime p_inicio, LocalDateTime p_final){
+    public BigDecimal getConsumoTotalPeriodo(int id, LocalDate inicio, LocalDate fin){
+
+        Reporte reporte = reporteDAO.getReporte(nombreClase,id,inicio,fin);
+
+        if( reporte != null )
+            return reporte.getConsumoTotalPeriodo();
+
+        LocalDateTime p_inicio = LocalDateTime.of(inicio, LocalTime.of(0,0,0)) ;
+        LocalDateTime p_final = LocalDateTime.of(fin,LocalTime.of(0,0,0)) ;
 
         Domicilio domicilio = domicilioDAO.getDomicilio(id);
+
+        if(domicilio == null)
+            return consumoTotal;
 
         List<DispositivoEstandar> listaE = domicilio.getDispositivosEstandar();
         if(listaE != null)
@@ -30,11 +43,15 @@ public class DomicilioService {
             ));
 
         List<DispositivoInteligente> listaI = domicilio.getDispositivosInteligentes();
-
         ConsumoService consumoService = new ConsumoService();
 
         if(listaI != null)
-            listaI.forEach( i -> consumoTotal = consumoService.consumoTotalDispositivo(i,p_inicio,p_final));
+            listaI.forEach( i -> consumoTotal = consumoService.getConsumoTotalPeriodo(i,p_inicio,p_final));
+
+        reporte = new Reporte(nombreClase,domicilio.getDom_id(),inicio,fin,
+                consumoTotal, consumoTotal.divide(new BigDecimal(24)));
+
+        reporteDAO.save(reporte);
 
         return consumoTotal;
     }

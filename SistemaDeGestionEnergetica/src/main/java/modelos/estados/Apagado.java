@@ -2,14 +2,11 @@ package modelos.estados;
 
 import modelos.dispositivos.DispositivoInteligente;
 
-import java.math.BigDecimal;
-
 public class Apagado extends Estado {
 
     public Apagado(DispositivoInteligente dispositivoInteligente) {
         super(dispositivoInteligente);
         this.setEstadoConcreto(EstadoConcreto.APAGADO);
-        this.getConsumoDispositivoDAO().apagarDispositivo(dispositivoInteligente);
         this.setUltimoEstado();
     }
 
@@ -24,7 +21,7 @@ public class Apagado extends Estado {
 
     @Override
     public Estado encender( ) {
-
+        this.getConsumoDispositivoDAO().encenderDispositivo(getDispositivoInteligente());
         return new Encendido( getDispositivoInteligente());
     }
 
@@ -36,13 +33,13 @@ public class Apagado extends Estado {
 
     @Override
     public Estado ahorrarEnergia( ) {
-
+        this.getConsumoDispositivoDAO().ahorroEnergiaDispositivo(getDispositivoInteligente());
         return new AhorroDeEnergia( getDispositivoInteligente() );
     }
 
     @Override
-    public BigDecimal porcentajeConsumo() {
-        return new BigDecimal( 0 );
+    public double getPorcentajeAhorro() {
+        return 0.0;
     }
 
 }

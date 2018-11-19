@@ -1,4 +1,6 @@
 .idea/*
 .idea/workspace.xml
 SistemaDeGestionEnergetica.iml
+velocity.log
+velocity.log.*
 target/*

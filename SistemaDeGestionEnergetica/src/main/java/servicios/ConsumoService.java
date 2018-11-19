@@ -15,7 +15,7 @@ public class ConsumoService {
     private final static ConsumoDispositivoDAO consumoDispositivoDAO = new ConsumoDispositivoDAO();
 
 
-    public BigDecimal consumoTotalDispositivo(DispositivoInteligente i, LocalDateTime p_inicio, LocalDateTime p_final){
+    public BigDecimal getConsumoTotalPeriodo(DispositivoInteligente i, LocalDateTime p_inicio, LocalDateTime p_final){
 
         List<ConsumoDispositivo> listaC = consumoDispositivoDAO.getConsumoPeriodo(i, p_inicio, p_final);
         BigDecimal consumoTotal = new BigDecimal(0);

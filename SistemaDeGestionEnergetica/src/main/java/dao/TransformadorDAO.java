@@ -20,11 +20,11 @@ public class TransformadorDAO {
         }
     }
 
-    public Transformador getTransformador(String codigo){
+    public Transformador getTransformador(int id){
         try{
-            hql = "from Transformador where codigo = :codigo ";
+            hql = "from Transformador where transf_id = :id ";
             return DatabaseUtil.getSession().createQuery(hql,Transformador.class)
-                    .setParameter("codigo", codigo)
+                    .setParameter("id", id)
                     .getSingleResult();
         } catch (Exception e){
             System.out.println("e.getMessage() = " + e.getMessage());
