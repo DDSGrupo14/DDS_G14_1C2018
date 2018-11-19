@@ -2,6 +2,7 @@ package modelos.reglas.reglas;
 
 import modelos.reglas.actuadores.Actuador;
 import modelos.reglas.condiciones.Condicion;
+import modelos.usuarios.Domicilio;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -20,6 +21,10 @@ public class Regla {
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "act_id")
     private Actuador actuador;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "dom_id")
+    private Domicilio domicilio;
 
     @OneToMany(
             mappedBy = "regla",
@@ -65,6 +70,14 @@ public class Regla {
 
     public void setActuador(Actuador actuador) {
         this.actuador = actuador;
+    }
+
+    public Domicilio getDomicilio() {
+        return domicilio;
+    }
+
+    public void setDomicilio(Domicilio domicilio) {
+        this.domicilio = domicilio;
     }
 
     public void actuar(){}

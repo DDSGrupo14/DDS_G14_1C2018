@@ -7,6 +7,7 @@ import modelos.dispositivos.DispositivoEstandar;
 import modelos.dispositivos.DispositivoInteligente;
 import modelos.enre.Transformador;
 import modelos.reglas.actuadores.Actuador;
+import modelos.reglas.reglas.Regla;
 import modelos.reglas.sensores.Sensor;
 
 import javax.persistence.*;
@@ -58,6 +59,12 @@ public class Domicilio extends BeanToJson<Domicilio> {
             orphanRemoval = true
     )
     private List<DispositivoEstandar> dispositivosEstandar;
+    @OneToMany(
+            mappedBy = "domicilio",
+            cascade = CascadeType.ALL,
+            orphanRemoval = true
+    )
+    private List<Regla> reglas;
     @Expose
     @Column
     private LocalDateTime fechaAltaEnSistema;
@@ -91,6 +98,7 @@ public class Domicilio extends BeanToJson<Domicilio> {
         this.dispositivosEstandar = new ArrayList<>();
         this.sensores = new ArrayList<>();
         this.actuadores = new ArrayList<>();
+        this.reglas = new ArrayList<>();
     }
 
     public Domicilio(){}
@@ -125,6 +133,14 @@ public class Domicilio extends BeanToJson<Domicilio> {
 
     public List<DispositivoEstandar> getDispositivosEstandar() {
         return dispositivosEstandar;
+    }
+
+    public List<Regla> getReglas() {
+        return reglas;
+    }
+
+    public void setReglas(List<Regla> reglas) {
+        this.reglas = reglas;
     }
 
     public LocalDateTime getFechaAltaEnSistema() {
@@ -193,6 +209,11 @@ public class Domicilio extends BeanToJson<Domicilio> {
 
         dispositivo.setDomicilio(this);
         return this;
+    }
+
+    public void agregarRegla(Regla regla){
+        reglas.add(regla);
+        regla.setDomicilio(this);
     }
 
     public List<Actuador> getActuadores() {

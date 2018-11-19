@@ -258,8 +258,8 @@ public class ParserJsonToJsonTest {
         Transformador transformador1 = new Transformador(true,latitud1,longitud1,trans_codigo1, direcciones1);
 
         List<String> direcciones2 = Arrays.asList(direccion3,direccion4);
-        final double latitud2= -34.665116;
-        final double longitud2= -58.489735;
+        final double latitud2= -34.6731;
+        final double longitud2= -58.474123;
         final String trans_codigo2 = "transformador2";
         Transformador transformador2 = new Transformador(true,latitud2,longitud2, trans_codigo2, direcciones2);
 
@@ -277,16 +277,16 @@ public class ParserJsonToJsonTest {
 
         final double latitudZona1 = -34.672627;
         final double longitudZona1 = -58.47698;
-        final int radio1 = 1000;
+        final double radio1 = 1000.0;
         final String codigo1 = "ZONA1";
-        List<Transformador> transformadores1 = Arrays.asList(transformador1, transformador2);
+        List<Transformador> transformadores1 = Arrays.asList(transformador1, transformador3);
         Zona zona1 = new Zona(codigo1,latitudZona1, longitudZona1, radio1,transformadores1);
 
         final double latitudZona2 = -34.657795;
         final double longitudZona2 = -58.500996;
-        final int radio2 = 1000;
+        final double radio2 = 1000.0;
         final String codigo2 = "ZONA2";
-        List<Transformador> transformadores2 = Arrays.asList(transformador3, transformador4);
+        List<Transformador> transformadores2 = Arrays.asList(transformador2, transformador4);
         Zona zona2 = new Zona(codigo2,latitudZona2, longitudZona2, radio2,transformadores2);
 
         JsonUtils.crearArchivoJson(Arrays.asList(zona1,zona2), Path.Archivos.ZONA);

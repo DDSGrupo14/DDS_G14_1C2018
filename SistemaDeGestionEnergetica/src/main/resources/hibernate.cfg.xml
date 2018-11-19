@@ -16,7 +16,7 @@
         <property name="hibernate.transaction.coordinator_class">jdbc</property>
 
         <!-- Cambiar a update si no se quiere borrar todas las tablas, create para dropear y crear de nuevo-->
-        <property name="hbm2ddl.auto">update</property>
+        <property name="hbm2ddl.auto">create</property>
 
         <mapping class="modelos.usuarios.Cliente" />
         <mapping class="modelos.usuarios.Usuario" />

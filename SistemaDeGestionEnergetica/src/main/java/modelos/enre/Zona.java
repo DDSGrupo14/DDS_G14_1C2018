@@ -27,7 +27,7 @@ public class Zona extends BeanToJson<Zona> {
     private double longitud;
     @Expose
     @Column
-    private int radio;
+    private double radio;
     @Expose
     @OneToMany(
             mappedBy = "zona",
@@ -37,7 +37,7 @@ public class Zona extends BeanToJson<Zona> {
     )
     private List<Transformador> transformadores;
 
-    public Zona(String codigo, double latitud, double longitud,int radio, List<Transformador> transformadores) {
+    public Zona(String codigo, double latitud, double longitud,double radio, List<Transformador> transformadores) {
         this.codigo = codigo;
         this.latitud = latitud;
         this.radio = radio;
@@ -48,6 +48,14 @@ public class Zona extends BeanToJson<Zona> {
     public Zona() {
     }
 
+    public int getZona_id() {
+        return zona_id;
+    }
+
+    public void setZona_id(int zona_id) {
+        this.zona_id = zona_id;
+    }
+
     public String getCodigo() {
         return codigo;
     }
@@ -56,11 +64,11 @@ public class Zona extends BeanToJson<Zona> {
         this.codigo = codigo;
     }
 
-    public int getRadio() {
+    public double getRadio() {
         return radio;
     }
 
-    public void setRadio(int radio) {
+    public void setRadio(double radio) {
         this.radio = radio;
     }
 

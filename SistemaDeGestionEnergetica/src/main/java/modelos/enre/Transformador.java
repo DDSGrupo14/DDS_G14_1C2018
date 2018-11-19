@@ -141,4 +141,15 @@ public class Transformador extends BeanToJson<Transformador> {
     public Transformador getObj() {
         return this;
     }
+
+    @Override
+    public boolean equals(Object o){
+
+        if( o == null)
+            return false;
+
+        Transformador otroT = (Transformador) o;
+
+        return this.codigo.equals(otroT.getCodigo());
+    }
 }

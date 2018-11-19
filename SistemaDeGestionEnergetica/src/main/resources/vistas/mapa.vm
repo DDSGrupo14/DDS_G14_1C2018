@@ -19,6 +19,7 @@
 <hr>
 <footer style="text-align: center;background-color:grey;color:white">
     Catedra Diseño de Sistemas - UTN FRBA 2018
+    <b></b>
 </footer>
 </html>
 <script type="text/javascript">
@@ -60,20 +61,9 @@
             radius: 500
         }).addTo(mapa).on('click', onMapClick);
         function onMapClick(e) {
-            alert("Latitud y Longitud: " + e.latlng);
+            alert("Latitud y Longitud: " + e.layerPoint);
         }
     });
-    function onClick(e){
-
-        mostrarDatosTransformador(e.latlng.lat, e.latlng.lng);
-    };
-
-    function mostrarDatosTransformador(latitud, longitud){
-        var transformador = ($zona).find(function (trans) {
-            return trans.latitud === latitud && trans.longitud === longitud;
-        })
-        alert(transformador.codigo);
-    };
 
     function agregarCirculo(algo, mapa, latitud, longitud, radio){
         return algo.circle([latitud, longitud], {

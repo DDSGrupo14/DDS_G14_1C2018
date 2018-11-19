@@ -15,7 +15,7 @@ public class GeolocalizacionTest {
     public static void cargarZonas(){
         ZonaDAO zonaDAO = new ZonaDAO();
 
-        zonas = zonaDAO.obtenerZonas();
+        zonas = zonaDAO.getAllZonas();
 
     }
 

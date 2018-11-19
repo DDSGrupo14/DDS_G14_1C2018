@@ -67,13 +67,9 @@ public class PersistenciaTest {
     @Test
     public void persistirZonasTest(){
 
-        CargarZonaDesdeJson cargaZona =
-                new CargarZonaDesdeJson();
-
         List<Zona> zonas = JsonUtils.obtenerZonas(Path.Archivos.ZONA);
 
         for(Zona zona: zonas){
             DatabaseUtil.persistir(zona);
-            System.out.println(zona.toString());
         }
     }}

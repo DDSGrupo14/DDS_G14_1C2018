@@ -20,7 +20,7 @@ public class MapaController {
 
         ZonaDAO zonaDAO = new ZonaDAO();
 
-        List<Zona> zonas = zonaDAO.obtenerZonas();
+        List<Zona> zonas = zonaDAO.getAllZonas();
 
         zonas.forEach(Zona::calcularConsumoDeTransformadores);
 

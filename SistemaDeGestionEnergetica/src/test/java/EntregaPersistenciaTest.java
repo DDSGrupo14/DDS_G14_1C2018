@@ -88,8 +88,8 @@ public class EntregaPersistenciaTest {
 
         Domicilio principal = cliente1.getPrincipal();
 
-        final double LATITUD = -36.670000;
-        final double LONGITUD = -58.479000;
+        final double LATITUD = -34.671843;
+        final double LONGITUD = -58.482608;
 
         principal.setLongitud(LONGITUD);
         principal.setLatitud(LATITUD);
@@ -120,6 +120,7 @@ public class EntregaPersistenciaTest {
         }
         dispositivoInteligente1.iniciarDispositivoInteligente();
         dispositivoInteligente1.encenderDispositivo();
+        dispositivoInteligente1.pasarAhorroEnergia();
         dispositivoInteligente1.apagarDispositivo();
 
         List<ConsumoDispositivo> consumos = consumoDispositivoDAO.consumoUltimoMes(dispositivoInteligente1);
@@ -194,6 +195,21 @@ public class EntregaPersistenciaTest {
         assertEquals(NOMBREACTUADOR,actuador.getNombre());
 
         assertEquals(EstadoConcreto.ENCENDIDO.getValue(),dispositivoInteligente1.getUltimoEstado());
+
+    }
+
+    @Test
+    public void casoPrueba3Parte2Test(){
+
+        final String NOMBREACTUADOR = "Actuador1";
+
+        ActuadorDAO actuadorDAO = new ActuadorDAO();
+        Actuador actuador = actuadorDAO.getActuador(NOMBREACTUADOR);
+
+        DispositivoInteligenteDAO dispositivoInteligenteDAO = new DispositivoInteligenteDAO();
+        DispositivoInteligente dispositivoInteligente1 =
+                dispositivoInteligenteDAO.getDispositivoInteligente("NombreCambiado");
+
 
     }
 }

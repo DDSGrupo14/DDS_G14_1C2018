@@ -1,4 +1,6 @@
 import json.CargarClaseSimpleDesdeJson;
+import json.JsonUtils;
+import modelos.dao.ZonaDAO;
 import modelos.dispositivos.Categoria;
 import modelos.dispositivos.DispositivoEstandar;
 import modelos.dispositivos.DispositivoInteligente;
@@ -59,8 +61,8 @@ public class CargaDatosCompletaTest {
         final String login_usuario1 = "completo1";
         final String password1 = "completo";
         final String direccion1 = "direccion1";
-        final double latitud1 = -35.55;
-        final double longitud1 = -58.3;
+        final double latitud1 = -34.657018;
+        final double longitud1 = -58.506308;
         final LocalDateTime fechaAlta1 = RandomDate.createRandomDate(2015,2018);
 
         final String nombre2 = "Fernando";
@@ -70,8 +72,8 @@ public class CargaDatosCompletaTest {
         final String login_usuario2 = "completo2";
         final String password2 = "completo";
         final String direccion2 = "direccion3";
-        final double latitud2 = -35.55;
-        final double longitud2 = -58.3;
+        final double latitud2 = -34.674384;
+        final double longitud2 = -58.470243;
         final LocalDateTime fechaAlta2 = RandomDate.createRandomDate(2015,2018);
 
         final Cliente cliente1 = new Cliente(nombre1,apellido1,documento1,telefono1,login_usuario1,password1);
@@ -103,7 +105,7 @@ public class CargaDatosCompletaTest {
 
         TipoDispositivo tipoHeladera = tipos.stream().filter( t -> t.getEquipoConcreto().equals("HeladeraConFreezer"))
                 .findAny().orElse(null);
-        DispositivoInteligente heladera2 = new DispositivoInteligente(tipoAire1,"heladera2"
+        DispositivoInteligente heladera2 = new DispositivoInteligente(tipoHeladera,"heladera2"
                 ,50.0);
 
         domicilio2.agregarDispositivoInteligente(heladera2);
@@ -125,9 +127,15 @@ public class CargaDatosCompletaTest {
         CargarClaseSimpleDesdeJson<Zona> cargaZonas =
                 new CargarClaseSimpleDesdeJson<>(Zona.class);
 
-        List<Zona> zonas = cargaZonas.obtenerListaClaseComun(Path.Archivos.ZONA);
+        List<Zona> zonas = JsonUtils.obtenerZonas(Path.Archivos.ZONA);
+
+        ZonaDAO zonaDAO = new ZonaDAO();
+
+        zonas.forEach(z -> z.getTransformadores().forEach(t-> System.out.println(t.getCodigo())));
 
         zonas.forEach(zona -> DatabaseUtil.persistir(zona));
+
+        zonas.forEach(zona -> zonaDAO.actualizarTransformadores(zona));
 
         /*
         ------------------------ CARGA ZONAS Y TRANSFORMADORES ------------------------
