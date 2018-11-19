@@ -2,38 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e721b091-18f3-430b-98e8-b26485bf4451" name="Default" comment="Terminando Backend">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dao/TransformadorDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servicios/ConsumoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servicios/DispositivoInteligenteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servicios/DomicilioService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/servicios/TransformadorService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controladores/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controladores/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controladores/MapaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controladores/MapaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dao/ActuadorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ActuadorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dao/AdministradorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/AdministradorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dao/ClienteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ClienteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dao/ConsumoDispositivoDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ConsumoDispositivoDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dao/DispositivoEstandarDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DispositivoEstandarDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dao/DispositivoInteligenteDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DispositivoInteligenteDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dao/DomicilioDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/DomicilioDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dao/ReglaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ReglaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dao/SensorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/SensorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dao/ZonaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dao/ZonaDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/Dispositivo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/Dispositivo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoEstandar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoEstandar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoInteligente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/dispositivos/DispositivoInteligente.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/estados/AhorroDeEnergia.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/estados/AhorroDeEnergia.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/estados/Apagado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/estados/Apagado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/estados/Encendido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/estados/Encendido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/estados/Estado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/estados/Estado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/estados/EstadoConcreto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/estados/EstadoConcreto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelos/usuarios/Domicilio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelos/usuarios/Domicilio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/CargaDatosCompletaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/CargaDatosCompletaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/EntregaPersistenciaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/EntregaPersistenciaTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/GeolocalizacionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/GeolocalizacionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/QueryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/QueryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/logs/actividadDeDispositivos.log.1" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -144,7 +113,7 @@
         <counts>
           <entry key="dummy" value="46" />
           <entry key="html" value="215" />
-          <entry key="java" value="51783" />
+          <entry key="java" value="51854" />
           <entry key="json" value="8" />
           <entry key="sql" value="15" />
           <entry key="txt" value="112" />
@@ -155,7 +124,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="HTML" value="215" />
-          <entry key="JAVA" value="51767" />
+          <entry key="JAVA" value="51838" />
           <entry key="JPA QL" value="17" />
           <entry key="JSON" value="8" />
           <entry key="PLAIN_TEXT" value="158" />
@@ -171,8 +140,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/EntregaPersistenciaTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="358">
-              <caret line="287" column="90" selection-start-line="287" selection-start-column="85" selection-end-line="287" selection-end-column="90" />
+            <state relative-caret-position="154">
+              <caret line="283" column="33" selection-start-line="283" selection-start-column="33" selection-end-line="283" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -539,7 +508,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542613837163" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542614131756" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../TestSpark/testRuleEngine" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
@@ -728,7 +697,7 @@
       <workItem from="1541624747773" duration="5991000" />
       <workItem from="1542238830714" duration="111000" />
       <workItem from="1542239234169" duration="9928000" />
-      <workItem from="1542480846993" duration="60113000" />
+      <workItem from="1542480846993" duration="60457000" />
     </task>
     <task id="LOCAL-00001" summary="Cambios">
       <created>1534979327493</created>
@@ -748,9 +717,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="CargaDatosCompletaTest_cargarTodoTest - 2018.11.19 at 04h 01m 05s.xml">
-      <configuration name="CargaDatosCompletaTest.cargarTodoTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="EntregaPersistenciaTest_consumoTest - 2018.11.19 at 04h 07m 02s.xml">
       <configuration name="EntregaPersistenciaTest.consumoTest" configurationId="JUnit" />
     </history-entry>
@@ -778,9 +744,12 @@
     <history-entry file="EntregaPersistenciaTest_casoPrueba5Parte2Test - 2018.11.19 at 04h 38m 52s.xml">
       <configuration name="EntregaPersistenciaTest.casoPrueba5Parte2Test" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="EntregaPersistenciaTest_casoPrueba5Parte3Test - 2018.11.19 at 04h 49m 37s.xml">
+      <configuration name="EntregaPersistenciaTest.casoPrueba5Parte3Test" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="380557000" />
+    <option name="totallyTimeSpent" value="380901000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1314,8 +1283,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/EntregaPersistenciaTest.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="358">
-          <caret line="287" column="90" selection-start-line="287" selection-start-column="85" selection-end-line="287" selection-end-column="90" />
+        <state relative-caret-position="154">
+          <caret line="283" column="33" selection-start-line="283" selection-start-column="33" selection-end-line="283" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
