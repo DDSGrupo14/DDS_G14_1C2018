@@ -179,6 +179,7 @@
                         <include>**/*Tests.java</include>
                         <include>**/*TestCase.java</include>
                     </includes>
+                    <skipTests>true</skipTests>
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -200,11 +201,10 @@
                 <configuration>
                     <jdkVersion>1.8</jdkVersion>
                     <!-- Use your own application name -->
-                    <appName>sge_app</appName>
                     <processTypes>
                         <!-- Tell Heroku how to launch your application -->
                         <!-- You might have to remove the ./ in front   -->
-                        <web>java -jar ./target/sge-app-1.0-jar-with-dependencies.jar</web>
+                        <web>java -jar /target/sge-app-1.0-jar-with-dependencies.jar</web>
                     </processTypes>
                 </configuration>
             </plugin>
